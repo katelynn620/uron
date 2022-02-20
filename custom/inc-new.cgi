@@ -1,56 +1,56 @@
-# V‹KŠJ“XƒJƒXƒ^ƒ}ƒCƒY—p 2004/01/20 —R˜Ò
+# æ–°è¦é–‹åº—ã‚«ã‚¹ã‚¿ãƒžã‚¤ã‚ºç”¨ 2004/01/20 ç”±ä¾†
 
-# V‹KŠJ“XŽž‚Ì’ˆÓŽ–€‚Ì•\Ž¦‚È‚Ç‚ðƒJƒXƒ^ƒ}ƒCƒY‚Å‚«‚Ü‚·B
-# ‚½‚¾‚µC‚ ‚é’ö“x‚ÌHTML‚Ì’mŽ¯‚ÆƒvƒƒOƒ‰ƒ€‚Ì—‰ð‚ª•K—v‚Å‚·B
+# æ–°è¦é–‹åº—æ™‚ã®æ³¨æ„äº‹é …ã®è¡¨ç¤ºãªã©ã‚’ã‚«ã‚¹ã‚¿ãƒžã‚¤ã‚ºã§ãã¾ã™ã€‚
+# ãŸã ã—ï¼Œã‚ã‚‹ç¨‹åº¦ã®HTMLã®çŸ¥è­˜ã¨ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã®ç†è§£ãŒå¿…è¦ã§ã™ã€‚
 
 $disp.=<<"HTML";
-<BIG>œ‚Í‚¶‚ß‚É</BIG><br><br>
+<BIG>â—ã¯ã˜ã‚ã«</BIG><br><br>
 $TB$TR
 $TD$image[0]$TD
-‚±‚ÌƒQ[ƒ€‚ÍCƒuƒ‰ƒEƒU‚ÅƒvƒŒƒC‚Å‚«‚éŒo‰cƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‚q‚o‚f‚Å‚·B<br>
-ŽQ‰Á‚·‚é‘O‚ÉC}‘ŠÙ‚Åƒ‹[ƒ‹‚âƒvƒŒƒC•û–@‚ð‚æ‚­“Ç‚ñ‚Å‚­‚¾‚³‚¢B
+ã“ã®ã‚²ãƒ¼ãƒ ã¯ï¼Œãƒ–ãƒ©ã‚¦ã‚¶ã§ãƒ—ãƒ¬ã‚¤ã§ãã‚‹çµŒå–¶ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ï¼²ï¼°ï¼§ã§ã™ã€‚<br>
+å‚åŠ ã™ã‚‹å‰ã«ï¼Œå›³æ›¸é¤¨ã§ãƒ«ãƒ¼ãƒ«ã‚„ãƒ—ãƒ¬ã‚¤æ–¹æ³•ã‚’ã‚ˆãèª­ã‚“ã§ãã ã•ã„ã€‚
 $TRE$TBE
 <hr width=500 noshade size=1>
 HTML
 
 $i_rand=int(rand($ICON_NUMBER))+1;
-$disp.="<BIG>œV‹K“X•ÜƒI[ƒvƒ“FŽc‚è".($MAX_USER-$DTusercount)."–¼—l</BIG><br>";
+$disp.="<BIG>â—æ–°è¦åº—èˆ—ã‚ªãƒ¼ãƒ—ãƒ³ï¼šæ®‹ã‚Š".($MAX_USER-$DTusercount)."åæ§˜</BIG><br>";
 $disp.=<<"HTML";
-<small>“o˜^‚Í<b>‚Pl‚P“X•Ü</b>‚Ì‚Ý</small><br>
+<small>ç™»éŒ²ã¯<b>ï¼‘äººï¼‘åº—èˆ—</b>ã®ã¿</small><br>
 <FORM ACTION="action.cgi" $METHOD>
 <INPUT TYPE=HIDDEN NAME=key VALUE="new">
 <INPUT TYPE=HIDDEN NAME=admin VALUE="$Q{admin}">
 <TABLE>
   <TR>
     <TD>
-<SPAN>–¼‘O</SPAN>F<INPUT TYPE=TEXT NAME=name> ”¼Šp‘SŠpOK<BR>
-<SPAN>“X–¼</SPAN>F<INPUT TYPE=TEXT NAME=sname> ”¼Šp‘SŠpOK<BR>
+<SPAN>åå‰</SPAN>ï¼š<INPUT TYPE=TEXT NAME=name> åŠè§’å…¨è§’OK<BR>
+<SPAN>åº—å</SPAN>ï¼š<INPUT TYPE=TEXT NAME=sname> åŠè§’å…¨è§’OK<BR>
 
-<SPAN>ƒAƒCƒRƒ“</SPAN>F<SELECT NAME=icon>
-<OPTION value="$i_rand" selected>ƒ‰ƒ“ƒ_ƒ€</OPTION>
+<SPAN>ã‚¢ã‚¤ã‚³ãƒ³</SPAN>ï¼š<SELECT NAME=icon>
+<OPTION value="$i_rand" selected>ãƒ©ãƒ³ãƒ€ãƒ </OPTION>
 HTML
 
 foreach my $i(1..$ICON_NUMBER)
 	{
-	$disp.=qq|<OPTION value="$i">‰æ‘œ$i</OPTION>|;
+	$disp.=qq|<OPTION value="$i">ç”»åƒ$i</OPTION>|;
 	}
 
 $disp.=<<"HTML";
 </SELECT> 
-<input type="button" value="ƒAƒCƒRƒ“ˆê——" onclick="javascript:window.open('action.cgi?key=icon','_blank','width=450,height=380,scrollbars')">
+<input type="button" value="ã‚¢ã‚¤ã‚³ãƒ³ä¸€è¦§" onclick="javascript:window.open('action.cgi?key=icon','_blank','width=450,height=380,scrollbars')">
 <br>
-<SPAN>ƒpƒXƒ[ƒh</SPAN>F<INPUT TYPE=PASSWORD maxlength=12 NAME=pass1> ”¼Šp‰p”‚Ì‚Ý<BR>
-<SPAN>ƒpƒXƒ[ƒh‚à‚¤ˆê“x</SPAN>F<INPUT TYPE=PASSWORD maxlength=12 NAME=pass2><BR>
+<SPAN>ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰</SPAN>ï¼š<INPUT TYPE=PASSWORD maxlength=12 NAME=pass1> åŠè§’è‹±æ•°ã®ã¿<BR>
+<SPAN>ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã‚‚ã†ä¸€åº¦</SPAN>ï¼š<INPUT TYPE=PASSWORD maxlength=12 NAME=pass2><BR>
 HTML
 
-$disp.="<SPAN>o“XƒL[ƒ[ƒh</SPAN>F<INPUT TYPE=TEXT NAME=newkey><BR>" if ($NEW_SHOP_KEYWORD);
+$disp.="<SPAN>å‡ºåº—ã‚­ãƒ¼ãƒ¯ãƒ¼ãƒ‰</SPAN>ï¼š<INPUT TYPE=TEXT NAME=newkey><BR>" if ($NEW_SHOP_KEYWORD);
 
 $disp.=<<"HTML";
-<center><INPUT TYPE=SUBMIT VALUE="“o˜^"></center>
+<center><INPUT TYPE=SUBMIT VALUE="ç™»éŒ²"></center>
 </TD></TR>
 </TABLE>
-<small>¦r‚ç‚µ‚Æ‹^‚í‚ê‚é‚æ‚¤‚È–¼‘O‚Í”ð‚¯‚Ü‚µ‚å‚¤B<br>
-¦ƒpƒXƒ[ƒh‚Í‘¼l‚ª„‘ª‚Å‚«‚È‚¢‚æ‚¤‚È‚à‚Ì‚ðB</small>
+<small>â€»è’ã‚‰ã—ã¨ç–‘ã‚ã‚Œã‚‹ã‚ˆã†ãªåå‰ã¯é¿ã‘ã¾ã—ã‚‡ã†ã€‚<br>
+â€»ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã¯ä»–äººãŒæŽ¨æ¸¬ã§ããªã„ã‚ˆã†ãªã‚‚ã®ã‚’ã€‚</small>
 </FORM>
 HTML
 1;

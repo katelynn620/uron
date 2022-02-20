@@ -1,152 +1,152 @@
-# �ݒ�t�@�C�� 2005/01/06 �R��
-# ���̃t�@�C���̃p�[�~�b�V������ݒ肷��K�v�͓��ɂ���܂���B�ݒ肷��Ȃ�644�Ȃǂłn�j�B
+# 設定ファイル 2005/01/06 由來
+# このファイルのパーミッションを設定する必要は特にありません。設定するなら644などでＯＫ。
 
 #-----------------------
-# ���͂��߂ɂ���ݒ�
+# ◆はじめにする設定
 #-----------------------
-$MASTER_PASSWORD	='';			# �Ǘ��p�X���[�h
-$ADMIN_EMAIL		='';			# �Ǘ��҃��[���A�h���X
+$MASTER_PASSWORD	='';			# 管理パスワード
+$ADMIN_EMAIL		='';			# 管理者メールアドレス
 
-$HTML_TITLE	='�X�̐�������';		# �X�̐�������
+$HTML_TITLE	='街の正式名称';		# 街の正式名称
 
-$TOWN_TITLE	='����';			# �X�̖��́i�S�p�Q�������炢�ŒZ���j
-						# ��ɂȂ��ĊX�̖��̂�ς����Ƃ��́C�Ǘ�����
-						# �u�������^�j���C���v�{�^���������K�v������܂��B
+$TOWN_TITLE	='略称';			# 街の名称（全角２文字くらいで短く）
+						# 後になって街の名称を変えたときは，管理室で
+						# 「初期化／破損修復」ボタンを押す必要があります。
 
 
 #-----------------------
-# ���X�̐ݒ�
+# ◆街の設定
 #-----------------------
-$TOWN_CODE	='uron';			# �X�̃R�[�h�i���ʋL���j
-						# ���p�p��������10�����ȓ��œK���ɐݒ肵�܂��傤�B
-						# ���̊X�Ɠ����R�[�h�ɂȂ�Ȃ��悤�ɁB
+$TOWN_CODE	='uron';			# 街のコード（識別記号）
+						# 半角英数小文字10文字以内で適当に設定しましょう。
+						# 他の街と同じコードにならないように。
 
-$TITLE_COMMENT	='';				# ���O�C����ʂɍڂ���R�����g�B�^�O�g���܂��B
+$TITLE_COMMENT	='';				# ログイン画面に載せるコメント。タグ使えます。
 
-$HOME_PAGE	='../index.html';		# �u�z�[���v�̃����N��
+$HOME_PAGE	='../index.html';		# 「ホーム」のリンク先
 
-$MOVETOWN_ENABLE	=0;			# �ړ]�@�\�̗L���� 1:�L�� 0:����
-						# �T�[�o�[��socket�ɑΉ����ĂȂ��ƈړ]�@�\�͎g���܂���B
+$MOVETOWN_ENABLE	=0;			# 移転機能の有効化 1:有効 0:無効
+						# サーバーがsocketに対応してないと移転機能は使えません。
 
 
 #------------------------
-# ��{�I�ȃQ�[���ݒ�
+# 基本的なゲーム設定
 #------------------------
-$MAX_USER	=50;				# �V���J�X�ő吔�F���܂�傫�����Ă͂����܂���B
-$MAX_MOVE_USER	=55;				# �ړ]�ő吔�i������ړ]���Ă����ꍇ�̎󂯓���\���j
+$MAX_USER	=50;				# 新装開店最大数：あまり大きくしてはいけません。
+$MAX_MOVE_USER	=55;				# 移転最大数（他から移転してきた場合の受け入れ可能数）
 
-$EXPIRE_TIME	=3600*24*7;			# �o�c�ҕs�݊���(�b)
-						# ���̊��Ԃ����ƃA�N�Z�X���Ȃ��ƃf�[�^����������܂��B
+$EXPIRE_TIME	=3600*24*7;			# 経営者不在期限(秒)
+						# この期間ずっとアクセスがないとデータが抹消されます。
 
-$ONE_DAY_TIME		=3600*36;		# ���Z�T�C�N��(�b)
-$DATE_REVISE_TIME	=3600*6;		# ���Z���������炷�b��(-3600��1���ԑO�|��)
+$ONE_DAY_TIME		=3600*36;		# 決算サイクル(秒)
+$DATE_REVISE_TIME	=3600*6;		# 決算時刻をずらす秒数(-3600で1時間前倒し)
 
-$MAX_STOCK_TIME		=72*60*60;		# �ő厝������(�b)
+$MAX_STOCK_TIME		=72*60*60;		# 最大持ち時間(秒)
 
-$LIMIT_EXP	=3600;				# �n���x�̍��v�l���~�b�g�i10�{�̐��l���w��j
-						# 3600����360%������B0�ɂ���Ə���Ȃ��B
+$LIMIT_EXP	=3600;				# 熟練度の合計値リミット（10倍の数値を指定）
+						# 3600だと360%が上限。0にすると上限なし。
 
-$REQUEST_LIMIT		=48*60*60;		# �u�˗����v�̈˗����L���Ȏ���(�b)
-$REQUEST_CAPACITY	=1;			# �����Ɉ˗��ł��鐔
+$REQUEST_LIMIT		=48*60*60;		# 「依頼所」の依頼が有効な時間(秒)
+$REQUEST_CAPACITY	=1;			# 同時に依頼できる数
 
-$HouseMax	=5;				# �u�Z��v�ɕۊǂł�����F
-						# 5 �Ƃ���ƁC���ꂼ��̃A�C�e�����q�ɍő吔��5�{�܂ŕۊǂł���B
+$HouseMax	=5;				# 「住宅」に保管できる個数：
+						# 5 とすると，それぞれのアイテムが倉庫最大数の5倍まで保管できる。
 
-$MAX_BOX	=5;				# �莆�̑��M�ő吔
-$BOX_STOCK_TIME	=48*60*60;			# �莆���L���Ȏ���(�b)
+$MAX_BOX	=5;				# 手紙の送信最大数
+$BOX_STOCK_TIME	=48*60*60;			# 手紙が有効な時間(秒)
 
-@DIGNITY=(					# �݈ʂ̖��O�B�E�ɍs���قǒn�ʂ������Ȃ�܂��B
-	"����","�m��","�q��","����","���","����","���"
+@DIGNITY=(					# 爵位の名前。右に行くほど地位が高くなります。
+	"平民","士爵","子爵","伯爵","侯爵","公爵","大公"
 	);
-@DIG_POINT=(					# �K�v�Ȏ݈ʃ|�C���g�B��ƑΉ������Ă��������B
+@DIG_POINT=(					# 必要な爵位ポイント。上と対応させてください。
 	0,1,2,4,8,16,32
 	);
-$DIG_FORGUILD=16;				# �M���h�����ɕK�v�Ȏ݈ʃ|�C���g
+$DIG_FORGUILD=16;				# ギルド結成に必要な爵位ポイント
 
-$BAL_NAME	='�o���o���X';			# �����m�o�b�̖��O
-$BAL_JOB	='�R��';			# �����m�o�b�̐E��
+$BAL_NAME	='バルバロス';			# 反乱ＮＰＣの名前
+$BAL_JOB	='山賊';			# 反乱ＮＰＣの職業
 
 
 #-------------------------------
-# �p��Ɋւ���ݒ� : �Q�[�����ɏo�Ă���p�����C�ɕύX�ł��܂��B
+# 用語に関する設定 : ゲーム内に出てくる用語を一気に変更できます。
 #-------------------------------
 
 @term=(
-	'\\',			#�O�ɂ���ʉݒP��
-	'',			#��ɂ���ʉݒP��
-	'�~',			#���{��\�L�����ꍇ�̒ʉݒP�ʁi���ʂȂǂŎg���j
-	'�T��������',		#�����}�C�i�X���i���ʂŎg���j
+	'\\',			#前につける通貨単位
+	'',			#後につける通貨単位
+	'円',			#日本語表記される場合の通貨単位（順位などで使う）
+	'サラ金生活',		#資金マイナス時（順位で使う）
 
 );
 
 
 #-------------------------------
-# �A�N�Z�X�̐����Ɋւ���ݒ�
+# アクセスの制限に関する設定
 #-------------------------------
-$NEW_SHOP_ADMIN		=0;			# �V�K�I�[�v������ 0:��� 1:�Ǘ��҂̂�
-						# 1 �ɂ���ƊǗ���ʂ��炵���X���J���Ȃ��Ȃ�܂��B
+$NEW_SHOP_ADMIN		=0;			# 新規オープン権限 0:一般 1:管理者のみ
+						# 1 にすると管理画面からしか店を開けなくなります。
 
-$NEW_SHOP_KEYWORD	='';			# �V�K�X�܃I�[�v���ɕK�v�ȃL�[���[�h
-						# �L�[���[�h��ݒ肷��ƁC���̌��t��m��Ȃ��ƊJ�X�ł��Ȃ��Ȃ�܂��B
+$NEW_SHOP_KEYWORD	='';			# 新規店舗オープンに必要なキーワード
+						# キーワードを設定すると，その言葉を知らないと開店できなくなります。
 
-$NEW_SHOP_BLOCKIP	=1;			# 1�œ���IP�ɂ��A���o�^(�X��̍ēo�^���܂�)��j�~
-$CHECK_IP		=1;			# ����IP��USER_AGENT�̃A�N�Z�X�������I�ɐ������� 1:�������� 0:�������Ȃ�
-@NG_SHOP_NAME		=qw(�Ǘ� �x 11 12 aa http ?);	# �X�ܖ��Ƃ��Ďg�p�ł��Ȃ�����(�X�y�[�X�ŋ�؂�)
+$NEW_SHOP_BLOCKIP	=1;			# 1で同一IPによる連続登録(閉店後の再登録も含む)を阻止
+$CHECK_IP		=1;			# 同一IP＆USER_AGENTのアクセスを自動的に制限する 1:制限する 0:制限しない
+@NG_SHOP_NAME		=qw(管理 支 11 12 aa http ?);	# 店舗名として使用できない文字(スペースで区切る)
 
-$NEW_OTHERTOWN_BLOCK	=0;			# 1 �ŊX�O���[�v�S�̂ŏd���o�^�����o�B
-						# �X�O���[�v�S�̂�1�����X�����ĂȂ��Ȃ�܂��B
+$NEW_OTHERTOWN_BLOCK	=0;			# 1 で街グループ全体で重複登録を検出。
+						# 街グループ全体で1つしか店を持てなくなります。
 
 
 
-#********************** ��ʓI�Ȑݒ荀�ڂ͂����܂łł� **********************
+#********************** 一般的な設定項目はここまでです **********************
 
 
 
 #--------------------------------------------------------------------
-# �摜�Ɋւ���ݒ� �F �摜�������ւ�����C����ȏꏊ�ɒu���l�����B
+# 画像に関する設定 ： 画像を差し替えたり，特殊な場所に置く人向け。
 #--------------------------------------------------------------------
-$IMAGE_URL		='./image';		# �摜�f�B���N�g���̂���ꏊ�i�A�h���X�j
-						# CGI���ʃT�[�o�[�ƂȂ�Ƃ���ł͕ύX�̕K�v����B
-$IMAGE_DIR		='./image';		# �摜�f�B���N�g���i�T�[�o�[�̃t���p�X�j
-						# nifty �Ȃǂ̓���ȃT�[�o�[�ł͕ύX�̕K�v����B
+$IMAGE_URL		='./image';		# 画像ディレクトリのある場所（アドレス）
+						# CGIが別サーバーとなるところでは変更の必要あり。
+$IMAGE_DIR		='./image';		# 画像ディレクトリ（サーバーのフルパス）
+						# nifty などの特殊なサーバーでは変更の必要あり。
 
-$ICON_NUMBER		=25;			# �X����A�C�R���̐�
-$ICON_SIZE		='WIDTH=48 HEIGHT=48';	# ��A�C�R���̃T�C�Y
+$ICON_NUMBER		=25;			# 店長顔アイコンの数
+$ICON_SIZE		='WIDTH=48 HEIGHT=48';	# 顔アイコンのサイズ
 
-$IMAGE_EXT		='.png';		# �摜�g���q
+$IMAGE_EXT		='.png';		# 画像拡張子
 
-$COMMON_URL		='../common';		# �O���[�o���f�[�^�f�B���N�g���i�M���h���j
-						# CGI���ʃT�[�o�[�ƂȂ�Ƃ���ł͕ύX�̕K�v����B
-$COMMON_DIR		='../common';		# �O���[�o���f�[�^�f�B���N�g���i�T�[�o�[�̃t���p�X�j
-						# nifty �Ȃǂ̓���ȃT�[�o�[�ł͕ύX�̕K�v����B
-
-#---------------------------------------------------------
-# ���x�ȃQ�[���o�����X�ݒ� �F �o�����X���n�m�����l�����B
-#---------------------------------------------------------
-$UPDATE_TIME		=60*5;			# �ŒZ�X�V�T�C�N��(�b)
-
-$PROFIT_DAY_COUNT	=3;			# �_���v�Z�̍ۍl������ߋ��̏����v�i���j
-$SALE_SPEED		=12;			# ����s���{��(inc-item-data.cgi�ł̐ݒ��1�Ƃ���)
-$POP_DOWN_RATE	=5;				# ���݂̐l�C�ɉ����Ă̏㉺��
-
-$EXP_DOWN_POINT		=5;			# ���Z���Ɍ�������n���x�|�C���g(1%==10)
-$EXP_DOWN_RATE		=60;			# ���Z���Ɍ�������n���x����(6%==60)
-						# ��:���݂̏n���x50%�̏ꍇ�A�Œ��0.5%��50%��6%��3%�A���킹��3.5%����
-
+$COMMON_URL		='../common';		# グローバルデータディレクトリ（ギルド等）
+						# CGIが別サーバーとなるところでは変更の必要あり。
+$COMMON_DIR		='../common';		# グローバルデータディレクトリ（サーバーのフルパス）
+						# nifty などの特殊なサーバーでは変更の必要あり。
 
 #---------------------------------------------------------
-# �ׂ����\���ݒ� �F �ނ�݂ɕύX����ƌ��h��������܂��B
+# 高度なゲームバランス設定 ： バランスを熟知した人向け。
 #---------------------------------------------------------
-$TOP_RANKING_PAGE_ROWS	=5;			# �u�g�b�v�v�����L���O�\������
-$MAIN_LOG_PAGE_ROWS	=10;			# �u�X�����v�ŋ߂̏o�����\������
-$SHOP_PAGE_ROWS		=5;			# �u���X�v�X�ܕ\������
-$RANKING_PAGE_ROWS	=10;			# �����L���O�\������
-$LIST_PAGE_ROWS_PC	=25;			# �e�탊�X�g�\�������i�ʏ�j
-$LIST_PAGE_ROWS_MOBILE	=5;			# �e�탊�X�g�\�������i�g�сj
+$UPDATE_TIME		=60*5;			# 最短更新サイクル(秒)
+
+$PROFIT_DAY_COUNT	=3;			# 点数計算の際考慮する過去の純利益（期）
+$SALE_SPEED		=12;			# 売れ行き倍率(inc-item-data.cgiでの設定を1として)
+$POP_DOWN_RATE	=5;				# 現在の人気に応じての上下幅
+
+$EXP_DOWN_POINT		=5;			# 決算時に減少する熟練度ポイント(1%==10)
+$EXP_DOWN_RATE		=60;			# 決算時に減少する熟練度割合(6%==60)
+						# 例:現在の熟練度50%の場合、固定の0.5%と50%の6%で3%、合わせて3.5%減少
+
+
+#---------------------------------------------------------
+# 細かい表示設定 ： むやみに変更すると見栄えが崩れます。
+#---------------------------------------------------------
+$TOP_RANKING_PAGE_ROWS	=5;			# 「トップ」ランキング表示件数
+$MAIN_LOG_PAGE_ROWS	=10;			# 「店長室」最近の出来事表示件数
+$SHOP_PAGE_ROWS		=5;			# 「他店」店舗表示件数
+$RANKING_PAGE_ROWS	=10;			# ランキング表示件数
+$LIST_PAGE_ROWS_PC	=25;			# 各種リスト表示件数（通常）
+$LIST_PAGE_ROWS_MOBILE	=5;			# 各種リスト表示件数（携帯）
 
 
 
-#********************** �����艺�̐ݒ�͂Ȃ�ׂ����̂܂܂� **********************
+#********************** これより下の設定はなるべくそのままで **********************
 
 $DATA_DIR		='./data';
 $LOG_DIR		=$DATA_DIR.'/log';
@@ -206,9 +206,9 @@ $BACKUP		=3;
 		$DATA_FILE,
 			);
 
-# �Z�p�Ҍ����f�o�b�O�p 
-$DEBUG_MOBILE		=0;			# 1�Ōg�ђ[�������Œ�
-$DEBUG_LOG_ENABLE	=0;			# 1��item::DebugLog()��event::DebugLog()��L����
+# 技術者向けデバッグ用 
+$DEBUG_MOBILE		=0;			# 1で携帯端末処理固定
+$DEBUG_LOG_ENABLE	=0;			# 1でitem::DebugLog()とevent::DebugLog()を有効化
 
 # set umask
 umask(~$DIR_PERMISSION & 0777);
@@ -219,7 +219,7 @@ sub RequireFile
 	my $customfile="$CUSTOM_DIR/$_[0]";
 	require $customfile,return if -e $customfile;
 	my $fname="$INCLUDE_DIR/$_[0]";
-	OutError('�t�@�C����������܂��� - '.$fname) unless -e $fname;
+	OutError('ファイルが見つかりません - '.$fname) unless -e $fname;
 	require $fname;
 }
 1;

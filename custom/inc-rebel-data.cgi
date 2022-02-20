@@ -1,9 +1,9 @@
-# �����I�ɓǂݍ��܂�锽����������уM���h�폈�� 2005/03/30 �R��
+# 自動的に読み込まれる反乱処理およびギルド戦処理 2005/03/30 由來
 
 @@event
 	start		0
 	code		rebel
-	info		�������N�����Ă��܂��B
+	info		反乱が起こっています。
 	func		_local_
 		main::ReadArmy();
 		my $time=int($main::TIMESPAN / 3);
@@ -33,7 +33,7 @@
 		{
 		delete $main::DTevent{rebel};
 		undef %main::RIOT;
-		main::PushLog(2,0,"�����͌�q�R�ɂ���������܂����B");
+		main::PushLog(2,0,"反乱は護衛軍により鎮圧されました。");
 		main::WriteArmy();
 		return 0;
 		}
@@ -50,7 +50,7 @@
 		delete $main::DTevent{rebel};
 		foreach(keys(%main::RIOT)) { delete $main::ARMY{$_}; }
 		undef %main::RIOT;
-		main::PushLog(2,0,"�����ɂ���q�R�͑S�ŁB�̎�͏��ǂ��܂����B");
+		main::PushLog(2,0,"反乱により護衛軍は全滅。領主は城を追われました。");
 
 		@DTS=sort{$b->{army}<=>$a->{army}}@DT;
 		my $rebelid=$DTS[0]->{id};
@@ -61,14 +61,14 @@
 		$main::STATE->{money}=0 if $main::STATE->{money}<0;
 			if ($rebelid)
 			{
-			main::PushLog(2,0,"���[�_�[ ".$DT[$main::id2idx{$rebelid}]->{name}."�i".$DT[$main::id2idx{$rebelid}]->{shopname}."�j���V�̎�ƂȂ�܂����B");
+			main::PushLog(2,0,"リーダー ".$DT[$main::id2idx{$rebelid}]->{name}."（".$DT[$main::id2idx{$rebelid}]->{shopname}."）が新領主となりました。");
 			$main::STATE->{leader}=$rebelid;
 			$main::STATE->{army}=$rebelsum;
 			$main::STATE->{robinb}=0;
 			}
 			else
 			{
-			main::PushLog(2,0,"���[�_�[ $main::BAL_JOB$main::BAL_NAME���V�̎�ƂȂ�܂����B");
+			main::PushLog(2,0,"リーダー $main::BAL_JOB$main::BAL_NAMEが新領主となりました。");
 			$main::STATE->{leader}=0;
 			$main::STATE->{army}=0;
 			$main::STATE->{robina}=10000;
@@ -84,7 +84,7 @@
 				{
 				$DTS->{money}+=$cnt;
 				}
-			main::PushLog(2,0,"$main::BAL_JOB$main::BAL_NAME�͊X������".main::GetMoneyString($cnt)."���o���܂��܂����B");
+			main::PushLog(2,0,"$main::BAL_JOB$main::BAL_NAMEは街資金を".main::GetMoneyString($cnt)."ずつバラまきました。");
 			}
 		}
 		main::WriteArmy();
@@ -100,15 +100,15 @@
 			@guildlist=sort{$b->{money}<=>$a->{money}}map{$main::GUILD_DATA{$_}->{guild}=$_;$main::GUILD_DATA{$_}}keys(%main::GUILD);
 			my $Dguild=$guildlist[0]->{guild};
 			main::SetTownData('dominion',$Dguild);
-			return 1,"�M���h�u".$main::GUILD{$Dguild}->[$GUILDIDX_name]."�v���΍R��ŏ������܂����B���߂łƂ��������܂��B";
+			return 1,"ギルド「".$main::GUILD{$Dguild}->[$GUILDIDX_name]."」が対抗戦で勝利しました。おめでとうございます。";
 			_local_
-	info		�M���h�΍R�킪�J��L�����Ă��܂��B
+	info		ギルド対抗戦が繰り広げられています。
 
 
-@@END #��`�I���錾(�ȍ~�R�����g����)
+@@END #定義終了宣言(以降コメント扱い)
 
 ------------
-������
+●説明
 ------------
 
-�����f�[�^�ł��B
+反乱データです。

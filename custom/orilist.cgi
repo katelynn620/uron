@@ -1,10 +1,10 @@
-# ƒIƒŠƒWƒiƒ‹ƒƒjƒ… 2004/01/20 —R˜Ò
+# ã‚ªãƒªã‚¸ãƒŠãƒ«ãƒ¡ãƒ‹ãƒ¥ 2004/01/20 ç”±ä¾†
 
 DataRead();
 CheckUserPass();
 
-$disp.=GetMenuTag('orilist',	'[‚¤‚Ç‚ñ]')
-	.GetMenuTag('orilist',	'[‚»‚Î]','&mode=soba');
+$disp.=GetMenuTag('orilist',	'[ã†ã©ã‚“]')
+	.GetMenuTag('orilist',	'[ãã°]','&mode=soba');
 $disp.="<hr width=500 noshade size=1>";
 
 my $functionname=$Q{mode};
@@ -23,7 +23,7 @@ sub udon
 	
 	my $pagecontrol=GetPageControl($pageprev,$pagenext,"mode=udon","",$pagemax,$page);
 	
-	$disp.="<BIG>œƒIƒŠƒWƒiƒ‹‚¤‚Ç‚ñŠJ”­“X</BIG><br><br>";
+	$disp.="<BIG>â—ã‚ªãƒªã‚¸ãƒŠãƒ«ã†ã©ã‚“é–‹ç™ºåº—</BIG><br><br>";
 	$disp.=$pagecontrol;
 	$disp.=$TB;
 	foreach my $DT (@udonDT[$pagestart..$pageend])
@@ -55,7 +55,7 @@ sub soba
 	
 	my $pagecontrol=GetPageControl($pageprev,$pagenext,"mode=soba","",$pagemax,$page);
 	
-	$disp.="<BIG>œƒIƒŠƒWƒiƒ‹‚»‚ÎŠJ”­“X</BIG><br><br>";
+	$disp.="<BIG>â—ã‚ªãƒªã‚¸ãƒŠãƒ«ãã°é–‹ç™ºåº—</BIG><br><br>";
 	$disp.=$pagecontrol;
 	$disp.=$TB;
 	foreach my $DT (@sobaDT[$pagestart..$pageend])

@@ -1,33 +1,33 @@
-# ���ǂ񁕂��ΔŃA�C�e���f�[�^ 2005/01/06 �R��
+# うどん＆そば版アイテムデータ 2005/01/06 由來
 
-# ���̃t�@�C���̓A�C�e���f�[�^�̒�`�t�@�C���ł��B
-# �D���Ȃ悤�ɃJ�X�^�}�C�Y�ł��܂��B�ڍׂ̓}�j���A�����������������B
+# このファイルはアイテムデータの定義ファイルです。
+# 好きなようにカスタマイズできます。詳細はマニュアルをご覧ください。
 
 @@DEFINE
-	version	05-01-06(URon)		#�����i�f�[�^�o�[�W�����\�L
-					# �Ō�́uURon�v�͂��ǂ񁕂��Δłł��邱�Ƃ������܂��B
-					# �������Ȃ����Ǝ��A�C�e����ڋʂɂ������l��������Ȃ�C
-					# ���̋L����ς���̂��悢�ł��傤�B
+	version	05-01-06(URon)		#★商品データバージョン表記
+					# 最後の「URon」はうどん＆そば版であることを示します。
+					# もしあなたが独自アイテムを目玉にした商人物語を作るなら，
+					# この記号を変えるのがよいでしょう。
 
-	scale	�t			#���f�t�H���g�̐����P��
-	type0	�S			#�S�A�C�e���̏W��
-	type1	�l��
-	type2	���Y��
-	type3	�C�Y��
-	type4	���ǂ�
-	type5	����
-	type6	�c�[��
+	scale	杯			#★デフォルトの数え単位
+	type0	全			#全アイテムの集合
+	type1	人材
+	type2	陸産物
+	type3	海産物
+	type4	うどん
+	type5	そば
+	type6	ツール
 	
-	job	agri		�_��		#���E�ƃR�[�h�͉p������10�����ȓ�
-	job	fish		����
-	job	temp		�V�Ղ牮
-	job	udon		���ǂ�
-	job	soba		���Ή�
-	job	man		�l�ޔh����
-	job	black		���Ƌ�
+	job	agri		農業		#★職業コードは英小文字10文字以内
+	job	fish		漁業
+	job	temp		天ぷら屋
+	job	udon		うどん屋
+	job	soba		そば屋
+	job	man		人材派遣業
+	job	black		裏家業
 	
-	# �E�ƕʎ��ԒZ�k�p�ϐ��ݒ�
-	set job_agri_time_rate		1.5	#���E�Ƃɂ��Ă����1.5�{�����Ȃ�
+	# 職業別時間短縮用変数設定
+	set job_agri_time_rate		1.5	#★職業についていると1.5倍早くなる
 	set job_fish_time_rate		1.5
 	set job_temp_time_rate		1.5
 	set job_udon_time_rate		1.5
@@ -35,41 +35,41 @@
 	set job_man_time_rate		2
 	set job_black_time_rate		2
 
-	MaxMoney	999999999	#���ő厑��
+	MaxMoney	999999999	#★最大資金
 	
-	set NewShopMoney	200000					#�������� (@@FUNCNEW�ɂĎg�p)
-	set NewShopTime		24*60*60				#����������(�b) (@@FUNCNEW�ɂĎg�p)
-	set NewShopItem		�q���g�u�b�N:1	#�����������i (@@FUNCNEW�ɂĎg�p) ���� ���i��:��:���i��:��:...
+	set NewShopMoney	200000					#初期資金 (@@FUNCNEWにて使用)
+	set NewShopTime		24*60*60				#初期持時間(秒) (@@FUNCNEWにて使用)
+	set NewShopItem		ヒントブック:1	#初期所持商品 (@@FUNCNEWにて使用) 書式 商品名:個数:商品名:個数:...
 	
-	TimeEditShowcase	10m		#����I���쎞��
-	TimeShopping		20m		#���d������(��SOLD OUT�Ƃ̌݊����m�ہB���͎g�p����)
-	TimeSendItem		20m		#���A�C�e���d��/���M����(��{)
-	TimeSendItemPlus	20s		#���A�C�e���d��/���M����(1�ӂ�̒ǉ�����)
-	TimeSendMoney		20m		#���������M����(��{)
-	TimeSendMoneyPlus	100000		#���������v���Ԍv�Z�p���z(���̋��z�ɂ�TimeSendMoney���Ԃ�����)
+	TimeEditShowcase	10m		#★陳列棚操作時間
+	TimeShopping		20m		#★仕入時間(旧SOLD OUTとの互換性確保。今は使用せず)
+	TimeSendItem		20m		#★アイテム仕入/送信時間(基本)
+	TimeSendItemPlus	20s		#★アイテム仕入/送信時間(1個辺りの追加時間)
+	TimeSendMoney		20m		#★資金送信時間(基本)
+	TimeSendMoneyPlus	100000		#★入金所要時間計算用金額(この金額につきTimeSendMoney時間を消費)
 	
-	CostShowcase1		0		#����I1���ێ���
-	CostShowcase2		1000	#��I2���ێ���
-	CostShowcase3		2000	#��I3���ێ���
-	CostShowcase4		4000	#��I4���ێ���
-	CostShowcase5		8000	#��I5���ێ���
-	CostShowcase6		16000	#��I6���ێ���
-	CostShowcase7		32000	#��I7���ێ���
-	CostShowcase8		64000	#��I8���ێ���
+	CostShowcase1		0		#★陳列棚1個時維持費
+	CostShowcase2		1000	#陳列棚2個時維持費
+	CostShowcase3		2000	#陳列棚3個時維持費
+	CostShowcase4		4000	#陳列棚4個時維持費
+	CostShowcase5		8000	#陳列棚5個時維持費
+	CostShowcase6		16000	#陳列棚6個時維持費
+	CostShowcase7		32000	#陳列棚7個時維持費
+	CostShowcase8		64000	#陳列棚8個時維持費
 	
-	ItemUseTimeRate		0.5		#���A�C�e���g�p�����Ԍv�Z�␳�{��(@USE��time,exptime�ɗL��)
+	ItemUseTimeRate		0.5		#★アイテム使用時時間計算補正倍率(@USE内time,exptimeに有効)
 	
 
-#------ ��������A�C�e����` ---------------------------------
+#------ ここからアイテム定義 ---------------------------------
 
 
 @@ITEM
 	no		1
-	type	�l��
+	type	人材
 	code	man-free
-	name	�t���[�^�[
-	info	�\�����߂��l�ނł�
-	scale	�l
+	name	フリーター
+	info	可能性を秘めた人材です
+	scale	人
 	price	5000
 	cost	100
 	limit	5/5
@@ -80,133 +80,133 @@
 		time	4h
 		exp		1%
 		exptime	2h
-		job		�l�ޔh����	times/job_man_time_rate
-		scale	�l
-		action	�_�Ƃ��n�߂�
-		name	�_�Ƃ��n�߂�
-		info	�t���[�^�[�͔_�Ƃ��n�߂܂�
-		okmsg	�t���[�^�[�͔_�v�ɂȂ�܂���
-			use		1	�t���[�^�[
-			get		1	�_�v
-			get		10	�X��	20%
+		job		人材派遣業	times/job_man_time_rate
+		scale	人
+		action	農業を始める
+		name	農業を始める
+		info	フリーターは農業を始めます
+		okmsg	フリーターは農夫になりました
+			use		1	フリーター
+			get		1	農夫
+			get		10	店力	20%
 	@@USE
 		time	4h
 		exp		1%
 		exptime	2h
-		job		�l�ޔh����	times/job_man_time_rate
-		scale	�l
-		action	���Ƃ��n�߂�
-		name	���Ƃ��n�߂�
-		info	�t���[�^�[�͋��Ƃ��n�߂܂�
-		okmsg	�t���[�^�[�͋��t�ɂȂ�܂���
-			use		1	�t���[�^�[
-			get		1	���t
-			get		10	�X��	20%
+		job		人材派遣業	times/job_man_time_rate
+		scale	人
+		action	漁業を始める
+		name	漁業を始める
+		info	フリーターは漁業を始めます
+		okmsg	フリーターは漁師になりました
+			use		1	フリーター
+			get		1	漁師
+			get		10	店力	20%
 	@@USE
 		time	4h
 		exp		1%
 		exptime	2h
-		job		�l�ޔh����	times/job_man_time_rate
-		scale	�l
-		action	�C�s������
-		name	�V�Ղ�E�l�̏C�s������
-		info	�t���[�^�[�͓V�Ղ�E�l�ɂȂ�C�s�����܂�
-		okmsg	�t���[�^�[�͓V�Ղ�E�l�ɂȂ�܂���
-			use		1	�t���[�^�[
-			get		1	�V�Ղ�E�l
-			get		10	�X��	20%
+		job		人材派遣業	times/job_man_time_rate
+		scale	人
+		action	修行をする
+		name	天ぷら職人の修行をする
+		info	フリーターは天ぷら職人になる修行をします
+		okmsg	フリーターは天ぷら職人になりました
+			use		1	フリーター
+			get		1	天ぷら職人
+			get		10	店力	20%
 	@@USE
 		time	4h
 		exp		1%
 		exptime	2h
-		job		�l�ޔh����	times/job_man_time_rate
-		scale	�l
-		action	�C�s������
-		name	���ǂ�E�l�̏C�s������
-		info	�t���[�^�[�͂��ǂ�E�l�ɂȂ�C�s�����܂�
-		okmsg	�t���[�^�[�͂��ǂ�E�l�ɂȂ�܂���
-			use		1	�t���[�^�[
-			use		10	������
-			get		1	���ǂ�E�l
-			get		10	�X��	20%
+		job		人材派遣業	times/job_man_time_rate
+		scale	人
+		action	修行をする
+		name	うどん職人の修行をする
+		info	フリーターはうどん職人になる修行をします
+		okmsg	フリーターはうどん職人になりました
+			use		1	フリーター
+			use		10	小麦粉
+			get		1	うどん職人
+			get		10	店力	20%
 	@@USE
 		time	4h
 		exp		1%
 		exptime	2h
-		job		�l�ޔh����	times/job_man_time_rate
-		scale	�l
-		action	�C�s������
-		name	���ΐE�l�̏C�s������
-		info	�t���[�^�[�͂��ΐE�l�ɂȂ�C�s�����܂�
-		okmsg	�t���[�^�[�͂��ΐE�l�ɂȂ�܂���
-			use		1	�t���[�^�[
-			use		10	���Ε�
-			get		1	���ΐE�l
-			get		10	�X��	20%
+		job		人材派遣業	times/job_man_time_rate
+		scale	人
+		action	修行をする
+		name	そば職人の修行をする
+		info	フリーターはそば職人になる修行をします
+		okmsg	フリーターはそば職人になりました
+			use		1	フリーター
+			use		10	そば粉
+			get		1	そば職人
+			get		10	店力	20%
 	@@USE
 		time	4h
 		exp		1%
 		exptime	2h
-		job		�l�ޔh����	times/job_man_time_rate
-		scale	�l
-		action	�֗����ɂȂ�
-		name	�֗����ɂȂ�
-		info	�t���[�^�[�͕֗����ɂȂ�܂�
-		okmsg	�t���[�^�[�͕֗����ɂȂ�܂���
-			use		1	�t���[�^�[
-			get		1	�֗���
-			get		10	�X��	20%
+		job		人材派遣業	times/job_man_time_rate
+		scale	人
+		action	便利屋になる
+		name	便利屋になる
+		info	フリーターは便利屋になります
+		okmsg	フリーターは便利屋になりました
+			use		1	フリーター
+			get		1	便利屋
+			get		10	店力	20%
 	@@use
 		time	4h
-		job		�l�ޔh����	times/job_man_time_rate
-		scale	��
-		action	����
-		name	�`���V�z��Ŏ����҂�
-		info	�����҂��܂��傤
+		job		人材派遣業	times/job_man_time_rate
+		scale	回
+		action	働く
+		name	チラシ配りで資金稼ぎ
+		info	少し稼ぎましょう
 		param	7000
 		func	_local_
 			$DT->{money}+=$USE->{param1}*$count;
-			my $ret=GetMoneyString($USE->{param1}*$count).'�҂��܂���';
+			my $ret=GetMoneyString($USE->{param1}*$count).'稼ぎました';
 			if (rand(1000)<200)
 			{
-			UseItem(1,1,$ITEM[1]->{name}.'�������҂��Ŕ��ēX������܂���');
+			UseItem(1,1,$ITEM[1]->{name}.'が資金稼ぎで疲れて店を去りました');
 			}
-			WriteLog(0,$DT->{id},"�o�C�g���C$ret");
-			WriteLog(3,0,$DT->{shopname}."�̃t���[�^�[���o�C�g�����悤�ł�");
+			WriteLog(0,$DT->{id},"バイトし，$ret");
+			WriteLog(3,0,$DT->{shopname}."のフリーターがバイトしたようです");
 			return $ret;
 		_local_
 	@@use
 		time	9h
-		job		�l�ޔh����	times/job_man_time_rate
-		scale	��
-		action	����
-		name	�R���r�j�Ŏ����҂�
-		info	������Ƃ������ǂ��������ȉ҂��ł�
+		job		人材派遣業	times/job_man_time_rate
+		scale	回
+		action	働く
+		name	コンビニで資金稼ぎ
+		info	ちょっときついけどけっこうな稼ぎです
 		param	20000
 		func	_local_7
 	@@USE
 		time	6h
-		action	�l�ޔh���Ƃ̐��ƂɂȂ�
+		action	人材派遣業の専門家になる
 		arg		nocount
-		name	�l�ޔh���Ƃ̐��ƂɂȂ�
-		info	���܂ł̌o���𐶂����āC�l�ޔh���Ƃ̐��ƂɂȂ�܂�
+		name	人材派遣業の専門家になる
+		info	今までの経験を生かして，人材派遣業の専門家になります
 			needexp		20%
 		func	_local_
 			my $ret="";
-			main::OutError('���݂��łɐl�ޔh���Ƃ̐��Ƃł�') if ($DT->{job} eq 'man');
+			main::OutError('現在すでに人材派遣業の専門家です') if ($DT->{job} eq 'man');
 			$DT->{job} = 'man';
-			$ret="�l�ޔh���Ƃ̐��ƂɂȂ�܂���";
+			$ret="人材派遣業の専門家になりました";
 			WriteLog(0,$DT->{id},$ret);
 			return $ret;
 		_local_
 
 @@ITEM
 	no		2
-	type	�l��
+	type	人材
 	code	man-nou
-	name	�_�v
-	info	�ƒ{�������̂����ӂł�
-	scale	�l
+	name	農夫
+	info	家畜を飼うのも得意です
+	scale	人
 	price	30000
 	cost	1000
 	limit	3/0.5
@@ -218,49 +218,49 @@
 		exp		1%
 		exptime	1h
 		price	20000
-		job		�_��	times/job_agri_time_rate
-		scale	��
-		action	������ɓ����
-		name	������ɓ����
-		info	�����̂悢����T���čw�����܂�
-		okmsg	�����Ɏ��n�ł������Ȕ�����ɓ���C���܂��ɑ͔�������Ă��炢�܂���
-			get		1	���n��҂�
-			get		100	�͔�
+		job		農業	times/job_agri_time_rate
+		scale	反
+		action	畑を手に入れる
+		name	畑を手に入れる
+		info	手入れのよい畑を探して購入します
+		okmsg	すぐに収穫できそうな畑が手に入り，おまけに堆肥も分けてもらいました
+			get		1	収穫を待つ畑
+			get		100	堆肥
 	@@USE
 		time	3h
 		exp		1%
 		exptime	1h
-		job		�_��	times/job_agri_time_rate
-		scale	��
-		action	�k���Ď��A����
-		name	�����k���Ď��A����
-		info	���ɔ엿��^���čk���C�앨�̎��A���܂�
-		okmsg	���͂悭�k����C�앨�̎킪�A�����܂���
-			use		1	�k���O�̔�
-			use		100	�͔�
-			get		1	�悭�k������
-			get		10	�X��	10%
+		job		農業	times/job_agri_time_rate
+		scale	反
+		action	耕して種を植える
+		name	畑を耕して種を植える
+		info	畑に肥料を与えて耕し，作物の種を植えます
+		okmsg	畑はよく耕され，作物の種が植えられました
+			use		1	耕す前の畑
+			use		100	堆肥
+			get		1	よく耕した畑
+			get		10	店力	10%
 	@@USE
 		time	3h
 		exp		1%
 		exptime	1h
-		job		�_��	times/job_agri_time_rate
-		scale	��
-		action	���n������
-		name	�˂��̎��n������
-		info	�˂����ɍs���Ď��n�����܂�
+		job		農業	times/job_agri_time_rate
+		scale	回
+		action	収穫をする
+		name	ねぎの収穫をする
+		info	ねぎ畑に行って収穫をします
 		func	lostman
 		param	50
-		ngmsg	�������n�ł��܂���ł����d
-			use		1	���n��҂�
-			get		100	�˂�	50%	�˂������n���܂���
-			get		10	�Ƃ����낱��	50%	���łɐH�׍��̂Ƃ����낱��������Ă��܂���
-			get		1	�������⏕��	01%	���ŕ������⏕�����E���܂���
-			get		1	�����傤	05%	���ɐN�����Ă����쐶�̂����傤�����܂��܂���
-			get		1	�k���O�̔�
-			get		10	�X��	10%
+		ngmsg	何も収穫できませんでした‥
+			use		1	収穫を待つ畑
+			get		100	ねぎ	50%	ねぎを収穫しました
+			get		10	とうもろこし	50%	ついでに食べ頃のとうもろこしを取ってきました
+			get		1	福引き補助券	01%	畑で福引き補助券を拾いました
+			get		1	がちょう	05%	畑に侵入していた野生のがちょうをつかまえました
+			get		1	耕す前の畑
+			get		10	店力	10%
 		funcb	_local_
-			# 1/20�̊m���Ŏ��n�ʂ�2�{�ɂȂ�
+			# 1/20の確率で収穫量が2倍になる
 			return 0 if rand(1000)>50;
 			
 			my $USE=$_[0];
@@ -270,28 +270,28 @@
 				$_->{count}*=2;
 			}
 			
-			$USE->{result}->{message}->{resultok}='����͂��Ȃ�L��ł���<br>�V����������ɓ���܂���';
+			$USE->{result}->{message}->{resultok}='今回はかなり豊作でした<br>新しい畑を手に入れました';
 			return 0;
 		_local_
 	@@USE
 		time	3h
 		exp		1%
 		exptime	1h
-		job		�_��	times/job_agri_time_rate
-		scale	��
-		action	���n������
-		name	�����̎��n������
-		info	�������ɍs���Ď��n�����܂�
+		job		農業	times/job_agri_time_rate
+		scale	回
+		action	収穫をする
+		name	小麦の収穫をする
+		info	小麦畑に行って収穫をします
 		func	lostman
 		param	50
-		ngmsg	�������n�ł��܂���ł����d
-			use		1	���n��҂�
-			get		40	������	50%	���������n���C����ɐ������܂���
-			get		10	�Ƃ����炵	50%	���łɂƂ����炵������Ă��܂���
-			get		1	�������⏕��	01%	���ŕ������⏕�����E���܂���
-			get		1	�����傤	05%	���ɐN�����Ă����쐶�̂����傤�����܂��܂���
-			get		1	�k���O�̔�
-			get		10	�X��	10%
+		ngmsg	何も収穫できませんでした‥
+			use		1	収穫を待つ畑
+			get		40	小麦粉	50%	小麦を収穫し，さらに製粉しました
+			get		10	とうがらし	50%	ついでにとうがらしを取ってきました
+			get		1	福引き補助券	01%	畑で福引き補助券を拾いました
+			get		1	がちょう	05%	畑に侵入していた野生のがちょうをつかまえました
+			get		1	耕す前の畑
+			get		10	店力	10%
 		funcb	_local_
 			return 0 if rand(1000)>50;
 			
@@ -302,28 +302,28 @@
 				$_->{count}*=2;
 			}
 			
-			$USE->{result}->{message}->{resultok}='����͂��Ȃ�L��ł���<br>�V����������ɓ���܂���';
+			$USE->{result}->{message}->{resultok}='今回はかなり豊作でした<br>新しい畑を手に入れました';
 			return 0;
 		_local_
 @@USE
 		time	3h
 		exp		1%
 		exptime	1h
-		job		�_��	times/job_agri_time_rate
-		scale	��
-		action	���n������
-		name	���΂̎��n������
-		info	���Δ��ɍs���Ď��n�����܂�
+		job		農業	times/job_agri_time_rate
+		scale	回
+		action	収穫をする
+		name	そばの収穫をする
+		info	そば畑に行って収穫をします
 		func	lostman
 		param	50
-		ngmsg	�������n�ł��܂���ł����d
-			use		1	���n��҂�
-			get		40	���Ε�	50%	���΂����n���C����ɐ������܂���
-			get		20	�Ƃ����炵	50%	���łɂƂ����炵������Ă��܂���
-			get		1	�������⏕��	01%	���ŕ������⏕�����E���܂���
-			get		1	��	05%	���ɐN�����Ă����쐶�̓؂����܂��܂���
-			get		1	�k���O�̔�
-			get		10	�X��	10%
+		ngmsg	何も収穫できませんでした‥
+			use		1	収穫を待つ畑
+			get		40	そば粉	50%	そばを収穫し，さらに製粉しました
+			get		20	とうがらし	50%	ついでにとうがらしを取ってきました
+			get		1	福引き補助券	01%	畑で福引き補助券を拾いました
+			get		1	豚	05%	畑に侵入していた野生の豚をつかまえました
+			get		1	耕す前の畑
+			get		10	店力	10%
 		funcb	_local_
 			return 0 if rand(1000)>50;
 			
@@ -334,28 +334,28 @@
 				$_->{count}*=2;
 			}
 			
-			$USE->{result}->{message}->{resultok}='����͂��Ȃ�L��ł���<br>�V����������ɓ���܂���';
+			$USE->{result}->{message}->{resultok}='今回はかなり豊作でした<br>新しい畑を手に入れました';
 			return 0;
 		_local_
 @@USE
 		time	3h
 		exp		1%
 		exptime	1h
-		job		�_��	times/job_agri_time_rate
-		scale	��
-		action	���n������
-		name	�哤�̎��n������
-		info	�哤���ɍs���Ď��n�����܂�
+		job		農業	times/job_agri_time_rate
+		scale	回
+		action	収穫をする
+		name	大豆の収穫をする
+		info	大豆畑に行って収穫をします
 		func	lostman
 		param	50
-		ngmsg	�������n�ł��܂���ł����d
-			use		1	���n��҂�
-			get		40	�哤	50%	�哤�����n���܂���
-			get		30	�˂�	50%	���łɂ˂�������Ă��܂���
-			get		1	�������⏕��	01%	���ŕ������⏕�����E���܂���
-			get		1	��	05%	���ɐN�����Ă����쐶�̓؂����܂��܂���
-			get		1	�k���O�̔�
-			get		10	�X��	10%
+		ngmsg	何も収穫できませんでした‥
+			use		1	収穫を待つ畑
+			get		40	大豆	50%	大豆を収穫しました
+			get		30	ねぎ	50%	ついでにねぎを取ってきました
+			get		1	福引き補助券	01%	畑で福引き補助券を拾いました
+			get		1	豚	05%	畑に侵入していた野生の豚をつかまえました
+			get		1	耕す前の畑
+			get		10	店力	10%
 		funcb	_local_
 			return 0 if rand(1000)>50;
 			
@@ -366,28 +366,28 @@
 				$_->{count}*=2;
 			}
 			
-			$USE->{result}->{message}->{resultok}='����͂��Ȃ�L��ł���<br>�V����������ɓ���܂���';
+			$USE->{result}->{message}->{resultok}='今回はかなり豊作でした<br>新しい畑を手に入れました';
 			return 0;
 		_local_
 @@USE
 		time	3h
 		exp		1%
 		exptime	1h
-		job		�_��	times/job_agri_time_rate
-		scale	��
-		action	���n������
-		name	�Ƃ����낱���̎��n������
-		info	�Ƃ����낱�����ɍs���Ď��n�����܂�
+		job		農業	times/job_agri_time_rate
+		scale	回
+		action	収穫をする
+		name	とうもろこしの収穫をする
+		info	とうもろこし畑に行って収穫をします
 		func	lostman
 		param	50
-		ngmsg	�������n�ł��܂���ł����d
-			use		1	���n��҂�
-			get		27	�Ƃ����낱��	50%	�Ƃ����낱�������n���܂���
-			get		20	�哤	50%	���łɑ哤������Ă��܂���
-			get		1	�������⏕��	01%	���ŕ������⏕�����E���܂���
-			get		1	�����傤	05%	���ɐN�����Ă����쐶�̂����傤�����܂��܂���
-			get		1	�k���O�̔�
-			get		10	�X��	10%
+		ngmsg	何も収穫できませんでした‥
+			use		1	収穫を待つ畑
+			get		27	とうもろこし	50%	とうもろこしを収穫しました
+			get		20	大豆	50%	ついでに大豆を取ってきました
+			get		1	福引き補助券	01%	畑で福引き補助券を拾いました
+			get		1	がちょう	05%	畑に侵入していた野生のがちょうをつかまえました
+			get		1	耕す前の畑
+			get		10	店力	10%
 		funcb	_local_
 			return 0 if rand(1000)>50;
 			
@@ -398,20 +398,20 @@
 				$_->{count}*=2;
 			}
 			
-			$USE->{result}->{message}->{resultok}='����͂��Ȃ�L��ł���<br>�V����������ɓ���܂���';
+			$USE->{result}->{message}->{resultok}='今回はかなり豊作でした<br>新しい畑を手に入れました';
 			return 0;
 		_local_
 	@@USE
 		time	3h
 		exp		1%
 		exptime	1h
-		job		�_��	times/job_agri_time_rate
+		job		農業	times/job_agri_time_rate
 		arg		nocount
-		action	���b������
-		name	�ɂ�Ƃ�̐��b������
-		info	�a���\���ɏ�������΁C�{�ɂ̑|����ɂɂ�Ƃ�ɐH�ׂ����邱�Ƃ��ł��܂�
+		action	世話をする
+		name	にわとりの世話をする
+		info	餌を十分に準備すれば，鶏舎の掃除後ににわとりに食べさせることができます
 		param	2
-			need		1	�ɂ�Ƃ�
+			need		1	にわとり
 		func	_local_
 			my $val=$USE->{param1}*$count;
 			my $ret="";
@@ -421,7 +421,7 @@
 			if ($niwatori*$count>$toumorokosi)
 			{
 			AddItem(58,$count,);
-			$ret='�{�̉a������Ȃ��悤�Ȃ̂ŁC�{�ɂ̑|�������ς܂��܂���';
+			$ret='鶏の餌が足りないようなので，鶏舎の掃除だけ済ませました';
 			WriteLog(0,$DT->{id},$ret);
 			}
 			else
@@ -430,7 +430,7 @@
 			$val=int(rand($val) * 2)+1;
 			AddItem(9,$val,);
 			AddItem(58,$count,);
-			UseItem(17,$niwatori*$count,'�ɂ�Ƃ�P�H�ɂ��C�Ƃ����낱����'.$count.'�{�H�ׂ����܂���');
+			UseItem(17,$niwatori*$count,'にわとり１羽につき，とうもろこしを'.$count.'本食べさせました');
 			
 			my $useproba=$USE->{param1}*$USE->{param1};
 			my $usecount=0;
@@ -438,9 +438,9 @@
 			{
 				$usecount++ if rand(1000)<$useproba;
 			}
-			UseItem(20,$usecount,$ITEM[20]->{name}.'������������C���V���܂���') if $usecount;
+			UseItem(20,$usecount,$ITEM[20]->{name}.'が満腹した後，昇天しました') if $usecount;
 			
-			$ret='����'.$val.'��ɓ���܂���';
+			$ret='卵が'.$val.'個手に入りました';
 			WriteLog(0,$DT->{id},$ret);
 			}
 			return $ret;
@@ -449,47 +449,47 @@
 		time	3h
 		exp		1%
 		exptime	1h
-		job		�_��	times/job_agri_time_rate
-		scale	�Z�b�g
-		action	�e���ɗ����������
-		name	����z��������
-		info	����e���ɕ������C�z�������Ă݂܂�
+		job		農業	times/job_agri_time_rate
+		scale	セット
+		action	親鳥に卵を抱かせる
+		name	卵を孵化させる
+		info	卵を親鳥に抱かせ，孵化させてみます
 		func	lostman
 		param	50
-		okmsg	�z���̏����������܂���
-			need		1	�ɂ�Ƃ�
-			use		5	��
-			get		5	�z����҂�
-			get		10	�X��	10%
+		okmsg	孵化の準備が整いました
+			need		1	にわとり
+			use		5	卵
+			get		5	孵化を待つ卵
+			get		10	店力	10%
 	@@USE
 		time	3h
 		exp		1%
 		exptime	1h
-		job		�_��	times/job_agri_time_rate
-		scale	�H
-		action	���b������
-		name	�����傤�̐��b������
-		info	�����傤�ɂ����Ղ�a��^���Ă݂܂�
+		job		農業	times/job_agri_time_rate
+		scale	羽
+		action	世話をする
+		name	がちょうの世話をする
+		info	がちょうにたっぷり餌を与えてみます
 		func	lostman
 		param	50
-		ngmsg	�t�H�A�O�����Ƃ��O�ɁC�����傤�����V���Ă��܂��܂����d
-		okmsg	�����ȃt�H�A�O������ɓ���܂���
-			use		1	�����傤
-			use		10	�Ƃ����낱��
-			get		48	�t�H�A�O��	50%
-			get		10	�X��	15%
+		ngmsg	フォアグラがとれる前に，がちょうが昇天してしまいました‥
+		okmsg	高級なフォアグラが手に入りました
+			use		1	がちょう
+			use		10	とうもろこし
+			get		48	フォアグラ	50%
+			get		10	店力	15%
 	@@USE
 		time	3h
 		exp		1%
 		exptime	1h
-		job		�_��	times/job_agri_time_rate
-		scale	��
+		job		農業	times/job_agri_time_rate
+		scale	回
 		arg		nocount
-		action	���b������
-		name	�؂̐��b������
-		info	�a���\���ɗp�ӂ���΁C�؂ɐH�ׂ����Ă���R�ɎU���ɘA��čs�����Ƃ��ł��܂�
+		action	世話をする
+		name	豚の世話をする
+		info	餌を十分に用意すれば，豚に食べさせてから山に散歩に連れて行くことができます
 		param	1
-			need		1	��
+			need		1	豚
 		func	_local_
 			my $val=$USE->{param1}*$count;
 			my $ret="";
@@ -499,7 +499,7 @@
 			if ($buta*$count*5>$daizu)
 			{
 			AddItem(58,$count*2,);
-			$ret='�a�����肻���ɂȂ������̂ŁC�؏����̑|�������ς܂��܂���';
+			$ret='餌が足りそうになかったので，豚小屋の掃除だけ済ませました';
 			WriteLog(0,$DT->{id},$ret);
 			}
 			else
@@ -508,7 +508,7 @@
 			$val=int(rand($val) * 3)+1;
 			AddItem(18,$val,);
 			AddItem(58,$count,);
-			UseItem(16,$buta*$count*5,'��1���ɂ��C�哤��'.($count*5).'kg�H�ׂ����܂���');
+			UseItem(16,$buta*$count*5,'豚1頭につき，大豆を'.($count*5).'kg食べさせました');
 			
 			my $useproba=$USE->{param1}*$USE->{param1};
 			my $usecount=0;
@@ -516,37 +516,37 @@
 			{
 				$usecount++ if rand(1000)<$useproba;
 			}
-			UseItem(22,$usecount,$ITEM[22]->{name}.'���R���ɓ����Ă����܂���') if $usecount;
+			UseItem(22,$usecount,$ITEM[22]->{name}.'が山奥に逃げていきました') if $usecount;
 			
-			$ret='�H��̎U���ɘA��čs�����R�ŁC�؂��g�����t��'.$val.'�����܂���';
+			$ret='食後の散歩に連れて行った山で，豚がトリュフを'.$val.'個見つけました';
 			WriteLog(0,$DT->{id},$ret);
 			}
 			return $ret;
 		_local_
 	@@USE
 		time	6h
-		action	�_�Ƃ̐��ƂɂȂ�
-		scale	��
+		action	農業の専門家になる
+		scale	回
 		arg		nocount
-		name	�_�Ƃ̐��ƂɂȂ�
-		info	���܂ł̌o���𐶂����āC�_�Ƃ̐��ƂɂȂ�܂�
+		name	農業の専門家になる
+		info	今までの経験を生かして，農業の専門家になります
 			needexp		20%
 		func	_local_
 			my $ret="";
-			main::OutError('���݂��łɔ_�Ƃ̐��Ƃł�') if ($DT->{job} eq 'agri');
+			main::OutError('現在すでに農業の専門家です') if ($DT->{job} eq 'agri');
 			$DT->{job} = 'agri';
-			$ret="�_�Ƃ̐��ƂɂȂ�܂���";
+			$ret="農業の専門家になりました";
 			WriteLog(0,$DT->{id},$ret);
 			return $ret;
 		_local_
 
 @@ITEM
 	no		3
-	type	�l��
+	type	人材
 	code	man-gyo
-	name	���t
-	info	�啨��ނ�ɂ͉a���K�v�ł�
-	scale	�l
+	name	漁師
+	info	大物を釣るには餌が必要です
+	scale	人
 	price	30000
 	cost	1000
 	limit	3/0.5
@@ -557,94 +557,94 @@
 		time	4.5h
 		exp		1%
 		exptime	1.5h
-		job		����	times/job_fish_time_rate
-		scale	��
-		action	�ނ������
-		name	�ނ������
-		info	�߂��̊C�݂Œނ�����Ă݂܂�
-		ngmsg	�މʂ͂���܂���ł����d
-			get		10	�����Ƃ�����	50%	�����Ƃ����炪�ނ�܂���
-			get		2	����	50%	�������ނ�܂���
-			get		100	����	60%	���т�߂܂��܂���
-			get		40	�킩��	50%	���łɂ킩�߂��̂�܂���
-			get		1	�����傤	02%	�M�ꂩ���Ă��������傤�������܂���
-			get		10	�X��	20%
+		job		漁業	times/job_fish_time_rate
+		scale	回
+		action	釣りをする
+		name	釣りをする
+		info	近くの海岸で釣りをしてみます
+		ngmsg	釣果はありませんでした‥
+			get		10	すけとうだら	50%	すけとうだらが釣れました
+			get		2	えそ	50%	えそが釣れました
+			get		100	えび	60%	えびを捕まえました
+			get		40	わかめ	50%	ついでにわかめも採りました
+			get		1	がちょう	02%	溺れかけていたがちょうを助けました
+			get		10	店力	20%
 	@@USE
 		time	4h
 		exp		1%
 		exptime	2h
-		job		����	times/job_fish_time_rate
-		scale	��
-		action	���ɏo��
-		name	���ɏo��
-		info	�D�ɏ���ċ��ɏo�Ă݂܂�
+		job		漁業	times/job_fish_time_rate
+		scale	回
+		action	漁に出る
+		name	漁に出る
+		info	船に乗って漁に出てみます
 		func	lostman
 		param	50
-		ngmsg	�މʂ͂���܂���ł����d
-			use		50	����
-			get		8	�����Ƃ�����	30%	�����Ƃ����炪�ނ�܂���
-			get		8	����	50%	�������ނ�܂���
-			get		10	����	50%	�������ނ�܂���
-			get		2	���傤����	30%	�啨�̂��傤���߂��ނ�܂���
-			get		1	��	02%	�M�ꂩ���Ă����؂������܂���
-			get		10	�X��	20%
+		ngmsg	釣果はありませんでした‥
+			use		50	えび
+			get		8	すけとうだら	30%	すけとうだらが釣れました
+			get		8	えそ	50%	えそが釣れました
+			get		10	かつお	50%	かつおが釣れました
+			get		2	ちょうざめ	30%	大物のちょうざめが釣れました
+			get		1	豚	02%	溺れかけていた豚を助けました
+			get		10	店力	20%
 	@@USE
 		time	2h
 		exp		1%
 		exptime	1h
-		job		����	times/job_fish_time_rate
-		scale	��
-		action	���
-		name	�h�q�߂񂽂������
-		info	�����Ƃ�����̗������H���āC�h�q�߂񂽂������܂�
+		job		漁業	times/job_fish_time_rate
+		scale	回
+		action	作る
+		name	辛子めんたいを作る
+		info	すけとうだらの卵を加工して，辛子めんたいを作ります
 		func	lostman
 		param	50
-		ngmsg	�h�q�߂񂽂����Ɏ��s���C�ޗ��𖳑ʂɂ��Ă��܂��܂����d
-		okmsg	�h�q�߂񂽂����ł��܂���
-			use		1	�����Ƃ�����
-			use		5	�Ƃ����炵
-			get		20	�h�q�߂񂽂�	80%
-			get		10	�X��	10%
+		ngmsg	辛子めんたい作りに失敗し，材料を無駄にしてしまいました‥
+		okmsg	辛子めんたいができました
+			use		1	すけとうだら
+			use		5	とうがらし
+			get		20	辛子めんたい	80%
+			get		10	店力	10%
 	@@USE
 		time	2h
 		exp		1%
 		exptime	1h
-		job		����	times/job_fish_time_rate
-		scale	��
-		action	��ɓ����
-		name	�L���r�A����ɓ����
-		info	���傤���߂̂��Ȃ�����L���r�A�����o���܂�
+		job		漁業	times/job_fish_time_rate
+		scale	回
+		action	手に入れる
+		name	キャビアを手に入れる
+		info	ちょうざめのおなかからキャビアを取り出します
 		func	lostman
 		param	50
-		ngmsg	���傤���߂́��ł����d
-		okmsg	�L���r�A����ɓ���܂���
-			use		1	���傤����
-			get		40	�L���r�A	60%
-			get		10	�X��	10%
+		ngmsg	ちょうざめは♂でした‥
+		okmsg	キャビアが手に入りました
+			use		1	ちょうざめ
+			get		40	キャビア	60%
+			get		10	店力	10%
 	@@USE
 		time	6h
-		action	���Ƃ̐��ƂɂȂ�
-		scale	��
+		action	漁業の専門家になる
+		scale	回
 		arg		nocount
-		name	���Ƃ̐��ƂɂȂ�
-		info	���܂ł̌o���𐶂����āC���Ƃ̐��ƂɂȂ�܂�
+		name	漁業の専門家になる
+		info	今までの経験を生かして，漁業の専門家になります
 			needexp		20%
 		func	_local_
 			my $ret="";
-			main::OutError('���݂��łɋ��Ƃ̐��Ƃł�') if ($DT->{job} eq 'fish');
+			main::OutError('現在すでに漁業の専門家です') if ($DT->{job} eq 'fish');
 			$DT->{job} = 'fish';
-			$ret="���Ƃ̐��ƂɂȂ�܂���";
+			$ret="漁業の専門家になりました";
 			WriteLog(0,$DT->{id},$ret);
 			return $ret;
 		_local_
 
 @@ITEM
 	no		4
-	type	�l��
+	type	人材
 	code	man-ten
-	name	�V�Ղ�E�l
-	info	���g���₩�܂ڂ������܂�
-	scale	�l
+	name	天ぷら職人
+	info	油揚げやかまぼこも作ります
+	scale	人
 	price	30000
 	cost	1000
 	limit	3/0.5
@@ -655,83 +655,83 @@
 		time	90m
 		exp	2%
 		exptime	30m
-		job	�V�Ղ牮	times/job_temp_time_rate
-		scale	��
-		action	���
-		name	���g�������
-		info	�哤���瓤�������C����ɖ��g���ɉ��H���܂�
-		ngmsg	���g�����Ɏ��s���C�ޗ��𖳑ʂɂ��Ă��܂��܂����d
-			use		10	�哤
-			get		100	���g��	80%	���g�����ł��܂���
-			get		10	�X��	20%
+		job	天ぷら屋	times/job_temp_time_rate
+		scale	回
+		action	作る
+		name	油揚げを作る
+		info	大豆から豆腐を作り，さらに油揚げに加工します
+		ngmsg	油揚げ作りに失敗し，材料を無駄にしてしまいました‥
+			use		10	大豆
+			get		100	油揚げ	80%	油揚げができました
+			get		10	店力	20%
 	@@USE
 		time	90m
 		exp	2%
 		exptime	30m
-		job		�V�Ղ牮	times/job_temp_time_rate
-		scale	��
-		action	���
-		name	���܂ڂ������
-		info	���܂ڂ������܂�
-		ngmsg	���܂ڂ����Ɏ��s���C�ޗ��𖳑ʂɂ��Ă��܂��܂����d
-			use		4	�����Ƃ�����
-			get		100	���܂ڂ�	80%	���܂ڂ����ł��܂���
-			get		10	�X��	20%
+		job		天ぷら屋	times/job_temp_time_rate
+		scale	回
+		action	作る
+		name	かまぼこを作る
+		info	かまぼこを作ります
+		ngmsg	かまぼこ作りに失敗し，材料を無駄にしてしまいました‥
+			use		4	すけとうだら
+			get		100	かまぼこ	80%	かまぼこができました
+			get		10	店力	20%
 	@@USE
 		time	90m
 		exp	2%
 		exptime	30m
-		job		�V�Ղ牮	times/job_temp_time_rate
-		scale	��
-		action	���
-		name	�ۓV�����
-		info	�ۓV�����܂�
+		job		天ぷら屋	times/job_temp_time_rate
+		scale	回
+		action	作る
+		name	丸天を作る
+		info	丸天を作ります
 		func	lostman
 		param	50
-		ngmsg	�ۓV���Ɏ��s���C�ޗ��𖳑ʂɂ��Ă��܂��܂����d
-			use		2	����
-			get		60	�ۓV	80%	�ۓV���ł��܂���
-			get		10	�X��	20%
+		ngmsg	丸天作りに失敗し，材料を無駄にしてしまいました‥
+			use		2	えそ
+			get		60	丸天	80%	丸天ができました
+			get		10	店力	20%
 	@@USE
 		time	90m
 		exp	2%
 		exptime	30m
-		job		�V�Ղ牮	times/job_temp_time_rate
-		scale	��
-		action	���
-		name	���ѓV�����
-		info	���ѓV�����܂�
+		job		天ぷら屋	times/job_temp_time_rate
+		scale	回
+		action	作る
+		name	えび天を作る
+		info	えび天を作ります
 		func	lostman
 		param	50
-		ngmsg	���ѓV���Ɏ��s���C�ޗ��𖳑ʂɂ��Ă��܂��܂����d
-			use		20	����
-			use		2	������
-			use		10	��
-			get		50	���ѓV	80%	���ѓV���ł��܂���
-			get		10	�X��	20%
+		ngmsg	えび天作りに失敗し，材料を無駄にしてしまいました‥
+			use		20	えび
+			use		2	小麦粉
+			use		10	卵
+			get		50	えび天	80%	えび天ができました
+			get		10	店力	20%
 	@@USE
 		time	6h
-		action	�V�Ղ���̐��ƂɂȂ�
+		action	天ぷら作りの専門家になる
 		arg		nocount
-		name	�V�Ղ���̐��ƂɂȂ�
-		info	���܂ł̌o���𐶂����āC�V�Ղ���̐��ƂɂȂ�܂�
+		name	天ぷら作りの専門家になる
+		info	今までの経験を生かして，天ぷら作りの専門家になります
 			needexp		20%
 		func	_local_
 			my $ret="";
-			main::OutError('���݂��łɓV�Ղ���̐��Ƃł�') if ($DT->{job} eq 'temp');
+			main::OutError('現在すでに天ぷら作りの専門家です') if ($DT->{job} eq 'temp');
 			$DT->{job} = 'temp';
-			$ret="�V�Ղ���̐��ƂɂȂ�܂���";
+			$ret="天ぷら作りの専門家になりました";
 			WriteLog(0,$DT->{id},$ret);
 			return $ret;
 		_local_
 
 @@ITEM
 	no		5
-	type	�l��
+	type	人材
 	code	man-udon
-	name	���ǂ�E�l
-	info	�e�키�ǂ��1�t�������āC�V�������ǂ�̊J�����I
-	scale	�l
+	name	うどん職人
+	info	各種うどんを1杯ずつ揃えて，新しいうどんの開発を！
+	scale	人
 	price	30000
 	cost	1000
 	limit	3/0.3
@@ -742,205 +742,205 @@
 		time	1h
 		exp	1%
 		exptime	20m
-		job	���ǂ�	times/job_udon_time_rate
-		scale	��
-		action	���
-		name	�����ǂ�����
-		info	�����ǂ�����܂�
-		ngmsg	�����ǂ���Ɏ��s���C�ޗ��𖳑ʂɂ��Ă��܂��܂����d
-			use		3	������
-			use		2	�˂�
-			use		2	���܂ڂ�
-			use		40	���ꂢ�Ș�
-			get		40	�����ǂ�	80%	�����ǂ񂪂ł��܂���
-			get		10	�X��	10%
+		job	うどん屋	times/job_udon_time_rate
+		scale	回
+		action	作る
+		name	すうどんを作る
+		info	すうどんを作ります
+		ngmsg	すうどん作りに失敗し，材料を無駄にしてしまいました‥
+			use		3	小麦粉
+			use		2	ねぎ
+			use		2	かまぼこ
+			use		40	きれいな丼
+			get		40	すうどん	80%	すうどんができました
+			get		10	店力	10%
 	@@USE
 		time	1h
 		exp	1%
 		exptime	20m
-		job	���ǂ�	times/job_udon_time_rate
-		scale	��
-		action	���
-		name	�킩�߂��ǂ�����
-		info	�킩�߂��ǂ�����܂�
-		ngmsg	�킩�߂��ǂ���Ɏ��s���C�ޗ��𖳑ʂɂ��Ă��܂��܂����d
-			use		3	������
-			use		2	�˂�
-			use		5	�킩��
-			use		32	���ꂢ�Ș�
-			get		30	�킩�߂��ǂ�	90%	�킩�߂��ǂ񂪂ł��܂���
-			get		10	�X��	10%
+		job	うどん屋	times/job_udon_time_rate
+		scale	回
+		action	作る
+		name	わかめうどんを作る
+		info	わかめうどんを作ります
+		ngmsg	わかめうどん作りに失敗し，材料を無駄にしてしまいました‥
+			use		3	小麦粉
+			use		2	ねぎ
+			use		5	わかめ
+			use		32	きれいな丼
+			get		30	わかめうどん	90%	わかめうどんができました
+			get		10	店力	10%
 	@@USE
 		time	1h
 		exp	1%
 		exptime	20m
-		job	���ǂ�	times/job_udon_time_rate
-		scale	��
-		action	���
-		name	���˂��ǂ�����
-		info	���˂��ǂ�����܂�
-		ngmsg	���˂��ǂ���Ɏ��s���C�ޗ��𖳑ʂɂ��Ă��܂��܂����d
-			use		3	������
-			use		2	�˂�
-			use		10	���g��
-			use		25	���ꂢ�Ș�
-			get		25	���˂��ǂ�	80%	���˂��ǂ񂪂ł��܂���
-			get		10	�X��	10%
+		job	うどん屋	times/job_udon_time_rate
+		scale	回
+		action	作る
+		name	きつねうどんを作る
+		info	きつねうどんを作ります
+		ngmsg	きつねうどん作りに失敗し，材料を無駄にしてしまいました‥
+			use		3	小麦粉
+			use		2	ねぎ
+			use		10	油揚げ
+			use		25	きれいな丼
+			get		25	きつねうどん	80%	きつねうどんができました
+			get		10	店力	10%
 	@@USE
 		time	1h
 		exp	1%
 		exptime	20m
-		job	���ǂ�	times/job_udon_time_rate
-		scale	��
-		action	���
-		name	�ۓV���ǂ�����
-		info	�ۓV���ǂ�����܂�
-		ngmsg	�ۓV���ǂ���Ɏ��s���C�ޗ��𖳑ʂɂ��Ă��܂��܂����d
-			use		3	������
-			use		2	�˂�
-			use		10	�ۓV
-			use		20	���ꂢ�Ș�
-			get		20	�ۓV���ǂ�	80%	�ۓV���ǂ񂪂ł��܂���
-			get		10	�X��	10%
+		job	うどん屋	times/job_udon_time_rate
+		scale	回
+		action	作る
+		name	丸天うどんを作る
+		info	丸天うどんを作ります
+		ngmsg	丸天うどん作りに失敗し，材料を無駄にしてしまいました‥
+			use		3	小麦粉
+			use		2	ねぎ
+			use		10	丸天
+			use		20	きれいな丼
+			get		20	丸天うどん	80%	丸天うどんができました
+			get		10	店力	10%
 	@@USE
 		time	2h
 		exp	2%
 		exptime	40m
-		job	���ǂ�	times/job_udon_time_rate
-		scale	��
-		action	���
-		name	���ѓV���ǂ�����
-		info	���ѓV���ǂ�����܂�
-		ngmsg	���ѓV���ǂ���Ɏ��s���C�ޗ��𖳑ʂɂ��Ă��܂��܂����d
-			use		5	������
-			use		5	�˂�
-			use		20	���ѓV
-			use		20	���ꂢ�Ș�
-			get		20	���ѓV���ǂ�	80%	���ѓV���ǂ񂪂ł��܂���
-			get		20	�X��	10%
+		job	うどん屋	times/job_udon_time_rate
+		scale	回
+		action	作る
+		name	えび天うどんを作る
+		info	えび天うどんを作ります
+		ngmsg	えび天うどん作りに失敗し，材料を無駄にしてしまいました‥
+			use		5	小麦粉
+			use		5	ねぎ
+			use		20	えび天
+			use		20	きれいな丼
+			get		20	えび天うどん	80%	えび天うどんができました
+			get		20	店力	10%
 	@@USE
 		time	20m
 		exp	0%
 		exptime	10m
-		job	���ǂ�	times/job_udon_time_rate
-		scale	�Z�b�g
-		action	���
-		name	���ǂ�O�������
-		info	���ǂ�O�������܂�
-		okmsg	���ǂ�O�����ł��܂���
+		job	うどん屋	times/job_udon_time_rate
+		scale	セット
+		action	作る
+		name	うどん三昧を作る
+		info	うどん三昧を作ります
+		okmsg	うどん三昧ができました
 			needexp		20%
-			use		10	���˂��ǂ�
-			use		10	�ۓV���ǂ�
-			use		10	���ѓV���ǂ�
-			get		10	���ǂ�O��
+			use		10	きつねうどん
+			use		10	丸天うどん
+			use		10	えび天うどん
+			get		10	うどん三昧
 	@@USE
 		time	3h
 		exp	4%
 		exptime	1h
-		job	���ǂ�	times/job_udon_time_rate
-		scale	��
-		action	���
-		name	�L���r�A���ǂ�����
-		info	�L���r�A���ǂ�����܂�
+		job	うどん屋	times/job_udon_time_rate
+		scale	回
+		action	作る
+		name	キャビアうどんを作る
+		info	キャビアうどんを作ります
 		func	lostman
 		param	50
-		ngmsg	�L���r�A���ǂ���Ɏ��s���C�ޗ��𖳑ʂɂ��Ă��܂��܂����d
+		ngmsg	キャビアうどん作りに失敗し，材料を無駄にしてしまいました‥
 			needexp		40%
-			use		3	������
-			use		1	����
-			use		2	�L���r�A
-			use		8	���ꂢ�Ș�
-			get		8	�L���r�A���ǂ�	80%	�L���r�A���ǂ񂪂ł��܂���
-			get		10	�X��	20%
+			use		3	小麦粉
+			use		1	かつお
+			use		2	キャビア
+			use		8	きれいな丼
+			get		8	キャビアうどん	80%	キャビアうどんができました
+			get		10	店力	20%
 	@@USE
 		time	3h
 		exp	4%
 		exptime	1h
-		job	���ǂ�	times/job_udon_time_rate
-		scale	��
-		action	���
-		name	�g�����t���ǂ�����
-		info	�g�����t���ǂ�����܂�
+		job	うどん屋	times/job_udon_time_rate
+		scale	回
+		action	作る
+		name	トリュフうどんを作る
+		info	トリュフうどんを作ります
 		func	lostman
 		param	50
-		ngmsg	�g�����t���ǂ���Ɏ��s���C�ޗ��𖳑ʂɂ��Ă��܂��܂����d
+		ngmsg	トリュフうどん作りに失敗し，材料を無駄にしてしまいました‥
 			needexp		40%
-			use		3	������
-			use		1	����
-			use		2	�g�����t
-			use		8	���ꂢ�Ș�
-			get		10	�g�����t���ǂ�	60%	�g�����t���ǂ񂪂ł��܂���
-			get		10	�X��	20%
+			use		3	小麦粉
+			use		1	かつお
+			use		2	トリュフ
+			use		8	きれいな丼
+			get		10	トリュフうどん	60%	トリュフうどんができました
+			get		10	店力	20%
 	@@USE
 		time	3h
 		exp	4%
 		exptime	1h
-		job		���ǂ�	times/job_udon_time_rate
-		scale	��
-		action	���
-		name	�t�H�A�O�����ǂ�����
-		info	�t�H�A�O�����ǂ�����܂�
+		job		うどん屋	times/job_udon_time_rate
+		scale	回
+		action	作る
+		name	フォアグラうどんを作る
+		info	フォアグラうどんを作ります
 		func	lostman
 		param	50
-		ngmsg	�t�H�A�O�����ǂ���Ɏ��s���C�ޗ��𖳑ʂɂ��Ă��܂��܂����d
+		ngmsg	フォアグラうどん作りに失敗し，材料を無駄にしてしまいました‥
 			needexp		40%
-			use		3	������
-			use		1	����
-			use		2	�t�H�A�O��
-			use		6	���ꂢ�Ș�
-			get		6	�t�H�A�O�����ǂ�	80%	�t�H�A�O�����ǂ񂪂ł��܂���
-			get		10	�X��	20%
+			use		3	小麦粉
+			use		1	かつお
+			use		2	フォアグラ
+			use		6	きれいな丼
+			get		6	フォアグラうどん	80%	フォアグラうどんができました
+			get		10	店力	20%
 	@@USE
 		time	6h
 		exp	5%
 		exptime	2h
-		job		���ǂ�	times/job_udon_time_rate
-		scale	��
-		action	���
-		name	�������ǂ�����
-		info	�������ǂ�����܂�
+		job		うどん屋	times/job_udon_time_rate
+		scale	回
+		action	作る
+		name	博多うどんを作る
+		info	博多うどんを作ります
 		func	lostman
 		param	50
-		ngmsg	�������ǂ���Ɏ��s���C�ޗ��𖳑ʂɂ��Ă��܂��܂����d
+		ngmsg	博多うどん作りに失敗し，材料を無駄にしてしまいました‥
 			needexp		60%
-			use		5	������
-			use		1	��
-			use		2	�h�q�߂񂽂�
-			use		6	���ꂢ�Ș�
-			get		6	�������ǂ�	80%	�������ǂ񂪂ł��܂���
-			get		10	�X��	20%
+			use		5	小麦粉
+			use		1	豚
+			use		2	辛子めんたい
+			use		6	きれいな丼
+			get		6	博多うどん	80%	博多うどんができました
+			get		10	店力	20%
 	@@USE
 		time	6h
 		exp	5%
 		exptime	2h
-		job		���ǂ�	times/job_udon_time_rate
-		scale	��
-		action	���
-		name	�I���W�i�����ǂ�����
-		info	�I���W�i�����ǂ�����܂�
-		ngmsg	�I���W�i�����ǂ���Ɏ��s���C�ޗ��𖳑ʂɂ��Ă��܂��܂����d
+		job		うどん屋	times/job_udon_time_rate
+		scale	回
+		action	作る
+		name	オリジナルうどんを作る
+		info	オリジナルうどんを作ります
+		ngmsg	オリジナルうどん作りに失敗し，材料を無駄にしてしまいました‥
 			needexp		80%
-			need		1	�I���W�i�����ǂ񃌃V�s
-			use		5	������
-			use		1	����
-			use		1	�����傤
-			use		5	�Ƃ����炵
-			use		3	���ꂢ�Ș�
-			get		5	�I���W�i�����ǂ�	40%	�I���W�i�����ǂ񂪂ł��܂���
-			get		10	�X��	20%
+			need		1	オリジナルうどんレシピ
+			use		5	小麦粉
+			use		1	かつお
+			use		1	がちょう
+			use		5	とうがらし
+			use		3	きれいな丼
+			get		5	オリジナルうどん	40%	オリジナルうどんができました
+			get		10	店力	20%
 		func	_local_
 			my $ret="";
 			$DT->{user}->{udoncnt}+=1;
 			if (rand(1000)<100)
 			{
-				UseItem(@@ITEMNO"���ǂ�E�l",1,"<br>�d�����I�������ǂ�E�l���C�ق��ċ����Ă����܂���");
+				UseItem(@@ITEMNO"うどん職人",1,"<br>仕事を終えたうどん職人が，黙って去っていきました");
 			}
 			if ((rand(1000)<100)&&($DT->{user}->{udoncnt}>50))
 			{
 				$DT->{user}->{udoncnt}=0;
-				UseItem(@@ITEMNO"�I���W�i�����ǂ񃌃V�s",1,"<br>�I���W�i�����ǂ񃌃V�s�ɂ�������΂����C�R�₵�Ă��܂��܂���");
-				WriteLog(0,$DT->{id},"�I���W�i�����ǂ񃌃V�s�������܂���");
-				WriteLog(2,0,$DT->{shopname}."���I���W�i�����ǂ񃌃V�s����������R�₵�Ă��܂����悤�ł��B");
+				UseItem(@@ITEMNO"オリジナルうどんレシピ",1,"<br>オリジナルうどんレシピにうっかり火がつき，燃やしてしまいました");
+				WriteLog(0,$DT->{id},"オリジナルうどんレシピを失いました");
+				WriteLog(2,0,$DT->{shopname}."がオリジナルうどんレシピをうっかり燃やしてしまったようです。");
 			}
 			return $ret;
 		_local_
@@ -948,56 +948,56 @@
 		time	6h
 		exp		1%
 		exptime	4h
-		job		���ǂ�	times/job_udon_time_rate
-		action	�Ƃ������O�̂��ǂ�����
-		name	�I���W�i�����ǂ���J������
-		info	�������߂č��I���W�i�����ǂ�ɖ��O�����܂�
+		job		うどん屋	times/job_udon_time_rate
+		action	という名前のうどんを作る
+		name	オリジナルうどんを開発する
+		info	精魂込めて作るオリジナルうどんに名前をつけます
 		arg		nocount|message30
-		okmsg	�Y��Ȃ������ɍ������������Ă����܂���
-			use		1	�����ǂ�
-			use		1	�킩�߂��ǂ�
-			use		1	���˂��ǂ�
-			use		1	�ۓV���ǂ�
-			use		1	���ѓV���ǂ�
-			use		1	�L���r�A���ǂ�
-			use		1	�g�����t���ǂ�
-			use		1	�t�H�A�O�����ǂ�
-			use		1	�������ǂ�
-			get		1	�I���W�i�����ǂ�
-			get		1	�I���W�i�����ǂ񃌃V�s
+		okmsg	忘れないうちに作り方をメモしておきました
+			use		1	すうどん
+			use		1	わかめうどん
+			use		1	きつねうどん
+			use		1	丸天うどん
+			use		1	えび天うどん
+			use		1	キャビアうどん
+			use		1	トリュフうどん
+			use		1	フォアグラうどん
+			use		1	博多うどん
+			get		1	オリジナルうどん
+			get		1	オリジナルうどんレシピ
 		func	_local_
-			# �I���W�i�����ǂ�����
-			main::OutError('���O�����Ă�������') if !$USE->{arg}->{message};
+			# オリジナルうどんを作る
+			main::OutError('名前をつけてください') if !$USE->{arg}->{message};
 			my $ret;
-			$ret='�I���W�i�����ǂ�y'.$USE->{arg}->{message}.'�z���������܂���';	
-			WriteLog(3,0,$DT->{shopname}."���������ǂ�u".$USE->{arg}->{message}."�v�����������܂����B");
+			$ret='オリジナルうどん【'.$USE->{arg}->{message}.'】が完成しました';	
+			WriteLog(3,0,$DT->{shopname}."が特製うどん「".$USE->{arg}->{message}."」を完成させました。");
 			WriteLog(0,$DT->{id},$ret);
 			$DT->{user}->{udon}=$USE->{arg}->{message};
 			return $ret;
 		_local_
 	@@USE
 		time	6h
-		action	���ǂ���̐��ƂɂȂ�
+		action	うどん作りの専門家になる
 		arg		nocount
-		name	���ǂ���̐��ƂɂȂ�
-		info	���܂ł̌o���𐶂����āC���ǂ���̐��ƂɂȂ�܂�
+		name	うどん作りの専門家になる
+		info	今までの経験を生かして，うどん作りの専門家になります
 			needexp		20%
 		func	_local_
 			my $ret="";
-			main::OutError('���݂��łɂ��ǂ���̐��Ƃł�') if ($DT->{job} eq 'udon');
+			main::OutError('現在すでにうどん作りの専門家です') if ($DT->{job} eq 'udon');
 			$DT->{job} = 'udon';
-			$ret="���ǂ���̐��ƂɂȂ�܂���";
+			$ret="うどん作りの専門家になりました";
 			WriteLog(0,$DT->{id},$ret);
 			return $ret;
 		_local_
 
 @@ITEM
 	no		6
-	type	�l��
+	type	人材
 	code	man-soba
-	name	���ΐE�l
-	info	�e�킻�΂�1�t�������āC�V�������΂̊J�����I
-	scale	�l
+	name	そば職人
+	info	各種そばを1杯ずつ揃えて，新しいそばの開発を！
+	scale	人
 	price	30000
 	cost	1000
 	limit	3/0.3
@@ -1008,205 +1008,205 @@
 		time	1h
 		exp	1%
 		exptime	20m
-		job	���Ή�	times/job_soba_time_rate
-		scale	��
-		action	���
-		name	�������΂����
-		info	�������΂����܂�
-		ngmsg	�������΍��Ɏ��s���C�ޗ��𖳑ʂɂ��Ă��܂��܂����d
-			use		3	���Ε�
-			use		2	�˂�
-			use		2	���܂ڂ�
-			use		40	���ꂢ�Ș�
-			get		40	��������	80%	�������΂��ł��܂���
-			get		10	�X��	10%
+		job	そば屋	times/job_soba_time_rate
+		scale	回
+		action	作る
+		name	かけそばを作る
+		info	かけそばを作ります
+		ngmsg	かけそば作りに失敗し，材料を無駄にしてしまいました‥
+			use		3	そば粉
+			use		2	ねぎ
+			use		2	かまぼこ
+			use		40	きれいな丼
+			get		40	かけそば	80%	かけそばができました
+			get		10	店力	10%
 	@@USE
 		time	1h
 		exp	1%
 		exptime	20m
-		job		���Ή�	times/job_soba_time_rate
-		scale	��
-		action	���
-		name	�킩�߂��΂����
-		info	�킩�߂��΂����܂�
-		ngmsg	�킩�߂��΍��Ɏ��s���C�ޗ��𖳑ʂɂ��Ă��܂��܂����d
-			use		3	���Ε�
-			use		2	�˂�
-			use		5	�킩��
-			use		32	���ꂢ�Ș�
-			get		30	�킩�߂���	90%	�킩�߂��΂��ł��܂���
-			get		10	�X��	10%
+		job		そば屋	times/job_soba_time_rate
+		scale	回
+		action	作る
+		name	わかめそばを作る
+		info	わかめそばを作ります
+		ngmsg	わかめそば作りに失敗し，材料を無駄にしてしまいました‥
+			use		3	そば粉
+			use		2	ねぎ
+			use		5	わかめ
+			use		32	きれいな丼
+			get		30	わかめそば	90%	わかめそばができました
+			get		10	店力	10%
 	@@USE
 		time	1h
 		exp	1%
 		exptime	20m
-		job		���Ή�	times/job_soba_time_rate
-		scale	��
-		action	���
-		name	���˂��΂����
-		info	���˂��΂����܂�
-		ngmsg	���˂��΍��Ɏ��s���C�ޗ��𖳑ʂɂ��Ă��܂��܂����d
-			use		3	���Ε�
-			use		2	�˂�
-			use		10	���g��
-			use		25	���ꂢ�Ș�
-			get		25	���˂���	80%	���˂��΂��ł��܂���
-			get		10	�X��	10%
+		job		そば屋	times/job_soba_time_rate
+		scale	回
+		action	作る
+		name	きつねそばを作る
+		info	きつねそばを作ります
+		ngmsg	きつねそば作りに失敗し，材料を無駄にしてしまいました‥
+			use		3	そば粉
+			use		2	ねぎ
+			use		10	油揚げ
+			use		25	きれいな丼
+			get		25	きつねそば	80%	きつねそばができました
+			get		10	店力	10%
 	@@USE
 		time	1h
 		exp	1%
 		exptime	20m
-		job	���Ή�	times/job_soba_time_rate
-		scale	��
-		action	���
-		name	�ۓV���΂����
-		info	�ۓV���΂����܂�
-		ngmsg	�ۓV���΍��Ɏ��s���C�ޗ��𖳑ʂɂ��Ă��܂��܂����d
-			use		3	���Ε�
-			use		2	�˂�
-			use		10	�ۓV
-			use		20	���ꂢ�Ș�
-			get		20	�ۓV����	80%	�ۓV���΂��ł��܂���
-			get		10	�X��	10%
+		job	そば屋	times/job_soba_time_rate
+		scale	回
+		action	作る
+		name	丸天そばを作る
+		info	丸天そばを作ります
+		ngmsg	丸天そば作りに失敗し，材料を無駄にしてしまいました‥
+			use		3	そば粉
+			use		2	ねぎ
+			use		10	丸天
+			use		20	きれいな丼
+			get		20	丸天そば	80%	丸天そばができました
+			get		10	店力	10%
 	@@USE
 		time	2h
 		exp	2%
 		exptime	40m
-		job	���Ή�	times/job_soba_time_rate
-		scale	��
-		action	���
-		name	���ѓV���΂����
-		info	���ѓV���΂����܂�
-		ngmsg	���ѓV���΍��Ɏ��s���C�ޗ��𖳑ʂɂ��Ă��܂��܂����d
-			use		5	���Ε�
-			use		5	�˂�
-			use		20	���ѓV
-			use		20	���ꂢ�Ș�
-			get		20	���ѓV����	80%	���ѓV���΂��ł��܂���
-			get		20	�X��	10%
+		job	そば屋	times/job_soba_time_rate
+		scale	回
+		action	作る
+		name	えび天そばを作る
+		info	えび天そばを作ります
+		ngmsg	えび天そば作りに失敗し，材料を無駄にしてしまいました‥
+			use		5	そば粉
+			use		5	ねぎ
+			use		20	えび天
+			use		20	きれいな丼
+			get		20	えび天そば	80%	えび天そばができました
+			get		20	店力	10%
 	@@USE
 		time	20m
 		exp	0%
 		exptime	10m
-		job		���Ή�	times/job_soba_time_rate
-		scale	�Z�b�g
-		action	���
-		name	���ΎO�������
-		info	���ΎO�������܂�
-		okmsg	���ΎO�����ł��܂���
+		job		そば屋	times/job_soba_time_rate
+		scale	セット
+		action	作る
+		name	そば三昧を作る
+		info	そば三昧を作ります
+		okmsg	そば三昧ができました
 			needexp		20%
-			use		10	���˂���
-			use		10	�ۓV����
-			use		10	���ѓV����
-			get		10	���ΎO��
+			use		10	きつねそば
+			use		10	丸天そば
+			use		10	えび天そば
+			get		10	そば三昧
 	@@USE
 		time	3h
 		exp	4%
 		exptime	1h
-		job	���Ή�	times/job_soba_time_rate
-		scale	��
-		action	���
-		name	�L���r�A���΂����
-		info	�L���r�A���΂����܂�
+		job	そば屋	times/job_soba_time_rate
+		scale	回
+		action	作る
+		name	キャビアそばを作る
+		info	キャビアそばを作ります
 		func	lostman
 		param	50
-		ngmsg	�L���r�A���΍��Ɏ��s���C�ޗ��𖳑ʂɂ��Ă��܂��܂����d
+		ngmsg	キャビアそば作りに失敗し，材料を無駄にしてしまいました‥
 			needexp		40%
-			use		3	���Ε�
-			use		1	����
-			use		2	�L���r�A
-			use		8	���ꂢ�Ș�
-			get		8	�L���r�A����	80%	�L���r�A���΂��ł��܂���
-			get		10	�X��	20%
+			use		3	そば粉
+			use		1	かつお
+			use		2	キャビア
+			use		8	きれいな丼
+			get		8	キャビアそば	80%	キャビアそばができました
+			get		10	店力	20%
 	@@USE
 		time	3h
 		exp	4%
 		exptime	1h
-		job	���Ή�	times/job_soba_time_rate
-		scale	��
-		action	���
-		name	�g�����t���΂����
-		info	�g�����t���΂����܂�
+		job	そば屋	times/job_soba_time_rate
+		scale	回
+		action	作る
+		name	トリュフそばを作る
+		info	トリュフそばを作ります
 		func	lostman
 		param	50
-		ngmsg	�g�����t���΍��Ɏ��s���C�ޗ��𖳑ʂɂ��Ă��܂��܂����d
+		ngmsg	トリュフそば作りに失敗し，材料を無駄にしてしまいました‥
 			needexp		40%
-			use		3	���Ε�
-			use		1	����
-			use		2	�g�����t
-			use		8	���ꂢ�Ș�
-			get		10	�g�����t����	60%	�g�����t���΂��ł��܂���
-			get		10	�X��	20%
+			use		3	そば粉
+			use		1	かつお
+			use		2	トリュフ
+			use		8	きれいな丼
+			get		10	トリュフそば	60%	トリュフそばができました
+			get		10	店力	20%
 	@@USE
 		time	3h
 		exp	4%
 		exptime	1h
-		job	���Ή�	times/job_soba_time_rate
-		scale	��
-		action	���
-		name	�t�H�A�O�����΂����
+		job	そば屋	times/job_soba_time_rate
+		scale	回
+		action	作る
+		name	フォアグラそばを作る
 		func	lostman
 		param	50
-		info	�t�H�A�O�����΂����܂�
-		ngmsg	�t�H�A�O�����΍��Ɏ��s���C�ޗ��𖳑ʂɂ��Ă��܂��܂����d
+		info	フォアグラそばを作ります
+		ngmsg	フォアグラそば作りに失敗し，材料を無駄にしてしまいました‥
 			needexp		40%
-			use		3	���Ε�
-			use		1	����
-			use		2	�t�H�A�O��
-			use		6	���ꂢ�Ș�
-			get		6	�t�H�A�O������	80%	�t�H�A�O�����΂��ł��܂���
-			get		10	�X��	20%
+			use		3	そば粉
+			use		1	かつお
+			use		2	フォアグラ
+			use		6	きれいな丼
+			get		6	フォアグラそば	80%	フォアグラそばができました
+			get		10	店力	20%
 	@@USE
 		time	6h
 		exp	5%
 		exptime	2h
-		job	���Ή�	times/job_soba_time_rate
-		scale	��
-		action	���
-		name	�������΂����
-		info	�������΂����܂�
+		job	そば屋	times/job_soba_time_rate
+		scale	回
+		action	作る
+		name	博多そばを作る
+		info	博多そばを作ります
 		func	lostman
 		param	50
-		ngmsg	�������΍��Ɏ��s���C�ޗ��𖳑ʂɂ��Ă��܂��܂����d
+		ngmsg	博多そば作りに失敗し，材料を無駄にしてしまいました‥
 			needexp		60%
-			use		5	���Ε�
-			use		1	��
-			use		2	�h�q�߂񂽂�
-			use		6	���ꂢ�Ș�
-			get		6	��������	80%	�������΂��ł��܂���
-			get		10	�X��	20%
+			use		5	そば粉
+			use		1	豚
+			use		2	辛子めんたい
+			use		6	きれいな丼
+			get		6	博多そば	80%	博多そばができました
+			get		10	店力	20%
 	@@USE
 		time	6h
 		exp	5%
 		exptime	2h
-		job	���Ή�	times/job_soba_time_rate
-		scale	��
-		action	���
-		name	�I���W�i�����΂����
-		info	�I���W�i�����΂����܂�
-		ngmsg	�I���W�i�����΍��Ɏ��s���C�ޗ��𖳑ʂɂ��Ă��܂��܂����d
+		job	そば屋	times/job_soba_time_rate
+		scale	回
+		action	作る
+		name	オリジナルそばを作る
+		info	オリジナルそばを作ります
+		ngmsg	オリジナルそば作りに失敗し，材料を無駄にしてしまいました‥
 			needexp		80%
-			need		1	�I���W�i�����΃��V�s
-			use		5	���Ε�
-			use		1	����
-			use		1	���傤����
-			use		15	��
-			use		3	���ꂢ�Ș�
-			get		5	�I���W�i������	40%	�I���W�i�����΂��ł��܂���
-			get		10	�X��	30%
+			need		1	オリジナルそばレシピ
+			use		5	そば粉
+			use		1	かつお
+			use		1	ちょうざめ
+			use		15	卵
+			use		3	きれいな丼
+			get		5	オリジナルそば	40%	オリジナルそばができました
+			get		10	店力	30%
 		func	_local_
 			my $ret="";
 			$DT->{user}->{sobacnt}+=1;
 			if (rand(1000)<100)
 			{
-				UseItem(@@ITEMNO"���ΐE�l",1,"<br>�d�����I�������ΐE�l���C�ق��ċ����Ă����܂���");
+				UseItem(@@ITEMNO"そば職人",1,"<br>仕事を終えたそば職人が，黙って去っていきました");
 			}
 			if ((rand(1000)<100)&&($DT->{user}->{sobacnt}>50))
 			{
 				$DT->{user}->{sobacnt}=0;
-				UseItem(@@ITEMNO"�I���W�i�����΃��V�s",1,"<br>�I���W�i�����΃��V�s�ɂ�������΂����C�R�₵�Ă��܂��܂���");
-				WriteLog(0,$DT->{id},"�I���W�i�����΃��V�s�������܂���");
-				WriteLog(2,0,$DT->{shopname}."���I���W�i�����΃��V�s����������R�₵�Ă��܂����悤�ł��B");
+				UseItem(@@ITEMNO"オリジナルそばレシピ",1,"<br>オリジナルそばレシピにうっかり火がつき，燃やしてしまいました");
+				WriteLog(0,$DT->{id},"オリジナルそばレシピを失いました");
+				WriteLog(2,0,$DT->{shopname}."がオリジナルそばレシピをうっかり燃やしてしまったようです。");
 			}
 			return $ret;
 		_local_
@@ -1214,56 +1214,56 @@
 		time	6h
 		exp		1%
 		exptime	4h
-		job		���Ή�	times/job_soba_time_rate
-		action	�Ƃ������O�̂��΂����
-		name	�I���W�i�����΂��J������
-		info	�������߂č��I���W�i�����΂ɖ��O�����܂�
+		job		そば屋	times/job_soba_time_rate
+		action	という名前のそばを作る
+		name	オリジナルそばを開発する
+		info	精魂込めて作るオリジナルそばに名前をつけます
 		arg		nocount|message30
-		okmsg	�Y��Ȃ������ɍ������������Ă����܂���
-			use		1	��������
-			use		1	�킩�߂���
-			use		1	���˂���
-			use		1	�ۓV����
-			use		1	���ѓV����
-			use		1	�L���r�A����
-			use		1	�g�����t����
-			use		1	�t�H�A�O������
-			use		1	��������
-			get		1	�I���W�i������
-			get		1	�I���W�i�����΃��V�s
+		okmsg	忘れないうちに作り方をメモしておきました
+			use		1	かけそば
+			use		1	わかめそば
+			use		1	きつねそば
+			use		1	丸天そば
+			use		1	えび天そば
+			use		1	キャビアそば
+			use		1	トリュフそば
+			use		1	フォアグラそば
+			use		1	博多そば
+			get		1	オリジナルそば
+			get		1	オリジナルそばレシピ
 		func	_local_
-			# �I���W�i�����΂����
-			main::OutError('���O�����Ă�������') if !$USE->{arg}->{message};
+			# オリジナルそばを作る
+			main::OutError('名前をつけてください') if !$USE->{arg}->{message};
 			my $ret;
-			$ret='�I���W�i�����΁y'.$USE->{arg}->{message}.'�z���������܂���';	
-			WriteLog(3,0,$DT->{shopname}."���������΁u".$USE->{arg}->{message}."�v�����������܂����B");
+			$ret='オリジナルそば【'.$USE->{arg}->{message}.'】が完成しました';	
+			WriteLog(3,0,$DT->{shopname}."が特製そば「".$USE->{arg}->{message}."」を完成させました。");
 			WriteLog(0,$DT->{id},$ret);
 			$DT->{user}->{soba}=$USE->{arg}->{message};
 			return $ret;
 		_local_
 	@@USE
 		time	6h
-		action	���΍��̐��ƂɂȂ�
+		action	そば作りの専門家になる
 		arg		nocount
-		name	���΍��̐��ƂɂȂ�
-		info	���܂ł̌o���𐶂����āC���΍��̐��ƂɂȂ�܂�
+		name	そば作りの専門家になる
+		info	今までの経験を生かして，そば作りの専門家になります
 			needexp		20%
 		func	_local_
 			my $ret="";
-			main::OutError('���݂��łɂ��΍��̐��Ƃł�') if ($DT->{job} eq 'soba');
+			main::OutError('現在すでにそば作りの専門家です') if ($DT->{job} eq 'soba');
 			$DT->{job} = 'soba';
-			$ret="���΍��̐��ƂɂȂ�܂���";
+			$ret="そば作りの専門家になりました";
 			WriteLog(0,$DT->{id},$ret);
 			return $ret;
 		_local_
 
 @@ITEM
 	no		7
-	type	�l��
+	type	人材
 	code	man-benri
-	name	�֗���
-	info	�I���☥�􂢂Ȃǂ����ӂł�
-	scale	�l
+	name	便利屋
+	info	棚作りや丼洗いなどが得意です
+	scale	人
 	price	30000
 	cost	1000
 	limit	5/0.5
@@ -1272,17 +1272,17 @@
 	flag	noshowcase|human
 	@@USE
 		time	1h
-		job		�l�ޔh����	times/job_man_time_rate
-		scale	��
-		action	��Ƃ���
+		job		人材派遣業	times/job_man_time_rate
+		scale	回
+		action	作業する
 		price	0
-		name	��I��1�ɂ���
-		info	��I��1�ɂ���
+		name	陳列棚を1つにする
+		info	陳列棚を1つにする
 		arg		nocount
 		param	1
 		func	_local_
-			# ����I���ύX
-			#   param1 �ύX��̒I��
+			# ★陳列棚数変更
+			#   param1 変更後の棚数
 			my $oldcnt=$DT->{showcasecount};
 			my $newcnt=$USE->{param1};
 			$DT->{showcasecount}=$newcnt;
@@ -1300,159 +1300,159 @@
 				splice(@{$DT->{showcase}},$newcnt);
 				splice(@{$DT->{price}},$newcnt);
 			}
-			my $ret="��I��$DT->{showcasecount}�ɂ��܂���";
+			my $ret="陳列棚を$DT->{showcasecount}個にしました";
 			WriteLog(0,$DT->{id},$ret);
-			WriteLog(3,0,$DT->{shopname}."�̒�I��$DT->{showcasecount}�ɂȂ�܂���");
+			WriteLog(3,0,$DT->{shopname}."の陳列棚が$DT->{showcasecount}個になりました");
 			
 			return $ret;
 		_local_
 	@@USE
 		time	2h
-		job		�l�ޔh����	times/job_man_time_rate
+		job		人材派遣業	times/job_man_time_rate
 		price	10000
-		name	��I��2�ɂ���
-		info	��I��2�ɂ���
+		name	陳列棚を2つにする
+		info	陳列棚を2つにする
 		func	_local_1
 		arg		nocount
 		param	2
 	@@USE
 		time	4h
-		job		�l�ޔh����	times/job_man_time_rate
+		job		人材派遣業	times/job_man_time_rate
 		price	50000
-		name	��I��3�ɂ���
-		info	��I��3�ɂ���
+		name	陳列棚を3つにする
+		info	陳列棚を3つにする
 		func	_local_1
 		arg		nocount
 		param	3
-			need	2	�֗���
+			need	2	便利屋
 	@@USE
 		time	6h
-		job		�l�ޔh����	times/job_man_time_rate
+		job		人材派遣業	times/job_man_time_rate
 		price	100000
-		name	��I��4�ɂ���
-		info	��I��4�ɂ���
+		name	陳列棚を4つにする
+		info	陳列棚を4つにする
 		func	_local_1
 		arg		nocount
 		param	4
-			need	2	�֗���
+			need	2	便利屋
 	@@USE
 		time	10h
-		job		�l�ޔh����	times/job_man_time_rate
+		job		人材派遣業	times/job_man_time_rate
 		price	200000
-		name	��I��5�ɂ���
-		info	��I��5�ɂ���
+		name	陳列棚を5つにする
+		info	陳列棚を5つにする
 		func	_local_1
 		arg		nocount
 		param	5
-			need	3	�֗���
+			need	3	便利屋
 	@@USE
 		time	12h
-		job		�l�ޔh����	times/job_man_time_rate
+		job		人材派遣業	times/job_man_time_rate
 		price	500000
-		name	��I��6�ɂ���
-		info	��I��6�ɂ���
+		name	陳列棚を6つにする
+		info	陳列棚を6つにする
 		func	_local_1
 		arg		nocount
 		param	6
-			need	3	�֗���
+			need	3	便利屋
 	@@USE
 		time	14h
-		job		�l�ޔh����	times/job_man_time_rate
+		job		人材派遣業	times/job_man_time_rate
 		price	1000000
-		name	��I��7�ɂ���
-		info	��I��7�ɂ���
+		name	陳列棚を7つにする
+		info	陳列棚を7つにする
 		func	_local_1
 		arg		nocount
 		param	7
-			need	4	�֗���
+			need	4	便利屋
 	@@USE
 		time	16h
-		job		�l�ޔh����	times/job_man_time_rate
+		job		人材派遣業	times/job_man_time_rate
 		price	2000000
-		name	��I��8�ɂ���
-		info	��I��8�ɂ���
+		name	陳列棚を8つにする
+		info	陳列棚を8つにする
 		func	_local_1
 		arg		nocount
 		param	8
-			need	5	�֗���
+			need	5	便利屋
 	@@USE
 		time	30m
 		exp		1%
 		exptime	10m
-		job		�l�ޔh����	times/job_man_time_rate
-		scale	��
-		action	��
-		name	���􂢂�����
-		info	���ꂽ����􂢂܂�
+		job		人材派遣業	times/job_man_time_rate
+		scale	回
+		action	洗う
+		name	丼洗いをする
+		info	汚れた丼を洗います
 		func	lostman
 		param	10
-		ngmsg	����S�������Ă��܂��܂����d
-			use		10	���ꂽ��
-			get		10	���ꂢ�Ș�	90%	�����s�J�s�J�ɂȂ�܂���
-			get		10	�X��	02%
+		ngmsg	丼を全部割ってしまいました‥
+			use		10	汚れた丼
+			get		10	きれいな丼	90%	丼がピカピカになりました
+			get		10	店力	02%
 	@@USE
 		time	1h
 		exp		1%
 		exptime	30m
-		job		�l�ޔh����	times/job_man_time_rate
-		scale	��
-		action	�Z�b�g����
-		name	�H��􂢋@�Ř��􂢂�����
-		info	���ꂽ����H��􂢋@�ɃZ�b�g���܂�
+		job		人材派遣業	times/job_man_time_rate
+		scale	回
+		action	セットする
+		name	食器洗い機で丼洗いをする
+		info	汚れた丼を食器洗い機にセットします
 		func	lostman
 		param	50
-		ngmsg	����S�������Ă��܂��܂����d
-			need		1	�H��􂢋@
-			use		50	���ꂽ��
-			get		50	���ꂢ�Ș�	95%	�����s�J�s�J�ɂȂ�܂���
-			get		10	�X��	05%
+		ngmsg	丼を全部割ってしまいました‥
+			need		1	食器洗い機
+			use		50	汚れた丼
+			get		50	きれいな丼	95%	丼がピカピカになりました
+			get		10	店力	05%
 	@@use
 		time	10h
 		exp		5%
 		exptime	6h
-		job		�l�ޔh����	times/job_man_time_rate
-		action	�L���𗬂�
-		name	[�V��]�ɍL���𗬂�
-		info	���̃t�H�[���ɕ�����������Ń{�^�����N���b�N�����<br>[�V��]�ɍL��������܂�
+		job		人材派遣業	times/job_man_time_rate
+		action	広告を流す
+		name	[新聞]に広告を流す
+		info	下のフォームに文を書き込んでボタンをクリックすると<br>[新聞]に広告が流れます
 		param	300
 		arg		nocount|message100
-			use	1	�֗���
+			use	1	便利屋
 		func	_local_
-			main::OutError('�L���������L����������') if !$USE->{arg}->{message};
+			main::OutError('広告文をご記入ください') if !$USE->{arg}->{message};
 			my $ret;
 			my $up=int($USE->{param1}*(2-$DT->{rank}/5000));
 			$DT->{rank}+=$up;
 			$DT->{rank}=10000 if $DT->{rank}>10000;
 
-			$ret='[�V��]�ɍL���𗬂��Ē��ڂ���C�l�C'.int($up/100)."%�A�b�v";
-			WriteLog(2,0,"�y�L���z".$USE->{arg}{message});
+			$ret='[新聞]に広告を流して注目され，人気'.int($up/100)."%アップ";
+			WriteLog(2,0,"【広告】".$USE->{arg}{message});
 			WriteLog(0,$DT->{id},$ret);	
 			return $ret;
 		_local_
 	@@USE
 		time	6h
-		action	�Ŕ����낷
+		action	看板を下ろす
 		arg		nocount
-		name	�Ŕ����낷
-		info	���E�̊Ŕ����낵�܂�
+		name	看板を下ろす
+		info	専門職の看板を下ろします
 		func	_local_
 			my $ret="";
-			main::OutError('���E�̊Ŕ͂������Ă��܂���') if ($DT->{job} eq '');
+			main::OutError('専門職の看板はあがっていません') if ($DT->{job} eq '');
 			$DT->{money}+=30000;
 			$DT->{job}='';	
-			$ret='�Ŕ����낵�C�ԘJ��\30000���󂯎��܂���';
-			WriteLog(0,$DT->{id},"�Ŕ����낵�C�ԘJ�����󂯎��܂���");
-			WriteLog(3,0,"���E�̊Ŕ����낵��".$DT->{shopname}."�ɁC���X���ԘJ�����x�����ꂽ�悤�ł�");
+			$ret='看板を下ろし，慰労金\30000を受け取りました';
+			WriteLog(0,$DT->{id},"看板を下ろし，慰労金を受け取りました");
+			WriteLog(3,0,"専門職の看板を下ろした".$DT->{shopname}."に，商店会から慰労金が支給されたようです");
 			return $ret;
 		_local_
 
 @@ITEM
 	no		8
-	type	�l��
+	type	人材
 	code	man-black
-	name	�u���b�N�H���
-	info	���܂����X�͂��g���ė��H������܂�
-	scale	�l
+	name	ブラック工作員
+	info	たまった店力を使って裏工作をします
+	scale	人
 	price	50000
 	cost	2500
 	limit	2/0.2
@@ -1462,103 +1462,103 @@
 		time	6h
 		exp	5%
 		exptime	4h
-		job		���Ƌ�	times/job_black_time_rate
-		scale	��
-		action	���Ԃ��Ă�
-		name	���Ԃ��Ă�
-		info	���Ԃ�����m����50%�ł�
-		ngmsg	���Ԃ͗��܂���ł���
-		okmsg	���Ԃ�����Ă��܂���
+		job		裏家業	times/job_black_time_rate
+		scale	回
+		action	仲間を呼ぶ
+		name	仲間を呼ぶ
+		info	仲間が来る確率は50%です
+		ngmsg	仲間は来ませんでした
+		okmsg	仲間がやってきました
 		arg		nocount
-			get		1	�u���b�N�H���	50%
+			get		1	ブラック工作員	50%
 	@@use
 		time	1h
 		exp	1%
 		exptime	30m
-		job		���Ƌ�	times/job_black_time_rate
-		scale	��
-		action	���
-		name	�ł��ǂ�����
-		info	���肠�킹�̍ޗ��œK���ɂ��ǂ������Ă݂܂�
+		job		裏家業	times/job_black_time_rate
+		scale	回
+		action	作る
+		name	闇うどんを作る
+		info	ありあわせの材料で適当にうどんを作ってみます
 		func	lostman
 		param	50
-		ngmsg	�ł��ǂ���Ɏ��s���܂����d
-			use		10	���ꂽ��
-			get		10	�ł��ǂ�	95%	�ł��ǂ�����܂���
-			get		10	�X��	07%
+		ngmsg	闇うどん作りに失敗しました‥
+			use		10	汚れた丼
+			get		10	闇うどん	95%	闇うどんを作りました
+			get		10	店力	07%
 	@@use
 		time	1h
 		exp	1%
 		exptime	30m
-		job		���Ƌ�	times/job_black_time_rate
-		scale	��
-		action	���
-		name	�ł��΂����
-		info	���肠�킹�̍ޗ��œK���ɂ��΂�����Ă݂܂�
+		job		裏家業	times/job_black_time_rate
+		scale	回
+		action	作る
+		name	闇そばを作る
+		info	ありあわせの材料で適当にそばを作ってみます
 		func	lostman
 		param	50
-		ngmsg	�ł��΍��Ɏ��s���܂����d
-			use		10	���ꂽ��
-			get		10	�ł���	95%	�ł��΂����܂���
-			get		10	�X��	07%
+		ngmsg	闇そば作りに失敗しました‥
+			use		10	汚れた丼
+			get		10	闇そば	95%	闇そばを作りました
+			get		10	店力	07%
 	@@use
 		time	4h
 		exp	5%
 		exptime	2h
-		job		���Ƌ�	times/job_black_time_rate
-		scale	��
-		action	���s����
-		name	����ւ��������s����
-		info	���X�̒�I�̏��i���C�������葼�̏��i�Ƃ���ւ��܂�
+		job		裏家業	times/job_black_time_rate
+		scale	回
+		action	実行する
+		name	すり替え作戦を実行する
+		info	他店の陳列棚の商品を，こっそり他の商品とすり替えます
 		arg		target|nocount
-			use		1	�u���b�N�H���
-			use		50	�ł��ǂ�
-			use		50	�ł���
-			use		10	�X��
+			use		1	ブラック工作員
+			use		50	闇うどん
+			use		50	闇そば
+			use		10	店力
 		func	_local_
-		# ������ւ��������s����
+		# ★すり替え作戦を実行する
 			my $cnt=int(rand(100))+1;
-			my $ret="����ւ����͎��s���C�X�̐l�C��������܂���";
+			my $ret="すり替え作戦は失敗し，店の人気が下がりました";
 			if(rand(1000)<900)
 			{
-				if($DTS->{item}[@@ITEMNO"�x��@"-1])
+				if($DTS->{item}[@@ITEMNO"警報機"-1])
 				{
 					if(rand(1000)<200)
 					{
-					$DTS->{showcase}[0]=57; # �ł��΂̃A�C�e���ԍ�
-					$DTS->{price}[0]=20; # �ł��΂̉��i
-					$DTS->{item}[@@ITEMNO"�ł���"-1]+=$cnt;
-					$DTS->{item}[@@ITEMNO"�ł���"-1]=2000 if $DTS->{item}[$itemno2-1]>2000;
-					$ret="����ւ����͐������܂���";
-					$DTS->{item}[@@ITEMNO"�x��@"-1]--;
-					WriteLog(2,0,$DTS->{shopname}."�̒�I�̏��i���ł��΂ɂ���ւ����C�{�����X�傪�x��@���������󂵂܂���");
+					$DTS->{showcase}[0]=57; # 闇そばのアイテム番号
+					$DTS->{price}[0]=20; # 闇そばの価格
+					$DTS->{item}[@@ITEMNO"闇そば"-1]+=$cnt;
+					$DTS->{item}[@@ITEMNO"闇そば"-1]=2000 if $DTS->{item}[$itemno2-1]>2000;
+					$ret="すり替え作戦は成功しました";
+					$DTS->{item}[@@ITEMNO"警報機"-1]--;
+					WriteLog(2,0,$DTS->{shopname}."の陳列棚の商品が闇そばにすり替えられ，怒った店主が警報機をたたき壊しました");
 					}
 					elsif(rand(1000)<700)
 					{
 					$DT->{rank}-=int($DT->{rank}/3);
-					$DTS->{item}[@@ITEMNO"�x��@"-1]--;
-					WriteLog(3,0,$DTS->{shopname}."�ɐN������".$DT->{shopname}."�̃u���b�N�H������C�x��@��j�󂵂܂��������Ǖ߂܂�܂���");
+					$DTS->{item}[@@ITEMNO"警報機"-1]--;
+					WriteLog(3,0,$DTS->{shopname}."に侵入した".$DT->{shopname}."のブラック工作員が，警報機を破壊しましたが結局捕まりました");
 					}
 					else
 					{
 					$DT->{rank}-=int($DT->{rank}/3);
-					WriteLog(3,0,$DTS->{shopname}."�̌x��@���苿���C�N�����Ă���".$DT->{shopname}."�̃u���b�N�H������߂܂�܂���");
+					WriteLog(3,0,$DTS->{shopname}."の警報機が鳴り響き，侵入していた".$DT->{shopname}."のブラック工作員が捕まりました");
 					}
 				}
 				else
 				{
-				$DTS->{showcase}[0]=45; # �ł��ǂ�̃A�C�e���i���o�[
-				$DTS->{price}[0]=20; # �ł��ǂ�̉��i
-				$DTS->{item}[@@ITEMNO"�ł��ǂ�"-1]+=$cnt;
-				$DTS->{item}[@@ITEMNO"�ł��ǂ�"-1]=2000 if $DTS->{item}[$itemno-1]>2000;
-				$ret="����ւ����͐������܂���";
-				WriteLog(2,0,$DTS->{shopname}."�̒�I�̏��i���ł��ǂ�ɂ���ւ����܂���");
+				$DTS->{showcase}[0]=45; # 闇うどんのアイテムナンバー
+				$DTS->{price}[0]=20; # 闇うどんの価格
+				$DTS->{item}[@@ITEMNO"闇うどん"-1]+=$cnt;
+				$DTS->{item}[@@ITEMNO"闇うどん"-1]=2000 if $DTS->{item}[$itemno-1]>2000;
+				$ret="すり替え作戦は成功しました";
+				WriteLog(2,0,$DTS->{shopname}."の陳列棚の商品が闇うどんにすり替えられました");
 				}
 			}
 			else
 			{
-			$ret="����ւ����͎��s���܂���";
-			WriteLog(3,0,$DTS->{shopname}."�Ɍ��ꂽ�u���b�N�H������C�Ȃ������������ɋ����Ă����܂���");
+			$ret="すり替え作戦は失敗しました";
+			WriteLog(3,0,$DTS->{shopname}."に現れたブラック工作員が，なぜか何もせずに去っていきました");
 			}
 			WriteLog(0,$DT->{id},$ret);
 			return $ret;
@@ -1566,30 +1566,30 @@
 	@@use
 		time	4h
 		exp	10%
-		job		���Ƌ�	times/job_black_time_rate
-		scale	��
-		action	������������
-		name	������������
-		info	�x��@�̂���X�͊댯�I�H
+		job		裏家業	times/job_black_time_rate
+		scale	回
+		action	万引きをする
+		name	万引きをする
+		info	警報機のある店は危険！？
 		arg		target|nocount
-			use		50	�X��
+			use		50	店力
 		func	_local_
-			# �����������i�������̓C�x���g�Ɠ������b�Z�[�W���o�́j
+			# ★万引き作戦（成功時はイベントと同じメッセージを出力）
 			
-			my $ret="�������͎��s���C���X�̐l�C��������܂���";
+			my $ret="万引きは失敗し，お店の人気が下がりました";
 			if(rand(1000)<700)
 			{
-				if($DTS->{item}[@@ITEMNO"�x��@"-1])
+				if($DTS->{item}[@@ITEMNO"警報機"-1])
 				{
 					$DT->{rank}-=int($DT->{rank}/2);
 					if(rand(1000)<700)
 					{
-						$DTS->{item}[@@ITEMNO"�x��@"-1]--;
-						WriteLog(3,0,$DT->{shopname}."�̃u���b�N�H�����".$DTS->{shopname}."�֖������ɓ���C$ITEM[@@ITEMNO"�x��@"]->{name}��j�󂵂܂��������Ǖ߂܂�܂����B");
+						$DTS->{item}[@@ITEMNO"警報機"-1]--;
+						WriteLog(3,0,$DT->{shopname}."のブラック工作員が".$DTS->{shopname}."へ万引きに入り，$ITEM[@@ITEMNO"警報機"]->{name}を破壊しましたが結局捕まりました。");
 					}
 					else
 					{
-						WriteLog(3,0,$DT->{shopname}."�̃u���b�N�H�����".$DTS->{shopname}."�֖������ɓ���܂��������s���܂����B");
+						WriteLog(3,0,$DT->{shopname}."のブラック工作員が".$DTS->{shopname}."へ万引きに入りましたが失敗しました。");
 					}
 				}
 				else
@@ -1607,16 +1607,16 @@
 							$manbiki_count+=$cnt*$DTS->{price}[$idx];
 						}
 					}
-					$ret="�������͐������܂���";
-					$ret="�u���b�N�H����͋C���ς���Ė���������߂܂���" if !$manbiki_count;
-					WriteLog(2,0,$DTS->{shopname}."�����z".GetMoneyString($manbiki_count)."�̖�������Q�ɑ����܂����B") if $manbiki_count;
-					WriteLog(2,0,$DTS->{shopname}."�ɓ������������Ƃ͉�����炸�ɓ����܂����B") if !$manbiki_count;
+					$ret="万引きは成功しました";
+					$ret="ブラック工作員は気が変わって万引きをやめました" if !$manbiki_count;
+					WriteLog(2,0,$DTS->{shopname}."が総額".GetMoneyString($manbiki_count)."の万引き被害に遭いました。") if $manbiki_count;
+					WriteLog(2,0,$DTS->{shopname}."に入った万引き犯は何も取らずに逃げました。") if !$manbiki_count;
 				}
 			}
 			else
 			{
 				$DT->{rank}-=int($DT->{rank}/3);
-				WriteLog(3,0,$DT->{shopname}."�̃u���b�N�H�����".$DTS->{shopname}."�֖������ɓ���܂��������s���܂����B");
+				WriteLog(3,0,$DT->{shopname}."のブラック工作員が".$DTS->{shopname}."へ万引きに入りましたが失敗しました。");
 			}
 			WriteLog(0,$DT->{id},$ret);
 			return $ret;
@@ -1624,110 +1624,110 @@
 	@@use
 		time	10h
 		exp	10%
-		job		���Ƌ�	times/job_black_time_rate
-		scale	��
-		action	�����\�𗬂�
-		name	�X�܂̈����\�𗬂�
-		info	�����t���Ȃ��\�𗬂��C���X�̐l�C�������܂�
+		job		裏家業	times/job_black_time_rate
+		scale	回
+		action	悪い噂を流す
+		name	店舗の悪い噂を流す
+		info	根も葉もない噂を流し，他店の人気を下げます
 		arg		target|nocount
-			use		1	�u���b�N�H���
-			use		100	�X��
+			use		1	ブラック工作員
+			use		100	店力
 		func	_local_
-			# �������\�𗬂����
+			# ★悪い噂を流す作戦
 			my $ret;
 			if(rand(1000)<750)
 			{
 				$DTS->{rank}-=int($DTS->{rank}/4);
-				$ret=$DTS->{shopname}.'�̈����\�𗬂���킪�������܂����B';
+				$ret=$DTS->{shopname}.'の悪い噂を流す作戦が成功しました。';
 				WriteLog(0,$DT->{id},$ret);
-				WriteLog(3,0,$DTS->{shopname}.'�̈����\���L�܂�l�C��������܂����B');
+				WriteLog(3,0,$DTS->{shopname}.'の悪い噂が広まり人気が下がりました。');
 			}
 			else
 			{
 				$DT->{rank}-=int($DT->{rank}/2);
-				$ret=$DTS->{shopname}.'�̈����\�𗬂���킪���s���܂���';
+				$ret=$DTS->{shopname}.'の悪い噂を流す作戦が失敗しました';
 				WriteLog(0,$DT->{id},$ret);
-				WriteLog(3,0,$DT->{shopname}."�̃u���b�N�H�����".$DTS->{shopname}.'�̈����\�𗬂����Ɖ�􂵂Ă����悤�ł��B');
+				WriteLog(3,0,$DT->{shopname}."のブラック工作員が".$DTS->{shopname}.'の悪い噂を流そうと画策していたようです。');
 			}
 			return $ret;
 			_local_
 	@@use
 		time	2h
 		exp	10%
-		job		���Ƌ�	times/job_black_time_rate
-		action	�������
-		name	�X�͂��������
-		info	�X�͂����ׂĉ�����C�X�̐l�C���グ�܂�
+		job		裏家業	times/job_black_time_rate
+		action	解放する
+		name	店力を解放する
+		info	店力をすべて解放し，店の人気を上げます
 		arg		nocount
 		func	_local_
-			main::OutError('�X�͂�100�ȏ�Ȃ��Ɖ���ł��܂���') if ($DT->{item}[@@ITEMNO"�X��"-1]<100);
+			main::OutError('店力が100以上ないと解放できません') if ($DT->{item}[@@ITEMNO"店力"-1]<100);
 			my $ret="";
 			my $power;
-			my $cnt=$DT->{item}[@@ITEMNO"�X��"-1];
-			$power=$DT->{item}[@@ITEMNO"�X��"-1]*3;
+			my $cnt=$DT->{item}[@@ITEMNO"店力"-1];
+			$power=$DT->{item}[@@ITEMNO"店力"-1]*3;
 			my $up=int($power*(2-$DT->{rank}/5000));
 
 			$DT->{rank}+=$up;
 			$DT->{rank}=10000 if $DT->{rank}>10000;
-			$ret="�X�͂����ׂĉ�����܂����i�l�C".int($up/100)."%�A�b�v�j";
-			UseItem(@@ITEMNO"�X��",$cnt);
+			$ret="店力をすべて解放しました（人気".int($up/100)."%アップ）";
+			UseItem(@@ITEMNO"店力",$cnt);
 			WriteLog(0,$DT->{id},$ret);
-			WriteLog(3,0,$DT->{shopname}."�����ׂĂ̓X�͂�������܂����B");
+			WriteLog(3,0,$DT->{shopname}."がすべての店力を解放しました。");
 			return $ret;
 			_local_
 	@@USE
 		time	0m
-		action	���ԑ��������
-		scale	��
-		name	���ԑ��������
-		info	��������Ύ��Ԃ����߂���I
-			use		2	�u���b�N�H���
+		action	時間操作をする
+		scale	回
+		name	時間操作をする
+		info	成功すれば時間を取り戻せる！
+			use		2	ブラック工作員
 		arg		nocount
 		func	_local_
-			# ���������ԑ���
+			# ★持ち時間増加
 			my $ret;
 			my $cnt=int(rand(6))+1;
 
 			if(rand(1000)<100)
 			{
-				$ret='���ԑ���͎��s���܂���';
-				WriteLog(3,0,$DT->{shopname}.'�̃u���b�N�H������C���ԑ���������������悤�ł��B');
-				AddItem(8,1,'�u���b�N�H�����1�l���C����̊���ڂ���߂��Ă��܂���');
-				WriteLog(0,$DT->{id},'���ԑ���͎��s���܂���');
+				$ret='時間操作は失敗しました';
+				WriteLog(3,0,$DT->{shopname}.'のブラック工作員が，時間操作をしくじったようです。');
+				AddItem(8,1,'ブラック工作員の1人が，時空の割れ目から戻ってきました');
+				WriteLog(0,$DT->{id},'時間操作は失敗しました');
 			}
 			else
 			{
 				$DT->{time}-=3600*($cnt);
 				$DT->{user}->{black}+=1;
-				$ret='���ԑ���͐������܂����@�i�{'.($cnt).'���ԁj';
-				WriteLog(3,0,$DT->{shopname}.'�̃u���b�N�H������C���ԑ���������Ȃ����悤�ł��B');
-				WriteLog(0,$DT->{id},'���ԑ���̌��ʁC�������Ԃ������܂���');
+				$ret='時間操作は成功しました　（＋'.($cnt).'時間）';
+				WriteLog(3,0,$DT->{shopname}.'のブラック工作員が，時間操作をおこなったようです。');
+				WriteLog(0,$DT->{id},'時間操作の結果，持ち時間が増えました');
 			}					
 			return $ret;
 		_local_
 	@@USE
 		time	6h
-		action	���H��̃v���ɂȂ�
+		action	裏工作のプロになる
 		arg		nocount
-		name	���H��̃v���ɂȂ�
-		info	���܂ł̌o���𐶂����āC���H��̃v���t�F�b�V���i���ɂȂ�܂�
+		name	裏工作のプロになる
+		info	今までの経験を生かして，裏工作のプロフェッショナルになります
 			needexp		20%
 		func	_local_
 			my $ret="";
-			main::OutError('���݂��łɗ��H��̃v���t�F�b�V���i���ł�') if ($DT->{job} eq 'black');
+			main::OutError('現在すでに裏工作のプロフェッショナルです') if ($DT->{job} eq 'black');
 			$DT->{job} = 'black';
-			$ret="���H��̃v���t�F�b�V���i���ɂȂ�܂���";
+			$ret="裏工作のプロフェッショナルになりました";
 			WriteLog(0,$DT->{id},$ret);
 			return $ret;
 		_local_
 
 @@ITEM
 	no		9
-	type	���Y��
+	type	陸産物
 	code	riku-tamagoa
-	name	��
-	info	�h�{���̍����H�i�ł�
-	scale	��
+	name	卵
+	info	栄養価の高い食品です
+	scale	個
 	price	100
 	cost	10
 	limit	5000/50
@@ -1737,56 +1737,56 @@
 	point	20%
 	@@USE
 		time	1m
-		action	�R���|�X�g�ɓ����
-		name	�R���|�X�g�ɓ����
-		info	�Â��Ȃ����H�i���R���|�X�g�ɓ���C�͔�����܂�
-		ngmsg	�͔���Ɏ��s���܂���
-			use		1	��
-			get		10	�͔�	15%	�㎿�͔̑삪�ł��܂���
+		action	コンポストに入れる
+		name	コンポストに入れる
+		info	古くなった食品をコンポストに入れ，堆肥を作ります
+		ngmsg	堆肥作りに失敗しました
+			use		1	卵
+			get		10	堆肥	15%	上質の堆肥ができました
 
 @@ITEM
 	no		10
-	type	���Y��
+	type	陸産物
 	code	riku-tamagob
-	name	�z����҂�
-	info	�h�{���̍����H�i�ł�
-	scale	��
+	name	孵化を待つ卵
+	info	栄養価の高い食品です
+	scale	個
 	price	100
 	cost	50
 	limit	50/0
 	pop	10d
 	funct	_local_
 		my($ITEM,@DT)=@_;
-		my $gabirth_per_day=3;  # 1���ɂ����傤��3�H�Y�܂��悤�Ȋm��(?)�̐ݒ�
-		my $nibirth_per_day=30;  # 1���ɂɂ�Ƃ肪30�H�Y�܂��悤�Ȋm��(?)�̐ݒ�
-		my $val          =1;  # ��x�ɎY�܂���{��
+		my $gabirth_per_day=3;  # 1日にがちょうが3羽産まれるような確率(?)の設定
+		my $nibirth_per_day=30;  # 1日ににわとりが30羽産まれるような確率(?)の設定
+		my $val          =1;  # 一度に産まれる基本数
 
-		my $gabirth_rate=$gabirth_per_day && (86400/$gabirth_per_day); # 0�Ŋ���̂�j�~
+		my $gabirth_rate=$gabirth_per_day && (86400/$gabirth_per_day); # 0で割るのを阻止
 		my $nibirth_rate=$nibirth_per_day && (86400/$nibirth_per_day);
 		foreach my $DT (@DT)
 		{
-			next if !$DT->{item}[@@ITEMNO"�z����҂�"-1];
-			if(rand($gabirth_rate)<$TIMESPAN) # 1�X�܂ɂ��u1����$gabirth_per_day��v�̊m���ŏ������^�ɂȂ�(�n�Y�c)
+			next if !$DT->{item}[@@ITEMNO"孵化を待つ卵"-1];
+			if(rand($gabirth_rate)<$TIMESPAN) # 1店舗につき「1日に$gabirth_per_day回」の確率で条件が真になる(ハズ…)
 			{
-				UseItemSub(@@ITEMNO"�z����҂�",$val,$DT);
-				AddItemSub(@@ITEMNO"�����傤",$val,$DT);
-				WriteLog(0,$DT->{id},'�Ȃ�ƁI�����炪���傤�����܂�܂���');
+				UseItemSub(@@ITEMNO"孵化を待つ卵",$val,$DT);
+				AddItemSub(@@ITEMNO"がちょう",$val,$DT);
+				WriteLog(0,$DT->{id},'なんと！卵からがちょうが生まれました');
 			}
 			if(rand($nibirth_rate)<$TIMESPAN)
 			{
-				UseItemSub(@@ITEMNO"�z����҂�",$val,$DT);
-				AddItemSub(@@ITEMNO"�ɂ�Ƃ�",$val,$DT);
+				UseItemSub(@@ITEMNO"孵化を待つ卵",$val,$DT);
+				AddItemSub(@@ITEMNO"にわとり",$val,$DT);
 			}
 		}
 	_local_ 
 
 @@ITEM
 	no		11
-	type	���Y��
+	type	陸産物
 	code	riku-age
-	name	���g��
-	info	���ɃL�c�l�̍D���Ƃ�����H�i�ł�
-	scale	��
+	name	油揚げ
+	info	俗にキツネの好物といわれる食品です
+	scale	枚
 	price	300
 	cost	10
 	limit	10000/10
@@ -1796,20 +1796,20 @@
 	point	20%
 	@@USE
 		time	1m
-		action	�R���|�X�g�ɓ����
-		name	�R���|�X�g�ɓ����
-		info	�Â��Ȃ����H�i���R���|�X�g�ɓ���C�͔�����܂�
-		ngmsg	�͔���Ɏ��s���܂���
-			use		1	���g��
-			get		10	�͔�	20%	�㎿�͔̑삪�ł��܂���
+		action	コンポストに入れる
+		name	コンポストに入れる
+		info	古くなった食品をコンポストに入れ，堆肥を作ります
+		ngmsg	堆肥作りに失敗しました
+			use		1	油揚げ
+			get		10	堆肥	20%	上質の堆肥ができました
 
 @@ITEM
 	no		12
-	type	���Y��
+	type	陸産物
 	code	riku-negi
-	name	�˂�
-	info	���ǂ�₻�΂ɂ͌������Ȃ��򖡂ł�
-	scale	�c
+	name	ねぎ
+	info	うどんやそばには欠かせない薬味です
+	scale	把
 	price	200
 	limit	5000/10
 	base	500/2000
@@ -1818,19 +1818,19 @@
 	point	10%
 	@@USE
 		time	1m
-		action	�R���|�X�g�ɓ����
-		name	�R���|�X�g�ɓ����
-		info	�Â��Ȃ����H�i���R���|�X�g�ɓ���C�͔�����܂�
-		ngmsg	�͔���Ɏ��s���܂���
-			use		1	�˂�
-			get		10	�͔�	25%	�㎿�͔̑삪�ł��܂���
+		action	コンポストに入れる
+		name	コンポストに入れる
+		info	古くなった食品をコンポストに入れ，堆肥を作ります
+		ngmsg	堆肥作りに失敗しました
+			use		1	ねぎ
+			get		10	堆肥	25%	上質の堆肥ができました
 
 @@ITEM
 	no		13
-	type	���Y��
+	type	陸産物
 	code	riku-komugi
-	name	������
-	info	���ǂ��V�Ղ�̍ޗ��ɂȂ�܂�
+	name	小麦粉
+	info	うどんや天ぷらの材料になります
 	scale	kg
 	price	500
 	cost	10
@@ -1841,19 +1841,19 @@
 	point	30%
 	@@USE
 		time	1m
-		action	�R���|�X�g�ɓ����
-		name	�R���|�X�g�ɓ����
-		info	�Â��Ȃ����H�i���R���|�X�g�ɓ���C�͔�����܂�
-		ngmsg	�͔���Ɏ��s���܂���
-			use		1	������
-			get		10	�͔�	30%	�㎿�͔̑삪�ł��܂���
+		action	コンポストに入れる
+		name	コンポストに入れる
+		info	古くなった食品をコンポストに入れ，堆肥を作ります
+		ngmsg	堆肥作りに失敗しました
+			use		1	小麦粉
+			get		10	堆肥	30%	上質の堆肥ができました
 
 @@ITEM
 	no		14
-	type	���Y��
+	type	陸産物
 	code	riku-soba
-	name	���Ε�
-	info	���΂̍ޗ��ɂȂ�܂�
+	name	そば粉
+	info	そばの材料になります
 	scale	kg
 	price	500
 	cost	10
@@ -1864,19 +1864,19 @@
 	point	30%
 	@@USE
 		time	1m
-		action	�R���|�X�g�ɓ����
-		name	�R���|�X�g�ɓ����
-		info	�Â��Ȃ����H�i���R���|�X�g�ɓ���C�͔�����܂�
-		ngmsg	�͔���Ɏ��s���܂���
-			use		1	���Ε�
-			get		10	�͔�	30%	�㎿�͔̑삪�ł��܂���
+		action	コンポストに入れる
+		name	コンポストに入れる
+		info	古くなった食品をコンポストに入れ，堆肥を作ります
+		ngmsg	堆肥作りに失敗しました
+			use		1	そば粉
+			get		10	堆肥	30%	上質の堆肥ができました
 
 @@ITEM
 	no		15
-	type	���Y��
+	type	陸産物
 	code	riku-tougarasi
-	name	�Ƃ����炵
-	info	���������w�h�q�߂񂽂��x�̖��t���Ɏg���܂�
+	name	とうがらし
+	info	博多名物『辛子めんたい』の味付けに使います
 	scale	kg
 	price	800
 	limit	1000/10
@@ -1885,19 +1885,19 @@
 	pop	5h
 	@@USE
 		time	1m
-		action	�R���|�X�g�ɓ����
-		name	�R���|�X�g�ɓ����
-		info	�Â��Ȃ����H�i���R���|�X�g�ɓ���C�͔�����܂�
-		ngmsg	�͔���Ɏ��s���܂���
-			use		1	�Ƃ����炵
-			get		10	�͔�	35%	�㎿�͔̑삪�ł��܂���
+		action	コンポストに入れる
+		name	コンポストに入れる
+		info	古くなった食品をコンポストに入れ，堆肥を作ります
+		ngmsg	堆肥作りに失敗しました
+			use		1	とうがらし
+			get		10	堆肥	35%	上質の堆肥ができました
 
 @@ITEM
 	no		16
-	type	���Y��
+	type	陸産物
 	code	riku-daizu
-	name	�哤
-	info	���H�i�̈�Ɂw���g���x������܂�
+	name	大豆
+	info	加工品の一つに『油揚げ』があります
 	scale	kg
 	price	400
 	limit	1500/20
@@ -1906,19 +1906,19 @@
 	pop	5h
 	@@USE
 		time	1m
-		action	�R���|�X�g�ɓ����
-		name	�R���|�X�g�ɓ����
-		info	�Â��Ȃ����H�i���R���|�X�g�ɓ���C�͔�����܂�
-		ngmsg	�͔���Ɏ��s���܂���
-			use		1	�哤
-			get		10	�͔�	35%	�㎿�͔̑삪�ł��܂���
+		action	コンポストに入れる
+		name	コンポストに入れる
+		info	古くなった食品をコンポストに入れ，堆肥を作ります
+		ngmsg	堆肥作りに失敗しました
+			use		1	大豆
+			get		10	堆肥	35%	上質の堆肥ができました
 
 @@ITEM
 	no		17
-	type	���Y��
+	type	陸産物
 	code	riku-toukibi
-	name	�Ƃ����낱��
-	info	�ƒ{�̉a�ɂ��Ȃ�܂�
+	name	とうもろこし
+	info	家畜の餌にもなります
 	scale	kg
 	price	600
 	limit	1000/10
@@ -1928,20 +1928,20 @@
 	point	50%
 	@@USE
 		time	1m
-		action	�R���|�X�g�ɓ����
-		name	�R���|�X�g�ɓ����
-		info	�Â��Ȃ����H�i���R���|�X�g�ɓ���C�͔�����܂�
-		ngmsg	�͔���Ɏ��s���܂���
-			use		1	�Ƃ����낱��
-			get		10	�͔�	35%	�㎿�͔̑삪�ł��܂���
+		action	コンポストに入れる
+		name	コンポストに入れる
+		info	古くなった食品をコンポストに入れ，堆肥を作ります
+		ngmsg	堆肥作りに失敗しました
+			use		1	とうもろこし
+			get		10	堆肥	35%	上質の堆肥ができました
 
 @@ITEM
 	no		18
-	type	���Y��
+	type	陸産物
 	code	riku-toryuhu
-	name	�g�����t
-	info	�߂��炵�����̂��ł�
-	scale	��
+	name	トリュフ
+	info	めずらしいきのこです
+	scale	個
 	price	2000
 	limit	500
 	base	50/200
@@ -1949,20 +1949,20 @@
 	pop	8h
 	@@USE
 		time	1m
-		action	�R���|�X�g�ɓ����
-		name	�R���|�X�g�ɓ����
-		info	�Â��Ȃ����H�i���R���|�X�g�ɓ���C�͔�����܂�
-		ngmsg	�͔���Ɏ��s���܂���
-			use		1	�g�����t
-			get		10	�͔�	35%	�㎿�͔̑삪�ł��܂���
+		action	コンポストに入れる
+		name	コンポストに入れる
+		info	古くなった食品をコンポストに入れ，堆肥を作ります
+		ngmsg	堆肥作りに失敗しました
+			use		1	トリュフ
+			get		10	堆肥	35%	上質の堆肥ができました
 
 @@ITEM
 	no		19
-	type	���Y��
+	type	陸産物
 	code	riku-foagura
-	name	�t�H�A�O��
-	info	��傳���������傤�̊̑��ł�
-	scale	��
+	name	フォアグラ
+	info	肥大させたがちょうの肝臓です
+	scale	個
 	price	2000
 	limit	500
 	base	50/200
@@ -1970,20 +1970,20 @@
 	pop	8h
 	@@USE
 		time	1m
-		action	�R���|�X�g�ɓ����
-		name	�R���|�X�g�ɓ����
-		info	�Â��Ȃ����H�i���R���|�X�g�ɓ���C�͔�����܂�
-		ngmsg	�͔���Ɏ��s���܂���
-			use		1	�t�H�A�O��
-			get		10	�͔�	35%	�㎿�͔̑삪�ł��܂���
+		action	コンポストに入れる
+		name	コンポストに入れる
+		info	古くなった食品をコンポストに入れ，堆肥を作ります
+		ngmsg	堆肥作りに失敗しました
+			use		1	フォアグラ
+			get		10	堆肥	35%	上質の堆肥ができました
 
 @@ITEM
 	no		20
-	type	���Y��
+	type	陸産物
 	code	riku-niwatori
-	name	�ɂ�Ƃ�
-	info	�����Y�܂���ɂ͉a���K�v�ł�
-	scale	�H
+	name	にわとり
+	info	卵を産ませるには餌が必要です
+	scale	羽
 	price	5000
 	limit	30/3
 	base	30/300
@@ -1991,30 +1991,30 @@
 	pop	10d
 	@@USE
 		time	30m
-		action	��������
-		scale	��
-		name	�����傤�ƌ�������
-		info	�{���ɍs���Č{�������傤�ƌ������܂�
-		okmsg	�����傤����ɓ���܂���
-			use		2	�ɂ�Ƃ�
-			get		1	�����傤
+		action	交換する
+		scale	回
+		name	がちょうと交換する
+		info	養育場に行って鶏をがちょうと交換します
+		okmsg	がちょうを手に入れました
+			use		2	にわとり
+			get		1	がちょう
 	@@USE
 		time	30m
-		action	��������
-		scale	��
-		name	�؂ƌ�������
-		info	�{���ɍs���Č{��؂ƌ������܂�
-		okmsg	�؂���ɓ���܂���
-			use		3	�ɂ�Ƃ�
-			get		1	��
+		action	交換する
+		scale	回
+		name	豚と交換する
+		info	養育場に行って鶏を豚と交換します
+		okmsg	豚を手に入れました
+			use		3	にわとり
+			get		1	豚
 
 @@ITEM
 	no		21
-	type	���Y��
+	type	陸産物
 	code	riku-gatyou
-	name	�����傤
-	info	�a�������Ղ����đ��点�܂��傤
-	scale	�H
+	name	がちょう
+	info	餌をたっぷりやって太らせましょう
+	scale	羽
 	price	7500
 	limit	20/2
 	base	20/200
@@ -2023,11 +2023,11 @@
 
 @@ITEM
 	no		22
-	type	���Y��
+	type	陸産物
 	code	riku-buta
-	name	��
-	info	�ʓ|���悭���Ă���ƁC���Ԃ������邩������܂���
-	scale	��
+	name	豚
+	info	面倒をよく見ていると，恩返しをするかもしれません
+	scale	頭
 	price	10000
 	limit	20/2
 	plus	1d
@@ -2035,11 +2035,11 @@
 
 @@ITEM
 	no		23
-	type	�C�Y��
+	type	海産物
 	code	umi-ebi
-	name	����
-	info	�v���b�Ɛg�̈������܂����C�ߊC���̂��тł�
-	scale	�C
+	name	えび
+	info	プリッと身の引き締まった，近海物のえびです
+	scale	匹
 	price	100
 	limit	5000/20
 	base	1000/4000
@@ -2048,19 +2048,19 @@
 	point	10%
 	@@USE
 		time	1m
-		action	�R���|�X�g�ɓ����
-		name	�R���|�X�g�ɓ����
-		info	�Â��Ȃ����H�i���R���|�X�g�ɓ���C�͔�����܂�
-		ngmsg	�͔���Ɏ��s���܂���
-			use		1	����
-			get		10	�͔�	25%	�㎿�͔̑삪�ł��܂���
+		action	コンポストに入れる
+		name	コンポストに入れる
+		info	古くなった食品をコンポストに入れ，堆肥を作ります
+		ngmsg	堆肥作りに失敗しました
+			use		1	えび
+			get		10	堆肥	25%	上質の堆肥ができました
 
 @@ITEM
 	no		24
-	type	�C�Y��
+	type	海産物
 	code	umi-wakame
-	name	�킩��
-	info	�~�l���������Ղ�̊C���ł�
+	name	わかめ
+	info	ミネラルたっぷりの海藻です
 	scale	kg
 	price	200
 	limit	2500/10
@@ -2070,20 +2070,20 @@
 	point	10%
 	@@USE
 		time	1m
-		action	�R���|�X�g�ɓ����
-		name	�R���|�X�g�ɓ����
-		info	�Â��Ȃ����H�i���R���|�X�g�ɓ���C�͔�����܂�
-		ngmsg	�͔���Ɏ��s���܂���
-			use		1	�킩��
-			get		10	�͔�	30%	�㎿�͔̑삪�ł��܂���
+		action	コンポストに入れる
+		name	コンポストに入れる
+		info	古くなった食品をコンポストに入れ，堆肥を作ります
+		ngmsg	堆肥作りに失敗しました
+			use		1	わかめ
+			get		10	堆肥	30%	上質の堆肥ができました
 
 @@ITEM
 	no		25
-	type	�C�Y��
+	type	海産物
 	code	umi-kama
-	name	���܂ڂ�
-	info	�s���N�̂��܂ڂ��ł�
-	scale	�{
+	name	かまぼこ
+	info	ピンクのかまぼこです
+	scale	本
 	price	300
 	limit	1500/10
 	plus	4h
@@ -2091,20 +2091,20 @@
 	point	30%
 	@@USE
 		time	1m
-		action	�R���|�X�g�ɓ����
-		name	�R���|�X�g�ɓ����
-		info	�Â��Ȃ����H�i���R���|�X�g�ɓ���C�͔�����܂�
-		ngmsg	�͔���Ɏ��s���܂���
-			use		1	���܂ڂ�
-			get		10	�͔�	30%	�㎿�͔̑삪�ł��܂���
+		action	コンポストに入れる
+		name	コンポストに入れる
+		info	古くなった食品をコンポストに入れ，堆肥を作ります
+		ngmsg	堆肥作りに失敗しました
+			use		1	かまぼこ
+			get		10	堆肥	30%	上質の堆肥ができました
 
 @@ITEM
 	no		26
-	type	�C�Y��
+	type	海産物
 	code	umi-maruten
-	name	�ۓV
-	info	���݂̂���ۓV�ł�
-	scale	��
+	name	丸天
+	info	厚みのある丸天です
+	scale	枚
 	price	500
 	limit	1000/10
 	plus	6h
@@ -2112,20 +2112,20 @@
 	point	50%
 	@@USE
 		time	1m
-		action	�R���|�X�g�ɓ����
-		name	�R���|�X�g�ɓ����
-		info	�Â��Ȃ����H�i���R���|�X�g�ɓ���C�͔�����܂�
-		ngmsg	�͔���Ɏ��s���܂���
-			use		1	�ۓV
-			get		10	�͔�	35%	�㎿�͔̑삪�ł��܂���
+		action	コンポストに入れる
+		name	コンポストに入れる
+		info	古くなった食品をコンポストに入れ，堆肥を作ります
+		ngmsg	堆肥作りに失敗しました
+			use		1	丸天
+			get		10	堆肥	35%	上質の堆肥ができました
 
 @@ITEM
 	no		27
-	type	�C�Y��
+	type	海産物
 	code	umi-ebiten
-	name	���ѓV
-	info	�J���b�Ɨg���������т̓V�Ղ�ł�
-	scale	�C
+	name	えび天
+	info	カラッと揚がったえびの天ぷらです
+	scale	匹
 	price	600
 	limit	1000
 	plus	-1h
@@ -2133,20 +2133,20 @@
 	point	50%
 	@@USE
 		time	1m
-		action	�R���|�X�g�ɓ����
-		name	�R���|�X�g�ɓ����
-		info	�Â��Ȃ����H�i���R���|�X�g�ɓ���C�͔�����܂�
-		ngmsg	�͔���Ɏ��s���܂���
-			use		1	���ѓV
-			get		10	�͔�	35%	�㎿�͔̑삪�ł��܂���
+		action	コンポストに入れる
+		name	コンポストに入れる
+		info	古くなった食品をコンポストに入れ，堆肥を作ります
+		ngmsg	堆肥作りに失敗しました
+			use		1	えび天
+			get		10	堆肥	35%	上質の堆肥ができました
 
 @@ITEM
 	no		28
-	type	�C�Y��
+	type	海産物
 	code	umi-suke
-	name	�����Ƃ�����
-	info	���܂ڂ��̌����ɂȂ鋛�ŁC���͉��H�ł��܂�
-	scale	�C
+	name	すけとうだら
+	info	かまぼこの原料になる魚で，卵は加工できます
+	scale	匹
 	price	1000
 	limit	1000/10
 	base	500/5000
@@ -2154,20 +2154,20 @@
 	pop	9h
 	@@USE
 		time	1m
-		action	�R���|�X�g�ɓ����
-		name	�R���|�X�g�ɓ����
-		info	�Â��Ȃ����H�i���R���|�X�g�ɓ���C�͔�����܂�
-		ngmsg	�͔���Ɏ��s���܂���
-			use		1	�����Ƃ�����
-			get		10	�͔�	50%	�㎿�͔̑삪�ł��܂���
+		action	コンポストに入れる
+		name	コンポストに入れる
+		info	古くなった食品をコンポストに入れ，堆肥を作ります
+		ngmsg	堆肥作りに失敗しました
+			use		1	すけとうだら
+			get		10	堆肥	50%	上質の堆肥ができました
 
 @@ITEM
 	no		29
-	type	�C�Y��
+	type	海産物
 	code	umi-eso
-	name	����
-	info	�ۓV�̌����ɂȂ鋛�ł�
-	scale	�C
+	name	えそ
+	info	丸天の原料になる魚です
+	scale	匹
 	price	2000
 	limit	500/5
 	base	250/5000
@@ -2175,20 +2175,20 @@
 	pop	18h
 	@@USE
 		time	1m
-		action	�R���|�X�g�ɓ����
-		name	�R���|�X�g�ɓ����
-		info	�Â��Ȃ����H�i���R���|�X�g�ɓ���C�͔�����܂�
-		ngmsg	�͔���Ɏ��s���܂���
-			use		1	����
-			get		10	�͔�	50%	�㎿�͔̑삪�ł��܂���
+		action	コンポストに入れる
+		name	コンポストに入れる
+		info	古くなった食品をコンポストに入れ，堆肥を作ります
+		ngmsg	堆肥作りに失敗しました
+			use		1	えそ
+			get		10	堆肥	50%	上質の堆肥ができました
 
 @@ITEM
 	no		32
-	type	�C�Y��
+	type	海産物
 	code	umi-katuo
-	name	����
-	info	�������ǂ�i���΁j�̂������Ɍ������܂���
-	scale	�C
+	name	かつお
+	info	高級うどん（そば）のだし作りに欠かせません
+	scale	匹
 	price	2000
 	limit	500
 	base	250/5000
@@ -2197,20 +2197,20 @@
 	point	200%
 	@@USE
 		time	1m
-		action	�R���|�X�g�ɓ����
-		name	�R���|�X�g�ɓ����
-		info	�Â��Ȃ����H�i���R���|�X�g�ɓ���C�͔�����܂�
-		ngmsg	�͔���Ɏ��s���܂���
-			use		1	����
-			get		10	�͔�	50%	�㎿�͔̑삪�ł��܂���
+		action	コンポストに入れる
+		name	コンポストに入れる
+		info	古くなった食品をコンポストに入れ，堆肥を作ります
+		ngmsg	堆肥作りに失敗しました
+			use		1	かつお
+			get		10	堆肥	50%	上質の堆肥ができました
 
 @@ITEM
 	no		33
-	type	�C�Y��
+	type	海産物
 	code	umi-tyouzame
-	name	���傤����
-	info	�C�̕�ƌĂ΂�鋛�ł�
-	scale	�C
+	name	ちょうざめ
+	info	海の宝と呼ばれる魚です
+	scale	匹
 	price	8000
 	limit	100
 	base	250/5000
@@ -2219,19 +2219,19 @@
 	point	200%
 	@@USE
 		time	1m
-		action	�R���|�X�g�ɓ����
-		name	�R���|�X�g�ɓ����
-		info	�Â��Ȃ����H�i���R���|�X�g�ɓ���C�͔�����܂�
-		ngmsg	�͔���Ɏ��s���܂���
-			use		1	���傤����
-			get		10	�͔�	80%	�㎿�͔̑삪�ł��܂���
+		action	コンポストに入れる
+		name	コンポストに入れる
+		info	古くなった食品をコンポストに入れ，堆肥を作ります
+		ngmsg	堆肥作りに失敗しました
+			use		1	ちょうざめ
+			get		10	堆肥	80%	上質の堆肥ができました
 
 @@ITEM
 	no		30
-	type	�C�Y��
+	type	海産物
 	code	umi-mentai
-	name	�h�q�߂񂽂�
-	info	�����Ƃ�����̗����Ƃ����炵�`�ɒЂ����񂾁C���������̂ЂƂł�
+	name	辛子めんたい
+	info	すけとうだらの卵をとうがらし汁に漬けこんだ，博多名物のひとつです
 	scale	kg
 	price	3000
 	limit	300
@@ -2240,19 +2240,19 @@
 	pop	12h
 	@@USE
 		time	1m
-		action	�R���|�X�g�ɓ����
-		name	�R���|�X�g�ɓ����
-		info	�Â��Ȃ����H�i���R���|�X�g�ɓ���C�͔�����܂�
-		ngmsg	�͔���Ɏ��s���܂���
-			use		1	�h�q�߂񂽂�
-			get		10	�͔�	35%	�㎿�͔̑삪�ł��܂���
+		action	コンポストに入れる
+		name	コンポストに入れる
+		info	古くなった食品をコンポストに入れ，堆肥を作ります
+		ngmsg	堆肥作りに失敗しました
+			use		1	辛子めんたい
+			get		10	堆肥	35%	上質の堆肥ができました
 
 @@ITEM
 	no		31
-	type	�C�Y��
+	type	海産物
 	code	umi-kyabia
-	name	�L���r�A
-	info	�����_�C���ƌĂ΂�Ē��d�����C���傤���߂̗��ł�
+	name	キャビア
+	info	黒いダイヤと呼ばれて珍重される，ちょうざめの卵です
 	scale	kg
 	price	2000
 	limit	500
@@ -2261,614 +2261,614 @@
 	pop	8h
 	@@USE
 		time	1m
-		action	�R���|�X�g�ɓ����
-		name	�R���|�X�g�ɓ����
-		info	�Â��Ȃ����H�i���R���|�X�g�ɓ���C�͔�����܂�
-		ngmsg	�͔���Ɏ��s���܂���
-			use		1	�L���r�A
-			get		10	�͔�	35%	�㎿�͔̑삪�ł��܂���
+		action	コンポストに入れる
+		name	コンポストに入れる
+		info	古くなった食品をコンポストに入れ，堆肥を作ります
+		ngmsg	堆肥作りに失敗しました
+			use		1	キャビア
+			get		10	堆肥	35%	上質の堆肥ができました
 
 @@ITEM
 	no		34
-	type	���ǂ�
+	type	うどん
 	code	udon-su
-	name	�����ǂ�
-	info	�ʍD�݂̃V���v�����ǂ�
+	name	すうどん
+	info	通好みのシンプルうどん
 	price	500
 	limit	1000/0
 	pop	75m
 	point	40%
 	@@USE
 		time	5m
-		action	�H�ׂ�
-		name	�H�ׂ�
-		info	�M�X�̂��ǂ��H�ׂ܂�
-		okmsg	�ƂĂ��������������ł�
-			use		1	�����ǂ�
-			get		1	���ꂽ��
-			get		10	�X��	20%
+		action	食べる
+		name	食べる
+		info	熱々のうどんを食べます
+		okmsg	とても美味しかったです
+			use		1	すうどん
+			get		1	汚れた丼
+			get		10	店力	20%
 
 @@ITEM
 	no		35
-	type	���ǂ�
+	type	うどん
 	code	udon-wakame
-	name	�킩�߂��ǂ�
-	info	���̖т��w���V�[���ǂ�
+	name	わかめうどん
+	info	髪の毛つやつやヘルシーうどん
 	price	600
 	limit	1000/0
 	pop	90m
 	point	50%
 	@@USE
 		time	5m
-		action	�H�ׂ�
-		name	�H�ׂ�
-		info	�M�X�̂��ǂ��H�ׂ܂�
-		okmsg	�ƂĂ��������������ł�
-			use		1	�킩�߂��ǂ�
-			get		1	���ꂽ��
-			get		10	�X��	20%
+		action	食べる
+		name	食べる
+		info	熱々のうどんを食べます
+		okmsg	とても美味しかったです
+			use		1	わかめうどん
+			get		1	汚れた丼
+			get		10	店力	20%
 
 @@ITEM
 	no		36
-	type	���ǂ�
+	type	うどん
 	code	udon-kitune
-	name	���˂��ǂ�
-	info	���̂��݂��񂾖��g������i�̂��ǂ�
+	name	きつねうどん
+	info	味のしみこんだ油揚げが絶品のうどん
 	price	800
 	limit	1000/0
 	pop	120m
 	point	60%
 	@@USE
 		time	5m
-		action	�H�ׂ�
-		name	�H�ׂ�
-		info	�M�X�̂��ǂ��H�ׂ܂�
-		okmsg	�ƂĂ��������������ł�
-			use		1	���˂��ǂ�
-			get		1	���ꂽ��
-			get		10	�X��	20%
+		action	食べる
+		name	食べる
+		info	熱々のうどんを食べます
+		okmsg	とても美味しかったです
+			use		1	きつねうどん
+			get		1	汚れた丼
+			get		10	店力	20%
 
 @@ITEM
 	no		37
-	type	���ǂ�
+	type	うどん
 	code	udon-maruten
-	name	�ۓV���ǂ�
-	info	�H�׉����̂���ۓV���̂������ǂ�
+	name	丸天うどん
+	info	食べ応えのある丸天がのったうどん
 	price	1000
 	limit	1000/0
 	pop	120m
 	point	75%
 	@@USE
 		time	5m
-		action	�H�ׂ�
-		name	�H�ׂ�
-		info	�M�X�̂��ǂ��H�ׂ܂�
-		okmsg	�ƂĂ��������������ł�
-			use		1	�ۓV���ǂ�
-			get		1	���ꂽ��
-			get		10	�X��	20%
+		action	食べる
+		name	食べる
+		info	熱々のうどんを食べます
+		okmsg	とても美味しかったです
+			use		1	丸天うどん
+			get		1	汚れた丼
+			get		10	店力	20%
 
 @@ITEM
 	no		38
-	type	���ǂ�
+	type	うどん
 	code	udon-ebiten
-	name	���ѓV���ǂ�
-	info	������Ɨg���������т���C�̂������ǂ�
+	name	えび天うどん
+	info	からっと揚がったえびが二匹のったうどん
 	price	2000
 	limit	500/0
 	pop	240m
 	@@USE
 		time	5m
-		action	�H�ׂ�
-		name	�H�ׂ�
-		info	�M�X�̂��ǂ��H�ׂ܂�
-		okmsg	�ƂĂ��������������ł�
-			use		1	���ѓV���ǂ�
-			get		1	���ꂽ��
-			get		10	�X��	20%
+		action	食べる
+		name	食べる
+		info	熱々のうどんを食べます
+		okmsg	とても美味しかったです
+			use		1	えび天うどん
+			get		1	汚れた丼
+			get		10	店力	20%
 
 @@ITEM
 	no		39
-	type	���ǂ�
+	type	うどん
 	code	udon-zanmai
-	name	���ǂ�O��
-	info	�������߂��ǂ�O��Z�b�g
-	scale	�Z�b�g
+	name	うどん三昧
+	info	おすすめうどん三種セット
+	scale	セット
 	price	5000
 	limit	200
 	pop	8h
 	point	500%
 	@@USE
 		time	5m
-		action	�H�ׂ�
-		name	�H�ׂ�
-		info	�M�X�̂��ǂ��H�ׂ܂�
-		okmsg	�ƂĂ��������������ł�
-			use		1	���ǂ�O��
-			get		3	���ꂽ��
-			get		10	�X��	30%
+		action	食べる
+		name	食べる
+		info	熱々のうどんを食べます
+		okmsg	とても美味しかったです
+			use		1	うどん三昧
+			get		3	汚れた丼
+			get		10	店力	30%
 
 @@ITEM
 	no		40
-	type	���ǂ�
+	type	うどん
 	code	udon-kyabia
-	name	�L���r�A���ǂ�
-	info	���E�O�咿�����ǂ�̂ЂƂ�
+	name	キャビアうどん
+	info	世界三大珍味うどんのひとつ
 	price	7500
 	limit	120/0
 	pop	12h
 	@@USE
 		time	5m
-		action	�H�ׂ�
-		name	�H�ׂ�
-		info	�M�X�̂��ǂ��H�ׂ܂�
-		okmsg	�т����肷��قǔ������������ł�
-			use		1	�L���r�A���ǂ�
-			get		1	���ꂽ��
-			get		10	�X��	50%
+		action	食べる
+		name	食べる
+		info	熱々のうどんを食べます
+		okmsg	びっくりするほど美味しかったです
+			use		1	キャビアうどん
+			get		1	汚れた丼
+			get		10	店力	50%
 
 @@ITEM
 	no		41
-	type	���ǂ�
+	type	うどん
 	code	udon-toryuhu
-	name	�g�����t���ǂ�
-	info	���E�O�咿�����ǂ�̂ЂƂ�
+	name	トリュフうどん
+	info	世界三大珍味うどんのひとつ
 	price	8000
 	limit	120/0
 	pop	13h
 	@@USE
 		time	5m
-		action	�H�ׂ�
-		name	�H�ׂ�
-		info	�M�X�̂��ǂ��H�ׂ܂�
-		okmsg	�т����肷��قǔ������������ł�
-			use		1	�g�����t���ǂ�
-			get		1	���ꂽ��
-			get		10	�X��	50%
+		action	食べる
+		name	食べる
+		info	熱々のうどんを食べます
+		okmsg	びっくりするほど美味しかったです
+			use		1	トリュフうどん
+			get		1	汚れた丼
+			get		10	店力	50%
 
 @@ITEM
 	no		42
-	type	���ǂ�
+	type	うどん
 	code	udon-foagura
-	name	�t�H�A�O�����ǂ�
-	info	���E�O�咿�����ǂ�̂ЂƂ�
+	name	フォアグラうどん
+	info	世界三大珍味うどんのひとつ
 	price	10000
 	limit	100/0
 	pop	15h
 	@@USE
 		time	5m
-		action	�H�ׂ�
-		name	�H�ׂ�
-		info	�M�X�̂��ǂ��H�ׂ܂�
-		okmsg	�т����肷��قǔ������������ł�
-			use		1	�t�H�A�O�����ǂ�
-			get		1	���ꂽ��
-			get		10	�X��	50%
+		action	食べる
+		name	食べる
+		info	熱々のうどんを食べます
+		okmsg	びっくりするほど美味しかったです
+			use		1	フォアグラうどん
+			get		1	汚れた丼
+			get		10	店力	50%
 
 @@ITEM
 	no		43
-	type	���ǂ�
+	type	うどん
 	code	udon-hakata
-	name	�������ǂ�
-	info	�����̖��̓������ǂ�
+	name	博多うどん
+	info	博多の味の特製うどん
 	price	20000
 	limit	50
 	pop	25h
 	point	200%
 	@@USE
 		time	5m
-		action	�H�ׂ�
-		name	�H�ׂ�
-		info	�M�X�̂��ǂ��H�ׂ܂�
-		okmsg	�т����肷��قǔ������������ł�
-			use		1	�������ǂ�
-			get		1	���ꂽ��
-			get		10	�X��	70%
+		action	食べる
+		name	食べる
+		info	熱々のうどんを食べます
+		okmsg	びっくりするほど美味しかったです
+			use		1	博多うどん
+			get		1	汚れた丼
+			get		10	店力	70%
 
 @@ITEM
 	no		44
-	type	���ǂ�
+	type	うどん
 	code	udon-origi
-	name	�I���W�i�����ǂ�
-	info	�������߂č�����I���W�i�����ǂ�
+	name	オリジナルうどん
+	info	精魂込めて作ったオリジナルうどん
 	price	50000
 	limit	20/0
 	pop	60h
 	point	200%
 	@@USE
 		time	5m
-		action	�H�ׂ�
-		name	�H�ׂ�
-		info	�M�X�̂��ǂ��H�ׂ܂�
-		okmsg	���̂悤�ɔ������������ł�
-			use		1	�I���W�i�����ǂ�
-			get		1	���ꂽ��
-			get		20	�X��	50%
+		action	食べる
+		name	食べる
+		info	熱々のうどんを食べます
+		okmsg	夢のように美味しかったです
+			use		1	オリジナルうどん
+			get		1	汚れた丼
+			get		20	店力	50%
 
 @@ITEM
 	no		45
-	type	���ǂ�
+	type	うどん
 	code	udon-yami
-	name	�ł��ǂ�
-	info	�u���b�N�H�����������܂������ǂ�
+	name	闇うどん
+	info	ブラック工作員が作ったまずいうどん
 	price	100
 	limit	5000/0
 	pop	1h
 	point	-10%
 	@@USE
 		time	5m
-		action	�H�ׂ�
-		name	�H�ׂ�
-		info	�M�X�̂��ǂ��H�ׂ܂�
-		okmsg	�������ɂ����������Ƃ͂����܂���ł���
-			use		1	�ł��ǂ�
-			get		1	���ꂽ��
+		action	食べる
+		name	食べる
+		info	熱々のうどんを食べます
+		okmsg	お世辞にも美味しいとはいえませんでした
+			use		1	闇うどん
+			get		1	汚れた丼
 
 @@ITEM
 	no		46
-	type	����
+	type	そば
 	code	soba-kake
-	name	��������
-	info	�ʍD�݂̃V���v������
+	name	かけそば
+	info	通好みのシンプルそば
 	price	500
 	limit	1000/0
 	pop	75m
 	point	40%
 	@@USE
 		time	5m
-		action	�H�ׂ�
-		name	�H�ׂ�
-		info	�M�X�̂��΂�H�ׂ܂�
-		okmsg	�ƂĂ��������������ł�
-			use		1	��������
-			get		1	���ꂽ��
-			get		10	�X��	20%
+		action	食べる
+		name	食べる
+		info	熱々のそばを食べます
+		okmsg	とても美味しかったです
+			use		1	かけそば
+			get		1	汚れた丼
+			get		10	店力	20%
 
 @@ITEM
 	no		47
-	type	����
+	type	そば
 	code	soba-wakame
-	name	�킩�߂���
-	info	���̖т��w���V�[����
+	name	わかめそば
+	info	髪の毛つやつやヘルシーそば
 	price	600
 	limit	1000/0
 	pop	90m
 	point	50%
 	@@USE
 		time	5m
-		action	�H�ׂ�
-		name	�H�ׂ�
-		info	�M�X�̂��΂�H�ׂ܂�
-		okmsg	�ƂĂ��������������ł�
-			use		1	�킩�߂���
-			get		1	���ꂽ��
-			get		10	�X��	20%
+		action	食べる
+		name	食べる
+		info	熱々のそばを食べます
+		okmsg	とても美味しかったです
+			use		1	わかめそば
+			get		1	汚れた丼
+			get		10	店力	20%
 
 @@ITEM
 	no		48
-	type	����
+	type	そば
 	code	soba-kitune
-	name	���˂���
-	info	���̂��݂��񂾖��g������i�̂���
+	name	きつねそば
+	info	味のしみこんだ油揚げが絶品のそば
 	price	800
 	limit	1000/0
 	pop	120m
 	point	60%
 	@@USE
 		time	5m
-		action	�H�ׂ�
-		name	�H�ׂ�
-		info	�M�X�̂��΂�H�ׂ܂�
-		okmsg	�ƂĂ��������������ł�
-			use		1	���˂���
-			get		1	���ꂽ��
-			get		10	�X��	20%
+		action	食べる
+		name	食べる
+		info	熱々のそばを食べます
+		okmsg	とても美味しかったです
+			use		1	きつねそば
+			get		1	汚れた丼
+			get		10	店力	20%
 
 @@ITEM
 	no		49
-	type	����
+	type	そば
 	code	soba-maruten
-	name	�ۓV����
-	info	�H�׉����̂���ۓV���̂�������
+	name	丸天そば
+	info	食べ応えのある丸天がのったそば
 	price	1000
 	limit	1000/0
 	pop	120m
 	point	75%
 	@@USE
 		time	5m
-		action	�H�ׂ�
-		name	�H�ׂ�
-		info	�M�X�̂��΂�H�ׂ܂�
-		okmsg	�ƂĂ��������������ł�
-			use		1	�ۓV����
-			get		1	���ꂽ��
-			get		10	�X��	20%
+		action	食べる
+		name	食べる
+		info	熱々のそばを食べます
+		okmsg	とても美味しかったです
+			use		1	丸天そば
+			get		1	汚れた丼
+			get		10	店力	20%
 
 @@ITEM
 	no		50
-	type	����
+	type	そば
 	code	soba-ebiten
-	name	���ѓV����
-	info	������Ɨg���������т���C�̂�������
+	name	えび天そば
+	info	からっと揚がったえびが二匹のったそば
 	price	2000
 	limit	500/0
 	pop	240m
 	@@USE
 		time	5m
-		action	�H�ׂ�
-		name	�H�ׂ�
-		info	�M�X�̂��΂�H�ׂ܂�
-		okmsg	�ƂĂ��������������ł�
-			use		1	���ѓV����
-			get		1	���ꂽ��
-			get		10	�X��	20%
+		action	食べる
+		name	食べる
+		info	熱々のそばを食べます
+		okmsg	とても美味しかったです
+			use		1	えび天そば
+			get		1	汚れた丼
+			get		10	店力	20%
 
 @@ITEM
 	no		51
-	type	����
+	type	そば
 	code	soba-zanmai
-	name	���ΎO��
-	info	�������߂��ΎO��Z�b�g
-	scale	�Z�b�g
+	name	そば三昧
+	info	おすすめそば三種セット
+	scale	セット
 	price	5000
 	limit	200
 	pop	8h
 	point	500%
 	@@USE
 		time	5m
-		action	�H�ׂ�
-		name	�H�ׂ�
-		info	�M�X�̂��΂�H�ׂ܂�
-		okmsg	�ƂĂ��������������ł�
-			use		1	���ΎO��
-			get		3	���ꂽ��
-			get		10	�X��	30%
+		action	食べる
+		name	食べる
+		info	熱々のそばを食べます
+		okmsg	とても美味しかったです
+			use		1	そば三昧
+			get		3	汚れた丼
+			get		10	店力	30%
 
 @@ITEM
 	no		52
-	type	����
+	type	そば
 	code	soba-kyabia
-	name	�L���r�A����
-	info	���E�O�咿�����΂̂ЂƂ�
+	name	キャビアそば
+	info	世界三大珍味そばのひとつ
 	price	7500
 	limit	120/0
 	pop	12h
 	@@USE
 		time	5m
-		action	�H�ׂ�
-		name	�H�ׂ�
-		info	�M�X�̂��΂�H�ׂ܂�
-		okmsg	�т����肷��قǔ������������ł�
-			use		1	�L���r�A����
-			get		1	���ꂽ��
-			get		10	�X��	50%
+		action	食べる
+		name	食べる
+		info	熱々のそばを食べます
+		okmsg	びっくりするほど美味しかったです
+			use		1	キャビアそば
+			get		1	汚れた丼
+			get		10	店力	50%
 
 @@ITEM
 	no		53
-	type	����
+	type	そば
 	code	soba-toryuhu
-	name	�g�����t����
-	info	���E�O�咿�����΂̂ЂƂ�
+	name	トリュフそば
+	info	世界三大珍味そばのひとつ
 	price	8000
 	limit	120/0
 	pop	13h
 	@@USE
 		time	5m
-		action	�H�ׂ�
-		name	�H�ׂ�
-		info	�M�X�̂��΂�H�ׂ܂�
-		okmsg	�т����肷��قǔ������������ł�
-			use		1	�g�����t����
-			get		1	���ꂽ��
-			get		10	�X��	50%
+		action	食べる
+		name	食べる
+		info	熱々のそばを食べます
+		okmsg	びっくりするほど美味しかったです
+			use		1	トリュフそば
+			get		1	汚れた丼
+			get		10	店力	50%
 
 @@ITEM
 	no		54
-	type	����
+	type	そば
 	code	soba-foagura
-	name	�t�H�A�O������
-	info	���E�O�咿�����΂̂ЂƂ�
+	name	フォアグラそば
+	info	世界三大珍味そばのひとつ
 	price	10000
 	limit	100/0
 	pop	15h
 	@@USE
 		time	5m
-		action	�H�ׂ�
-		name	�H�ׂ�
-		info	�M�X�̂��΂�H�ׂ܂�
-		okmsg	�т����肷��قǔ������������ł�
-			use		1	�t�H�A�O������
-			get		1	���ꂽ��
-			get		10	�X��	50%
+		action	食べる
+		name	食べる
+		info	熱々のそばを食べます
+		okmsg	びっくりするほど美味しかったです
+			use		1	フォアグラそば
+			get		1	汚れた丼
+			get		10	店力	50%
 
 @@ITEM
 	no		55
-	type	����
+	type	そば
 	code	soba-hakata
-	name	��������
-	info	�����̖��̓�������
+	name	博多そば
+	info	博多の味の特製そば
 	price	20000
 	limit	50
 	pop	25h
 	point	200%
 	@@USE
 		time	5m
-		action	�H�ׂ�
-		name	�H�ׂ�
-		info	�M�X�̂��΂�H�ׂ܂�
-		okmsg	�т����肷��قǔ������������ł�
-			use		1	��������
-			get		1	���ꂽ��
-			get		10	�X��	70%
+		action	食べる
+		name	食べる
+		info	熱々のそばを食べます
+		okmsg	びっくりするほど美味しかったです
+			use		1	博多そば
+			get		1	汚れた丼
+			get		10	店力	70%
 
 @@ITEM
 	no		56
-	type	����
+	type	そば
 	code	soba-origi
-	name	�I���W�i������
-	info	�������߂č�����I���W�i������
+	name	オリジナルそば
+	info	精魂込めて作ったオリジナルそば
 	price	50000
 	limit	20/0
 	pop	60h
 	point	200%
 	@@USE
 		time	5m
-		action	�H�ׂ�
-		name	�H�ׂ�
-		info	�M�X�̂��΂�H�ׂ܂�
-		okmsg	���̂悤�ɔ������������ł�
-			use		1	�I���W�i������
-			get		1	���ꂽ��
-			get		20	�X��	50%
+		action	食べる
+		name	食べる
+		info	熱々のそばを食べます
+		okmsg	夢のように美味しかったです
+			use		1	オリジナルそば
+			get		1	汚れた丼
+			get		20	店力	50%
 
 @@ITEM
 	no		57
-	type	����
+	type	そば
 	code	soba-yami
-	name	�ł���
-	info	�u���b�N�H�����������܂�������
+	name	闇そば
+	info	ブラック工作員が作ったまずいそば
 	price	100
 	limit	5000/0
 	pop	1h
 	point	-10%
 	@@USE
 		time	5m
-		action	�H�ׂ�
-		name	�H�ׂ�
-		info	�M�X�̂��΂�H�ׂ܂�
-		okmsg	�������ɂ����������Ƃ͂����܂���ł���
-			use		1	�ł���
+		action	食べる
+		name	食べる
+		info	熱々のそばを食べます
+		okmsg	お世辞にも美味しいとはいえませんでした
+			use		1	闇そば
 
 @@ITEM
 	no		58
-	type	�c�[��
+	type	ツール
 	code	tool-tikara
-	name	�X��
-	info	�����Ƃ����Ƃ��ɐ^���𔭊����邩������Ȃ�[�݂�������]
-	scale	��
+	name	店力
+	info	いざというときに真価を発揮するかもしれない[みせぢから]
+	scale	力
 	price	0
 	limit	1000/0
 	pop		0
 	flag	noshowcase|norequest|notrash
 	@@use
 		time	10m
-		scale	��
-		action	���т�
-		name	���т�
-		info	�F������߂ēX�͂𓪂��痁�тĂ݂܂�
+		scale	回
+		action	浴びる
+		name	浴びる
+		info	祈りを込めて店力を頭から浴びてみます
 		arg		nocount
-			use		500	�X��
+			use		500	店力
 		func	_local_
-			my $ret='�F�肪�ʂ��ēX�͂��s�v�c�ȗ͂𔭊������悤�ł�';
+			my $ret='祈りが通じて店力が不思議な力を発揮したようです';
 
-			if ((rand(1000)<20) && !$DT->{item}[@@ITEMNO"�I���W�i�����ǂ񃌃V�s"-1])
+			if ((rand(1000)<20) && !$DT->{item}[@@ITEMNO"オリジナルうどんレシピ"-1])
 			{
-				AddItem(@@ITEMNO"�I���W�i�����ǂ񃌃V�s",1,"�˕��Ŕ��ł������؂���悭����ƁC�Ȃ�ƁI�ǂ����̓X�́u�I���W�i�����ǂ񃌃V�s�v�ł���");
-				WriteLog(0,$DT->{id},'�I���W�i�����ǂ񃌃V�s����ɓ���܂���');
+				AddItem(@@ITEMNO"オリジナルうどんレシピ",1,"突風で飛んできた紙切れをよく見ると，なんと！どこかの店の「オリジナルうどんレシピ」でした");
+				WriteLog(0,$DT->{id},'オリジナルうどんレシピを手に入れました');
 			}
-			elsif((rand(1000)<20) && !$DT->{item}[@@ITEMNO"�I���W�i�����΃��V�s"-1])
+			elsif((rand(1000)<20) && !$DT->{item}[@@ITEMNO"オリジナルそばレシピ"-1])
 			{
-				AddItem(@@ITEMNO"�I���W�i�����΃��V�s",1,"�˕��Ŕ��ł������؂���悭����ƁC�Ȃ�ƁI�ǂ����̓X�́u�I���W�i�����΃��V�s�v�ł���");
-				WriteLog(0,$DT->{id},'�I���W�i�����΃��V�s����ɓ���܂���');
+				AddItem(@@ITEMNO"オリジナルそばレシピ",1,"突風で飛んできた紙切れをよく見ると，なんと！どこかの店の「オリジナルそばレシピ」でした");
+				WriteLog(0,$DT->{id},'オリジナルそばレシピを手に入れました');
 			}
-			elsif ((rand(1000)<100) && ($DT->{item}[@@ITEMNO"��"-1]<=10))
+			elsif ((rand(1000)<100) && ($DT->{item}[@@ITEMNO"豚"-1]<=10))
 			{
-				AddItem(@@ITEMNO"��",10,"�쐶�̓؏W�c���X�ɔ�э���ł��܂���");
-				WriteLog(0,$DT->{id},'�؂���ɓ���܂���');
+				AddItem(@@ITEMNO"豚",10,"野生の豚集団が店に飛び込んできました");
+				WriteLog(0,$DT->{id},'豚を手に入れました');
 			}
-			elsif ((rand(1000)<100) && ($DT->{item}[@@ITEMNO"�����傤"-1]<=10))
+			elsif ((rand(1000)<100) && ($DT->{item}[@@ITEMNO"がちょう"-1]<=10))
 			{
-				AddItem(@@ITEMNO"�����傤",10,"�쐶�̂����傤�W�c���X�ɔ�э���ł��܂���");
-				WriteLog(0,$DT->{id},'�����傤����ɓ���܂���');
+				AddItem(@@ITEMNO"がちょう",10,"野生のがちょう集団が店に飛び込んできました");
+				WriteLog(0,$DT->{id},'がちょうを手に入れました');
 			}
-			elsif ((rand(1000)<100) && ($DT->{item}[@@ITEMNO"�Ƃ����炵"-1]<=500))
+			elsif ((rand(1000)<100) && ($DT->{item}[@@ITEMNO"とうがらし"-1]<=500))
 			{
-				AddItem(@@ITEMNO"�Ƃ����炵",500,"�����e�ʂ���Ƃ����炵�̏�������Ă��܂���");
-				WriteLog(0,$DT->{id},'�Ƃ����炵����ɓ���܂���');
+				AddItem(@@ITEMNO"とうがらし",500,"遠い親戚からとうがらしの小包が送ってきました");
+				WriteLog(0,$DT->{id},'とうがらしを手に入れました');
 			}
-			elsif((rand(1000)<100) && $DT->{item}[@@ITEMNO"�ɂ�Ƃ�"-1] && ($DT->{item}[@@ITEMNO"��"-1]<=2700))
+			elsif((rand(1000)<100) && $DT->{item}[@@ITEMNO"にわとり"-1] && ($DT->{item}[@@ITEMNO"卵"-1]<=2700))
 			{
-				AddItem(@@ITEMNO"��",$DT->{item}[@@ITEMNO"�ɂ�Ƃ�"-1]*10,"�����Ă���ɂ�Ƃ肪��Ăɗ���10���Y�݂܂���");
-				WriteLog(0,$DT->{id},'������ɓ���܂���');
+				AddItem(@@ITEMNO"卵",$DT->{item}[@@ITEMNO"にわとり"-1]*10,"飼っているにわとりが一斉に卵を10個ずつ産みました");
+				WriteLog(0,$DT->{id},'卵を手に入れました');
 			}
-			elsif((rand(1000)<100) && $DT->{item}[@@ITEMNO"��"-1] && ($DT->{item}[@@ITEMNO"�g�����t"-1]<=50))
+			elsif((rand(1000)<100) && $DT->{item}[@@ITEMNO"豚"-1] && ($DT->{item}[@@ITEMNO"トリュフ"-1]<=50))
 			{
-				AddItem(@@ITEMNO"�g�����t",$DT->{item}[@@ITEMNO"��"-1]*5,"�����Ă���؂��F�C�g�����t��5�����킦�Ă��܂���");
-				WriteLog(0,$DT->{id},'�g�����t����ɓ���܂���');
+				AddItem(@@ITEMNO"トリュフ",$DT->{item}[@@ITEMNO"豚"-1]*5,"飼っている豚が皆，トリュフを5個ずつくわえてきました");
+				WriteLog(0,$DT->{id},'トリュフを手に入れました');
 			}
-			elsif ((rand(1000)<100) && ($DT->{item}[@@ITEMNO"�u���b�N�H���"-1]<2))
+			elsif ((rand(1000)<100) && ($DT->{item}[@@ITEMNO"ブラック工作員"-1]<2))
 			{
-				AddItem(@@ITEMNO"�u���b�N�H���",1,"�u���b�N�H�������������X�ɓ����Ă��āC�ق��Ăق����ƌ����܂���");
-				WriteLog(0,$DT->{id},'�u���b�N�H�������ɓ���܂���');
+				AddItem(@@ITEMNO"ブラック工作員",1,"ブラック工作員がこっそり店に入ってきて，雇ってほしいと言いました");
+				WriteLog(0,$DT->{id},'ブラック工作員を手に入れました');
 			}
-			elsif((rand(1000)<20) && $DT->{user}->{udon} && ($DT->{user}->{udon}ne'�g���k�����ǂ�') && ($DT->{user}->{udon}ne'�n�C�p�[�O���[�g�t�c�n�m'))
+			elsif((rand(1000)<20) && $DT->{user}->{udon} && ($DT->{user}->{udon}ne'トンヌラうどん') && ($DT->{user}->{udon}ne'ハイパーグレートＵＤＯＮ'))
 			{
 				if (rand(1000)<500)
 				{
-					$ret.='<br>�ˑR�Ђ�߂��āC�J�������I���W�i�����ǂ�̖��O���u�g���k�����ǂ�v�ɕς��܂���<br>';
-					$DT->{user}->{udon}='�g���k�����ǂ�';
+					$ret.='<br>突然ひらめいて，開発したオリジナルうどんの名前を「トンヌラうどん」に変えました<br>';
+					$DT->{user}->{udon}='トンヌラうどん';
 				}
 				else
 				{
-					$ret.='<br>�ˑR�Ђ�߂��āC�J�������I���W�i�����ǂ�̖��O���u�n�C�p�[�O���[�g�t�c�n�m�v�ɕς��܂���<br>';
-					$DT->{user}->{udon}='�n�C�p�[�O���[�g�t�c�n�m';
+					$ret.='<br>突然ひらめいて，開発したオリジナルうどんの名前を「ハイパーグレートＵＤＯＮ」に変えました<br>';
+					$DT->{user}->{udon}='ハイパーグレートＵＤＯＮ';
 				}
-				WriteLog(0,$DT->{id},'�I���W�i�����ǂ�̖��O��ύX���܂���');
-				WriteLog(3,0,$DT->{shopname}.'�̓X�傪�X�͂𗁂тĂЂ�߂��C�I���W�i�����ǂ�̖��O��ύX�����悤�ł�');
+				WriteLog(0,$DT->{id},'オリジナルうどんの名前を変更しました');
+				WriteLog(3,0,$DT->{shopname}.'の店主が店力を浴びてひらめき，オリジナルうどんの名前を変更したようです');
 			}
-			elsif((rand(1000)<20) && $DT->{user}->{soba} && ($DT->{user}->{soba}ne'���̕n�R�E�o����') && ($DT->{user}->{soba}ne'�ʂ��Ђ��\�o'))
+			elsif((rand(1000)<20) && $DT->{user}->{soba} && ($DT->{user}->{soba}ne'愛の貧乏脱出そば') && ($DT->{user}->{soba}ne'ぬらりひょんソバ'))
 			{
 				if (rand(1000)<500)
 				{
-					$ret.='<br>�ˑR�Ђ�߂��āC�J�������I���W�i�����΂̖��O���u���̕n�R�E�o���΁v�ɕς��܂���<br>';
-					$DT->{user}->{soba}='���̕n�R�E�o����';
+					$ret.='<br>突然ひらめいて，開発したオリジナルそばの名前を「愛の貧乏脱出そば」に変えました<br>';
+					$DT->{user}->{soba}='愛の貧乏脱出そば';
 				}
 				else
 				{
-					$ret.='<br>�ˑR�Ђ�߂��āC�J�������I���W�i�����΂̖��O���u�ʂ��Ђ��\�o�v�ɕς��܂���<br>';
-					$DT->{user}->{soba}='�ʂ��Ђ��\�o';
+					$ret.='<br>突然ひらめいて，開発したオリジナルそばの名前を「ぬらりひょんソバ」に変えました<br>';
+					$DT->{user}->{soba}='ぬらりひょんソバ';
 				}
-				WriteLog(0,$DT->{id},'�I���W�i�����΂̖��O��ύX���܂���');
-				WriteLog(3,0,$DT->{shopname}.'�̓X�傪�X�͂𗁂тĂЂ�߂��C�I���W�i�����΂̖��O��ύX�����悤�ł�');
+				WriteLog(0,$DT->{id},'オリジナルそばの名前を変更しました');
+				WriteLog(3,0,$DT->{shopname}.'の店主が店力を浴びてひらめき，オリジナルそばの名前を変更したようです');
 			}
 			else
 			{
-				$ret.='<br>�X�͂ɂ���Ď��̃G�l���M�[����������C�����ł��鎞�Ԃ������܂���';
+				$ret.='<br>店力によって時のエネルギーが増幅され，活動できる時間が増えました';
 				my $cnt=int(rand(6))+5;
 				$DT->{time}-=3600*($cnt);
-				$ret.='�i�{'.($cnt).'���ԁj<br>';
-				WriteLog(0,$DT->{id},'�X�͂𓪂��痁�т����ʁC�������Ԃ������܂���');
+				$ret.='（＋'.($cnt).'時間）<br>';
+				WriteLog(0,$DT->{id},'店力を頭から浴びた結果，持ち時間が増えました');
 			}
 			return $ret;
 		_local_
 
 @@ITEM
 	no		59
-	type	�c�[��
+	type	ツール
 	code	tool-huku
-	name	�������⏕��
-	info	5����1�񒊑I���ł��܂�
-	scale	��
+	name	福引き補助券
+	info	5枚で1回抽選ができます
+	scale	枚
 	price	0
 	limit	1000/0
 	pop		0
 	@@USE
 		time	5m
-		action	������������
-		name	������������
-		info	�W�߂��������⏕���ŕ����������܂�
-		scale	��
-			use		5	�������⏕��
+		action	福引きをする
+		name	福引きをする
+		info	集めた福引き補助券で福引きをします
+		scale	回
+			use		5	福引き補助券
 		func	_local_
-			# ��������
+			# ★福引き
 			my $ret;
-			my $hit1=0; #��ɓ�������i�i�̌�
-			my $hit2=0; #��ɓ���1���i�i�̌�
-			my $hit3=0; #��ɓ���2���i�i�̌�
-			my $hit4=0; #��ɓ���3���i�i�̌�
-			my $hit5=0; #��ɓ���4���i�i�̌�
-			my $hit6=0; #��ɓ���5���i�i�̌�
-			my $hit7=0; #��ɓ���c�O�܂̌�
+			my $hit1=0; #手に入る特等景品の個数
+			my $hit2=0; #手に入る1等景品の個数
+			my $hit3=0; #手に入る2等景品の個数
+			my $hit4=0; #手に入る3等景品の個数
+			my $hit5=0; #手に入る4等景品の個数
+			my $hit6=0; #手に入る5等景品の個数
+			my $hit7=0; #手に入る残念賞の個数
 
 			foreach(1..$count)
 			{
@@ -2898,51 +2898,51 @@
 				}
 			}
 			$hit7=$count-($hit1+$hit2+$hit3+$hit4+$hit5+$hit6);
-			AddItem(83,$hit1,'�Ȃ�ƁI�����̋��̏����L��'.$hit1.'�񓖂���܂���') if ($hit1>=1);
-			AddItem(82,$hit2,'�Ȃ�ƁI1���̎����Ԃ�'.$hit2.'�񓖂���܂���') if ($hit2>=1);
-			AddItem(80,$hit3,'2���̐H��􂢋@��'.$hit3.'�񓖂���܂���') if ($hit3>=1);
-			AddItem(79,$hit4,'3���̎��]�Ԃ�'.$hit4.'�񓖂���܂���') if ($hit4>=1);
-			AddItem(67,$hit5,'4���̃q���g�u�b�N��'.$hit5.'�񓖂���܂���') if ($hit5>=1);
-			AddItem(66,$hit6,'5���̏��i����'.$hit6.'�񓖂���܂���') if ($hit6>=1);
-			AddItem(64,$hit7,'�c�O�܂̂��ꂢ�Ș���'.$hit7.'�񕪂ł�') if ($hit7>=1);
-			$ret='�������͂͂���܂���';
-			$ret='�������Ōi�i�𓖂Ă܂���' if ($hit7<$count);
+			AddItem(83,$hit1,'なんと！特等の金の招き猫が'.$hit1.'回当たりました') if ($hit1>=1);
+			AddItem(82,$hit2,'なんと！1等の自動車が'.$hit2.'回当たりました') if ($hit2>=1);
+			AddItem(80,$hit3,'2等の食器洗い機が'.$hit3.'回当たりました') if ($hit3>=1);
+			AddItem(79,$hit4,'3等の自転車が'.$hit4.'回当たりました') if ($hit4>=1);
+			AddItem(67,$hit5,'4等のヒントブックが'.$hit5.'回当たりました') if ($hit5>=1);
+			AddItem(66,$hit6,'5等の商品券が'.$hit6.'回当たりました') if ($hit6>=1);
+			AddItem(64,$hit7,'残念賞のきれいな丼が'.$hit7.'回分です') if ($hit7>=1);
+			$ret='福引きははずれました';
+			$ret='福引きで景品を当てました' if ($hit7<$count);
 			WriteLog(0,$DT->{id},$ret);
 			return $ret;
 		_local_
 
 @@ITEM
 	no		60
-	type	�c�[��
+	type	ツール
 	code	tool-udon
-	name	�I���W�i�����ǂ񃌃V�s
-	info	�I���W�i�����ǂ�̍����������Ă���܂�
-	scale	��
+	name	オリジナルうどんレシピ
+	info	オリジナルうどんの作り方が書いてあります
+	scale	枚
 	price	0
 	limit	1/0
 	pop		0
 	@@USE
 		time	1m
-		action	����
-		name	���V�s������
-		info	�I���W�i�����ǂ�̍ޗ��ƍ�����Y�ꂽ�Ƃ��̂��߂�
-		scale	��
+		action	見る
+		name	レシピを見る
+		info	オリジナルうどんの材料と作り方を忘れたときのために
+		scale	回
 		arg		nocount
-		ngmsg	�y�I���W�i�����ǂ�̍����z<br>�ޗ�<br>�E������<br>�E����<br>�E�����傤<br>�E�Ƃ����炵<br>�E���ꂢ�Ș�<br><br>����<br><b>�@�@�閧</b>
+		ngmsg	【オリジナルうどんの作り方】<br>材料<br>・小麦粉<br>・かつお<br>・がちょう<br>・とうがらし<br>・きれいな丼<br><br>作り方<br><b>　　秘密</b>
 	@@USE
 		time	4h
-		job		���ǂ�	times/job_udon_time_rate
-		action	�Ƃ������O�ɕς���
-		name	�I���W�i�����ǂ�̖��O��ς���
-		info	�I���W�i�����ǂ�̖��O��ύX���܂�
+		job		うどん屋	times/job_udon_time_rate
+		action	という名前に変える
+		name	オリジナルうどんの名前を変える
+		info	オリジナルうどんの名前を変更します
 		arg		nocount|message30
 		func	_local_
-			# �I���W�i�����ǂ�̖��O��ς���
-			main::OutError('�܂��I���W�i�����ǂ���J�����Ă�������') if !$DT->{user}->{udon};
-			main::OutError('���O�����Ă�������') if !$USE->{arg}->{message};
+			# オリジナルうどんの名前を変える
+			main::OutError('まずオリジナルうどんを開発してください') if !$DT->{user}->{udon};
+			main::OutError('名前をつけてください') if !$USE->{arg}->{message};
 			my $ret;
-			$ret='�I���W�i�����ǂ�̖��O���y'.$USE->{arg}->{message}.'�z�ɕύX���܂���';	
-			WriteLog(3,0,$DT->{shopname}."���I���W�i�����ǂ�̖��O��ς����悤�ł�");
+			$ret='オリジナルうどんの名前を【'.$USE->{arg}->{message}.'】に変更しました';	
+			WriteLog(3,0,$DT->{shopname}."がオリジナルうどんの名前を変えたようです");
 			WriteLog(0,$DT->{id},$ret);
 			$DT->{user}->{udon}=$USE->{arg}->{message};
 			return $ret;
@@ -2950,35 +2950,35 @@
 
 @@ITEM
 	no		61
-	type	�c�[��
+	type	ツール
 	code	tool-soba
-	name	�I���W�i�����΃��V�s
-	info	�I���W�i�����΂̍����������Ă���܂�
-	scale	��
+	name	オリジナルそばレシピ
+	info	オリジナルそばの作り方が書いてあります
+	scale	枚
 	price	0
 	limit	1/0
 	pop		0
 	@@USE
 		time	1m
-		action	����
-		name	���V�s������
-		info	�I���W�i�����΂̍ޗ��ƍ�����Y�ꂽ�Ƃ��̂��߂�
-		scale	��
+		action	見る
+		name	レシピを見る
+		info	オリジナルそばの材料と作り方を忘れたときのために
+		scale	回
 		arg		nocount
-		ngmsg	�y�I���W�i�����΂̍����z<br>�ޗ�<br>�E���Ε�<br>�E����<br>�E���傤����<br>�E���܂�<br>�E���ꂢ�Ș�<br><br>����<br><b>�@�@�閧</b>
+		ngmsg	【オリジナルそばの作り方】<br>材料<br>・そば粉<br>・かつお<br>・ちょうざめ<br>・たまご<br>・きれいな丼<br><br>作り方<br><b>　　秘密</b>
 	@@USE
 		time	4h
-		job		���Ή�	times/job_soba_time_rate
-		action	�Ƃ������O�ɕς���
-		name	�I���W�i�����΂̖��O��ς���
-		info	�I���W�i�����΂̖��O��ύX���܂�
+		job		そば屋	times/job_soba_time_rate
+		action	という名前に変える
+		name	オリジナルそばの名前を変える
+		info	オリジナルそばの名前を変更します
 		arg		nocount|message30
 		func	_local_
-			main::OutError('�܂��I���W�i�����΂��J�����Ă�������') if !$DT->{user}->{soba};
-			main::OutError('���O�����Ă�������') if !$USE->{arg}->{message};
+			main::OutError('まずオリジナルそばを開発してください') if !$DT->{user}->{soba};
+			main::OutError('名前をつけてください') if !$USE->{arg}->{message};
 			my $ret;
-			$ret='�I���W�i�����΂̖��O���y'.$USE->{arg}->{message}.'�z�ɕύX���܂���';	
-			WriteLog(3,0,$DT->{shopname}."���I���W�i�����΂̖��O��ς����悤�ł�");
+			$ret='オリジナルそばの名前を【'.$USE->{arg}->{message}.'】に変更しました';	
+			WriteLog(3,0,$DT->{shopname}."がオリジナルそばの名前を変えたようです");
 			WriteLog(0,$DT->{id},$ret);
 			$DT->{user}->{soba}=$USE->{arg}->{message};
 			return $ret;
@@ -2986,10 +2986,10 @@
 
 @@ITEM
 	no		62
-	type	�c�[��
+	type	ツール
 	code	tool-taihi
-	name	�͔�
-	info	���̔엿�ł�
+	name	堆肥
+	info	畑の肥料です
 	scale	kg
 	price	5
 	cost	0
@@ -3001,11 +3001,11 @@
 
 @@ITEM
 	no		63
-	type	�c�[��
+	type	ツール
 	code	tool-yogore
-	name	���ꂽ��
-	info	�g������̘��ł�
-	scale	��
+	name	汚れた丼
+	info	使った後の丼です
+	scale	個
 	price	10
 	cost	0
 	limit	10000/0
@@ -3013,11 +3013,11 @@
 
 @@ITEM
 	no		64
-	type	�c�[��
+	type	ツール
 	code	tool-kirei
-	name	���ꂢ�Ș�
-	info	���ꂢ�ɐ�������ł�
-	scale	��
+	name	きれいな丼
+	info	きれいに洗った丼です
+	scale	個
 	price	50
 	cost	10
 	limit	3000/2000
@@ -3027,11 +3027,11 @@
 
 @@ITEM
 	no		65
-	type	�c�[��
+	type	ツール
 	code	tool-takara
-	name	�󂭂�
-	info	�ꝺ����𖲌��ād
-	scale	��
+	name	宝くじ
+	info	一攫千金を夢見て‥
+	scale	枚
 	price	1000
 	cost	10
 	limit	100/20
@@ -3041,101 +3041,101 @@
 
 @@ITEM
 	no		66
-	type	�c�[��
+	type	ツール
 	code	tool-syou
-	name	���i��
-	info	��]�̏��i�ƌ����ł��܂�
-	scale	��
+	name	商品券
+	info	希望の商品と交換できます
+	scale	枚
 	price	5000
 	cost	10
 	limit	500/0
 	pop		0
 	@@USE
 		time	10m
-		action	��������
-		scale	��
-		name	�͔�ƌ�������
-		info	���i������]�̏��i�ƌ������܂�
-		okmsg	�͔����ɓ���܂���
-			use		1	���i��
-			get		250	�͔�
+		action	交換する
+		scale	回
+		name	堆肥と交換する
+		info	商品券を希望の商品と交換します
+		okmsg	堆肥を手に入れました
+			use		1	商品券
+			get		250	堆肥
 	@@USE
 		time	10m
-		action	��������
-		scale	��
-		name	���ꂢ�Ș��ƌ�������
-		info	���i������]�̏��i�ƌ������܂�
-		okmsg	���ꂢ�Ș�����ɓ���܂���
-			use		1	���i��
-			get		100	���ꂢ�Ș�
+		action	交換する
+		scale	回
+		name	きれいな丼と交換する
+		info	商品券を希望の商品と交換します
+		okmsg	きれいな丼を手に入れました
+			use		1	商品券
+			get		100	きれいな丼
 	@@USE
 		time	10m
-		action	��������
-		scale	��
-		name	�q���g�u�b�N�ƌ�������
-		info	���i������]�̏��i�ƌ������܂�
-		okmsg	�q���g�u�b�N����ɓ���܂���
-			use		2	���i��
-			get		1	�q���g�u�b�N
+		action	交換する
+		scale	回
+		name	ヒントブックと交換する
+		info	商品券を希望の商品と交換します
+		okmsg	ヒントブックを手に入れました
+			use		2	商品券
+			get		1	ヒントブック
 	@@USE
 		time	10m
-		action	��������
-		scale	��
-		name	�x��@�ƌ�������
-		info	���i������]�̏��i�ƌ������܂�
-		okmsg	�x��@����ɓ���܂���
-			use		40	���i��
-			get		1	�x��@
+		action	交換する
+		scale	回
+		name	警報機と交換する
+		info	商品券を希望の商品と交換します
+		okmsg	警報機を手に入れました
+			use		40	商品券
+			get		1	警報機
 	@@USE
 		time	10m
-		action	��������
-		scale	��
-		name	�����Ԃƌ�������
-		info	���i������]�̏��i�ƌ������܂�
-		okmsg	�����Ԃ���ɓ���܂���
-			use		100	���i��
-			get		1	������
+		action	交換する
+		scale	回
+		name	自動車と交換する
+		info	商品券を希望の商品と交換します
+		okmsg	自動車を手に入れました
+			use		100	商品券
+			get		1	自動車
 	@@USE
 		time	10m
-		action	��������
-		scale	��
-		name	���̏����L�ƌ�������
-		info	���i������]�̏��i�ƌ������܂�
-		okmsg	���̏����L����ɓ���܂���
-			use		200	���i��
-			get		1	���̏����L
+		action	交換する
+		scale	回
+		name	金の招き猫と交換する
+		info	商品券を希望の商品と交換します
+		okmsg	金の招き猫を手に入れました
+			use		200	商品券
+			get		1	金の招き猫
 	@@use
 		time	10m
-		scale	��
-		action	��������
-		name	��������
-		info	���i���������V���b�v�Ɉ�������Ă��炢�܂�
+		scale	枚
+		action	換金する
+		name	換金する
+		info	商品券を金券ショップに引き取ってもらいます
 		param	500,2500
-			use		1	���i��
+			use		1	商品券
 		func	_local_
 			my $ret;
 			if (rand(1000)<300)
 			{
 				$DT->{money}+=$USE->{param1}*$count;
-				$ret='�����V���b�v�̂��₶�ɔ����������ꂽ�悤�ł�<br>';
-				$ret.=GetMoneyString($USE->{param1}*$count).'�ň�������Ă��炢�܂���';
+				$ret='金券ショップのおやじに買いたたかれたようです<br>';
+				$ret.=GetMoneyString($USE->{param1}*$count).'で引き取ってもらいました';
 			}
 			else
 			{
 			$DT->{money}+=$USE->{param2}*$count;
-			$ret=GetMoneyString($USE->{param2}*$count).'�ň�������Ă��炢�܂���';
+			$ret=GetMoneyString($USE->{param2}*$count).'で引き取ってもらいました';
 			}
-			WriteLog(0,$DT->{id},"���i�����������܂���");
+			WriteLog(0,$DT->{id},"商品券を換金しました");
 			return $ret;
 		_local_
 
 @@ITEM
 	no		67
-	type	�c�[��
+	type	ツール
 	code	tool-hint
-	name	�q���g�u�b�N
-	info	<b>���ӁI����̃q���g��ǂނƃq���g�u�b�N�����ł��܂�</b>
-	scale	��
+	name	ヒントブック
+	info	<b>注意！★印のヒントを読むとヒントブックが消滅します</b>
+	scale	冊
 	price	10000
 	cost	10
 	limit	5/0
@@ -3143,142 +3143,142 @@
 	flag	noshowcase|norequest
 	@@USE
 		time	1m
-		action	�q���g��ǂ�
-		name	���߂Ă̕���
-		info	�܂�����������悢�̂��킩��Ȃ��ꍇ�̃q���g�ł�
+		action	ヒントを読む
+		name	初めての方へ
+		info	まず何をしたらよいのかわからない場合のヒントです
 		arg		nocount
-		ngmsg	�i�u�}���فv�����Ă���j<br><br>�_�v�����t��1�l�C�s�ꂩ���ꂩ��w�����Ă݂܂��傤�B<br>�i�ǂ�����Ȃ��ꍇ�́C�t���[�^�[�𔃂��Ĕ_�v�����t�ɂ��Ă��������j<br>���t�̏ꍇ�͂����ɒނ肪�n�߂��܂��B<br>�_�v�͔�����ɓ����ƁC���n�����邱�Ƃ��ł���悤�ɂȂ�܂��B<br>���n�������́u�k���O�̔��v�ɖ߂�C1���ɂ��͔�100kg��<br>�u�悭�k�������v�ɂ��邱�Ƃ��ł��C����ɂ�����x�̎��Ԍo�߂ɂ����<br>�����u���n��҂��v�ɕω����܂��B
+		ngmsg	（「図書館」を見てから）<br><br>農夫か漁師を1人，市場か相場から購入してみましょう。<br>（どちらもない場合は，フリーターを買って農夫か漁師にしてください）<br>漁師の場合はすぐに釣りが始められます。<br>農夫は畑を手に入れると，収穫をすることができるようになります。<br>収穫した畑は「耕す前の畑」に戻り，1反につき堆肥100kgで<br>「よく耕した畑」にすることができ，さらにある程度の時間経過によって<br>順次「収穫を待つ畑」に変化します。
 	@@USE
 		time	10m
-		action	�q���g��ǂ�
-		name	���t���[�^�[�̔閧
-		info	�l�ޔh���Ƃ��ɂ߂Ă݂�������
+		action	ヒントを読む
+		name	★フリーターの秘密
+		info	人材派遣業を極めてみたい方へ
 		arg		nocount
-		ngmsg	�E���ǂ�E�l�̏C�s������ɂ́C�t���[�^�[�Ə��������K�v�ł��B<br>�E���ΐE�l�̏C�s������ɂ́C�t���[�^�[�Ƃ��Ε����K�v�ł��B
-			use		1	�q���g�u�b�N
+		ngmsg	・うどん職人の修行をするには，フリーターと小麦粉が必要です。<br>・そば職人の修行をするには，フリーターとそば粉が必要です。
+			use		1	ヒントブック
 	@@USE
 		time	10m
-		action	�q���g��ǂ�
-		name	���_�v�̔閧
-		info	�_�Ƃ��ɂ߂Ă݂�������
+		action	ヒントを読む
+		name	★農夫の秘密
+		info	農業を極めてみたい方へ
 		arg		nocount
-		ngmsg	�E�G�T�œ�������Ă܂��傤�B�ɂ�Ƃ�Ƃ����傤�̃G�T�͂Ƃ����낱���C�؂̃G�T�͑哤�ł��B<br>�E��������������Ƃ��́C�ɂ�Ƃ�̐e���ɗ���������C�z�������邱�Ƃ��ł��܂��B<br>�i�z����҂��́C���Ԃ��o�߂���Ə����e���ɂȂ�܂��j<br>�E�ɂ�Ƃ���g�p����ƁC�����傤��؂Ǝ�肩���邱�Ƃ��ł��܂��B
-			use		1	�q���g�u�b�N
+		ngmsg	・エサで動物を育てましょう。にわとりとがちょうのエサはとうもろこし，豚のエサは大豆です。<br>・卵がいくつかあるときは，にわとりの親鳥に卵を抱かせ，孵化させることができます。<br>（孵化を待つ卵は，時間が経過すると順次親鳥になります）<br>・にわとりを使用すると，がちょうや豚と取りかえることができます。
+			use		1	ヒントブック
 	@@USE
 		time	10m
-		action	�q���g��ǂ�
-		name	�����t�̔閧
-		info	���Ƃ��ɂ߂Ă݂�������
+		action	ヒントを読む
+		name	★漁師の秘密
+		info	漁業を極めてみたい方へ
 		arg		nocount
-		ngmsg	�E���т���������p�ӂ���ƁC���ɏo����悤�ɂȂ�܂��B<br>�E�����Ƃ�����ƁC�Ƃ����炵����������΁C�h�q�߂񂽂������܂��B
-			use		1	�q���g�u�b�N
+		ngmsg	・えびをたくさん用意すると，漁に出られるようになります。<br>・すけとうだらと，とうがらしを準備すれば，辛子めんたいが作れます。
+			use		1	ヒントブック
 	@@USE
 		time	10m
-		action	�q���g��ǂ�
-		name	���V�Ղ�E�l�̔閧
-		info	�V�Ղ牮���ɂ߂Ă݂�������
+		action	ヒントを読む
+		name	★天ぷら職人の秘密
+		info	天ぷら屋を極めてみたい方へ
 		arg		nocount
-		ngmsg	�E�哤������g������邱�Ƃ��ł��܂��B<br>�E�����Ƃ����炩�炩�܂ڂ������܂��B<br>�E��������ۓV�����܂��B<br>�E���тƏ������C����p�ӂ���΁C���ѓV����邱�Ƃ��ł��܂��B
-			use		1	�q���g�u�b�N
+		ngmsg	・大豆から油揚げを作ることができます。<br>・すけとうだらからかまぼこが作れます。<br>・えそから丸天が作れます。<br>・えびと小麦粉，卵を用意すれば，えび天を作ることができます。
+			use		1	ヒントブック
 	@@USE
 		time	10m
-		action	�q���g��ǂ�
-		name	�����ǂ�E�l�̔閧
-		info	���ǂ񉮂��ɂ߂Ă݂�������
+		action	ヒントを読む
+		name	★うどん職人の秘密
+		info	うどん屋を極めてみたい方へ
 		arg		nocount
-		ngmsg	�E��邱�Ƃ̂ł��邤�ǂ�́C�W�����i�̈������Ɂu�����ǂ�v�u�킩�߂��ǂ�v�u���˂��ǂ�v<br>�u�ۓV���ǂ�v�u���ѓV���ǂ�v�u���ǂ�O���v�u�L���r�A���ǂ�v�u�g�����t���ǂ�v�u�t�H�A�O�����ǂ�v<br>�u�������ǂ�v�u�I���W�i�����ǂ�v��11��ނł��B<br>�E�����ǂ�̍ޗ��́C�������Ƃ˂��C���܂ڂ��Ƃ��ꂢ�Ș��ł��i���ǂ���̊�{�j�B<br>�E���ǂ�O���͓���̂��ǂ�3��ނ��C�Z�b�g�ɂ��邱�Ƃɂ���č��܂��B<br>�E�����Ȃ��ǂ�ɂ͂������K�v�Ȃ��̂������ł��B<br>�E�������ǂ�͓؍����ŁC���锎�������̊C�Y�����H�i���̂��Ă��܂��B
-			use		1	�q���g�u�b�N
+		ngmsg	・作ることのできるうどんは，標準価格の安い順に「すうどん」「わかめうどん」「きつねうどん」<br>「丸天うどん」「えび天うどん」「うどん三昧」「キャビアうどん」「トリュフうどん」「フォアグラうどん」<br>「博多うどん」「オリジナルうどん」の11種類です。<br>・すうどんの材料は，小麦粉とねぎ，かまぼこときれいな丼です（うどん作りの基本）。<br>・うどん三昧は特定のうどん3種類を，セットにすることによって作ります。<br>・高級なうどんにはかつおが必要なものが多いです。<br>・博多うどんは豚骨味で，ある博多名物の海産物加工品がのっています。
+			use		1	ヒントブック
 	@@USE
 		time	10m
-		action	�q���g��ǂ�
-		name	�����ΐE�l�̔閧
-		info	���Ή����ɂ߂Ă݂�������
+		action	ヒントを読む
+		name	★そば職人の秘密
+		info	そば屋を極めてみたい方へ
 		arg		nocount
-		ngmsg	�E��邱�Ƃ̂ł��邻�΂́C�W�����i�̈������Ɂu�������΁v�u�킩�߂��΁v�u���˂��΁v<br>�u�ۓV���΁v�u���ѓV���΁v�u���ΎO���v�u�L���r�A���΁v�u�g�����t���΁v�u�t�H�A�O�����΁v<br>�u�������΁v�u�I���W�i�����΁v��11��ނł��B<br>�E�������΂̍ޗ��́C���Ε��Ƃ˂��C���܂ڂ��Ƃ��ꂢ�Ș��ł��i���΍��̊�{�j�B<br>�E���ΎO���͓���̂���3��ނ��C�Z�b�g�ɂ��邱�Ƃɂ���č��܂��B<br>�E�����Ȃ��΂ɂ͂������K�v�Ȃ��̂������ł��B<br>�E�������΂͓؍����ŁC���锎�������̊C�Y�����H�i���̂��Ă��܂��B
-			use		1	�q���g�u�b�N
+		ngmsg	・作ることのできるそばは，標準価格の安い順に「かけそば」「わかめそば」「きつねそば」<br>「丸天そば」「えび天そば」「そば三昧」「キャビアそば」「トリュフそば」「フォアグラそば」<br>「博多そば」「オリジナルそば」の11種類です。<br>・かけそばの材料は，そば粉とねぎ，かまぼこときれいな丼です（そば作りの基本）。<br>・そば三昧は特定のそば3種類を，セットにすることによって作ります。<br>・高級なそばにはかつおが必要なものが多いです。<br>・博多そばは豚骨味で，ある博多名物の海産物加工品がのっています。
+			use		1	ヒントブック
 	@@USE
 		time	10m
-		action	�q���g��ǂ�
-		name	���֗����̔閧
-		info	�l�ޔh���Ƃ��ɂ߂Ă݂�������
+		action	ヒントを読む
+		name	★便利屋の秘密
+		info	人材派遣業を極めてみたい方へ
 		arg		nocount
-		ngmsg	�E�t���[�^�[���l�ޔh���̐��ƂɂȂ邱�Ƃɂ���āC�֗����̊e���Ǝ��Ԃ��Z���Ȃ�܂��B<br>�E�H��􂢋@����ɓ����ƁC�Z�����Ԃł�������̉��ꂽ�����􂦂�悤�ɂȂ�܂��B<br>�E���E�̊Ŕ����낷�ƁC���X���ԘJ�����x������܂��B
-			use		1	�q���g�u�b�N
+		ngmsg	・フリーターが人材派遣の専門家になることによって，便利屋の各種作業時間も短くなります。<br>・食器洗い機を手に入れると，短い時間でたくさんの汚れた丼が洗えるようになります。<br>・専門職の看板を下ろすと，商店会から慰労金が支給されます。
+			use		1	ヒントブック
 	@@USE
 		time	10m
-		action	�q���g��ǂ�
-		name	���u���b�N�H����̔閧
-		info	���ƋƂ��ɂ߂Ă݂�������
+		action	ヒントを読む
+		name	★ブラック工作員の秘密
+		info	裏家業を極めてみたい方へ
 		arg		nocount
-		ngmsg	�E���ꂽ����������x����ƁC�ł��ǂ�ƈł��΂���邱�Ƃ��ł��܂��B<br>�E�ł��ǂ�ƈł��΂��������񑵂��Ă���Ƃ��ɁC�X�͂���������΁C����ւ��������s�ł��܂��B<br>�E�����\�𗬂����߂ɂ́C�X�͂�100�K�v�ł��B<br>�E�u���b�N�H�����2�l���āC����ɓX�͂�100����Ǝ��ԑ�����s�����Ƃ��ł��܂��B<br>�i���ԑ���ɂ���āC�������Ԃ������_���ɑ������܂��j
-			use		1	�q���g�u�b�N
+		ngmsg	・汚れた丼がある程度あると，闇うどんと闇そばを作ることができます。<br>・闇うどんと闇そばがたくさん揃っているときに，店力が少しあれば，すり替え作戦を実行できます。<br>・悪い噂を流すためには，店力が100必要です。<br>・ブラック工作員が2人いて，さらに店力が100あると時間操作を行うことができます。<br>（時間操作によって，持ち時間がランダムに増加します）
+			use		1	ヒントブック
 	@@USE
 		time	1m
-		action	�q���g��ǂ�
-		name	��I�ɂ���
-		info	��I�̑����z�ƈێ���ɂ��Ă̐����ł�
+		action	ヒントを読む
+		name	陳列棚について
+		info	陳列棚の増改築と維持費についての説明です
 		arg		nocount
-		ngmsg	��I�̐���ς���ɂ́C�֗������g���܂��B<br>�������C�֗���1�l�ł͒�I���Q�܂ł������₷���Ƃ��ł����C<br>����ȏ㑝�₵�����Ƃ��ɂ́C�֗����̐��������ƕK�v�ł��B<br>��I�̈ێ���́C�I��������Ǝ���ɂ�����悤�ɂȂ��Ă��܂��B
+		ngmsg	陳列棚の数を変えるには，便利屋を使います。<br>ただし，便利屋1人では陳列棚を２つまでしか増やすことができず，<br>それ以上増やしたいときには，便利屋の数がもっと必要です。<br>陳列棚の維持費は，棚が増えると次第にかかるようになってきます。
 	@@USE
 		time	1m
-		action	�q���g��ǂ�
-		name	�X�͂ɂ���
-		info	�X�͂Ɋւ�������ł�
+		action	ヒントを読む
+		name	店力について
+		info	店力に関する説明です
 		arg		nocount
-		ngmsg	�X�́i�݂�������j�Ƃ́C���Y�I�ȍs�����Ƃ�����<br>���ǂ�₻�΂�H�ׂ邱�Ƃɂ���Ď�ɂ͂�����̂�<br>�u���b�N�H�������̏����L�ɂ���āC���̗͂��g�p���邱�Ƃ��ł��܂��B
+		ngmsg	店力（みせぢから）とは，生産的な行動をとったり<br>うどんやそばを食べることによって手にはいるもので<br>ブラック工作員や金の招き猫によって，その力を使用することができます。
 	@@USE
 		time	1m
-		action	�q���g��ǂ�
-		name	�I���W�i�����ǂ�i���΁j�ɂ���
-		info	�I���W�i�����ǂ�i���΁j�̍����̐����ł�
+		action	ヒントを読む
+		name	オリジナルうどん（そば）について
+		info	オリジナルうどん（そば）の作り方の説明です
 		arg		nocount
-		ngmsg	���ǂ�i���΁j�O���ƃI���W�i�����ǂ�i���΁j�������S��ނ̂��ǂ�i���΁j��1�t���p�ӂ���ƁC<br>���ǂ�i���΁j�E�l�̓I���W�i�����ǂ�i���΁j���J�����邱�Ƃ��ł���悤�ɂȂ�܂��B<br>�I���W�i�����ǂ�i���΁j�ɂ́C�D���Ȗ��O��t�����܂��B<br>���̖��O�̓V���E�E�C���h�E�i��I1�j�Ŕ̔������Ƃ��ɁC�����L���O���ɕ\������܂��B
+		ngmsg	うどん（そば）三昧とオリジナルうどん（そば）を除く全種類のうどん（そば）を1杯ずつ用意すると，<br>うどん（そば）職人はオリジナルうどん（そば）を開発することができるようになります。<br>オリジナルうどん（そば）には，好きな名前を付けられます。<br>この名前はショウウインドウ（陳列棚1）で販売したときに，ランキング中に表示されます。
 	@@USE
 		time	1m
-		action	�q���g��ǂ�
-		name	���ꂽ���ɂ���
-		info	���ꂽ���ɂ��Ă̐����ł�
+		action	ヒントを読む
+		name	汚れた丼について
+		info	汚れた丼についての説明です
 		arg		nocount
-		ngmsg	���ǂ�₻�΂������ƁC���ꂽ�����q�ɂɂ��܂��Ă��܂��B<br>�i���X�܂��甃��ꂽ�Ƃ��ɂ́C���͖߂��Ă��܂���j<br>�������C�ł��ǂ�ƈł��΂͗�O��<br>��ʎs�����u�܁C�܂����I�v�Ɠ{���������C����@�������Ă��܂��̂ł��B
+		ngmsg	うどんやそばが売れると，汚れた丼が倉庫にたまってきます。<br>（他店舗から買われたときには，丼は戻ってきません）<br>ただし，闇うどんと闇そばは例外で<br>一般市民も「ま，まずい！」と怒ったうえ，丼を叩き割ってしまうのです。
 	@@USE
 		time	1m
-		action	�q���g��ǂ�
-		name	�q���g�u�b�N�ɂ���
-		info	�q���g�u�b�N�̎�ɓ�����Ɋւ�������ł�
+		action	ヒントを読む
+		name	ヒントブックについて
+		info	ヒントブックの手に入れ方に関する説明です
 		arg		nocount
-		ngmsg	�q���g�u�b�N�́C���i���ƌ����ł��܂��B<br>���i���͌��Z���̏ܕi�Ƃ��Ă��炦�邱�Ƃ�����܂��B<br>�܂��C�q���g�u�b�N�͕������̌i�i�œ����邱�Ƃ�����܂��B<br>�������⏕���́C�s��Ŕ�����������Ƃ��炦�邱�Ƃ�����܂��B
+		ngmsg	ヒントブックは，商品券と交換できます。<br>商品券は決算時の賞品としてもらえることがあります。<br>また，ヒントブックは福引きの景品で当たることもあります。<br>福引き補助券は，市場で買い物をするともらえることがあります。
 	@@use
 		time	10m
-		scale	��
-		action	��������
-		name	��������
-		info	�q���g�u�b�N�������V���b�v�Ɉ�������Ă��炢�܂�
+		scale	冊
+		action	換金する
+		name	換金する
+		info	ヒントブックを金券ショップに引き取ってもらいます
 		param	1000,5000
-			use		1	�q���g�u�b�N
+			use		1	ヒントブック
 		func	_local_
 			my $ret;
 			if (rand(1000)<300)
 			{
 				$DT->{money}+=$USE->{param1}*$count;
-				$ret='�����V���b�v�̂��₶�ɔ����������ꂽ�悤�ł�<br>';
-				$ret.=GetMoneyString($USE->{param1}*$count).'�ň�������Ă��炢�܂���';
+				$ret='金券ショップのおやじに買いたたかれたようです<br>';
+				$ret.=GetMoneyString($USE->{param1}*$count).'で引き取ってもらいました';
 			}
 			else
 			{
 			$DT->{money}+=$USE->{param2}*$count;
-			$ret=GetMoneyString($USE->{param2}*$count).'�ň�������Ă��炢�܂���';
+			$ret=GetMoneyString($USE->{param2}*$count).'で引き取ってもらいました';
 			}
-			WriteLog(0,$DT->{id},"�q���g�u�b�N���������܂���");
+			WriteLog(0,$DT->{id},"ヒントブックを換金しました");
 			return $ret;
 		_local_
 
 @@ITEM
 	no		68
-	type	�c�[��
+	type	ツール
 	code	tool-paintr
-	name	�Ԃ̓h��
-	info	�i�g�p�ł��Ȃ��A�C�e���ł��B�j�����Ă��������j
-	scale	��
+	name	赤の塗料
+	info	（使用できないアイテムです。破棄してください）
+	scale	缶
 	price	10000
 	cost	100
 	limit	1/0
@@ -3286,11 +3286,11 @@
 
 @@ITEM
 	no		69
-	type	�c�[��
+	type	ツール
 	code	tool-paintb
-	name	�̓h��
-	info	�i�g�p�ł��Ȃ��A�C�e���ł��B�j�����Ă��������j
-	scale	��
+	name	青の塗料
+	info	（使用できないアイテムです。破棄してください）
+	scale	缶
 	price	10000
 	cost	100
 	limit	1/0
@@ -3298,11 +3298,11 @@
 
 @@ITEM
 	no		70
-	type	�c�[��
+	type	ツール
 	code	tool-painto
-	name	�I�����W�̓h��
-	info	�i�g�p�ł��Ȃ��A�C�e���ł��B�j�����Ă��������j
-	scale	��
+	name	オレンジの塗料
+	info	（使用できないアイテムです。破棄してください）
+	scale	缶
 	price	10000
 	cost	100
 	limit	1/0
@@ -3310,11 +3310,11 @@
 
 @@ITEM
 	no		71
-	type	�c�[��
+	type	ツール
 	code	tool-painty
-	name	���F�̓h��
-	info	�i�g�p�ł��Ȃ��A�C�e���ł��B�j�����Ă��������j
-	scale	��
+	name	黄色の塗料
+	info	（使用できないアイテムです。破棄してください）
+	scale	缶
 	price	10000
 	cost	100
 	limit	1/0
@@ -3322,11 +3322,11 @@
 
 @@ITEM
 	no		72
-	type	�c�[��
+	type	ツール
 	code	tool-paintg
-	name	�΂̓h��
-	info	�i�g�p�ł��Ȃ��A�C�e���ł��B�j�����Ă��������j
-	scale	��
+	name	緑の塗料
+	info	（使用できないアイテムです。破棄してください）
+	scale	缶
 	price	10000
 	cost	100
 	limit	1/0
@@ -3334,11 +3334,11 @@
 
 @@ITEM
 	no		73
-	type	�c�[��
+	type	ツール
 	code	tool-paintp
-	name	�s���N�̓h��
-	info	�i�g�p�ł��Ȃ��A�C�e���ł��B�j�����Ă��������j
-	scale	��
+	name	ピンクの塗料
+	info	（使用できないアイテムです。破棄してください）
+	scale	缶
 	price	10000
 	cost	100
 	limit	1/0
@@ -3346,11 +3346,11 @@
 
 @@ITEM
 	no		74
-	type	�c�[��
+	type	ツール
 	code	tool-painte
-	name	���̓h��
-	info	�i�g�p�ł��Ȃ��A�C�e���ł��B�j�����Ă��������j
-	scale	��
+	name	紫の塗料
+	info	（使用できないアイテムです。破棄してください）
+	scale	缶
 	price	10000
 	cost	100
 	limit	1/0
@@ -3358,11 +3358,11 @@
 
 @@ITEM
 	no		75
-	type	�c�[��
+	type	ツール
 	code	tool-paintk
-	name	���̓h��
-	info	�i�g�p�ł��Ȃ��A�C�e���ł��B�j�����Ă��������j
-	scale	��
+	name	黒の塗料
+	info	（使用できないアイテムです。破棄してください）
+	scale	缶
 	price	10000
 	cost	100
 	limit	1/0
@@ -3370,11 +3370,11 @@
 
 @@ITEM
 	no		76
-	type	�c�[��
+	type	ツール
 	code	tool-hatakea
-	name	�k���O�̔�
-	info	�엿�������Ղ�^���܂��傤
-	scale	��
+	name	耕す前の畑
+	info	肥料をたっぷり与えましょう
+	scale	反
 	price	5000
 	limit	40/2
 	plus	1d
@@ -3383,39 +3383,39 @@
 
 @@ITEM
 	no		77
-	type	�c�[��
+	type	ツール
 	code	tool-hatakeb
-	name	�悭�k������
-	info	���΂炭����Ǝ��n�ł���悤�ɂȂ�܂�
-	scale	��
+	name	よく耕した畑
+	info	しばらくすると収穫できるようになります
+	scale	反
 	price	10000
 	limit	20/0
 	pop		1d
 	flag	noshowcase|onlysend
 	funct	_local_
 		my($ITEM,@DT)=@_;
-		my $birth_per_day=40;  # 1���Ɏ��n��҂���40�ɂȂ�m���̐ݒ�
-		my $val          =1;  # ��x�Ɏ��n��҂��ɂȂ��{��
+		my $birth_per_day=40;  # 1日に収穫を待つ畑が40になる確率の設定
+		my $val          =1;  # 一度に収穫を待つ畑になる基本数
 		
-		my $birth_rate=$birth_per_day && (86400/$birth_per_day); # 0�Ŋ���̂�j�~
+		my $birth_rate=$birth_per_day && (86400/$birth_per_day); # 0で割るのを阻止
 		foreach my $DT (@DT)
 		{
-			next if !$DT->{item}[@@ITEMNO"�悭�k������"-1];
-			if(rand($birth_rate)<$TIMESPAN) # 1�X�܂ɂ��u1����$birth_per_day��v�̊m���ŏ������^�ɂȂ�(�n�Y�c)
+			next if !$DT->{item}[@@ITEMNO"よく耕した畑"-1];
+			if(rand($birth_rate)<$TIMESPAN) # 1店舗につき「1日に$birth_per_day回」の確率で条件が真になる(ハズ…)
 			{
-				UseItemSub(@@ITEMNO"�悭�k������",$val,$DT);
-				AddItemSub(@@ITEMNO"���n��҂�",$val,$DT);
+				UseItemSub(@@ITEMNO"よく耕した畑",$val,$DT);
+				AddItemSub(@@ITEMNO"収穫を待つ畑",$val,$DT);
 			}
 		}
 	_local_ 
 
 @@ITEM
 	no		78
-	type	�c�[��
+	type	ツール
 	code	tool-hatakec
-	name	���n��҂�
-	info	���낢��Ȏ��n�������҂ł������ł�
-	scale	��
+	name	収穫を待つ畑
+	info	いろいろな収穫物が期待できそうです
+	scale	反
 	price	20000
 	limit	20/0
 	pop		1d
@@ -3423,11 +3423,11 @@
 
 @@ITEM
 	no		79
-	type	�c�[��
+	type	ツール
 	code	tool-ziten
-	name	���]��
-	info	��������������Ɗy�ɂȂ�܂�
-	scale	��
+	name	自転車
+	info	買い物がちょっと楽になります
+	scale	台
 	price	30000
 	cost	1000
 	limit	1/0.5
@@ -3437,11 +3437,11 @@
 
 @@ITEM
 	no		80
-	type	�c�[��
+	type	ツール
 	code	tool-syokki
-	name	�H��􂢋@
-	info	�H��􂢂��葁���ł��܂�
-	scale	��
+	name	食器洗い機
+	info	食器洗いが手早くできます
+	scale	台
 	price	100000
 	cost	3000
 	limit	1/0.8
@@ -3451,11 +3451,11 @@
 
 @@ITEM
 	no		81
-	type	�c�[��
+	type	ツール
 	code	tool-keihou
-	name	�x��@
-	info	�X�̈��S�΍�Ɂd
-	scale	��
+	name	警報機
+	info	店の安全対策に‥
+	scale	台
 	price	200000
 	cost	5000
 	limit	1/0.5
@@ -3465,11 +3465,11 @@
 
 @@ITEM
 	no		82
-	type	�c�[��
+	type	ツール
 	code	tool-kuruma
-	name	������
-	info	�����������Ȃ�y�ɂȂ�܂�
-	scale	��
+	name	自動車
+	info	買い物がかなり楽になります
+	scale	台
 	price	500000
 	cost	5000
 	limit	1/0.3
@@ -3479,11 +3479,11 @@
 
 @@ITEM
 	no		83
-	type	�c�[��
+	type	ツール
 	code	tool-neko
-	name	���̏����L
-	info	�X�̎��_�ł�
-	scale	��
+	name	金の招き猫
+	info	店の守り神です
+	scale	体
 	price	1000000
 	cost	1000
 	limit	1/0.2
@@ -3492,11 +3492,11 @@
 	flag	noshowcase|onlysend
 	@@use
 		time	3m
-		scale	��
-		action	�q��
-		name	�q��
-		info	�����ɐ�������āC���̏����L��q�݂܂�
-			use		1	�X��
+		scale	回
+		action	拝む
+		name	拝む
+		info	商売繁盛を願って，金の招き猫を拝みます
+			use		1	店力
 		func	_local_
 			my $val=$count;
 			my $ret="";
@@ -3505,20 +3505,20 @@
 			{
 				$DT->{rank}-=$count*2;
 				$DT->{rank}=0 if $DT->{rank}<0;
-				WriteLog(2,0,$DT->{shopname}.'�̓X�傪�C�������āC�~�}�Ԃŉ^�΂�܂����B');
-				WriteLog(2,0,'��x��'.$count.'������̏����L��q�ނȂ�āC���C�̍����ł͂���܂���B');
-				$ret="�d�C���t������a�@�̃x�b�h�̏�ł���";
+				WriteLog(2,0,$DT->{shopname}.'の店主が気を失って，救急車で運ばれました。');
+				WriteLog(2,0,'一度に'.$count.'回も金の招き猫を拝むなんて，正気の沙汰ではありません。');
+				$ret="‥気が付いたら病院のベッドの上でした";
 			}
 			elsif($count>=20)
 			{
-				$ret='�n�����N�����Ă��܂��܂����@��x��'.$count.'��͔q�݉߂��ł��B';
+				$ret='貧血を起こしてしまいました　一度に'.$count.'回は拝み過ぎです。';
 				WriteLog(0,$DT->{id},$ret);
 			}
 			else
 			{
 				$DT->{rank}+=int(rand($count+1))+$count;
 				$DT->{rank}=10000 if $DT->{rank}>10000;
-				$ret='���̏����L��q��ŁC�����������������ɂ����C�����܂����B';
+				$ret='金の招き猫を拝んで，今日も商売が順調にいく気がしました。';
 				WriteLog(0,$DT->{id},$ret);
 			}
 			return $ret;
@@ -3530,14 +3530,14 @@
 	plustime	0h
 	code		loto
 	startfunc	loto
-	info		�󂭂����I
+	info		宝くじ抽選
 
 @@EVENT
 	start		30%
 	basetime	0h
 	plustime	0h
 	code		luckyneko
-	info		���̏����L�̏��^
+	info		金の招き猫の招運
 	startfunc	_local_(200)
 		my($hitproba)=@_;
 		
@@ -3545,16 +3545,16 @@
 		{
 			next if rand(1000)>$hitproba;
 			{
-			foreach my $itemno (@@ITEMNO"���̏����L")
+			foreach my $itemno (@@ITEMNO"金の招き猫")
 			{			
-			if ($DT->{item}[@@ITEMNO"���̏����L"-1])
+			if ($DT->{item}[@@ITEMNO"金の招き猫"-1])
 			{
-				$DT->{item}[@@ITEMNO"���̏����L"-1]=0;
+				$DT->{item}[@@ITEMNO"金の招き猫"-1]=0;
 				my $up=int(1000*(2-$DT->{rank}/5000));
 				$DT->{rank}+=$up;
 				$DT->{rank}=10000 if $DT->{rank}>10000;
-				WriteLog(2,0,$DT->{shopname}."�̋��̏����L���C���X�ɍK�^�������炵�V�ɏ����Ă����܂����B");
-				WriteLog(0,$DT->{id},"���̏����L�̕s�v�c�ȗ͂ŁC���X�̐l�C��".int($up/100)."%�オ��܂���");			}
+				WriteLog(2,0,$DT->{shopname}."の金の招き猫が，お店に幸運をもたらし天に昇っていきました。");
+				WriteLog(0,$DT->{id},"金の招き猫の不思議な力で，お店の人気が".int($up/100)."%上がりました");			}
 			}		
 			}
 		}
@@ -3566,7 +3566,7 @@
 	basetime	0h
 	plustime	0h
 	code		yogoredon
-	info		���ꂽ���̈��L
+	info		汚れた丼の悪臭
 	startfunc	_local_(500)
 		my($hitproba)=@_;
 		
@@ -3574,28 +3574,28 @@
 		{
 			next if rand(1000)>$hitproba;
 			{
-			foreach my $itemno (@@ITEMNO"���ꂽ��")
+			foreach my $itemno (@@ITEMNO"汚れた丼")
 			{			
-			if ($DT->{item}[@@ITEMNO"���ꂽ��"-1]>=1000)
+			if ($DT->{item}[@@ITEMNO"汚れた丼"-1]>=1000)
 			{
 				my $down=int($DT->{rank}/5);
 				$DT->{rank}-=$down;
 				$DT->{rank}=0 if $DT->{rank}<0;
-				WriteLog(2,0,$DT->{shopname}."�ɂ��܂��Ă��鉘�ꂽ�����爫�L���������C�X�̐l�C��������܂����B");
-				WriteLog(0,$DT->{id},"���ꂽ���̂����ŁC���X�̐l�C��".int($down/100)."%������܂���");			}
+				WriteLog(2,0,$DT->{shopname}."にたまっている汚れた丼から悪臭が発生し，店の人気が下がりました。");
+				WriteLog(0,$DT->{id},"汚れた丼のせいで，お店の人気が".int($down/100)."%下がりました");			}
 			}		
 			}
 		}
 		return 0;
 	_local_
 
-# �I���W�i�����ǂ�Ől�C�A�b�v
+# オリジナルうどんで人気アップ
 @@EVENT
 	start		50%
 	basetime	0h
 	plustime	0h
 	code		udonpop
-	info		�I���W�i�����ǂ�l�C����
+	info		オリジナルうどん人気沸騰
 	startfunc	_local_
 		foreach(reverse(@DT))
 		{
@@ -3605,19 +3605,19 @@
 			my $up=int(300*(2-$_->{rank}/5000));
 			$_->{rank}+=$up;
 			$_->{rank}=10000 if $_->{rank}>10000;
-			return (0,$_->{shopname}.'�������ǂ�u'.$_->{user}->{udon}.'�v���J�ŉ\�ɂȂ�C�X�̑O�͊��҂ɋ���c��܂����q�ł����ς��ł��B') ;
+			return (0,$_->{shopname}.'特製うどん「'.$_->{user}->{udon}.'」が巷で噂になり，店の前は期待に胸を膨らませた客でいっぱいです。') ;
 			}
 		}
 		return 0;
 	_local_
 
-# �I���W�i�����΂Ől�C�A�b�v
+# オリジナルそばで人気アップ
 @@EVENT
 	start		50%
 	basetime	0h
 	plustime	0h
 	code		sobapop
-	info		�I���W�i�����ΐl�C����
+	info		オリジナルそば人気沸騰
 	startfunc	_local_
 		foreach(reverse(@DT))
 		{
@@ -3627,7 +3627,7 @@
 			my $up=int(300*(2-$_->{rank}/5000));
 			$_->{rank}+=$up;
 			$_->{rank}=10000 if $_->{rank}>10000;
-			return (0,$_->{shopname}.'�������΁u'.$_->{user}->{soba}.'�v���l�C�������C�\�𕷂������q���X�̑O�ɍs��������Ă��܂��B') ;
+			return (0,$_->{shopname}.'特製そば「'.$_->{user}->{soba}.'」が人気沸騰し，噂を聞きつけた客が店の前に行列をつくっています。') ;
 			}
 		}
 		return 0;
@@ -3638,7 +3638,7 @@
 	basetime	0h
 	plustime	0h
 	code		syokkiarai
-	info		�H��􂢋@�̎���
+	info		食器洗い機の寿命
 	startfunc	_local_(100)
 		my($hitproba)=@_;
 		
@@ -3646,12 +3646,12 @@
 		{			
 			next if rand(1000)>$hitproba;
 			{
-			foreach my $itemno (@@ITEMNO"�H��􂢋@")
+			foreach my $itemno (@@ITEMNO"食器洗い機")
 			{
-				if ($DT->{item}[@@ITEMNO"�H��􂢋@"-1]==1)					{
-				$DT->{item}[@@ITEMNO"�H��􂢋@"-1]=0;
-				WriteLog(2,0,$DT->{shopname}."�̐H��􂢋@���̏Ⴕ���悤�ł��B");
-				WriteLog(0,$DT->{id},"�̏Ⴕ���H��􂢋@��p�����܂���");
+				if ($DT->{item}[@@ITEMNO"食器洗い機"-1]==1)					{
+				$DT->{item}[@@ITEMNO"食器洗い機"-1]=0;
+				WriteLog(2,0,$DT->{shopname}."の食器洗い機が故障したようです。");
+				WriteLog(0,$DT->{id},"故障した食器洗い機を廃棄しました");
 				}
 			}
 			}
@@ -3664,7 +3664,7 @@
 	basetime	0h
 	plustime	0h
 	code		haisya
-	info		�p��
+	info		廃車
 	startfunc	_local_(100)
 		my($hitproba)=@_;
 		
@@ -3672,12 +3672,12 @@
 		{			
 			next if rand(1000)>$hitproba;
 			{
-			foreach my $itemno (@@ITEMNO"������")
+			foreach my $itemno (@@ITEMNO"自動車")
 			{
-				if ($DT->{item}[@@ITEMNO"������"-1]==1)	{
-				$DT->{item}[@@ITEMNO"������"-1]=0;
-				WriteLog(2,0,$DT->{shopname}."���̏�̑��������Ԃ�p�Ԃ����悤�ł��B");
-				WriteLog(0,$DT->{id},"�����Ԃ�p�Ԃ��܂���");
+				if ($DT->{item}[@@ITEMNO"自動車"-1]==1)	{
+				$DT->{item}[@@ITEMNO"自動車"-1]=0;
+				WriteLog(2,0,$DT->{shopname}."が故障の多い自動車を廃車したようです。");
+				WriteLog(0,$DT->{id},"自動車を廃車しました");
 				}
 			}
 			}
@@ -3685,18 +3685,18 @@
 		return 0;
 	_local_
 
-#�j���C�x���g��唄��o���C�x���g�ɕύX
+#祝福イベントを大売り出しイベントに変更
 @@event
 	start		20%
 	basetime	5h
 	plustime	5h
 	code		happy
-	startmsg	���X�X�̑唄��o�����n�܂�܂����B
-	endmsg		�唄��o�����I���܂����B
-	info		�唄��o���ŏ��X�X�͊��C�ɂ��ӂ�Ă��܂��B
+	startmsg	商店街の大売り出しが始まりました。
+	endmsg		大売り出しが終わりました。
+	info		大売り出しで商店街は活気にあふれています。
 	func		_local_
 		my $time=$TIMESPAN;
-		$time=10*3600 if $time>10*3600; # �ő�10%����
+		$time=10*3600 if $time>10*3600; # 最大10%制限
 		$time=int($time/36);
 		
 		foreach(@DT)
@@ -3712,40 +3712,40 @@
 	basetime	6h
 	plustime	24h
 	code		udon-boom
-	startmsg	�J�ł͂��ǂ񂪃u�[���̂悤�ł��B
-	endmsg		���ǂ�u�[�����I���܂����B
-	info		���ǂ�̐l�C�����܂��Ă��܂��B
-		param	�����ǂ�			pop/1.5
-		param	�킩�߂��ǂ�			pop/1.5
-		param	���˂��ǂ�			pop/1.5
-		param	�ۓV���ǂ�			pop/1.5
-		param	���ѓV���ǂ�			pop/2
-		param	���ǂ�O��			pop/2
-		param	�L���r�A���ǂ�			pop/2
-		param	�g�����t���ǂ�			pop/2
-		param	�t�H�A�O�����ǂ�		pop/2
-		param	�������ǂ�			pop/2
-		param	�I���W�i�����ǂ�		pop/2
+	startmsg	巷ではうどんがブームのようです。
+	endmsg		うどんブームが終わりました。
+	info		うどんの人気が高まっています。
+		param	すうどん			pop/1.5
+		param	わかめうどん			pop/1.5
+		param	きつねうどん			pop/1.5
+		param	丸天うどん			pop/1.5
+		param	えび天うどん			pop/2
+		param	うどん三昧			pop/2
+		param	キャビアうどん			pop/2
+		param	トリュフうどん			pop/2
+		param	フォアグラうどん		pop/2
+		param	博多うどん			pop/2
+		param	オリジナルうどん		pop/2
 
 @@EVENT
 	start		10%
 	basetime	6h
 	plustime	24h
 	code		soba-boom
-	startmsg	�J�ł͂��΂��u�[���̂悤�ł��B
-	endmsg		���΃u�[�����I���܂����B
-	info		���΂̐l�C�����܂��Ă��܂��B
-		param	��������			pop/1.5
-		param	�킩�߂���			pop/1.5
-		param	���˂���			pop/1.5
-		param	�ۓV����			pop/1.5
-		param	���ѓV����			pop/2
-		param	���ΎO��			pop/2
-		param	�L���r�A����			pop/2
-		param	�g�����t����			pop/2
-		param	�t�H�A�O������			pop/2
-		param	��������			pop/2
-		param	�I���W�i������			pop/2
+	startmsg	巷ではそばがブームのようです。
+	endmsg		そばブームが終わりました。
+	info		そばの人気が高まっています。
+		param	かけそば			pop/1.5
+		param	わかめそば			pop/1.5
+		param	きつねそば			pop/1.5
+		param	丸天そば			pop/1.5
+		param	えび天そば			pop/2
+		param	そば三昧			pop/2
+		param	キャビアそば			pop/2
+		param	トリュフそば			pop/2
+		param	フォアグラそば			pop/2
+		param	博多そば			pop/2
+		param	オリジナルそば			pop/2
 
 @@EVENT
 	start		5%
@@ -3753,10 +3753,10 @@
 	plustime	16h
 	code		plusup-katuo
 	group		sui
-	startmsg	�������L���ł��B
-	endmsg		�����̗��ʂ�����ɖ߂�܂����B
-	info		�����̗��ʗʂ������Ă��܂��B
-		param	����				plus=300
+	startmsg	かつおが豊漁です。
+	endmsg		かつおの流通が平常に戻りました。
+	info		かつおの流通量が増えています。
+		param	かつお				plus=300
 
 @@EVENT
 	start		1%
@@ -3764,16 +3764,16 @@
 	plustime	18h
 	code		plusup-tyouzame
 	group		sui
-	startmsg	���傤���߂̑�Q���l�ɂ����񂹂܂����B
-	endmsg		���傤���߂̗��ʂ�����ɖ߂�܂����B
-	info		���傤���߂̗��ʗʂ������Ă��܂��B
-		param	���傤����			plus=500
+	startmsg	ちょうざめの大群が浜にうち寄せました。
+	endmsg		ちょうざめの流通が平常に戻りました。
+	info		ちょうざめの流通量が増えています。
+		param	ちょうざめ			plus=500
 
-# �᎑���D��ŃM���h�������X�Ɏ��������C�x���g
+# 低資金優先でギルド未加盟店に資金援助イベント
 @@EVENT
 	start		30%
 	code		getmoney
-	info		��������
+	info		資金援助
 	startfunc	_local_(100000)
 		my($money)=@_;
 		
@@ -3785,34 +3785,34 @@
 			{
 			$_->{money}+=$money;
 			$_->{money}=$main::MAX_MONEY if $_->{money}>$main::MAX_MONEY;
-			return (0,"���X���".$_->{shopname}.'��'.GetMoneyString($money).'�̕⏕�����x������܂���');
+			return (0,"商店会から".$_->{shopname}.'へ'.GetMoneyString($money).'の補助金が支給されました');
 			}
 		}
 		return 0;
 	_local_
 
-# ��ʗD��Ŗ������C�x���g
+# 上位優先で万引きイベント
 @@EVENT
 	start		100% #old50%
-	basetime	0h		#�������n�̃C�x���g�ł͂Ȃ��̂Ŏ��Ԃ�0�B
+	basetime	0h		#★持続系のイベントではないので時間は0。
 	plustime	0h
 	code		manbiki
-	info		������
+	info		万引き
 	startfunc	_local_(400,200)
-		#�����͂��̊֐����C�x���g�̖{�̂ɂȂ��Ă�
+		#★実はこの関数がイベントの本体になってる
 		my($hitproba,$breakproba)=@_;
-		#�_����m��,���{�b�g�j��m��
+		#狙われる確率,ロボット破壊確率
 		
 		foreach my $DT (@DT)
 		{
 			next if rand(1000)>$hitproba;
 			
-			if($DT->{item}[@@ITEMNO"�x��@"-1])
+			if($DT->{item}[@@ITEMNO"警報機"-1])
 			{
-				return (0,$DT->{shopname}.'�֖�����������܂������j�~����܂����B') if rand(1000)>$breakproba;
+				return (0,$DT->{shopname}.'へ万引きが入りましたが阻止されました。') if rand(1000)>$breakproba;
 				
-				$DT->{item}[@@ITEMNO"�x��@"-1]--;
-				return (0,$DT->{shopname}.'�֖�����������C'.$ITEM[@@ITEMNO"�x��@"]->{name}.'���j�󂳂�܂����B');
+				$DT->{item}[@@ITEMNO"警報機"-1]--;
+				return (0,$DT->{shopname}.'へ万引きが入り，'.$ITEM[@@ITEMNO"警報機"]->{name}.'が破壊されました。');
 			}
 			
 			my $count=0;
@@ -3825,8 +3825,8 @@
 				$DT->{item}[$itemno-1]-=$cnt;
 				$count+=$cnt*$DT->{price}[$idx];
 			}
-			return (0,$DT->{shopname}.'�����z'.GetMoneyString($count).'�����̖�������Q�ɑ����܂����B') if $count;
-			return (0,$DT->{shopname}.'�ɓ������������Ƃ́C������炸�ɓ����܂����B');
+			return (0,$DT->{shopname}.'が総額'.GetMoneyString($count).'相当の万引き被害に遭いました。') if $count;
+			return (0,$DT->{shopname}.'に入った万引き犯は，何も取らずに逃げました。');
 		}
 		return 0;
 	_local_
@@ -3836,20 +3836,20 @@
 	basetime	0h
 	plustime	0h
 	code		goutou
-	info		����
+	info		強盗
 	startfunc	_local_(700)
-		#�����͂��̊֐����C�x���g�̖{�̂ɂȂ��Ă�
+		#★実はこの関数がイベントの本体になってる
 		my($hitproba)=@_;
-		#�_����m��
+		#狙われる確率
 		
 		foreach my $DT (@DT)
 		{
 			next if rand(1000)>$hitproba;
 			
-			if($DT->{item}[@@ITEMNO"�x��@"-1])
+			if($DT->{item}[@@ITEMNO"警報機"-1])
 			{
-				$DT->{item}[@@ITEMNO"�x��@"-1]--;
-				return (0,$DT->{shopname}.'�֋���������C'.$ITEM[@@ITEMNO"�x��@"]->{name}.'���j�󂳂�܂����B');
+				$DT->{item}[@@ITEMNO"警報機"-1]--;
+				return (0,$DT->{shopname}.'へ強盗が入り，'.$ITEM[@@ITEMNO"警報機"]->{name}.'が破壊されました。');
 			}
 			
 			$DT->{rank}-=int($DT->{rank}/5);
@@ -3864,8 +3864,8 @@
 				$DT->{item}[$itemno-1]-=$cnt;
 				$count+=$cnt*$DT->{price}[$idx];
 			}
-			return (0,$DT->{shopname}.'�����z'.GetMoneyString($count).'�����̋�����Q�ɑ����܂����B') if $count;
-			return (0,$DT->{shopname}.'�ɓ����������Ƃ́C������炸�ɓ����܂����B');
+			return (0,$DT->{shopname}.'が総額'.GetMoneyString($count).'相当の強盗被害に遭いました。') if $count;
+			return (0,$DT->{shopname}.'に入った強盗犯は，何も取らずに逃げました。');
 		}
 		return 0;
 	_local_
@@ -3875,7 +3875,7 @@
 	basetime	0h
 	plustime	0h
 	code		blacktime
-	info		���̉Q
+	info		時の渦
 	startfunc	_local_(700)
 		my($hitproba)=@_;
 		foreach my $DT (@DT)
@@ -3889,20 +3889,20 @@
 				$cnt=12 if $cnt>12;
 				$DT->{time}+=3600*$cnt;
 				$DT->{user}->{black}=0;
-				WriteLog(0,$DT->{id},'���̉Q�Ɏ��Ԃ��z�����܂�܂����@�|'.$cnt.'����');
-				return (0,'�x�d�Ȃ鎞�ԑ���̂��߂Ɏ��̉Q���������C'.$DT->{shopname}.'�̎��Ԃ��z�����񂾂悤�ł��B');
+				WriteLog(0,$DT->{id},'時の渦に時間を吸い込まれました　－'.$cnt.'時間');
+				return (0,'度重なる時間操作のために時の渦が発生し，'.$DT->{shopname}.'の時間を吸い込んだようです。');
 			}
 		}
 		return 0;
 	_local_
 
-# ���ʗD��Ől�C�A�b�v�C�x���g
+# 下位優先で人気アップイベント
 @@EVENT
 	start		30%
 	basetime	0h
 	plustime	0h
 	code		getpop
-	info		�l�C�A�b�v
+	info		人気アップ
 	startfunc	_local_(1000)
 		my($pop)=@_;
 		
@@ -3912,20 +3912,20 @@
 			
 			$_->{rank}+=$pop;
 			$_->{rank}=10000 if $_->{rank}>10000;
-			return (0,$_->{shopname}.'���G���ŏЉ��C�l�C���オ�����悤�ł��B');
+			return (0,$_->{shopname}.'が雑誌で紹介され，人気が上がったようです。');
 		}
 		return 0;
 	_local_
 
 @@FUNCEVENT
 ######################################################################
-# ���󂭂��C�x���g
+# ★宝くじイベント
 # usage:  loto
-# return: 0 �Œ�
+# return: 0 固定
 ######################################################################
 sub loto
 {
-	WriteLog(2,0,"�󂭂��̒��I���s���܂����B");
+	WriteLog(2,0,"宝くじの抽選が行われました。");
 	foreach my $DT (@main'DT)
 	{
 		my $count=$DT->{item}[65-1];
@@ -3958,84 +3958,84 @@ sub loto
 		}
 		my $hitlog=5;
 		$hitlog=1;
-		WriteLog(($hitlog<=3?1:2),0,$DT->{shopname}."��1��".GetMoneyString(1000000000)."�𓖂Ă܂����I") if $hit1>0;
+		WriteLog(($hitlog<=3?1:2),0,$DT->{shopname}."が1等".GetMoneyString(1000000000)."を当てました！") if $hit1>0;
 		$hitlog=2;
-		WriteLog(($hitlog<=3?1:2),0,$DT->{shopname}."��2��".GetMoneyString(150000000)."��$hit2�{���Ă܂���") if $hit2>0;
+		WriteLog(($hitlog<=3?1:2),0,$DT->{shopname}."が2等".GetMoneyString(150000000)."を$hit2本当てました") if $hit2>0;
 		$hitlog=3;
-		WriteLog(($hitlog<=3?1:2),0,$DT->{shopname}."��3��".GetMoneyString(5000000)."��$hit3�{���Ă܂���") if $hit3>0;
+		WriteLog(($hitlog<=3?1:2),0,$DT->{shopname}."が3等".GetMoneyString(5000000)."を$hit3本当てました") if $hit3>0;
 		$hitlog=4;
-		WriteLog(($hitlog<=3?1:2),0,$DT->{shopname}."��4��".GetMoneyString(100000)."��$hit4�{���Ă܂���") if $hit4>0;
+		WriteLog(($hitlog<=3?1:2),0,$DT->{shopname}."が4等".GetMoneyString(100000)."を$hit4本当てました") if $hit4>0;
 		my $hitlog=5;
-		WriteLog(($hitlog<=3?1:2),0,$DT->{shopname}."��5��".GetMoneyString(10000)."��$hit5�{���Ă܂���") if $hit5>0;
+		WriteLog(($hitlog<=3?1:2),0,$DT->{shopname}."が5等".GetMoneyString(10000)."を$hit5本当てました") if $hit5>0;
 	}
 	return 0;
 }
 
 @@FUNCINIT
-#���]�Ԃ������Ă���ꍇ�C�������ɕK�v�Ȏ��Ԃ�3/4�ɂ���B
-$TIME_SEND_ITEM=int($TIME_SEND_ITEM/4*3) if (($DT->{item}[@@ITEMNO"���]��"-1])&&(!$DT->{item}[@@ITEMNO"������"-1]));
+#自転車を持っている場合，買い物に必要な時間を3/4にする。
+$TIME_SEND_ITEM=int($TIME_SEND_ITEM/4*3) if (($DT->{item}[@@ITEMNO"自転車"-1])&&(!$DT->{item}[@@ITEMNO"自動車"-1]));
 
-#�����Ԃ������Ă���ꍇ�C�������ɕK�v�Ȏ��Ԃ�1/4�ɂ���B
-$TIME_SEND_ITEM=int($TIME_SEND_ITEM/4) if $DT->{item}[@@ITEMNO"������"-1];
+#自動車を持っている場合，買い物に必要な時間を1/4にする。
+$TIME_SEND_ITEM=int($TIME_SEND_ITEM/4) if $DT->{item}[@@ITEMNO"自動車"-1];
 
 @@FUNCITEM
 ######################################################################
-# ���l�ނ��X������
+# ★人材が店を去る
 ######################################################################
 sub lostman
 {
 	my $itemno=$USE->{itemno};
 	if(rand(1000)<$USE->{param1})
 	{
-		UseItem($itemno,1,'<br>�d�����I����'.$ITEM[$itemno]->{name}.'���C�ق��ċ����Ă����܂���');
+		UseItem($itemno,1,'<br>仕事を終えた'.$ITEM[$itemno]->{name}.'が，黙って去っていきました');
 	}
 	return "";
 }
 
 @@FUNCUPDATE
-sub UpdateResetBefore #���Z���O�̏���(�֐����Œ�)
+sub UpdateResetBefore #決算直前の処理(関数名固定)
 {
 	UpdateTodayPrize();
 	
 	sub UpdateTodayPrize
 	{
-		#�ܕi���^
+		#賞品授与
 		my @TOP123=(
 			[
-				['���i��',	[[@@ITEMNO "���i��", 5],			],],
-				['���i��',	[[@@ITEMNO "���i��", 4],			],],
-				['���i��',	[[@@ITEMNO "���i��", 3],			],],
-				['�������⏕��',	[[@@ITEMNO "�������⏕��", 5],		],],
-				['�h�Ɨp�i',	[[@@ITEMNO "�x��@", 1],		],],
-				['�엿�g���b�N1�䕪',[[@@ITEMNO "�͔�", 1000],	],],
-				['�H��',[[@@ITEMNO "���ꂢ�Ș�", 500],	],],
+				['商品券',	[[@@ITEMNO "商品券", 5],			],],
+				['商品券',	[[@@ITEMNO "商品券", 4],			],],
+				['商品券',	[[@@ITEMNO "商品券", 3],			],],
+				['福引き補助券',	[[@@ITEMNO "福引き補助券", 5],		],],
+				['防犯用品',	[[@@ITEMNO "警報機", 1],		],],
+				['肥料トラック1台分',[[@@ITEMNO "堆肥", 1000],	],],
+				['食器',[[@@ITEMNO "きれいな丼", 500],	],],
 			],
 			[
-				['���i��',	[[@@ITEMNO "���i��", 3],			],],
-				['���i��',	[[@@ITEMNO "���i��", 2],			],],
-				['�������⏕��',	[[@@ITEMNO "�������⏕��", 3],		],],
-				['�H��',[[@@ITEMNO "���ꂢ�Ș�", 300],	],],
+				['商品券',	[[@@ITEMNO "商品券", 3],			],],
+				['商品券',	[[@@ITEMNO "商品券", 2],			],],
+				['福引き補助券',	[[@@ITEMNO "福引き補助券", 3],		],],
+				['食器',[[@@ITEMNO "きれいな丼", 300],	],],
 			],
 			[
-				['�������⏕��',	[[@@ITEMNO "�������⏕��", 2],		],],
-				['���i��',	[[@@ITEMNO "���i��", 2],			],],
-				['���i��',	[[@@ITEMNO "���i��", 1],			],],
-				['�H��',[[@@ITEMNO "���ꂢ�Ș�", 200],	],],
+				['福引き補助券',	[[@@ITEMNO "福引き補助券", 2],		],],
+				['商品券',	[[@@ITEMNO "商品券", 2],			],],
+				['商品券',	[[@@ITEMNO "商品券", 1],			],],
+				['食器',[[@@ITEMNO "きれいな丼", 200],	],],
 			],
 			[
-				['���i��',	[[@@ITEMNO "���i��", 2],			],],
-				['���i��',	[[@@ITEMNO "���i��", 1],			],],
-				['�������⏕��',	[[@@ITEMNO "�������⏕��", 1],		],],
+				['商品券',	[[@@ITEMNO "商品券", 2],			],],
+				['商品券',	[[@@ITEMNO "商品券", 1],			],],
+				['福引き補助券',	[[@@ITEMNO "福引き補助券", 1],		],],
 			],
 		);
 		
-		TopGetItem($DT[0],$TOP123[0],"�݂��ƗD����") if defined($DT[0]);
-		TopGetItem($DT[1],$TOP123[1],"�ɂ�����2�ʂ�") if defined($DT[1]);
-		TopGetItem($DT[2],$TOP123[2],"3�ʓ��܂�") if defined($DT[2]);
+		TopGetItem($DT[0],$TOP123[0],"みごと優勝の") if defined($DT[0]);
+		TopGetItem($DT[1],$TOP123[1],"惜しくも2位の") if defined($DT[1]);
+		TopGetItem($DT[2],$TOP123[2],"3位入賞の") if defined($DT[2]);
 	
 		for(my $i=9; $i<$#DT; $i+=10)
 		{
-			TopGetItem($DT[$i],$TOP123[3],"�W���X�g".($i+1)."�ʂ�") if defined($DT[$i]);
+			TopGetItem($DT[$i],$TOP123[3],"ジャスト".($i+1)."位の") if defined($DT[$i]);
 		}
 		
 		sub TopGetItem
@@ -4045,7 +4045,7 @@ sub UpdateResetBefore #���Z���O�̏���(�֐����Œ�)
 			my @list=@{$itemlist};
 			my @getitem=@{$list[int(rand($#list+1))]};
 			
-			my $msg=$head.$DT->{shopname}."�ɂ́C���X����".$getitem[0]."�������܂����B";
+			my $msg=$head.$DT->{shopname}."には，商店会より".$getitem[0]."が贈られました。";
 			WriteLog(2,0,0,$msg,1);
 			foreach (@{$getitem[1]})
 			{
@@ -4053,9 +4053,9 @@ sub UpdateResetBefore #���Z���O�̏���(�֐����Œ�)
 				
 				my $cnt=AddItem($DT,$itemnocount[0],$itemnocount[1]);
 				my $ITEM=$ITEM[$itemnocount[0]];
-				WriteLog(0,$DT->{id},0,$head."�ܕi�Ƃ���".$ITEM->{name}."��".$itemnocount[1].$ITEM->{scale}."�l�����܂����B",1);
+				WriteLog(0,$DT->{id},0,$head."賞品として".$ITEM->{name}."を".$itemnocount[1].$ITEM->{scale}."獲得しました。",1);
 				$cnt=$itemnocount[1]-$cnt;
-				WriteLog(0,$DT->{id},0,"�������ő及�����ȏゾ�����̂�".$cnt.$ITEM->{scale}."�j�����܂���",1) if $cnt;
+				WriteLog(0,$DT->{id},0,"しかし最大所持数以上だったので".$cnt.$ITEM->{scale}."破棄しました",1) if $cnt;
 			}
 		}
 	}
@@ -4063,7 +4063,7 @@ sub UpdateResetBefore #���Z���O�̏���(�֐����Œ�)
 
 @@FUNCNEW
 
-# @@DEFINE Set NewShopMoney NewShopTime NewShopItem �̏���
+# @@DEFINE Set NewShopMoney NewShopTime NewShopItem の処理
 $DT->{money}=@@VALUE"NewShopMoney" if @@VALUE"NewShopMoney";
 $DT->{time}=$NOW_TIME-eval(@@VALUE"NewShopTime") if @@VALUE"NewShopTime";
 if(@@VALUE"NewShopItem")
@@ -4078,27 +4078,27 @@ if(@@VALUE"NewShopItem")
 	}
 }
 
-# $DEFINE_FUNCNEW_NOLOG=1 ��ݒ肷��ƁC�V�X�e�����̍ŋ߂̏o�����V���J�X���b�Z�[�W��}�����܂��B
+# $DEFINE_FUNCNEW_NOLOG=1 を設定すると，システム側の最近の出来事新装開店メッセージを抑制します。
 $DEFINE_FUNCNEW_NOLOG=1;
-WriteLog(1,0,0,$DT->{shopname}."�����A�J�[�������āC���̊X�Ɍ���܂����B",1);
+WriteLog(1,0,0,$DT->{shopname}."がリアカーを引いて，この街に現れました。",1);
 
-# ���̑��C�V���J�X���ɓƎ��̏�����ǉ��ł��܂��B
+# その他，新装開店時に独自の処理を追加できます。
 
 @@FUNCSHOPIN
 
-SetUserDataEx($DT,'_so_move_in',$NOW_TIME); # �ړ]�������L�^
+SetUserDataEx($DT,'_so_move_in',$NOW_TIME); # 移転時刻を記録
 
-$DT->{item}[67-1]=1;	# �q���g�u�b�N���v���[���g
+$DT->{item}[67-1]=1;	# ヒントブックをプレゼント
 if($DT->{job} eq 'man')
 {
-	# �l�ޔh����(man)�ɂ͈ړ]����Ԃ�1/2��Ԋ�
+	# 人材派遣業(man)には移転消費時間の1/2を返還
 	$DT->{_MoveTownTime}=int($DT->{_MoveTownTime}/2);
 	EditTime($DT,$DT->{_MoveTownTime});
-	WriteLog(0,$DT->{id},0,'�ړ]���Ԃ�������'.GetTime2HMS($DT->{_MoveTownTime}).'�ōς񂾂悤�ł�',1);
+	WriteLog(0,$DT->{id},0,'移転時間が半分の'.GetTime2HMS($DT->{_MoveTownTime}).'で済んだようです',1);
 }
 if(GetUserDataEx($DT,'_so_present_money'))
 {
-	WriteLog(0,$DT->{id},0,'�ړ]���̊X�����S�ʂƂ���'.GetMoneyString(GetUserDataEx($DT,'_so_present_money')).'�����炢�܂���',1);
+	WriteLog(0,$DT->{id},0,'移転元の街から餞別として'.GetMoneyString(GetUserDataEx($DT,'_so_present_money')).'をもらいました',1);
 	SetUserDataEx($DT,'_so_present_money','');
 }
 
@@ -4107,27 +4107,27 @@ if(GetUserDataEx($DT,'_so_present_money'))
 if(GetUserDataEx($DT,'_so_move_in'))
 {
 	my $present_money=int(($NOW_TIME-GetUserDataEx($DT,'_so_move_in'))/86400)*5000;
-	EditMoney($DT,$present_money); # �؍݊���1���ɕt��\5000���S�ʂƂ��Ď�����
+	EditMoney($DT,$present_money); # 滞在期間1日に付き\5000を餞別として資金へ
 	SetUserDataEx($DT,'_so_present_money',$present_money);
-	SetUserDataEx($DT,'_so_move_in',''); # $DT->{user}{_so_move_in} ���폜
+	SetUserDataEx($DT,'_so_move_in',''); # $DT->{user}{_so_move_in} を削除
 }
 
 @@FUNCBUY
-# package item �ł��B
+# package item です。
 # 
-# $item::BUY �𗘗p�ł��܂��B$item::BUY �̍\���̓}�j���A���� @@ITEM funcb ���������������B
-# ���i���̏����� @@ITEM funcb �𗘗p���Ă��������B
+# $item::BUY を利用できます。$item::BUY の構造はマニュアルの @@ITEM funcb をご覧ください。
+# 商品毎の処理は @@ITEM funcb を利用してください。
 
 if($BUY->{whole})
 {
-	# �s�ꂩ��̎d���̏ꍇ�C\500000�ɕt��1���̕������⏕����i�悷��B
+	# 市場からの仕入の場合，\500000に付き1枚の福引き補助券を進呈する。
 	my $price=$BUY->{num}*$BUY->{price};
 	my $count=int $price/500000;
 	
-	$count=AddItemSub(@@ITEMNO"�������⏕��",$count,$BUY->{dt}) if $count;
-	WriteLog(0,$BUY->{dt}{id},'�s�ꂩ�畟�����⏕����'.$count.'�����炢�܂���') if $count;
+	$count=AddItemSub(@@ITEMNO"福引き補助券",$count,$BUY->{dt}) if $count;
+	WriteLog(0,$BUY->{dt}{id},'市場から福引き補助券を'.$count.'枚もらいました') if $count;
 }
 
-@@END #��`�I���錾(�ȍ~�R�����g����)
+@@END #定義終了宣言(以降コメント扱い)
 
 

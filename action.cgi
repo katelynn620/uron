@@ -1,5 +1,5 @@
 #!/usr/local/bin/perl
-# ˆ—‘‹ŒûƒvƒƒOƒ‰ƒ€ 2003/11/03 —R˜Ò
+# å‡¦ç†çª“å£ãƒ—ãƒ­ã‚°ãƒ©ãƒ  2003/11/03 ç”±ä¾†
 
 require './_config.cgi';
 RequireFile('inc-func.cgi');

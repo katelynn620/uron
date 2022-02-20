@@ -1,6 +1,9 @@
 #!/usr/local/bin/perl
 # 管理メイン 2005/03/30 由來
 
+use utf8;
+binmode(STDOUT, ':encoding(utf8)');
+
 require './_config.cgi';
 GetQuery();
 RequireFile("inc-makeitem.cgi") if $Q{key} eq "makeitem";

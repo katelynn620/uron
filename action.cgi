@@ -1,4 +1,4 @@
-#!/usr/local/bin/perl
+#!/usr/bin/perl
 # 処理窓口プログラム 2003/11/03 由來
 
 use utf8;

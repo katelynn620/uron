@@ -1,55 +1,55 @@
-# ƒƒjƒ…[İ’èƒtƒ@ƒCƒ‹ 2005/03/30 —R˜Ò
+# ãƒ¡ãƒ‹ãƒ¥ãƒ¼è¨­å®šãƒ•ã‚¡ã‚¤ãƒ« 2005/03/30 ç”±ä¾†
 
-# ƒƒjƒ…[‚É•\¦‚³‚¹‚éƒŠƒXƒg‚ğİ’è‚Å‚«‚Ü‚·B
-# Å‰‚Ìˆês‚ªuƒƒjƒ…[€–Ú–¼vC
-# Ÿ‚Ìs‚©‚ç‚ÍuƒTƒuƒƒjƒ…[–¼vCuƒvƒƒOƒ‰ƒ€–¼v‚Å‚·B
-#   ¦ƒvƒƒOƒ‰ƒ€–¼‚É‚ÍƒAƒhƒŒƒX‚àw’è‰Â”\‚Å‚·B
+# ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã«è¡¨ç¤ºã•ã›ã‚‹ãƒªã‚¹ãƒˆã‚’è¨­å®šã§ãã¾ã™ã€‚
+# æœ€åˆã®ä¸€è¡ŒãŒã€Œãƒ¡ãƒ‹ãƒ¥ãƒ¼é …ç›®åã€ï¼Œ
+# æ¬¡ã®è¡Œã‹ã‚‰ã¯ã€Œã‚µãƒ–ãƒ¡ãƒ‹ãƒ¥ãƒ¼åã€ï¼Œã€Œãƒ—ãƒ­ã‚°ãƒ©ãƒ åã€ã§ã™ã€‚
+#   â€»ãƒ—ãƒ­ã‚°ãƒ©ãƒ åã«ã¯ã‚¢ãƒ‰ãƒ¬ã‚¹ã‚‚æŒ‡å®šå¯èƒ½ã§ã™ã€‚
 
 my @MENU=(
-	# ƒQƒXƒgŒ ŒÀ‚Ìê‡‚Ìƒƒjƒ…[
-	['ŠXˆÄ“à',[
-		['•—Œi',	'town'],
-		['V•·',	'log'],
-		['}‘ŠÙ',	'action.cgi?key=library',	"_blank"],
+	# ã‚²ã‚¹ãƒˆæ¨©é™ã®å ´åˆã®ãƒ¡ãƒ‹ãƒ¥ãƒ¼
+	['è¡—æ¡ˆå†…',[
+		['é¢¨æ™¯',	'town'],
+		['æ–°è',	'log'],
+		['å›³æ›¸é¤¨',	'action.cgi?key=library',	"_blank"],
 	]],
 
-	# ˆÈ‰ºƒvƒŒƒCƒ„[Œ ŒÀ‚Ìê‡‚Ìƒƒjƒ…[
-	['©“X',[
-		['“X“à',	'main'],
-		['‘qŒÉ',	'stock'],
-		['‚¨‘|œ',	'sweep'],
-		['ûx',	'balance'],
-		['è‘±',	'other'],
+	# ä»¥ä¸‹ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼æ¨©é™ã®å ´åˆã®ãƒ¡ãƒ‹ãƒ¥ãƒ¼
+	['è‡ªåº—',[
+		['åº—å†…',	'main'],
+		['å€‰åº«',	'stock'],
+		['ãŠæƒé™¤',	'sweep'],
+		['åæ”¯',	'balance'],
+		['æ‰‹ç¶š',	'other'],
 		['LogOut',	'index.cgi'],
 	]],
-	['æˆø',[
-		['sê',	'shop-m'],
-		['¤“X’Ê‚è',	'shop-a'],
-		['ˆË—ŠŠ',	'req'],
-		['‹{“a',	'palace'],
+	['å–å¼•',[
+		['å¸‚å ´',	'shop-m'],
+		['å•†åº—é€šã‚Š',	'shop-a'],
+		['ä¾é ¼æ‰€',	'req'],
+		['å®®æ®¿',	'palace'],
 	]],
-	['î•ñ',[
-		['•—Œi',	'town'],
-		['V•·',	'log'],
-		['“a“°',	'orilist'],
-		['}‘ŠÙ',	'action.cgi?key=library',	"_blank"],
+	['æƒ…å ±',[
+		['é¢¨æ™¯',	'town'],
+		['æ–°è',	'log'],
+		['æ®¿å ‚',	'orilist'],
+		['å›³æ›¸é¤¨',	'action.cgi?key=library',	"_blank"],
 	]],
-	['{İ',[
-		['—Ìå“@',	'lord'],
-		['ƒMƒ‹ƒh',	'gd'],
-		['‹£‹Zê',	'slime'],
-		['—b•ºŠ',	'army'],
-		['Z‘î’n',	'hometown'],
+	['æ–½è¨­',[
+		['é ˜ä¸»é‚¸',	'lord'],
+		['ã‚®ãƒ«ãƒ‰',	'gd'],
+		['ç«¶æŠ€å ´',	'slime'],
+		['å‚­å…µæ‰€',	'army'],
+		['ä½å®…åœ°',	'hometown'],
 	]],
-	['Œğ—¬',[
-		['—X•Ö‹Ç',	'letter'],
-		['‘î”z•Ö',	'dwarf'],
-		['Œf¦”Â '.GetTime2FormatTime((stat($COMMON_DIR.'/treelog.cgi'))[9]+0,1),	'treebbs'],
+	['äº¤æµ',[
+		['éƒµä¾¿å±€',	'letter'],
+		['å®…é…ä¾¿',	'dwarf'],
+		['æ²ç¤ºæ¿ '.GetTime2FormatTime((stat($COMMON_DIR.'/treelog.cgi'))[9]+0,1),	'treebbs'],
 		['wis',	'wis'],
 	]],
 );
 
-# ˆÈ‰º‚ÍƒvƒƒOƒ‰ƒ€‚Å‚·B•ÒW‚·‚é‚É‚Í‹Zp‚ª•K—v‚Å‚·B------------------------------
+# ä»¥ä¸‹ã¯ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã§ã™ã€‚ç·¨é›†ã™ã‚‹ã«ã¯æŠ€è¡“ãŒå¿…è¦ã§ã™ã€‚------------------------------
 
 my $now=$DTlasttime+$TZ_JST-$DATE_REVISE_TIME;
 my $nextday=$now+$ONE_DAY_TIME-($now % $ONE_DAY_TIME);
@@ -68,13 +68,13 @@ if($USER && $USER ne 'soldoutadmin')
 menudata=[
 STR
 	$MENUMSG.="'";
-	$MENUMSG.=(-e $file) ? WisRead($file) : "<BIG>Šˆ“®’†</BIG> &gt; <small>".LoginMember()."</small>";
+	$MENUMSG.=(-e $file) ? WisRead($file) : "<BIG>æ´»å‹•ä¸­</BIG> &gt; <small>".LoginMember()."</small>";
 	$MENUMSG.="',";
 	foreach(1..$#MENU)
 		{
 		my $msg=@{$MENU[$_]}[0];
 		my @list=@{@{$MENU[$_]}[1]};
-		$i.=qq|<A href="javascript:mymenu($_)">y$msgz</A> |;
+		$i.=qq|<A href="javascript:mymenu($_)">ã€$msgã€‘</A> |;
 		$MENUMSG.="'";
 		$MENUMSG.="<BIG>$msg</BIG> &gt; ";
 		foreach my $sublist(@list)
@@ -82,7 +82,7 @@ STR
 			my @SUBMENU=@{$sublist};
 			$MENUMSG.=(($SUBMENU[1] =~ /\./) ? GetTagA("[".$SUBMENU[0]."]",$SUBMENU[1],0,$SUBMENU[2]) : GetMenuTag($SUBMENU[1],"[".$SUBMENU[0]."]"));
 			}
-		$MENUMSG.=qq|<A href="javascript:mymenu(0)">y~z</A> |;
+		$MENUMSG.=qq|<A href="javascript:mymenu(0)">ã€Ã—ã€‘</A> |;
 		$MENUMSG.="',";
 		}
 	$MENUMSG.=<<"STR";
@@ -94,8 +94,8 @@ mymenu(0);
 // -->
 </SCRIPT>
 STR
-	$i.=qq|<A HREF="action.cgi?key=bgm&$USERPASSURL&mode=$Q{key}" target="_top">[ô]</a> |;
-	$i.='[Ÿ‰ñŒˆZ '.GetTime2FormatTime($nextday-$TZ_JST+$DATE_REVISE_TIME).' ‚Ü‚Å‚ ‚Æ'.GetTime2HMS(int(($nextday-$now)/60)*60+59).']';
+	$i.=qq|<A HREF="action.cgi?key=bgm&$USERPASSURL&mode=$Q{key}" target="_top">[â™ª]</a> |;
+	$i.='[æ¬¡å›æ±ºç®— '.GetTime2FormatTime($nextday-$TZ_JST+$DATE_REVISE_TIME).' ã¾ã§ã‚ã¨'.GetTime2HMS(int(($nextday-$now)/60)*60+59).']';
 	$DISP{MENU} =~ s/#SKINMENU#/$i/;
 	$DISP{MENU} =~ s/#SKINMENUSUB#/$MENUMSG/;
 	}
@@ -113,8 +113,8 @@ STR
 		my @SUBMENU=@{$sublist};
 		$MENUMSG.=(($SUBMENU[1] =~ /\./) ? GetTagA("[".$SUBMENU[0]."]",$SUBMENU[1],0,"_blank") : GetMenuTag($SUBMENU[1],"[".$SUBMENU[0]."]"));
 		}
-	$i.=($MYNAME eq 'index.cgi')? qq|<A HREF="$HOME_PAGE" TARGET=_top>[ƒz[ƒ€]</A> | : qq|<A HREF="index.cgi" TARGET=_top>[ƒgƒbƒv]</A> |;
-	$i.='[Ÿ‰ñŒˆZ '.GetTime2FormatTime($nextday-$TZ_JST+$DATE_REVISE_TIME).' ‚Ü‚Å‚ ‚Æ'.GetTime2HMS(int(($nextday-$now)/60)*60+59).']';
+	$i.=($MYNAME eq 'index.cgi')? qq|<A HREF="$HOME_PAGE" TARGET=_top>[ãƒ›ãƒ¼ãƒ ]</A> | : qq|<A HREF="index.cgi" TARGET=_top>[ãƒˆãƒƒãƒ—]</A> |;
+	$i.='[æ¬¡å›æ±ºç®— '.GetTime2FormatTime($nextday-$TZ_JST+$DATE_REVISE_TIME).' ã¾ã§ã‚ã¨'.GetTime2HMS(int(($nextday-$now)/60)*60+59).']';
 	$DISP{MENU} =~ s/#SKINMENU#/$i/;
 	$DISP{MENU} =~ s/#SKINMENUSUB#/$MENUMSG/;
 	}
@@ -129,12 +129,12 @@ my $i=0;
 foreach(@DT)
 	{
 	next if ($_->{lastlogin} < $NOW_TIME - 120);
-	$logmemb .= "C ".$_->{shopname};
+	$logmemb .= "ï¼Œ ".$_->{shopname};
 	$i++;
-	$logmemb .= "‚Ù‚©", last if ($i > 3);
+	$logmemb .= "ã»ã‹", last if ($i > 3);
 	}
 $logmemb = substr($logmemb,3) if ($logmemb);
-$logmemb = "‚È‚µ" if !$logmemb;
+$logmemb = "ãªã—" if !$logmemb;
 return $logmemb
 }
 

@@ -1,5 +1,5 @@
 #!/usr/local/bin/perl
-# ƒgƒbƒv‰æ–Ê 2004/01/20 —R˜Ò
+# ãƒˆãƒƒãƒ—ç”»é¢ 2004/01/20 ç”±ä¾†
 
 require './_config.cgi';
 RequireFile('inc-func.cgi');
@@ -17,9 +17,9 @@ $password=$Q{pw} ? $Q{pw} : $COOKIE{PASSWORD};
 $lform="";
 if (!$MOBILE)
 	{
-	$lform.=GetTagA('yV‹K“X•ÜƒI[ƒvƒ“z<small>c‚è'.($MAX_USER-$DTusercount).'–¼—l</small>',"action.cgi?key=new") if $MAX_USER>$DTusercount;
-	$lform.='yV‹K“X•ÜƒI[ƒvƒ“z<small>Œ»İ–ˆõ</small>' if $MAX_USER<=$DTusercount;
-	$lform.=($MAX_MOVE_USER>$DTusercount)?('<small>iˆÚ“]Fc‚è'.($MAX_MOVE_USER-$DTusercount).'–¼—lj</small>'):('<small>iˆÚ“]FŒ»İ–ˆõj</small>') if $MOVETOWN_ENABLE;
+	$lform.=GetTagA('ã€æ–°è¦åº—èˆ—ã‚ªãƒ¼ãƒ—ãƒ³ã€‘<small>æ®‹ã‚Š'.($MAX_USER-$DTusercount).'åæ§˜</small>',"action.cgi?key=new") if $MAX_USER>$DTusercount;
+	$lform.='ã€æ–°è¦åº—èˆ—ã‚ªãƒ¼ãƒ—ãƒ³ã€‘<small>ç¾åœ¨æº€å“¡</small>' if $MAX_USER<=$DTusercount;
+	$lform.=($MAX_MOVE_USER>$DTusercount)?('<small>ï¼ˆç§»è»¢ï¼šæ®‹ã‚Š'.($MAX_MOVE_USER-$DTusercount).'åæ§˜ï¼‰</small>'):('<small>ï¼ˆç§»è»¢ï¼šç¾åœ¨æº€å“¡ï¼‰</small>') if $MOVETOWN_ENABLE;
 	$lform.="<br>";
 	}
 $DISP{MENU} =~ s/#SKINNEW#/$lform/;

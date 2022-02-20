@@ -1,4 +1,4 @@
-#!/usr/local/bin/perl
+#!/usr/bin/perl
 # トップ画面 2004/01/20 由來
 
 use utf8;

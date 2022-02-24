@@ -1,4 +1,3 @@
-use utf8;
 # うどん＆そば版アイテムデータ 2005/01/06 由來
 
 # このファイルはアイテムデータの定義ファイルです。
@@ -2929,7 +2928,7 @@ use utf8;
 		info	オリジナルうどんの材料と作り方を忘れたときのために
 		scale	回
 		arg		nocount
-		ngmsg	【オリジナルうどんの作り方】<br>材料<br>・小麦粉<br>・かつお<br>・がちょう<br>・とうがらし<br>・きれいな丼<br><br>作り方<br><b>　　秘密</b>
+		ngmsg	【オリジナルうどんの作り方】<br>材料<br>・小麦粉<br>・かつお<br>・がちょう<br>・とうがらし<br>・きれいな丼<br><br>作り方<br><b>&nbsp;&nbsp;秘密</b>
 	@@USE
 		time	4h
 		job		うどん屋	times/job_udon_time_rate
@@ -2966,7 +2965,7 @@ use utf8;
 		info	オリジナルそばの材料と作り方を忘れたときのために
 		scale	回
 		arg		nocount
-		ngmsg	【オリジナルそばの作り方】<br>材料<br>・そば粉<br>・かつお<br>・ちょうざめ<br>・たまご<br>・きれいな丼<br><br>作り方<br><b>　　秘密</b>
+		ngmsg	【オリジナルそばの作り方】<br>材料<br>・そば粉<br>・かつお<br>・ちょうざめ<br>・たまご<br>・きれいな丼<br><br>作り方<br><b>&nbsp;&nbsp;秘密</b>
 	@@USE
 		time	4h
 		job		そば屋	times/job_soba_time_rate
@@ -3927,7 +3926,7 @@ use utf8;
 sub loto
 {
 	WriteLog(2,0,"宝くじの抽選が行われました。");
-	foreach my $DT (@main'DT)
+	foreach my $DT (@main::DT)
 	{
 		my $count=$DT->{item}[65-1];
 		$DT->{item}[65-1]=0;

@@ -7,10 +7,10 @@ sub ReadLog
 	$id=$DT->{id} if $id eq '';
 	undef @MESSAGE;
 	
-	open(IN,GetPath("log0"));
+	open(IN,"<:encoding(UTF-8)",GetPath("log0"));
 	push(@MESSAGE,<IN>);
 	close(IN);
-	open(IN,GetPath("log1"));
+	open(IN,"<:encoding(UTF-8)",GetPath("log1"));
 	push(@MESSAGE,<IN>);
 	close(IN);
 	
@@ -22,14 +22,14 @@ sub ReadLog
 	}
 	if($keyword)
 	{
-		require $JCODE_FILE;
-		$keyword=jcode::sjis($keyword,$CHAR_SHIFT_JIS&&'sjis');
+		# require $JCODE_FILE;
+		# $keyword=jcode::sjis($keyword,$CHAR_SHIFT_JIS&&'sjis');
 		@MESSAGE=grep(/\Q$keyword\E/oi,@MESSAGE);
 	}
 	if($target)
 	{
-		require $JCODE_FILE;
-		$target=jcode::sjis($target,$CHAR_SHIFT_JIS&&'sjis');
+		# require $JCODE_FILE;
+		# $target=jcode::sjis($target,$CHAR_SHIFT_JIS&&'sjis');
 		@MESSAGE=grep(/\Q$target\E/o,@MESSAGE);
 	}
 	@MESSAGE=("0\t0\t0\t情報はありません\n") if !scalar(@MESSAGE);
@@ -62,7 +62,7 @@ sub RenewLog
 	}
 	else
 	{
-		open(IN,(-e $tempfile ? $tempfile : $s0));
+		open(IN,">:encoding(UTF-8)",(-e $tempfile ? $tempfile : $s0));
 		push(@LOG,<IN>);
 		close(IN);
 	}

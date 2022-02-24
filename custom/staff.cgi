@@ -37,7 +37,7 @@ HTML
 
 # ----------- ここまで。最後の「HTML」を消さないよう注意。-----------------
 
-require "skin.pl" if -e "skin.pl";
+require "./skin.pl" if -e "skin.pl";
 $disp.=$TRE.$TBE;
 OutSkin();
 1;

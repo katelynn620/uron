@@ -134,7 +134,7 @@ foreach(@DT)
 	$i++;
 	$logmemb .= "ほか", last if ($i > 3);
 	}
-$logmemb = substr($logmemb,3) if ($logmemb);
+$logmemb = substr($logmemb,2) if ($logmemb);
 $logmemb = "なし" if !$logmemb;
 return $logmemb
 }
@@ -142,7 +142,7 @@ return $logmemb
 sub WisRead
 {
 	my ($file)=@_;
-	open(IN,$file) or return;
+	open(IN,"<:encoding(UTF-8)",$file) or return;
 	read(IN,my $buf,-s $file);
 	close(IN);
 	unlink $file;

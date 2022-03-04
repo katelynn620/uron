@@ -5,6 +5,9 @@ use utf8;
 binmode(STDOUT, ':encoding(utf8)');
 
 require './_config.cgi';
+# Add I18N
+RequireFile('inc-locale.cgi');
+
 GetQuery();
 RequireFile("inc-makeitem.cgi") if $Q{key} eq "makeitem";
 

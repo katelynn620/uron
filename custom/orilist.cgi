@@ -4,8 +4,8 @@ use utf8;
 DataRead();
 CheckUserPass();
 
-$disp.=GetMenuTag('orilist',	'[うどん]')
-	.GetMenuTag('orilist',	'[そば]','&mode=soba');
+$disp.=GetMenuTag('orilist',	'['.l('うどん').']')
+	.GetMenuTag('orilist',	'['.l('そば').']','&mode=soba');
 $disp.="<hr width=500 noshade size=1>";
 
 my $functionname=$Q{mode};
@@ -24,7 +24,7 @@ sub udon
 	
 	my $pagecontrol=GetPageControl($pageprev,$pagenext,"mode=udon","",$pagemax,$page);
 	
-	$disp.="<BIG>●オリジナルうどん開発店</BIG><br><br>";
+	$disp.="<BIG>●".l('オリジナルうどん開発店')."</BIG><br><br>";
 	$disp.=$pagecontrol;
 	$disp.=$TB;
 	foreach my $DT (@udonDT[$pagestart..$pageend])
@@ -56,7 +56,7 @@ sub soba
 	
 	my $pagecontrol=GetPageControl($pageprev,$pagenext,"mode=soba","",$pagemax,$page);
 	
-	$disp.="<BIG>●オリジナルそば開発店</BIG><br><br>";
+	$disp.="<BIG>●".l('オリジナルそば開発店')."</BIG><br><br>";
 	$disp.=$pagecontrol;
 	$disp.=$TB;
 	foreach my $DT (@sobaDT[$pagestart..$pageend])

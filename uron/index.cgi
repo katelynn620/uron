@@ -21,9 +21,9 @@ $password=$Q{pw} ? $Q{pw} : $COOKIE{PASSWORD};
 $lform="";
 if (!$MOBILE)
 	{
-	$lform.=GetTagA('【新規店舗オープン】<small>残り'.($MAX_USER-$DTusercount).'名様</small>',"action.cgi?key=new") if $MAX_USER>$DTusercount;
-	$lform.='【新規店舗オープン】<small>現在満員</small>' if $MAX_USER<=$DTusercount;
-	$lform.=($MAX_MOVE_USER>$DTusercount)?('<small>（移転：残り'.($MAX_MOVE_USER-$DTusercount).'名様）</small>'):('<small>（移転：現在満員）</small>') if $MOVETOWN_ENABLE;
+	$lform.=GetTagA(l('【新規店舗オープン】<small>残り %1 名様</small>', $MAX_USER - $DTusercount),"action.cgi?key=new") if $MAX_USER>$DTusercount;
+	$lform.=l('【新規店舗オープン】<small>現在満員</small>') if $MAX_USER<=$DTusercount;
+	$lform.=($MAX_MOVE_USER>$DTusercount)?(l('<small>（移転：残り%1名様）</small>',($MAX_MOVE_USER-$DTusercount))):(l('<small>（移転：現在満員）</small>')) if $MOVETOWN_ENABLE;
 	$lform.="<br>";
 	}
 $DISP{MENU} =~ s/#SKINNEW#/$lform/;

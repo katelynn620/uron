@@ -3,28 +3,28 @@ use utf8;
 
 if(-e "$DATA_DIR/$LASTTIME_FILE$FILE_EXT")
 	{
-		push(@log,'現在メンテモードにつき，ゲームの進行が止まっています。') if -e "./lock" or -e "$DATA_DIR/lock";
-		push(@log,'ゲームデータがなくなっています。'," バックアップを復元するか初期化が必要です。") if !-e "$DATA_DIR/$DATA_FILE$FILE_EXT";
-		my $init=' 初期化ボタン（メニュー下部）を押して修復してください。';
-		push(@log,'ギルド定義ファイルがなくなっています。',$init) if !-e "$DATA_DIR/$GUILD_FILE$FILE_EXT";
-		push(@log,'ロックファイルがなくなっています。',$init) if !GetFileList($DATA_DIR,"^$LOCK_FILE");
-		push(@log,'共有ロックファイルがなくなっています。',$init) if !GetFileList($COMMON_DIR,"^$LOCK_FILE");
+		push(@log,l('現在メンテモードにつき，ゲームの進行が止まっています。')) if -e "./lock" or -e "$DATA_DIR/lock";
+		push(@log,l('ゲームデータがなくなっています。'),l(' バックアップを復元するか初期化が必要です。')) if !-e "$DATA_DIR/$DATA_FILE$FILE_EXT";
+		my $init=l(' 初期化ボタン（メニュー下部）を押して修復してください。');
+		push(@log,l('ギルド定義ファイルがなくなっています。'),$init) if !-e "$DATA_DIR/$GUILD_FILE$FILE_EXT";
+		push(@log,l('ロックファイルがなくなっています。'),$init) if !GetFileList($DATA_DIR,"^$LOCK_FILE");
+		push(@log,l('共有ロックファイルがなくなっています。'),$init) if !GetFileList($COMMON_DIR,"^$LOCK_FILE");
 		foreach my $dir ($SESSION_DIR,$TEMP_DIR,$COTEMP_DIR,$LOG_DIR,$SUBDATA_DIR,$BACKUP_DIR)
 		{
-			push(@log,$dir.' がなくなっています。',$init) if !-e $dir;
+			push(@log,$dir.l(' がなくなっています。'),$init) if !-e $dir;
 		}
-		push(@log,' 商品データを作成してください。') if !-e $ITEM_DIR;
+		push(@log,l(' 商品データを作成してください。')) if !-e $ITEM_DIR;
 	}
 	else
 	{
-		push(@log,' 初期化を行ってください（メニュー下部）');
+		push(@log,l(' 初期化を行ってください（メニュー下部）'));
 	}
 	
 if(-e "$DATA_DIR/$ERROR_COUNT_FILE$FILE_EXT")
 	{
 	my $errorcount=(-s "$DATA_DIR/$ERROR_COUNT_FILE$FILE_EXT")+0;
 	unlink("$DATA_DIR/$ERROR_COUNT_FILE$FILE_EXT");
-	push(@log,'前回の管理から現在まで '.$errorcount.'回のエラーを検知しました。');
+	push(@log,l('前回の管理から現在まで %1回のエラーを検知しました。',$errorcount));
 	}
 	push(@log,"<A HREF=\"$DATA_DIR/error.log\">[エラー情報]</A> が報告されています。") if(-e "$DATA_DIR/error.log");
 	
@@ -62,8 +62,8 @@ if(open(IN,"<:encoding(UTF-8)","$DATA_DIR/$DATA_FILE$FILE_EXT"))
 	};
 	if ($@)
 	{
-	push(@log,' inc-item-data.cgiにエラーがあり，データを取得できません。');
-	push(@log,'一部の管理機能が正常に動作しない可能性があります。');
+	push(@log,l(' inc-item-data.cgiにエラーがあり，データを取得できません。'));
+	push(@log,l('一部の管理機能が正常に動作しない可能性があります。'));
 	}
 	else
 	{

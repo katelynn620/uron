@@ -49,7 +49,7 @@ sub RenameAndCheck
 		return if !-e $_[0] && -e $_[1];
 	}
 	WriteErrorLog('rename error '.$_[0]."->".$_[1],$LOG_ERROR_FILE);
-	OutError('異常処理です。中断しました。');
+	OutError(l('異常処理です。中断しました。'));
 }
 
 sub OpenAndCheck
@@ -57,7 +57,7 @@ sub OpenAndCheck
 	my $count=5;
 	while(!open(OUT,">:encoding(UTF-8)",$_[0]))
 	{
-		WriteErrorLog('write mode open error',$LOG_ERROR_FILE),OutError('異常処理です。中断しました。') if !$count--;
+		WriteErrorLog('write mode open error',$LOG_ERROR_FILE),OutError(l('異常処理です。中断しました。')) if !$count--;
 		select(undef,undef,undef,0.2);
 	}
 }

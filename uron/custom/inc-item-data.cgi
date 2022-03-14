@@ -193,7 +193,7 @@
 			needexp		20%
 		func	_local_
 			my $ret="";
-			main::OutError('現在すでに人材派遣業の専門家です') if ($DT->{job} eq 'man');
+			main::OutError(l('現在すでに人材派遣業の専門家です')) if ($DT->{job} eq 'man');
 			$DT->{job} = 'man';
 			$ret="人材派遣業の専門家になりました";
 			WriteLog(0,$DT->{id},$ret);
@@ -533,7 +533,7 @@
 			needexp		20%
 		func	_local_
 			my $ret="";
-			main::OutError('現在すでに農業の専門家です') if ($DT->{job} eq 'agri');
+			main::OutError(l('現在すでに農業の専門家です')) if ($DT->{job} eq 'agri');
 			$DT->{job} = 'agri';
 			$ret="農業の専門家になりました";
 			WriteLog(0,$DT->{id},$ret);
@@ -631,7 +631,7 @@
 			needexp		20%
 		func	_local_
 			my $ret="";
-			main::OutError('現在すでに漁業の専門家です') if ($DT->{job} eq 'fish');
+			main::OutError(l('現在すでに漁業の専門家です')) if ($DT->{job} eq 'fish');
 			$DT->{job} = 'fish';
 			$ret="漁業の専門家になりました";
 			WriteLog(0,$DT->{id},$ret);
@@ -718,7 +718,7 @@
 			needexp		20%
 		func	_local_
 			my $ret="";
-			main::OutError('現在すでに天ぷら作りの専門家です') if ($DT->{job} eq 'temp');
+			main::OutError(l('現在すでに天ぷら作りの専門家です')) if ($DT->{job} eq 'temp');
 			$DT->{job} = 'temp';
 			$ret="天ぷら作りの専門家になりました";
 			WriteLog(0,$DT->{id},$ret);
@@ -967,7 +967,7 @@
 			get		1	オリジナルうどんレシピ
 		func	_local_
 			# オリジナルうどんを作る
-			main::OutError('名前をつけてください') if !$USE->{arg}->{message};
+			main::OutError(l('名前をつけてください')) if !$USE->{arg}->{message};
 			my $ret;
 			$ret='オリジナルうどん【'.$USE->{arg}->{message}.'】が完成しました';	
 			WriteLog(3,0,$DT->{shopname}."が特製うどん「".$USE->{arg}->{message}."」を完成させました。");
@@ -984,7 +984,7 @@
 			needexp		20%
 		func	_local_
 			my $ret="";
-			main::OutError('現在すでにうどん作りの専門家です') if ($DT->{job} eq 'udon');
+			main::OutError(l('現在すでにうどん作りの専門家です')) if ($DT->{job} eq 'udon');
 			$DT->{job} = 'udon';
 			$ret="うどん作りの専門家になりました";
 			WriteLog(0,$DT->{id},$ret);
@@ -1233,7 +1233,7 @@
 			get		1	オリジナルそばレシピ
 		func	_local_
 			# オリジナルそばを作る
-			main::OutError('名前をつけてください') if !$USE->{arg}->{message};
+			main::OutError(l('名前をつけてください')) if !$USE->{arg}->{message};
 			my $ret;
 			$ret='オリジナルそば【'.$USE->{arg}->{message}.'】が完成しました';	
 			WriteLog(3,0,$DT->{shopname}."が特製そば「".$USE->{arg}->{message}."」を完成させました。");
@@ -1250,7 +1250,7 @@
 			needexp		20%
 		func	_local_
 			my $ret="";
-			main::OutError('現在すでにそば作りの専門家です') if ($DT->{job} eq 'soba');
+			main::OutError(l('現在すでにそば作りの専門家です')) if ($DT->{job} eq 'soba');
 			$DT->{job} = 'soba';
 			$ret="そば作りの専門家になりました";
 			WriteLog(0,$DT->{id},$ret);
@@ -1418,7 +1418,7 @@
 		arg		nocount|message100
 			use	1	便利屋
 		func	_local_
-			main::OutError('広告文をご記入ください') if !$USE->{arg}->{message};
+			main::OutError(l('広告文をご記入ください')) if !$USE->{arg}->{message};
 			my $ret;
 			my $up=int($USE->{param1}*(2-$DT->{rank}/5000));
 			$DT->{rank}+=$up;
@@ -1437,7 +1437,7 @@
 		info	専門職の看板を下ろします
 		func	_local_
 			my $ret="";
-			main::OutError('専門職の看板はあがっていません') if ($DT->{job} eq '');
+			main::OutError(l('専門職の看板はあがっていません')) if ($DT->{job} eq '');
 			$DT->{money}+=30000;
 			$DT->{job}='';	
 			$ret='看板を下ろし，慰労金\30000を受け取りました';
@@ -1660,7 +1660,7 @@
 		info	店力をすべて解放し，店の人気を上げます
 		arg		nocount
 		func	_local_
-			main::OutError('店力が100以上ないと解放できません') if ($DT->{item}[@@ITEMNO"店力"-1]<100);
+			main::OutError(l('店力が100以上ないと解放できません')) if ($DT->{item}[@@ITEMNO"店力"-1]<100);
 			my $ret="";
 			my $power;
 			my $cnt=$DT->{item}[@@ITEMNO"店力"-1];
@@ -1714,7 +1714,7 @@
 			needexp		20%
 		func	_local_
 			my $ret="";
-			main::OutError('現在すでに裏工作のプロフェッショナルです') if ($DT->{job} eq 'black');
+			main::OutError(l('現在すでに裏工作のプロフェッショナルです')) if ($DT->{job} eq 'black');
 			$DT->{job} = 'black';
 			$ret="裏工作のプロフェッショナルになりました";
 			WriteLog(0,$DT->{id},$ret);
@@ -2938,8 +2938,8 @@
 		arg		nocount|message30
 		func	_local_
 			# オリジナルうどんの名前を変える
-			main::OutError('まずオリジナルうどんを開発してください') if !$DT->{user}->{udon};
-			main::OutError('名前をつけてください') if !$USE->{arg}->{message};
+			main::OutError(l('まずオリジナルうどんを開発してください')) if !$DT->{user}->{udon};
+			main::OutError(l('名前をつけてください')) if !$USE->{arg}->{message};
 			my $ret;
 			$ret='オリジナルうどんの名前を【'.$USE->{arg}->{message}.'】に変更しました';	
 			WriteLog(3,0,$DT->{shopname}."がオリジナルうどんの名前を変えたようです");
@@ -2974,8 +2974,8 @@
 		info	オリジナルそばの名前を変更します
 		arg		nocount|message30
 		func	_local_
-			main::OutError('まずオリジナルそばを開発してください') if !$DT->{user}->{soba};
-			main::OutError('名前をつけてください') if !$USE->{arg}->{message};
+			main::OutError(l('まずオリジナルそばを開発してください')) if !$DT->{user}->{soba};
+			main::OutError(l('名前をつけてください')) if !$USE->{arg}->{message};
 			my $ret;
 			$ret='オリジナルそばの名前を【'.$USE->{arg}->{message}.'】に変更しました';	
 			WriteLog(3,0,$DT->{shopname}."がオリジナルそばの名前を変えたようです");

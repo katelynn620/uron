@@ -9,7 +9,7 @@ $itemno=$Q{item};
 $no=$Q{no};
 CheckItemNo($itemno);
 $itemcode=GetPath($ITEM_DIR,"use",$ITEM[$itemno]->{code});
-OutError('使えません') if $itemcode eq '' || !(-e $itemcode);
+OutError(l('使えません')) if $itemcode eq '' || !(-e $itemcode);
 
 $ITEM=$ITEM[$itemno];
 @item::DT=@DT;
@@ -20,7 +20,7 @@ RequireFile('inc-item.cgi');
 require $itemcode;
 
 $USE=GetUseItem($no);
-OutError('使えません') if !$USE || !$USE->{useok};
+OutError(l('使えません')) if !$USE || !$USE->{useok};
 $item::USE=$USE;
 
 RequireFile('inc-html-ownerinfo.cgi');

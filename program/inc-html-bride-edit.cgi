@@ -9,7 +9,7 @@ DataWrite();
 else
 {
 $i=SearchBride($Q{idx});
-OutError('指定された情報は存在しません') if ($i==-1);
+OutError(l('指定された情報は存在しません')) if ($i==-1);
 ($ida,$idb)=($BRIDE[$i]->{ida},$BRIDE[$i]->{idb});
 }
 
@@ -42,8 +42,8 @@ if ($Q{mode} eq 'con') {
 	PushLog(2,0,$DT[$id2idx{$ida}]->{name}.'＆'.$DT[$id2idx{$idb}]->{name}.'夫妻が住宅を建てました。');
 }
 if ($Q{mode} eq 'more') {
-	OutError('増築できません。') if ($BRIDE[$i]->{mode} < 2 || $BRIDE[$i]->{mode} > 7) ;
-	OutError('住宅増築に必要な資金が足りません。') if ($BRIDE[$i]->{money} < $BRIDE[$i]->{mode} * 10000000);
+	OutError(l('増築できません。')) if ($BRIDE[$i]->{mode} < 2 || $BRIDE[$i]->{mode} > 7) ;
+	OutError(l('住宅増築に必要な資金が足りません。')) if ($BRIDE[$i]->{money} < $BRIDE[$i]->{mode} * 10000000);
 	$BRIDE[$i]->{money}-=($BRIDE[$i]->{mode} * 10000000);
 	$BRIDE[$i]->{mode}+=2;
 	PushLog(2,0,$DT[$id2idx{$ida}]->{name}.'＆'.$DT[$id2idx{$idb}]->{name}.'夫妻が住宅を増築しました。');
@@ -51,12 +51,12 @@ if ($Q{mode} eq 'more') {
 if ($Q{mode} eq 'plus') {
 	$itemno=$Q{it};
 	my $n=SearchBstock($Q{it});
-	OutError('保管スペースがありません。') if ($n == -1) ;
+	OutError(l('保管スペースがありません。')) if ($n == -1) ;
 	my $space=$ITEM[$itemno]->{limit}*$HouseMax - $BRIDE[$i]->{cnt}[$n];
-	OutError('保管スペースがありません。') if ($space < 1) ;
+	OutError(l('保管スペースがありません。')) if ($space < 1) ;
 	$Q{num}=$DT->{item}[$itemno-1] if ($Q{num} > $DT->{item}[$itemno-1]);
 	$num=CheckCount($DT->{item}[$itemno-1],int($Q{num}),0,$space);
-	OutError('無効な数値指定です。') if !$num;
+	OutError(l('無効な数値指定です。')) if !$num;
 	$DT->{item}[$itemno-1]-=$num;
 	$BRIDE[$i]->{stock}[$n]=$itemno;
 	$BRIDE[$i]->{cnt}[$n]+=$num;
@@ -66,10 +66,10 @@ if ($Q{mode} eq 'minus') {
 	my $n=$Q{it};
 	my $itemno=$BRIDE[$i]->{stock}[$n];
 	my $space=$ITEM[$itemno]->{limit} - $DT->{item}[$itemno-1];
-	OutError('倉庫が一杯で取り出せません。') if ($space < 1) ;
+	OutError(l('倉庫が一杯で取り出せません。')) if ($space < 1) ;
 	$Q{num}=$BRIDE[$i]->{cnt}[$n] if ($Q{num} > $BRIDE[$i]->{cnt}[$n]);
 	$num=CheckCount($BRIDE[$i]->{cnt}[$n],int($Q{num}),0,$space);
-	OutError('無効な数値指定です。') if !$num;
+	OutError(l('無効な数値指定です。')) if !$num;
 	$DT->{item}[$itemno-1]+=$num;
 	$BRIDE[$i]->{cnt}[$n]-=$num;
 	$BRIDE[$i]->{stock}[$n]=0 if !($BRIDE[$i]->{cnt}[$n]);
@@ -77,20 +77,20 @@ if ($Q{mode} eq 'minus') {
 }
 if ($Q{mode} eq 'mplus') {
 	my $space=$BRIDE[$i]->{mode}*20000000 - $BRIDE[$i]->{money};
-	OutError('保管スペースがありません。') if ($space < 1) ;
+	OutError(l('保管スペースがありません。')) if ($space < 1) ;
 	$Q{num}=$DT->{money} if ($Q{num} > $DT->{money});
 	$num=CheckCount($DT->{money},int($Q{num}),0,$space);
-	OutError('無効な数値指定です。') if !$num;
+	OutError(l('無効な数値指定です。')) if !$num;
 	$DT->{money}-=$num;
 	$BRIDE[$i]->{money}+=$num;
 	DataWrite();
 }
 if ($Q{mode} eq 'mminus') {
 	my $space=$MAX_MONEY - $DT->{money};
-	OutError('倉庫が一杯で取り出せません。') if ($space < 1) ;
+	OutError(l('倉庫が一杯で取り出せません。')) if ($space < 1) ;
 	$Q{num}=$BRIDE[$i]->{money} if ($Q{num} > $BRIDE[$i]->{money});
 	$num=CheckCount($BRIDE[$i]->{money},int($Q{num}),0,$space);
-	OutError('無効な数値指定です。') if !$num;
+	OutError(l('無効な数値指定です。')) if !$num;
 	$DT->{money}+=$num;
 	$BRIDE[$i]->{money}-=$num;
 	DataWrite();

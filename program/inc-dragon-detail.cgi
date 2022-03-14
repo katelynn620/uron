@@ -5,7 +5,7 @@ $disp.="<BIG>●ドラゴンレース：牧場</BIG><br><br>";
 
 ReadDragon();
 my $cnt=$id2dra{$Q{dr}};
-OutError("bad request") if ($DR[$cnt]->{town} ne $MYDIR || $DR[$cnt]->{owner} != $DT->{id});
+OutError('bad request') if ($DR[$cnt]->{town} ne $MYDIR || $DR[$cnt]->{owner} != $DT->{id});
 my $stname="";
 $forment="";
 

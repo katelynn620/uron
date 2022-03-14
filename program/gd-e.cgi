@@ -9,7 +9,7 @@ RequireFile('inc-gd.cgi');
 $Q{er}='gd';
 my $functionname=$Q{mode};
 $functionname||="leave";
-OutError("bad request") if !defined(&$functionname);
+OutError('bad request') if !defined(&$functionname);
 &$functionname;
 
 OutSkin();
@@ -18,7 +18,7 @@ OutSkin();
 
 sub leave
 {
-OutError("bad request") if (!$DT->{guild});
+OutError('bad request') if (!$DT->{guild});
 $disp.=<<"HTML";
 $TB$TR
 $TD$image[0]$TD
@@ -41,11 +41,11 @@ STR
 
 sub submit
 {
-OutError("bad request") if (!$DT->{guild});
+OutError('bad request') if (!$DT->{guild});
 my $checkok;
 $ckeckok=1 if ($GUILD_DETAIL{$DT->{guild}}->{leadt} eq $MYDIR && $GUILD_DETAIL{$DT->{guild}}->{leader} == $DT->{id});
 $ckeckok=1 if ($GUILD_DETAIL{$DT->{guild}}->{$MYDIR} == $DT->{id});
-OutError("bad request") if (!$ckeckok);
+OutError('bad request') if (!$ckeckok);
 $disp.=<<"HTML";
 $TB$TR
 $TD$image[0]$TD
@@ -90,17 +90,17 @@ STR
 
 sub name
 {
-OutError("bad request") if (!$DT->{guild});
+OutError('bad request') if (!$DT->{guild});
 my $checkok;
 $ckeckok=1 if ($GUILD_DETAIL{$DT->{guild}}->{leadt} eq $MYDIR && $GUILD_DETAIL{$DT->{guild}}->{leader} == $DT->{id});
 $ckeckok=1 if ($GUILD_DETAIL{$DT->{guild}}->{$MYDIR} == $DT->{id});
-OutError("bad request") if (!$ckeckok);
+OutError('bad request') if (!$ckeckok);
 
-OutError('命名する相手を選んでください。') if !$Q{id};
-OutError('存在しない店舗です。') if !defined($id2idx{$Q{id}});
+OutError(l('命名する相手を選んでください。')) if !$Q{id};
+OutError(l('存在しない店舗です。')) if !defined($id2idx{$Q{id}});
 my $tg=$id2idx{$Q{id}};
-OutError('命名権限がありません。') if ($DT[$tg]->{guild} ne $DT->{guild});
-OutError('肩書きが長すぎです。') if length($Q{name})>20;
+OutError(l('命名権限がありません。')) if ($DT[$tg]->{guild} ne $DT->{guild});
+OutError(l('肩書きが長すぎです。')) if length($Q{name})>20;
 
 $DT[$tg]->{user}{_so_e}=$Q{name};
 my $ret=$DT[$tg]->{shopname}."を「".$Q{name}."」に叙しました。";
@@ -115,18 +115,18 @@ UnLock();
 
 sub fire
 {
-OutError("bad request") if (!$DT->{guild});
+OutError('bad request') if (!$DT->{guild});
 my $checkok;
 $ckeckok=1 if ($GUILD_DETAIL{$DT->{guild}}->{leadt} eq $MYDIR && $GUILD_DETAIL{$DT->{guild}}->{leader} == $DT->{id});
 $ckeckok=1 if ($GUILD_DETAIL{$DT->{guild}}->{$MYDIR} == $DT->{id});
-OutError("bad request") if (!$ckeckok);
+OutError('bad request') if (!$ckeckok);
 
-OutError('退団させるメンバーを選んでください。') if !$Q{id};
-OutError('存在しない店舗です。') if !defined($id2idx{$Q{id}});
+OutError(l('退団させるメンバーを選んでください。')) if !$Q{id};
+OutError(l('存在しない店舗です。')) if !defined($id2idx{$Q{id}});
 my $tg=$id2idx{$Q{id}};
-OutError('権限がありません。') if ($DT[$tg]->{guild} ne $DT->{guild});
-OutError('団長を退団させることはできません。') if ($GUILD_DETAIL{$DT->{guild}}->{leadt} eq $MYDIR && $GUILD_DETAIL{$DT->{guild}}->{leader} == $Q{id});
-OutError('退団させるにはleaveと入力してください') if $Q{guild} ne 'leave';
+OutError(l('権限がありません。')) if ($DT[$tg]->{guild} ne $DT->{guild});
+OutError(l('団長を退団させることはできません。')) if ($GUILD_DETAIL{$DT->{guild}}->{leadt} eq $MYDIR && $GUILD_DETAIL{$DT->{guild}}->{leader} == $Q{id});
+OutError(l('退団させるにはleaveと入力してください')) if $Q{guild} ne 'leave';
 
 delete $DT[$tg]->{user}{_so_e};
 $DT[$tg]->{guild}="";

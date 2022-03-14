@@ -1,7 +1,7 @@
 use utf8;
 # フォーム表示 2005/03/30 由來
 
-$disp.=GetMenuTag('dwarf','[宅配便リスト]')
+$disp.=GetMenuTag('dwarf','['.l('宅配便リスト').']')
 	."<b>[宅配便を出す]</b>";
 $disp.=GetMenuTag('dwarf','[貿易品リスト]','&trade=list') if -e "trade.cgi";
 $disp.="<hr width=500 noshade size=1>";
@@ -74,7 +74,7 @@ sub LFormCheck
 my $to=$Q{to};
 my $toname;
 $preerror="宛先を指定してください。", return if $to==-1;
-OutError("自分自身に宅配便を出すことはできません。") if ($to == $DT->{id});
+OutError(l('自分自身に宅配便を出すことはできません。')) if ($to == $DT->{id});
 if ($to==99)
 	{
 	$preerror="貿易がつながっていないので指定できません。", return unless -e "trade.cgi";

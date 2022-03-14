@@ -4,7 +4,7 @@ use utf8;
 $image[0]=GetTagImgKao("大臣","minister");
 DataRead();
 CheckUserPass();
-OutError('政治を行えるのは領主のみです') if $STATE->{leader}!=$DT->{id};
+OutError(l('政治を行えるのは領主のみです')) if $STATE->{leader}!=$DT->{id};
 
 my $shoplist="";
 my $taxsum=0;

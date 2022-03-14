@@ -2,7 +2,7 @@ use utf8;
 # 全体管理 2004/01/20 由來
 
 CheckUserPass();
-OutError("") if !$MASTER_USER;
+OutError('') if !$MASTER_USER;
 
 $NOMENU=1;
 $Q{bk}="none";
@@ -15,7 +15,7 @@ if($Q{log})
 elsif($Q{mode} eq "delitem")
 {
 	$num=CheckCount($Q{num1},$Q{num2},0,$MAX_MONEY);
-	OutError('消去するアイテムを指定してください。') if !$num;
+	OutError(l('消去するアイテムを指定してください。')) if !$num;
 
 	Lock();
 	DataRead();
@@ -41,17 +41,17 @@ elsif ($Q{ecode})
 	$Q{tlyear}-=1900 if $Q{tlyear}>=2000;
 	$time=0;
 	$time=GetTimeLocal($Q{tlsec},$Q{tlmin},$Q{tlhour},$Q{tlday},$Q{tlmon}-1,$Q{tlyear});
-	OutError('日付時刻設定が不正です。') if !$time;
+	OutError(l('日付時刻設定が不正です。')) if !$time;
 	Lock();
 	DataRead();
 	require (GetPath($ITEM_DIR,"event"));
 	my $key=$Q{ecode};
-	OutError('正しいイベントコードを指定してください。') if !defined($EVENT{$key});
+	OutError(l('正しいイベントコードを指定してください。')) if !defined($EVENT{$key});
 	$DTevent{$key}=$time;
 	DataWrite();
 	DataCommitOrAbort();
 	UnLock();
-	$disp.="イベントコード".$Q{ecode}."を発生させました。";
+	$disp.=l('イベントコード%1を発生させました。',$Q{ecode});
 	OutSkin();
 }
 else
@@ -82,18 +82,18 @@ sub GetLog
 
 	if($Q{log}eq'.')
 	{
-		$disp.="<hr>上記タブより閲覧したいログを選択してください<br>";
-		$disp.="[$LOG_DELETESHOP_FILE] 閉店/移転した店舗のログ<br>";
-		$disp.="[$LOG_ERROR_FILE] 各種エラーのログ<br>";
-		$disp.="[$LOG_MOVESHOP_FILE] 移転受け入れのログ<br>";
-		$disp.="[$LOG_DEBUG_FILE] デバッグログ<br>";
-		$disp.="[$LOG_GLOBAL_MSG_FILE] 広域掲示板ログ<br>";
-		$disp.="[$LOG_MARK_FILE] マークログ<br>";
-		$disp.="<hr>なお、表\示される内容には生のパスワードが含まれる可能\性もありますので、注意してください。";
+		$disp.="<hr>".l('上記タブより閲覧したいログを選択してください')."<br>";
+		$disp.="[$LOG_DELETESHOP_FILE] ".l('閉店/移転した店舗のログ')."<br>";
+		$disp.="[$LOG_ERROR_FILE] ".l('各種エラーのログ')."<br>";
+		$disp.="[$LOG_MOVESHOP_FILE] ".l('移転受け入れのログ')."<br>";
+		$disp.="[$LOG_DEBUG_FILE] ".l('デバッグログ')."<br>";
+		$disp.="[$LOG_GLOBAL_MSG_FILE] ".l('広域掲示板ログ')."<br>";
+		$disp.="[$LOG_MARK_FILE] ".l('マークログ')."<br>";
+		$disp.="<hr>".l('なお、表示される内容には生のパスワードが含まれる可能性もありますので、注意してください。');
 	}
 	else
 	{
-		open(IN,"<:encoding(UTF-8)",GetPath($LOG_DIR,$Q{log})) or OutError('存在しません '.$Q{log});
+		open(IN,"<:encoding(UTF-8)",GetPath($LOG_DIR,$Q{log})) or OutError(l('存在しません %1',$Q{log}));
 		my @data=reverse(<IN>);
 		close(IN);
 

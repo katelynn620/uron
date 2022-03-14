@@ -7,7 +7,7 @@ DataRead();
 CheckUserPass();
 
 my $functionname=$Q{mode};
-OutError("bad request") if !defined(&$functionname);
+OutError('bad request') if !defined(&$functionname);
 &$functionname;
 RenewLog();
 DataWrite();
@@ -22,7 +22,7 @@ sub inside
 if ($Q{taxrate} =~ /([^0-9])/
 	|| $Q{devem} =~ /([^0-9])/
 	|| $Q{safem} =~ /([^0-9])/
-	) { OutError('使用できる文字は半角数字だけです'); }
+	) { OutError(l('使用できる文字は半角数字だけです')); }
 OutError($image[0].'いくら何でもそれは高すぎというものですぞ。') if ($Q{taxrate} > 40) ;
 OutError($image[0].'一度にそれだけ対策費をつぎこんでも無意味ですぞ。') if ($Q{devem} > 10000000 || $Q{safem} > 10000000) ;
 
@@ -46,10 +46,10 @@ $STATE->{safem}=int($Q{safem});
 
 sub outside
 {
-OutError('反乱中のため雇用できません。') if $DTevent{rebel};
+OutError(l('反乱中のため雇用できません。')) if $DTevent{rebel};
 my $stock=int($STATE->{money} / 1200);
 $count=CheckCount($Q{cnt1},$Q{cnt2},0,$stock);
-OutError('雇用人数を指定してください') if !$count;
+OutError(l('雇用人数を指定してください')) if !$count;
 $STATE->{money}-=$count * 1200;
 $STATE->{army}+=$count;
 $disp.="護衛軍を$count人雇いました。";
@@ -57,16 +57,16 @@ $disp.="護衛軍を$count人雇いました。";
 
 sub outdel
 {
-OutError('反乱中のため解雇できません。') if $DTevent{rebel};
+OutError(l('反乱中のため解雇できません。')) if $DTevent{rebel};
 $count=CheckCount($Q{cnt1},$Q{cnt2},0,$STATE->{army});
-OutError('解雇人数を指定してください') if !$count;
+OutError(l('解雇人数を指定してください')) if !$count;
 $STATE->{army}-=$count;
 $disp.="護衛軍を$count人解雇しました。";
 }
 
 sub taxside
 {
-OutError('対象店を選択してください。') if !defined($id2idx{$Q{tg}});
+OutError(l('対象店を選択してください。')) if !defined($id2idx{$Q{tg}});
 my $i=$id2idx{$Q{tg}};
 if ($Q{md} eq "free")
 	{
@@ -100,9 +100,9 @@ $disp.="全ての店の税率を通常に戻しました。";
 
 sub expose
 {
-OutError('反乱中のため実行できません。') if $DTevent{rebel};
-OutError('対象店を選択してください。') if !defined($id2idx{$Q{tg}});
-OutError('費用が足りません。') if ($STATE->{money} < 1000000);
+OutError(l('反乱中のため実行できません。')) if $DTevent{rebel};
+OutError(l('対象店を選択してください。')) if !defined($id2idx{$Q{tg}});
+OutError(l('費用が足りません。')) if ($STATE->{money} < 1000000);
 my $i=$id2idx{$Q{tg}};
 OutError($image[0].'その店舗に対する取り締まりはあまり意味がないようですぞ。') if ($DT[$i]->{rank} < 2000) ;
 $STATE->{money}-=1000000;

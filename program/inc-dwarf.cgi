@@ -2,8 +2,8 @@ use utf8;
 # 宅配便リスト表示 2005/01/06 由來
 
 $disp.="<b>[宅配便リスト]</b> "
-	.GetMenuTag('dwarf',		'[宅配便を出す]','&form=make');
-$disp.=GetMenuTag('dwarf','[貿易品リスト]','&trade=list') if -e "trade.cgi";
+	.GetMenuTag('dwarf',		'['.l('宅配便を出す').']','&form=make');
+$disp.=GetMenuTag('dwarf','['.l('貿易品リスト').']','&trade=list') if -e "trade.cgi";
 $disp.="<hr width=500 noshade size=1>";
 
 if (!$NeverD)

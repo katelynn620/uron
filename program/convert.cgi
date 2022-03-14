@@ -70,13 +70,13 @@ sub OldLog
 sub DataReadOld
 {
 	my $datafile=GetPath("data");
-	OutError("実行できません") unless -e $datafile;
+	OutError(l('実行できません')) unless -e $datafile;
 	open(IN,"<:encoding(UTF-8)",$datafile);
 	read(IN,my $buf,-s $datafile);
 	close(IN);
 	my @DATA=split(/\n/,$buf);
 	
-	OutError("no data") if !@DATA;
+	OutError('no data') if !@DATA;
 	
 	my $idx=0;
 	my $maxdata=@DATA;

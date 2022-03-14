@@ -1,7 +1,7 @@
 use utf8;
 # 貿易品リスト表示 2005/01/06 由來
 
-OutError("bad request") unless -e "trade.cgi";
+OutError('bad request') unless -e "trade.cgi";
 CheckTradeProcess();
 
 $tp=int($Q{tp}+0);
@@ -40,9 +40,9 @@ close(IN);
 my($page,$pagestart,$pageend,$pagenext,$pageprev,$pagemax)
 	=GetPage($Q{pg},$RANKING_PAGE_ROWS,scalar(@itemlist));
 
-$disp.=GetMenuTag('dwarf','[宅配便リスト]')
-	.GetMenuTag('dwarf',		'[宅配便を出す]','&form=make');
-$disp.=GetMenuTag('dwarf','[貿易品リスト]','&trade=list') if -e "trade.cgi";
+$disp.=GetMenuTag('dwarf','['.l('宅配便リスト').']')
+	.GetMenuTag('dwarf',		'['.l('宅配便を出す').']','&form=make');
+$disp.=GetMenuTag('dwarf','['.l('貿易品リスト').']','&trade=list') if -e "trade.cgi";
 $disp.="<hr width=500 noshade size=1>";
 
 $disp.=<<"HTML";
@@ -125,7 +125,7 @@ sub CheckTradeProcess
 		unlink($fn) if (stat($fn))[9]<$NOW_TIME-60*30; #既に解除されている可能性をチェック後解除
 		UnLock();
 	}
-	OutError('ただ今貿易船が入港しています。もうしばらくお待ちください');
+	OutError(l('ただ今貿易船が入港しています。もうしばらくお待ちください'));
 }
 
 sub ConvertItem

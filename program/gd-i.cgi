@@ -4,7 +4,7 @@ use utf8;
 $NOITEM=1;
 DataRead();
 CheckUserPass(1);
-OutError('ギルドに入っていません') if !$DT->{guild};
+OutError(l('ギルドに入っていません')) if !$DT->{guild};
 RequireFile('inc-gd.cgi');
 
 my $lv=int( $GUILD_DATA{$DT->{guild}}->{money} / 111000);

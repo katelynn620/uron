@@ -9,7 +9,7 @@ RequireFile('inc-html-ownerinfo.cgi');
 $disp.="<BIG>●依頼所</BIG><br><br>";
 
 $i=SearchReqIndex($Q{no});
-OutError('指定された依頼は存在しません') if ($i==-1);
+OutError(l('指定された依頼は存在しません')) if ($i==-1);
 my($no,$id,$itemno,$num,$prn,$pr,$mode)=($REQ[$i]->{no},$REQ[$i]->{id},$REQ[$i]->{itemno},$REQ[$i]->{num},$REQ[$i]->{prn},$REQ[$i]->{pr},$REQ[$i]->{mode});
 ReqDataSet();
 ReqEnd() if defined($id2idx{$mode});

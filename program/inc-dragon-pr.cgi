@@ -5,9 +5,9 @@ $disp.="<BIG>●ドラゴンレース：牧場</BIG><br><br>";
 
 ReadParent();
 my $cnt=$id2pr{$Q{dr}};
-OutError("bad request") if ($MYDIR ne $PR[$cnt]->{town});
-OutError("bad request") if ($PR[$cnt]->{owner}!=$DT->{id});
-OutError("bad request") if (!$PR[$cnt]->{fm});
+OutError('bad request') if ($MYDIR ne $PR[$cnt]->{town});
+OutError('bad request') if ($PR[$cnt]->{owner}!=$DT->{id});
+OutError('bad request') if (!$PR[$cnt]->{fm});
 
 $forment="";
 foreach(0..$PRcount)

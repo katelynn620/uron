@@ -1,9 +1,9 @@
 use utf8;
 # 依頼下請け関数 2003/09/25 由來
 
-$MENUSAY=GetMenuTag('stock',	'[倉庫を確認する]')
-	.GetMenuTag('req','[依頼一覧に戻る]')
-	.GetMenuTag('town',	'[依頼所を出る]');
+$MENUSAY=GetMenuTag('stock',	'['.l('倉庫を確認する').']')
+	.GetMenuTag('req','['.l('依頼一覧に戻る').']')
+	.GetMenuTag('town',	'['.l('依頼所を出る').']');
 $AucImg=GetTagImgKao("受付","req");
 
 @REQnamelist=qw(

@@ -3,7 +3,7 @@ use utf8;
 
 my $topic=$Q{key} ne "log";
 
-$disp.=$topic ? "<BIG>".$DT->{shopname}."の出来事</BIG><br><br>" : "<BIG>●新聞：速報</BIG><br><br>";
+$disp.=$topic ? "<BIG>" . l('%1の出来事',$DT->{shopname}). "</BIG><br><br>" : "<BIG>".l('●新聞：速報')."</BIG><br><br>";
 
 my($page,$pagestart,$pageend,$pagenext,$pageprev,$pagemax);
 my $pagecontrol="";
@@ -41,9 +41,10 @@ $formtarget
 <select name=lmd>
 $formmode
 </select>
-<input type=submit value="検索">
-</form>
 HTML
+	$disp.= '<input type=submit value="'.l('検索').'">
+</form>';
+
 
 	my $key=$Q{kw};
 	$key=~s/(\W)/'%'.unpack('H2',$1)/eg;

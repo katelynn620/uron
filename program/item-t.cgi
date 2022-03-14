@@ -14,8 +14,8 @@ $count=CheckCount($Q{cnt1},$Q{cnt2},0,$DT->{item}[$itemno-1]);
 
 if ($ITEM[$itemno]->{flag}=~/h/) {
 
-OutError('不正な要求です') if ($ITEM[$itemno]->{flag}=~/t/);
-OutError('解雇人数を指定してください') if !$count;
+OutError(l('不正な要求です')) if ($ITEM[$itemno]->{flag}=~/t/);
+OutError(l('解雇人数を指定してください')) if !$count;
 
 $ret=$itemname."を".$count.$scale."解雇しました";
 $disp.=$ret;
@@ -23,8 +23,8 @@ $DT->{item}[$itemno-1]-=$count;
 
  }	else	{
 
-OutError('不正な要求です') if ($ITEM[$itemno]->{flag}=~/t/);
-OutError('破棄数量を指定してください') if !$count;
+OutError(l('不正な要求です')) if ($ITEM[$itemno]->{flag}=~/t/);
+OutError(l('破棄数量を指定してください')) if !$count;
 
 $ret=$itemname."を".$count.$scale."処分しました";
 $disp.=$ret;

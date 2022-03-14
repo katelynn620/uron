@@ -16,7 +16,7 @@ $Q{er}='gd';
 RequireFile('inc-gd-entry.cgi') if ($Q{edit});
 my $functionname=$Q{mode};
 $functionname||="join";
-OutError("bad request") if !defined(&$functionname);
+OutError('bad request') if !defined(&$functionname);
 &$functionname;
 
 OutSkin();
@@ -25,7 +25,7 @@ OutSkin();
 
 sub join
 {
-OutError("bad request") if ($DT->{guild});
+OutError('bad request') if ($DT->{guild});
 $disp.=<<"HTML";
 $TB$TR
 $TD$image[0]$TD
@@ -54,11 +54,11 @@ $disp.=($join) ? $join : "入団許可が出ていません";
 
 sub submit
 {
-OutError("bad request") if (!$DT->{guild});
+OutError('bad request') if (!$DT->{guild});
 my $checkok;
 $ckeckok=1 if ($GUILD_DETAIL{$DT->{guild}}->{leadt} eq $MYDIR && $GUILD_DETAIL{$DT->{guild}}->{leader} == $DT->{id});
 $ckeckok=1 if ($GUILD_DETAIL{$DT->{guild}}->{$MYDIR} == $DT->{id});
-OutError("bad request") if (!$ckeckok);
+OutError('bad request') if (!$ckeckok);
 
 ReadLetterName();
 $disp.=<<"HTML";

@@ -15,10 +15,10 @@ $target=$Q{tg};
 $message=$Q{msg};
 $select=$Q{select};
 CheckItemNo($itemno);
-OutError('標的が見つかりません') if $target && !defined($id2idx{$target});
+OutError(l('標的が見つかりません')) if $target && !defined($id2idx{$target});
 
 $itemcode=GetPath($ITEM_DIR,"use",$ITEM[$itemno]->{code});
-OutError('使えません') if $itemcode eq '' || !(-e $itemcode);
+OutError(l('使えません')) if $itemcode eq '' || !(-e $itemcode);
 
 $ITEM=$ITEM[$itemno];
 @item::DT=@DT;
@@ -29,7 +29,7 @@ RequireFile('inc-item.cgi');
 require $itemcode;
 
 $USE=GetUseItem($no);
-OutError('使えません') if !$USE || !$USE->{useok};
+OutError(l('使えません')) if !$USE || !$USE->{useok};
 $item::USE=$USE;
 
 	if($USE->{arg}=~/message(\d*)/)
@@ -38,7 +38,7 @@ $item::USE=$USE;
 		# require $JCODE_FILE;
 		# $message=EscapeHTML(jcode::sjis($message,$CHAR_SHIFT_JIS&&'sjis'));
 		$message=EscapeHTML($message);
-		OutError('入力文字数が多すぎます (<>&"は4～6文字に換算されます)') if length $message>$limit;
+		OutError(l('入力文字数が多すぎます (<>&"は4～6文字に換算されます)')) if length $message>$limit;
 	}
 	my %select_hash;
 	if($USE->{arg}=~/select/)
@@ -51,7 +51,7 @@ $item::USE=$USE;
 			last if shift @fld eq $select;
 			shift @fld;
 		}
-		OutError('選択肢が不正です') if !@fld;
+		OutError(l('選択肢が不正です')) if !@fld;
 	}
 	$USE->{arg}={};
 	$USE->{arg}->{target}=$target;

@@ -27,7 +27,7 @@ OutSkin();
 sub GuildEditMenu
 {
 my $leaderid=$GUILD_DETAIL{$DT->{guild}}->{leader};
-OutError('ギルドを変更できるのは団長だけです') if (defined($id2idx{$leaderid}) && $leaderid != $DT->{id});
+OutError(l('ギルドを変更できるのは団長だけです')) if (defined($id2idx{$leaderid}) && $leaderid != $DT->{id});
 ReadLetterName();
 $code=$DT->{guild};
 $GUILD_DETAIL{$code}->{url}="http://" if !$GUILD_DETAIL{$code}->{url};

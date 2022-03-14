@@ -23,8 +23,8 @@ else
 $showcase=CheckShowCaseNumber($DTS,$showcase);
 ($itemno,$price,$stock)=CheckShowCaseItem($DTS,$showcase);
 
-OutError("陳列棚には何もありません") if !$itemno || !$stock;
-OutError("陳列が変化したようです") if $itemno!=$mstno;
+OutError(l('陳列棚には何もありません')) if !$itemno || !$stock;
+OutError(l('陳列が変化したようです')) if $itemno!=$mstno;
 
 RequireFile('inc-html-ownerinfo.cgi');
 

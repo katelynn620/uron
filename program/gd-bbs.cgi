@@ -8,7 +8,7 @@ RequireFile('inc-gd.cgi');
 
 my $code = $DT->{guild};
 $code=$Q{code} if $MASTER_USER;
-OutError('使用不可です') if !$code;
+OutError(l('使用不可です')) if !$code;
 
 $disp.=$TB.$TR.$TD.$image[0].$TD."<SPAN>ギルド受付</SPAN>：こちらは".GetTagImgGuild($DT->{guild});
 $disp.="<BIG>".$GUILD{$DT->{guild}}->[$GUILDIDX_name]."</BIG> 作戦室です。<br>";

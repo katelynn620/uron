@@ -15,7 +15,7 @@ sub CheckUserID
 	$id+=0;
 	
 	return 0 if $enable0 && !$id;
-	OutError('その店舗は存在しません。') if !defined($id2idx{$id});
+	OutError(l('その店舗は存在しません。')) if !defined($id2idx{$id});
 
 	return ($id,$id2idx{$id});
 }

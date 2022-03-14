@@ -47,7 +47,7 @@ sub CheckShowCaseNumber
 	my($DT,$sc)=@_;
 	
 	$sc+=0;
-	OutError('そんな陳列棚はありません') if $sc<0 || $DT->{showcasecount}<=$sc;
+	OutError(l('そんな陳列棚はありません')) if $sc<0 || $DT->{showcasecount}<=$sc;
 
 	return $sc;
 }

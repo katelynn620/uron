@@ -9,12 +9,12 @@ RequireFile('inc-req.cgi');
 $disp.="<BIG>●依頼所</BIG><br><br>";
 
 my $functionname=$Q{mode};
-OutError("bad request") if !defined(&$functionname);
+OutError('bad request') if !defined(&$functionname);
 &$functionname;
 
 $disp.="<br><br>".$TBT.$TRT.$TD.GetTagImgJob($DT->{job},$DT->{icon});
-$disp.=$TD.GetMenuTag('stock',	'[倉庫へ]');
-$disp.=GetMenuTag('req','[続けて依頼を見る]');
+$disp.=$TD.GetMenuTag('stock',	'['.l('倉庫へ').']');
+$disp.=GetMenuTag('req','['.l('続けて依頼を見る').']');
 $disp.=$TRE.$TBE;
 
 WriteAuc();
@@ -83,7 +83,7 @@ sub new
 sub plus
 {
 	$i=SearchReqIndex($Q{idx});
-	OutError('指定された取引は存在しません') if ($i==-1);
+	OutError(l('指定された取引は存在しません')) if ($i==-1);
 	my($itemno,$num,$prn,$pr,$mode)=($REQ[$i]->{itemno},$REQ[$i]->{num},$REQ[$i]->{prn},$REQ[$i]->{pr},$REQ[$i]->{mode});
 	OutError($AucImg.'この取引はもう達成されてるぜ。またよろしく頼むな。') if defined($id2idx{$mode});
 	OutError($AucImg.'おいおい、ない袖は振れないぜ！') if ($prn > 0)&&($DT->{item}[$prn-1] < $pr) ;
@@ -111,7 +111,7 @@ sub plus
 sub end
 {
 	$i=SearchReqIndex($Q{idx});
-	OutError('指定された取引は存在しません') if ($i==-1);
+	OutError(l('指定された取引は存在しません')) if ($i==-1);
 	my($itemno,$num)=($REQ[$i]->{itemno},$REQ[$i]->{num});
 
 	if ($itemno> 0)
@@ -131,8 +131,8 @@ sub end
 sub thank
 {
 	$i=SearchReqIndex($Q{idx});
-	OutError('指定された取引は存在しません') if ($i==-1);
-	OutError('不正な要求です') if ($REQ[$i]->{id} != $DT->{id});
+	OutError(l('指定された取引は存在しません')) if ($i==-1);
+	OutError(l('不正な要求です')) if ($REQ[$i]->{id} != $DT->{id});
 	my($no,$itemno,$num,$prn,$pr,$mode)=($REQ[$i]->{no},$REQ[$i]->{itemno},$REQ[$i]->{num},$REQ[$i]->{prn},$REQ[$i]->{pr},$REQ[$i]->{mode});
 
 	if ($prn > 0) {

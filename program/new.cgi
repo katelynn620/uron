@@ -1,17 +1,17 @@
 use utf8;
 # 新規開店 2004/01/20 由來
 
-$image[0]=GetTagImgKao("案内人","guide");
+$image[0]=GetTagImgKao(l('案内人'),"guide");
 # require $JCODE_FILE;
 DataRead();
 
 if($Q{admin} ne $MASTER_PASSWORD)
 {
-	OutError('新規店舗登録権限がありません。') if $NEW_SHOP_ADMIN;
-	OutError('あなたはすでに店舗を持っています。') if GetIPList(GetTrueIP());
-	OutError('あなたは他の街ですでに店舗を持っています。') if $NEW_OTHERTOWN_BLOCK && GetDoubleIP(GetTrueIP());
-	OutError('あなたは現在登録制限されています。') if $NEW_SHOP_BLOCKIP && GetTrueIP() eq $DTblockip;
-	OutError('出店キーワードが正しくありません。') if $NEW_SHOP_KEYWORD && $Q{sname} && $Q{newkey} ne $NEW_SHOP_KEYWORD;
+	OutError(l('新規店舗登録権限がありません。')) if $NEW_SHOP_ADMIN;
+	OutError(l('あなたはすでに店舗を持っています。')) if GetIPList(GetTrueIP());
+	OutError(l('あなたは他の街ですでに店舗を持っています。')) if $NEW_OTHERTOWN_BLOCK && GetDoubleIP(GetTrueIP());
+	OutError(l('あなたは現在登録制限されています。')) if $NEW_SHOP_BLOCKIP && GetTrueIP() eq $DTblockip;
+	OutError(l('出店キーワードが正しくありません。')) if $NEW_SHOP_KEYWORD && $Q{sname} && $Q{newkey} ne $NEW_SHOP_KEYWORD;
 	checkMaxUser();
 }
 
@@ -32,30 +32,30 @@ if($Q{sname}.$Q{name}.$Q{pass1}.$Q{pass2})
 	}
 	if(!$Q{sname} || !$Q{name} || !$Q{pass1} || !$Q{pass2})
 	{
-		OutError('名前・店名・パスワードを入力してください。');
+		OutError(l('名前・店名・パスワードを入力してください。'));
 	}
 	if($Q{pass1} ne $Q{pass2})
 	{
-		OutError('確認パスワードが違っています。');
+		OutError(l('確認パスワードが違っています。'));
 	}
 	if(length($Q{sname})<4)
 	{
-		OutError('店名の文字数が少ないです。');
+		OutError(l('店名の文字数が少ないです。'));
 	}
 	if(length($Q{name})>12 || length($Q{sname})>20
 	|| length($Q{pass1})>12 || length($Q{pass2})>8)
 	{
-		OutError('名前(全角6文字)・店名(全角10文字)・パスワード(8文字)の文字数が多いです。');
+		OutError(l('名前(全角6文字)・店名(全角10文字)・パスワード(8文字)の文字数が多いです。'));
 	}
 	if( $Q{name} eq $Q{pass1} )
 	{
-		OutError('名前とパスワードは同じにしないでください。');
+		OutError(l('名前とパスワードは同じにしないでください。'));
 	}
 	
 	Lock();
 	DataRead();
-	OutError('既に存在する名前です。-> '.$Q{name}) if $name2pass{$Q{name}};
-	OutError('既に存在する店名です。-> '.$Q{sname}) if GetDoubleName($Q{sname});;
+	OutError(l('既に存在する名前です。-> %1',$Q{name})) if $name2pass{$Q{name}};
+	OutError(l('既に存在する店名です。-> %1',$Q{sname})) if GetDoubleName($Q{sname});;
 	
 	$idx=$DTusercount;
 	$DTlasttime=$NOW_TIME if !$idx;

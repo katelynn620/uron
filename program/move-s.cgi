@@ -1,14 +1,14 @@
 use utf8;
 # 移転処理 2004/01/20 由來
 
-OutError('使用不可です') if !$MOVETOWN_ENABLE || !$TOWN_CODE;
+OutError(l('使用不可です')) if !$MOVETOWN_ENABLE || !$TOWN_CODE;
 my $townmaster=ReadTown($TOWN_CODE,'getown');
-OutError('使用不可です') if !$townmaster;
+OutError(l('使用不可です')) if !$townmaster;
 DataRead();
 CheckUserPass();
 
 OutError('bad request') if  ($Q{towncode} eq '' || $Q{pass} eq '');
-OutError('パスワードが正しくありません') if $Q{pass} ne $MASTER_PASSWORD && !CheckPassword($Q{pass},$DT->{pass});
+OutError(l('パスワードが正しくありません')) if $Q{pass} ne $MASTER_PASSWORD && !CheckPassword($Q{pass},$DT->{pass});
 
 #移転処理
 $disp.=MoveShop($DT,$Q{towncode});

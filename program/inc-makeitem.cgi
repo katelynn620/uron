@@ -13,7 +13,7 @@ $linecount=0;
 ($MYDIR,$MYNAME)=($ENV{SCRIPT_NAME}=~/^.*\/([^\/]+)\/([^\/]+)$/); # 自ファイル名/ディレクトリ名
 $g_define->{dirname}=$MYDIR; # 設置ディレクトリ名(@@if等で利用可)
 
-OutError('管理者パスワードが不正です') if $Q{admin} ne $MASTER_PASSWORD;
+OutError(l('管理者パスワードが不正です')) if $Q{admin} ne $MASTER_PASSWORD;
 OutHeader();
 $mode=$Q{mode};
 
@@ -1273,7 +1273,7 @@ sub GetLocalFunction
 
 sub OutDefineData
 {
-	open OUT,">$ITEM_DIR/define$FILE_EXT";
+	open OUT,">:encoding(UTF-8)","$ITEM_DIR/define$FILE_EXT";
 	
 	print OUT "\%DEFINE_DATA=(\n";
 	while(my($key,$val)=each %$g_define)

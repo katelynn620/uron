@@ -2,7 +2,7 @@ use utf8;
 # 住宅操作 2005/01/06 由來
 
 $i=SearchBride($Q{no});
-OutError('指定された情報は存在しません') if ($i==-1);
+OutError(l('指定された情報は存在しません')) if ($i==-1);
 ($ida,$idb)=($BRIDE[$i]->{ida},$BRIDE[$i]->{idb});
 
 if (!$BRIDE[$i]->{mode})

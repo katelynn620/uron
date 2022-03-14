@@ -131,7 +131,7 @@ sub jk
 	$disp.=<<STR;
 <BIG>●ドラゴンレース：騎手一覧</BIG><br><br>
 $pagecontrol
-$TB$TR$TDB名前$TDB勤続$TDB逃先$TDB差追$TDB成績$TDB特殊能\力$TDB出走$TRE
+$TB$TR$TDB名前$TDB勤続$TDB逃先$TDB差追$TDB成績$TDB特殊能力$TDB出走$TRE
 STR
 
 	foreach my $i($pagestart..$pageend)

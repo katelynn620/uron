@@ -8,7 +8,7 @@ my $usetime=3*60*60;
 Lock();
 DataRead();
 CheckUserPass();
-OutError('ギルドに入っていません') if !$DT->{guild};
+OutError(l('ギルドに入っていません')) if !$DT->{guild};
 ReadGuild();
 ReadGuildData();
 
@@ -29,8 +29,8 @@ sub fund
 {
 $count=CheckCount($Q{cnt1},$Q{cnt2},0,$DT->{money});
 
-OutError('寄付金額を指定してください') if !$count;
-OutError('最低でも'.GetMoneyString(100000).'は自店に残しましょう') if ($DT->{money} - $count) < 100000;
+OutError(l('寄付金額を指定してください')) if !$count;
+OutError(l('最低でも %1 は自店に残しましょう',GetMoneyString(100000))) if ($DT->{money} - $count) < 100000;
 
 $ret="ギルド「".$GUILD{$DT->{guild}}->[$GUILDIDX_name]."」に".GetMoneyString($count)."寄付";
 EditGuildMoney($DT->{guild} ,$count);
@@ -41,12 +41,12 @@ PushLog(0,0,$DT->{shopname}."がギルド「".$GUILD{$DT->{guild}}->[$GUILDIDX_n
 
 sub break
 {
-OutError('肩書きがつかないと実行できません') if (!$DT->{user}{_so_e});
-OutError('時間が足りません') if GetStockTime($DT->{time})<$usetime;
+OutError(l('肩書きがつかないと実行できません')) if (!$DT->{user}{_so_e});
+OutError(l('時間が足りません')) if GetStockTime($DT->{time})<$usetime;
 UseTime($usetime);
 my $tg=$Q{tg};
-OutError('標的を指定してください') if !$tg;
-OutError('そのギルドに対して攻撃はできません') if ($GUILD_DATA{$tg}->{money} <= $GUILD_DATA{$DT->{guild}}->{money});
+OutError(l('標的を指定してください')) if !$tg;
+OutError(l('そのギルドに対して攻撃はできません')) if ($GUILD_DATA{$tg}->{money} <= $GUILD_DATA{$DT->{guild}}->{money});
 
 $ret="ギルド「".$GUILD{$DT->{guild}}->[$GUILDIDX_name]."」のブレイク。";
 my $attack=0;
@@ -83,10 +83,10 @@ my $checkok;
 $ckeckok=1 if ($GUILD_DETAIL{$DT->{guild}}->{leadt} eq $MYDIR && $GUILD_DETAIL{$DT->{guild}}->{leader} == $DT->{id});
 $ckeckok=1 if ($GUILD_DETAIL{$DT->{guild}}->{$MYDIR} == $DT->{id});
 OutError('bad request') if (!$ckeckok);
-OutError('肩書きがつかないと実行できません') if (!$DT->{user}{_so_e});
-OutError('時間が足りません') if GetStockTime($DT->{time})<$usetime;
+OutError(l('肩書きがつかないと実行できません')) if (!$DT->{user}{_so_e});
+OutError(l('時間が足りません')) if GetStockTime($DT->{time})<$usetime;
 UseTime($usetime);
-OutError('増強の必要がありません') if ($GUILD_DATA{$DT->{guild}}->{atk} > 990);
+OutError(l('増強の必要がありません')) if ($GUILD_DATA{$DT->{guild}}->{atk} > 990);
 my $guild=$GUILD_DATA{$DT->{guild}};
 my $cnt=int($guild->{money} / 4);
 $guild->{money} -= $cnt;

@@ -13,7 +13,7 @@ DataRead();
 CheckUserPass();
 
 $num=CheckCount($Q{num1},$Q{num2},0,$ITEM[$itemno]->{limit}-$DT->{item}[$itemno-1]);
-OutError('数量を指定してください。') if !$num;
+OutError(l('数量を指定してください。')) if !$num;
 
 if($id==0)
 {
@@ -24,10 +24,10 @@ if($id==0)
 else
 {
 	# 一般店
-	OutError('店終いしたかもしれません') if !defined($id2idx{$id});
+	OutError(l('店終いしたかもしれません')) if !defined($id2idx{$id});
 	$DTS=$DT[$id2idx{$id}];
 }
-OutError('自分の店から買うことはできません') if $DT->{id}==$DTS->{id};
+OutError(l('自分の店から買うことはできません')) if $DT->{id}==$DTS->{id};
 CheckShowCaseNumber($DTS,$showcase);
 CheckItemNo($itemno,$DTS);
 
@@ -40,14 +40,14 @@ if($itemno!= $DTS->{showcase}[$showcase]
 || !$DTS->{item}[$itemno-1]
 )
 {
-	OutError('商品や価格が変化したようです');
+	OutError(l('商品や価格が変化したようです'));
 }
 
 $num=$DTS->{item}[$itemno-1] if $DTS->{item}[$itemno-1]<$num;
 $num=int($DT->{money}/$price) if ($DT->{money}<$num*$price && $price > 0);
 $num=0 if $num<0;
 
-OutError('冷やかしですか？') if !$num;
+OutError(l('冷やかしですか？')) if !$num;
 
 $TIME_SEND_ITEM=int($TIME_SEND_ITEM/2) if !$id;
 my $usetime=GetTimeDeal($baseprice*$num,$itemno,$num);
@@ -132,8 +132,8 @@ DataCommitOrAbort();
 UnLock();
 
 $disp.=$TBT.$TRT.$TD.GetTagImgJob($DT->{job},$DT->{icon});
-$disp.=$TD.GetMenuTag('stock',	'[倉庫へ]');
-$disp.=($id==0) ? GetMenuTag('shop-m','[仕入れを続ける]') : GetMenuTag('shop-a','[買い物を続ける]','&t=2');
+$disp.=$TD.GetMenuTag('stock',	'['.l('倉庫へ').']');
+$disp.=($id==0) ? GetMenuTag('shop-m','['.l('仕入れを続ける').']') : GetMenuTag('shop-a','['.l('買い物を続ける').']','&t=2');
 $disp.=$TRE.$TBE;
 $disp.="<br>".$ret;
 

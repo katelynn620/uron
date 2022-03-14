@@ -70,7 +70,7 @@ $disp.=$TRE.$TBE;
 
 sub ProposeForm
 {
-	OutError("bad request") if $married;
+	OutError('bad request') if $married;
 	$userselect="";
 	foreach my $DTS (@DT)
 	{

@@ -34,7 +34,7 @@ $design_rank=0;
 $design_plus=0;
 $disp.="<BIG>●アイテムデータ</BIG><br><br>";
 } else {
-OutError("bad request") if ($listcheck == 2);
+OutError('bad request') if ($listcheck == 2);
 $disp.="<BIG>●アイテム紹介</BIG><br><br>";
 }
 

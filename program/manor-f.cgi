@@ -5,7 +5,7 @@ Lock() if $Q{mode};
 $image[0]=GetTagImgKao("大臣","minister",'align="left" ');
 DataRead();
 CheckUserPass();
-OutError('荘園管理を行えるのは領主のみです') if $STATE->{leader}!=$DT->{id};
+OutError(l('荘園管理を行えるのは領主のみです')) if $STATE->{leader}!=$DT->{id};
 RequireFile('inc-manor.cgi');
 
 ReadDTSub($DT,"lord");

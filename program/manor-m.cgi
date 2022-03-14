@@ -5,7 +5,7 @@ $NOITEM=1;
 $NOMENU=1;
 DataRead();
 CheckUserPass();
-OutError("領主がいないので荘園制度が機能していません") if !defined($id2idx{$STATE->{leader}});
+OutError(l('領主がいないので荘園制度が機能していません')) if !defined($id2idx{$STATE->{leader}});
 RequireFile('inc-manor.cgi');
 
 	# 荘園設定を取得
@@ -20,10 +20,10 @@ $i=int($Q{buy});
 
 my @MYMANOR=@{$MANOR[$i]};
 $price=$MANORLORD->{"price$i"};
-OutError("bad request") if !$price;
+OutError('bad request') if !$price;
 
 $stock=$MANORLORD->{"count$i"};
-OutError("販売在庫が尽きています") if !$stock;
+OutError(l('販売在庫が尽きています')) if !$stock;
 
 RequireFile('inc-html-ownerinfo.cgi');
 

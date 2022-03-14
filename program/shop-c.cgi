@@ -4,7 +4,7 @@ use utf8;
 DataRead();
 CheckUserPass(1);
 
-$disp.="<BIG>●商店通り：相場表\示</BIG><br><br>";
+$disp.="<BIG>●商店通り：相場表示</BIG><br><br>";
 
 # 需要/供給バランス計算
 GetMarketStatus();

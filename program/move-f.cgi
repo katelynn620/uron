@@ -1,14 +1,14 @@
 use utf8;
 # 移転フォーム 2005/01/06 由來
 
-OutError('使用不可です') if !$MOVETOWN_ENABLE || !$TOWN_CODE;
+OutError(l('使用不可です')) if !$MOVETOWN_ENABLE || !$TOWN_CODE;
 my $townmaster=ReadTown($TOWN_CODE,'getown');
-OutError('使用不可です') if !$townmaster;
+OutError(l('使用不可です')) if !$townmaster;
 
 DataRead();
 CheckUserPass();
 
-OutError('移転可能な街が見つかりません') if !$Q{towncode};
+OutError(l('移転可能な街が見つかりません')) if !$Q{towncode};
 $disp.=GetMoveShopForm($Q{towncode});
 OutSkin();
 1;

@@ -1,10 +1,10 @@
 use utf8;
 # 引越しセンター 2004/01/20 由來
 
-OutError('移転が不可に設定されています') if !$MOVETOWN_ENABLE;
-OutError('街コードが設定されていません') if !$TOWN_CODE;
+OutError(l('移転が不可に設定されています')) if !$MOVETOWN_ENABLE;
+OutError(l('街コードが設定されていません')) if !$TOWN_CODE;
 my $townmaster=ReadTown($TOWN_CODE,'getown');
-OutError('移転ルートがつながっていません') if !$townmaster;
+OutError(l('移転ルートがつながっていません')) if !$townmaster;
 
 DataRead();
 CheckUserPass();

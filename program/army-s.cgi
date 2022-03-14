@@ -8,7 +8,7 @@ CheckUserPass();
 ReadArmy();
 
 my $functionname=$Q{mode};
-OutError("bad request") if !defined(&$functionname);
+OutError('bad request') if !defined(&$functionname);
 &$functionname;
 
 WriteArmy();
@@ -18,8 +18,8 @@ DataCommitOrAbort();
 UnLock();
 
 $disp.=$TBT.$TRT.$TD.GetTagImgJob($DT->{job},$DT->{icon});
-$disp.=$TD.GetMenuTag('army',	'[傭兵所へ]');
-$disp.=GetMenuTag('main','[自店に戻る]');
+$disp.=$TD.GetMenuTag('army',	'['.l('傭兵所へ').']');
+$disp.=GetMenuTag('main','['.l('自店に戻る').']');
 $disp.=$TRE.$TBE;
 $disp.="<br>".$ret;
 OutSkin();
@@ -34,11 +34,11 @@ my $usetime=60*40;
 UseTime($usetime);
 
 $num=CheckCount($Q{cnt1},$Q{cnt2},0,$limit);
-OutError('数量を指定してください。') if !$num;
+OutError(l('数量を指定してください。')) if !$num;
 
 $num=int($DT->{money}/$price) if $DT->{money}<$num*$price;
 $num=0 if $num<0;
-OutError('資金が足りません。') if !$num;
+OutError(l('資金が足りません。')) if !$num;
 
 $ARMY{$DT->{id}}+=$num;
 $DT->{money}-=$num*$price;
@@ -51,7 +51,7 @@ PushLog(0,$DT->{id},$ret);
 sub fire
 {
 $num=CheckCount($Q{cnt1},$Q{cnt2},0,$ARMY{$DT->{id}});
-OutError('数量を指定してください。') if !$num;
+OutError(l('数量を指定してください。')) if !$num;
 
 my $usetime=60*10;
 UseTime($usetime);
@@ -64,8 +64,8 @@ PushLog(0,$DT->{id},$ret);
 
 sub rebelon
 {
-OutError('反乱を開始するには rebel と入力してください。') if ($Q{cmd} ne "rebel");
-OutError('兵士数が足りません。') if ($ARMY{$DT->{id}} < 2500);
+OutError(l('反乱を開始するには rebel と入力してください。')) if ($Q{cmd} ne "rebel");
+OutError(l('兵士数が足りません。')) if ($ARMY{$DT->{id}} < 2500);
 
 my $usetime=60*30;
 UseTime($usetime);
@@ -80,7 +80,7 @@ $ret.="/".GetTime2HMS($usetime)."消費";
 
 sub rside
 {
-OutError('反乱に呼応するには rebel と入力してください。') if ($Q{cmd} ne "rebel");
+OutError(l('反乱に呼応するには rebel と入力してください。')) if ($Q{cmd} ne "rebel");
 
 my $usetime=60*20;
 UseTime($usetime);
@@ -93,7 +93,7 @@ $ret.="/".GetTime2HMS($usetime)."消費";
 
 sub lside
 {
-OutError('反乱に参加しながら領主の味方をすることはできません。') if ($RIOT{$DT->{id}});
+OutError(l('反乱に参加しながら領主の味方をすることはできません。')) if ($RIOT{$DT->{id}});
 
 my $usetime=60*20;
 UseTime($usetime);

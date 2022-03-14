@@ -6,7 +6,7 @@ $Q{bk}="none";
 $NOITEM=1;
 DataRead();
 CheckUserPass();
-OutError("") if !$MASTER_USER;
+OutError('') if !$MASTER_USER;
 
 ReadLetterName();
 ReadLetter();

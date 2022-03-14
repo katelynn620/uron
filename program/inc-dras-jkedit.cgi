@@ -5,7 +5,7 @@ ReadJock();
 $disp.="<BIG>●ドラゴンレース：騎手</BIG><br><br>";
 
 my $functionname=$Q{code};
-OutError("bad request") if !defined(&$functionname);
+OutError('bad request') if !defined(&$functionname);
 &$functionname;
 
 WriteJock();
@@ -16,9 +16,9 @@ CoDataCA();
 
 sub new
 {
-OutError("bad request") if ($MYJK!=-1);
-OutError("bad request") if (scalar @JK >= $JKmax);
-OutError('資金の余裕がありません。') if ($DT->{money} < $JKest);
+OutError('bad request') if ($MYJK!=-1);
+OutError('bad request') if (scalar @JK >= $JKmax);
+OutError(l('資金の余裕がありません。')) if ($DT->{money} < $JKest);
 
 	# 名前の正当性をチェック
 	# require $JCODE_FILE;
@@ -26,14 +26,14 @@ OutError('資金の余裕がありません。') if ($DT->{money} < $JKest);
 
 	if(!$Q{name})
 	{
-		OutError('名前を入力してください。');
+		OutError(l('名前を入力してください。'));
 	}
 	if($Q{name} =~ /([,:;\t\r\n<>&])/ || CheckNGName($Q{name}) )
 	{
-		OutError('名前に使用できない文字が含まれています。');
+		OutError(l('名前に使用できない文字が含まれています。'));
 	}
-	OutError('名前が長すぎます。') if length($Q{name})>20;
-	OutError('名前が短すぎます。') if length($Q{name})<6;
+	OutError(l('名前が長すぎます。')) if length($Q{name})>20;
+	OutError(l('名前が短すぎます。')) if length($Q{name})<6;
 
 	@JK=reverse(@JK);
 	$JKcount++;

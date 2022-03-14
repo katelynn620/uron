@@ -8,45 +8,45 @@ use utf8;
 
 my @MENU=(
 	# ゲスト権限の場合のメニュー
-	['街案内',[
-		['風景',	'town'],
-		['新聞',	'log'],
-		['図書館',	'action.cgi?key=library',	"_blank"],
+	[l('街案内'),[
+		[l('風景'),	'town'],
+		[l('新聞'),	'log'],
+		[l('図書館'),	'action.cgi?key=library',	"_blank"],
 	]],
 
 	# 以下プレイヤー権限の場合のメニュー
-	['自店',[
-		['店内',	'main'],
-		['倉庫',	'stock'],
-		['お掃除',	'sweep'],
-		['収支',	'balance'],
-		['手続',	'other'],
-		['LogOut',	'index.cgi'],
+	[l('自店'),[
+		[l('店内'),	'main'],
+		[l('倉庫'),	'stock'],
+		[l('お掃除'),	'sweep'],
+		[l('収支'),	'balance'],
+		[l('手続'),	'other'],
+		[l('LogOut'),	'index.cgi'],
 	]],
-	['取引',[
-		['市場',	'shop-m'],
-		['商店通り',	'shop-a'],
-		['依頼所',	'req'],
-		['宮殿',	'palace'],
+	[l('取引'),[
+		[l('市場'),	'shop-m'],
+		[l('商店通り'),	'shop-a'],
+		[l('依頼所'),	'req'],
+		[l('宮殿'),	'palace'],
 	]],
-	['情報',[
-		['風景',	'town'],
-		['新聞',	'log'],
-		['殿堂',	'orilist'],
-		['図書館',	'action.cgi?key=library',	"_blank"],
+	[l('情報'),[
+		[l('風景'),	'town'],
+		[l('新聞'),	'log'],
+		[l('殿堂'),	'orilist'],
+		[l('図書館'),	'action.cgi?key=library',	"_blank"],
 	]],
-	['施設',[
-		['領主邸',	'lord'],
-		['ギルド',	'gd'],
-		['競技場',	'slime'],
-		['傭兵所',	'army'],
-		['住宅地',	'hometown'],
+	[l('施設'),[
+		[l('領主邸'),	'lord'],
+		[l('ギルド'),	'gd'],
+		[l('競技場'),	'slime'],
+		[l('傭兵所'),	'army'],
+		[l('住宅地'),	'hometown'],
 	]],
-	['交流',[
-		['郵便局',	'letter'],
-		['宅配便',	'dwarf'],
-		['掲示板 '.GetTime2FormatTime((stat($COMMON_DIR.'/treelog.cgi'))[9]+0,1),	'treebbs'],
-		['wis',	'wis'],
+	[l('交流'),[
+		[l('郵便局'),	'letter'],
+		[l('宅配便'),	'dwarf'],
+		[l('掲示板').' '.GetTime2FormatTime((stat($COMMON_DIR.'/treelog.cgi'))[9]+0,1),	'treebbs'],
+		[l('wis'),	'wis'],
 	]],
 );
 
@@ -69,7 +69,7 @@ if($USER && $USER ne 'soldoutadmin')
 menudata=[
 STR
 	$MENUMSG.="'";
-	$MENUMSG.=(-e $file) ? WisRead($file) : "<BIG>活動中</BIG> &gt; <small>".LoginMember()."</small>";
+	$MENUMSG.=(-e $file) ? WisRead($file) : "<BIG>".l('活動中')."</BIG> &gt; <small>".LoginMember()."</small>";
 	$MENUMSG.="',";
 	foreach(1..$#MENU)
 		{
@@ -96,7 +96,7 @@ mymenu(0);
 </SCRIPT>
 STR
 	$i.=qq|<A HREF="action.cgi?key=bgm&$USERPASSURL&mode=$Q{key}" target="_top">[♪]</a> |;
-	$i.='[次回決算 '.GetTime2FormatTime($nextday-$TZ_JST+$DATE_REVISE_TIME).' まであと'.GetTime2HMS(int(($nextday-$now)/60)*60+59).']';
+	$i.='['.l('次回決算 %1 まであと%2',GetTime2FormatTime($nextday-$TZ_JST+$DATE_REVISE_TIME),GetTime2HMS(int(($nextday-$now)/60)*60+59)).']';
 	$DISP{MENU} =~ s/#SKINMENU#/$i/;
 	$DISP{MENU} =~ s/#SKINMENUSUB#/$MENUMSG/;
 	}
@@ -114,8 +114,8 @@ STR
 		my @SUBMENU=@{$sublist};
 		$MENUMSG.=(($SUBMENU[1] =~ /\./) ? GetTagA("[".$SUBMENU[0]."]",$SUBMENU[1],0,"_blank") : GetMenuTag($SUBMENU[1],"[".$SUBMENU[0]."]"));
 		}
-	$i.=($MYNAME eq 'index.cgi')? qq|<A HREF="$HOME_PAGE" TARGET=_top>[ホーム]</A> | : qq|<A HREF="index.cgi" TARGET=_top>[トップ]</A> |;
-	$i.='[次回決算 '.GetTime2FormatTime($nextday-$TZ_JST+$DATE_REVISE_TIME).' まであと'.GetTime2HMS(int(($nextday-$now)/60)*60+59).']';
+	$i.=($MYNAME eq 'index.cgi')? '<A HREF="'."$HOME_PAGE".'" TARGET=_top>['.l('ホーム').']</A> ' : '<A HREF="index.cgi" TARGET=_top>['.l('トップ').']</A>';
+	$i.='['.l('次回決算 %1 まであと%2',GetTime2FormatTime($nextday-$TZ_JST+$DATE_REVISE_TIME),GetTime2HMS(int(($nextday-$now)/60)*60+59)).']';
 	$DISP{MENU} =~ s/#SKINMENU#/$i/;
 	$DISP{MENU} =~ s/#SKINMENUSUB#/$MENUMSG/;
 	}
@@ -132,10 +132,10 @@ foreach(@DT)
 	next if ($_->{lastlogin} < $NOW_TIME - 120);
 	$logmemb .= "， ".$_->{shopname};
 	$i++;
-	$logmemb .= "ほか", last if ($i > 3);
+	$logmemb .= l('ほか'), last if ($i > 3);
 	}
 $logmemb = substr($logmemb,2) if ($logmemb);
-$logmemb = "なし" if !$logmemb;
+$logmemb = l('なし') if !$logmemb;
 return $logmemb
 }
 

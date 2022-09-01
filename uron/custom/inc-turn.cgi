@@ -313,7 +313,10 @@ $temptimenow=$DTlasttime;
 						my $func="event::".$E->{endfunc};
 						($ret,$msg)=&$func(split(/[:,]/,$E->{endfuncparam}));
 						PushLog(2,0,$msg) if $msg;
-						undef &$func;
+						# fix when loading funcevent twice
+						if (-e $extfile) {
+							undef &$func;
+						}
 					}
 					if($ret)
 					{
@@ -348,8 +351,11 @@ $temptimenow=$DTlasttime;
 					my $func="event::".$E->{startfunc};
 					($ret,$msg)=&$func(split(/[:,]/,$E->{startfuncparam}));
 					PushLog(2,0,$msg) if $msg;
-					undef &$func;
-					delete $INC{$extfile};
+					# fix when loading funcevent twice
+					if (-e $extfile) {
+						undef &$func;
+						delete $INC{$extfile};
+					}
 				}
 				if($ret)
 				{

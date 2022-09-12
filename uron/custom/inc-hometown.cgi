@@ -31,21 +31,21 @@ sub CharaDefine
 my $i=int($NOW_TIME / 3600) % 4;
 	if ($i == 1)
 		{
-		$chara[3]=TagChara("わーい わーい","a1").$space.$space.TagChara("わーい わーい","a2").$space;
+		$chara[3]=TagChara(l("わーい わーい"),"a1").$space.$space.TagChara(l("わーい わーい"),"a2").$space;
 		}
 	elsif ($i == 2)
 		{
-		$chara[0]=TagChara("はやくマイホームを建てないとなぁ・・・","d1")
-			.TagChara("やっと結婚できたねっ","d2").$vspace.$vspace;
+		$chara[0]=TagChara(l("はやくマイホームを建てないとなぁ・・・"),"d1")
+			.TagChara(l("やっと結婚できたねっ"),"d2").$vspace.$vspace;
 		}
 	elsif ($i == 3)
 		{
-		$chara[1]=$vspace.TagChara("待って～っ","c1").$space.$space.TagChara("きゃんきゃんっ","c2");
+		$chara[1]=$vspace.TagChara(l("待って～っ"),"c1").$space.$space.TagChara(l("きゃんきゃんっ"),"c2");
 		}
 	elsif ($STATE->{safety} < 4000)
 		{
-		$chara[2]=TagChara("盗っ人め・・・待て！","b1");
-		$chara[5]=TagChara("この街は警戒がぬるくてラッキー♪","b2");
+		$chara[2]=TagChara(l("盗っ人め・・・待て！"),"b1");
+		$chara[5]=TagChara(l("この街は警戒がぬるくてラッキー♪"),"b2");
 		}
 }
 1;

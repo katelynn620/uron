@@ -3,7 +3,7 @@
 @@event
 	start		0
 	code		rebel
-	info		反乱が起こっています。
+	info		發生叛亂了。
 	func		_local_
 		main::ReadArmy();
 		my $time=int($main::TIMESPAN / 3);
@@ -33,7 +33,7 @@
 		{
 		delete $main::DTevent{rebel};
 		undef %main::RIOT;
-		main::PushLog(2,0,"反乱は護衛軍により鎮圧されました。");
+		main::PushLog(2,0,"叛亂被護衛軍鎮壓了。");
 		main::WriteArmy();
 		return 0;
 		}
@@ -50,7 +50,7 @@
 		delete $main::DTevent{rebel};
 		foreach(keys(%main::RIOT)) { delete $main::ARMY{$_}; }
 		undef %main::RIOT;
-		main::PushLog(2,0,"反乱により護衛軍は全滅。領主は城を追われました。");
+		main::PushLog(2,0,"護衛軍被叛軍殲滅了。領主被趕出了城堡。");
 
 		@DTS=sort{$b->{army}<=>$a->{army}}@DT;
 		my $rebelid=$DTS[0]->{id};
@@ -61,14 +61,14 @@
 		$main::STATE->{money}=0 if $main::STATE->{money}<0;
 			if ($rebelid)
 			{
-			main::PushLog(2,0,"リーダー ".$DT[$main::id2idx{$rebelid}]->{name}."（".$DT[$main::id2idx{$rebelid}]->{shopname}."）が新領主となりました。");
+			main::PushLog(2,0,"首領 ".$DT[$main::id2idx{$rebelid}]->{name}."（".$DT[$main::id2idx{$rebelid}]->{shopname}."）成為了新的領主。");
 			$main::STATE->{leader}=$rebelid;
 			$main::STATE->{army}=$rebelsum;
 			$main::STATE->{robinb}=0;
 			}
 			else
 			{
-			main::PushLog(2,0,"リーダー $main::BAL_JOB$main::BAL_NAMEが新領主となりました。");
+			main::PushLog(2,0,"首領 $main::BAL_JOB$main::BAL_NAME成為了新的領主。");
 			$main::STATE->{leader}=0;
 			$main::STATE->{army}=0;
 			$main::STATE->{robina}=10000;
@@ -84,7 +84,7 @@
 				{
 				$DTS->{money}+=$cnt;
 				}
-			main::PushLog(2,0,"$main::BAL_JOB$main::BAL_NAMEは街資金を".main::GetMoneyString($cnt)."ずつバラまきました。");
+			main::PushLog(2,0,"$main::BAL_JOB$main::BAL_NAME將城鎮資金".main::GetMoneyString($cnt)."分配給居民了。");
 			}
 		}
 		main::WriteArmy();
@@ -100,9 +100,9 @@
 			@guildlist=sort{$b->{money}<=>$a->{money}}map{$main::GUILD_DATA{$_}->{guild}=$_;$main::GUILD_DATA{$_}}keys(%main::GUILD);
 			my $Dguild=$guildlist[0]->{guild};
 			main::SetTownData('dominion',$Dguild);
-			return 1,"ギルド「".$main::GUILD{$Dguild}->[$GUILDIDX_name]."」が対抗戦で勝利しました。おめでとうございます。";
+			return 1,"商會「".$main::GUILD{$Dguild}->[$GUILDIDX_name]."」在對抗戰中勝出了。恭喜。";
 			_local_
-	info		ギルド対抗戦が繰り広げられています。
+	info		商會對抗戰正在進行中。
 
 
 @@END #定義終了宣言(以降コメント扱い)

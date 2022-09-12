@@ -23,7 +23,7 @@ use utf8;
 # --- No.0 の場所定義 ---
 
 ($Pname[0],$Pimage[0],$Plink[0],$Pguest[0])=(
-	"競技場",
+	l("競技場"),
 	qq|<IMG WIDTH=16 HEIGHT=64 SRC="$IMAGE_URL/map/mapsignslime.png">$i[0]|,
 	"slime",
 	"slime"
@@ -36,7 +36,7 @@ use utf8;
 # --- No.2 の場所定義 ---
 
 ($Pname[2],$Pimage[2],$Plink[2],$Pguest[2])=(
-	"依頼所",
+	l("依頼所"),
 	qq|$space<IMG WIDTH=16 HEIGHT=64 SRC=\"$IMAGE_URL/map/mapsignrequest.png\">$i[1]|,
 	"req",
 	"req"
@@ -45,7 +45,7 @@ use utf8;
 # --- No.3 の場所定義 ---
 
 ($Pname[3],$Pimage[3],$Plink[3],$Pguest[3])=(
-	"市場",
+	l("市場"),
 	qq|$space<IMG WIDTH=16 HEIGHT=64 SRC=\"$IMAGE_URL/map/mapsignmarket.png\">$i[1]|,
 	"shop-m",
 	"shop-m"
@@ -58,7 +58,7 @@ use utf8;
 # --- No.5 の場所定義 ---
 
 ($Pname[5],$Pimage[5],$Plink[5],$Pguest[5])=(
-	"ギルド",
+	l("ギルド"),
 	qq|<IMG WIDTH=16 HEIGHT=64 SRC="$IMAGE_URL/map/mapsignguild.png">$i[0]|,
 	"gd",
 	"gd"
@@ -71,7 +71,7 @@ use utf8;
 # --- No.7 の場所定義 ---
 
 ($Pname[7],$Pimage[7],$Plink[7],$Pguest[7])=(
-	"兵士駐屯所",
+	l("兵士駐屯所"),
 	qq|<IMG WIDTH=16 HEIGHT=64 SRC="$IMAGE_URL/map/mapsignarmy.png">$i[0]|,
 	"army",
 	""
@@ -80,7 +80,7 @@ use utf8;
 # --- No.8 の場所定義 ---
 
 ($Pname[8],$Pimage[8],$Plink[8],$Pguest[8])=(
-	"図書館",
+	l("図書館"),
 	qq|$space<IMG WIDTH=112 HEIGHT=80 SRC="$IMAGE_URL/map/house1c.png">|,
 	"action.cgi?key=library",
 	"action.cgi?key=library"
@@ -89,7 +89,7 @@ use utf8;
 # --- No.9 の場所定義 ---
 
 ($Pname[9],$Pimage[9],$Plink[9],$Pguest[9])=(
-	"掲示板",
+	l("掲示板"),
 	qq|<br><br><IMG WIDTH=32 HEIGHT=32 SRC="$IMAGE_URL/map/mapboard.png">|.GetTime2FormatTime((stat($COMMON_DIR.'/treelog.cgi'))[9]+0,1),
 	"treebbs",
 	""
@@ -106,32 +106,32 @@ sub CharaDefine
 @chara=();
 	if ($DTevent{rebel})
 		{
-		$chara[1]=TagChara('大変だ・・・。援軍を呼ばないと！',"d2");
-		$chara[2]=TagChara('反乱だ！加勢に行くぞっ',"d1");
-		$chara[5]=TagChara('領主を倒せっ',"d1")."<br>".TagChara('一気にケリをつけようっ',"d1");
+		$chara[1]=TagChara(l('大変だ・・・。援軍を呼ばないと！'),"d2");
+		$chara[2]=TagChara(l('反乱だ！加勢に行くぞっ'),"d1");
+		$chara[5]=TagChara(l('領主を倒せっ'),"d1")."<br>".TagChara(l('一気にケリをつけようっ'),"d1");
 		return;
 		}
 my $i=int($NOW_TIME / 3600) % 4;
 	if ($i == 0)
 		{
-		$chara[0]=TagChara("うちのスライムまた負けちゃった・・・","e1").$vspace.$vspace;
-		$chara[4]=$space.TagChara("食事の材料買いに行かなくっちゃ。","e2");
+		$chara[0]=TagChara(l("うちのスライムまた負けちゃった・・・"),"e1").$vspace.$vspace;
+		$chara[4]=$space.TagChara(l("食事の材料買いに行かなくっちゃ。"),"e2");
 		}
 	elsif ($i == 1)
 		{
-		$chara[7]=$vspace.$vspace.TagChara("図書館の情報は重要だよっ","b2").$space
-			.TagChara("掲示板のチェックも大切だね。ふむふむ・・・","b1");
+		$chara[7]=$vspace.$vspace.TagChara(l("図書館の情報は重要だよっ"),"b2").$space
+			.TagChara(l("掲示板のチェックも大切だね。ふむふむ・・・"),"b1");
 		}
 	elsif ($i == 2)
 		{
-		$chara[4]=$vspace.TagChara("ぽかぽかして気持ちええのぉ・・・","c2");
-		$chara[6]=TagChara("買い物はやっぱり".$DT[0]->{shopname}."よねっ","c1").$space;
+		$chara[4]=$vspace.TagChara(l("ぽかぽかして気持ちええのぉ・・・"),"c2");
+		$chara[6]=TagChara(l("買い物はやっぱり%1よねっ",$DT[0]->{shopname}),"c1").$space;
 		}
 	elsif ($STATE->{safety} < 4000)
 		{
 		my $lid=$id2idx{$STATE->{leader}};
-		$chara[0]=TagChara(($STATE->{leader} ? $DT[$lid]->{name} : $BAL_NAME).'の暴政に断固ハンターイ！',"a1")
-			.TagChara('もっと市民の安全を考えろーっ',"a2");
+		$chara[0]=TagChara(l('%1の暴政に断固ハンターイ！',($STATE->{leader} ? $DT[$lid]->{name} : $BAL_NAME)),"a1")
+			.TagChara(l('もっと市民の安全を考えろーっ'),"a2");
 		}
 }
 1;

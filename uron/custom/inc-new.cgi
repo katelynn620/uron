@@ -50,8 +50,8 @@ $disp.=<<"HTML";
 <center><INPUT TYPE=SUBMIT VALUE="${\l('登録')}"></center>
 </TD></TR>
 </TABLE>
-<small>${\l('※荒らしと疑われるような名前は避けましょう。')}<br>
-${\l('※パスワードは他人が推測できないようなものを。')}</small>
+<small>※${\l('荒らしと疑われるような名前は避けましょう。')}<br>
+※${\l('パスワードは他人が推測できないようなものを。')}</small>
 </FORM>
 HTML
 1;

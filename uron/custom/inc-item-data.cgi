@@ -6,25 +6,25 @@
 @@DEFINE
 	version	05-01-06(URon)		#★商品データバージョン表記
 					# 最後の「URon」はうどん＆そば版であることを示します。
-					# もしあなたが独自アイテムを目玉にした商人物語を作るなら，
+					# もしあなたが独自アイテムを目玉にした商人物語を製作なら，
 					# この記号を変えるのがよいでしょう。
 
-	scale	杯			#★デフォルトの数え単位
+	scale	碗			#★デフォルトの数え単位
 	type0	全			#全アイテムの集合
 	type1	人材
-	type2	陸産物
-	type3	海産物
-	type4	うどん
-	type5	そば
-	type6	ツール
+	type2	陸產品
+	type3	海產品
+	type4	烏龍麵
+	type5	蕎麥麵
+	type6	工具
 	
 	job	agri		農業		#★職業コードは英小文字10文字以内
 	job	fish		漁業
-	job	temp		天ぷら屋
-	job	udon		うどん屋
-	job	soba		そば屋
-	job	man		人材派遣業
-	job	black		裏家業
+	job	temp		天婦羅屋
+	job	udon		烏龍麵屋
+	job	soba		蕎麥麵屋
+	job	man		人力仲介
+	job	black		黑道
 	
 	# 職業別時間短縮用変数設定
 	set job_agri_time_rate		1.5	#★職業についていると1.5倍早くなる
@@ -39,23 +39,23 @@
 	
 	set NewShopMoney	200000					#初期資金 (@@FUNCNEWにて使用)
 	set NewShopTime		24*60*60				#初期持時間(秒) (@@FUNCNEWにて使用)
-	set NewShopItem		ヒントブック:1	#初期所持商品 (@@FUNCNEWにて使用) 書式 商品名:個数:商品名:個数:...
+	set NewShopItem		攻略本:1	#初期所持商品 (@@FUNCNEWにて使用) 書式 商品名:個数:商品名:個数:...
 	
-	TimeEditShowcase	10m		#★陳列棚操作時間
+	TimeEditShowcase	10m		#★展示架操作時間
 	TimeShopping		20m		#★仕入時間(旧SOLD OUTとの互換性確保。今は使用せず)
 	TimeSendItem		20m		#★アイテム仕入/送信時間(基本)
 	TimeSendItemPlus	20s		#★アイテム仕入/送信時間(1個辺りの追加時間)
 	TimeSendMoney		20m		#★資金送信時間(基本)
 	TimeSendMoneyPlus	100000		#★入金所要時間計算用金額(この金額につきTimeSendMoney時間を消費)
 	
-	CostShowcase1		0		#★陳列棚1個時維持費
-	CostShowcase2		1000	#陳列棚2個時維持費
-	CostShowcase3		2000	#陳列棚3個時維持費
-	CostShowcase4		4000	#陳列棚4個時維持費
-	CostShowcase5		8000	#陳列棚5個時維持費
-	CostShowcase6		16000	#陳列棚6個時維持費
-	CostShowcase7		32000	#陳列棚7個時維持費
-	CostShowcase8		64000	#陳列棚8個時維持費
+	CostShowcase1		0		#★展示架1個時維持費
+	CostShowcase2		1000	#展示架2個時維持費
+	CostShowcase3		2000	#展示架3個時維持費
+	CostShowcase4		4000	#展示架4個時維持費
+	CostShowcase5		8000	#展示架5個時維持費
+	CostShowcase6		16000	#展示架6個時維持費
+	CostShowcase7		32000	#展示架7個時維持費
+	CostShowcase8		64000	#展示架8個時維持費
 	
 	ItemUseTimeRate		0.5		#★アイテム使用時時間計算補正倍率(@USE内time,exptimeに有効)
 	
@@ -67,8 +67,8 @@
 	no		1
 	type	人材
 	code	man-free
-	name	フリーター
-	info	可能性を秘めた人材です
+	name	臨時工
+	info	有潛能的人才
 	scale	人
 	price	5000
 	cost	100
@@ -80,122 +80,122 @@
 		time	4h
 		exp		1%
 		exptime	2h
-		job		人材派遣業	times/job_man_time_rate
+		job		人力仲介	times/job_man_time_rate
 		scale	人
-		action	農業を始める
-		name	農業を始める
-		info	フリーターは農業を始めます
-		okmsg	フリーターは農夫になりました
-			use		1	フリーター
+		action	從事農業
+		name	從事農業
+		info	臨時工開始從事農業了
+		okmsg	臨時工成為農夫了
+			use		1	臨時工
 			get		1	農夫
 			get		10	店力	20%
 	@@USE
 		time	4h
 		exp		1%
 		exptime	2h
-		job		人材派遣業	times/job_man_time_rate
+		job		人力仲介	times/job_man_time_rate
 		scale	人
-		action	漁業を始める
-		name	漁業を始める
-		info	フリーターは漁業を始めます
-		okmsg	フリーターは漁師になりました
-			use		1	フリーター
-			get		1	漁師
+		action	從事漁業
+		name	從事漁業
+		info	臨時工開始從事漁業了
+		okmsg	臨時工成為漁夫了
+			use		1	臨時工
+			get		1	漁夫
 			get		10	店力	20%
 	@@USE
 		time	4h
 		exp		1%
 		exptime	2h
-		job		人材派遣業	times/job_man_time_rate
+		job		人力仲介	times/job_man_time_rate
 		scale	人
-		action	修行をする
-		name	天ぷら職人の修行をする
-		info	フリーターは天ぷら職人になる修行をします
-		okmsg	フリーターは天ぷら職人になりました
-			use		1	フリーター
-			get		1	天ぷら職人
+		action	開始修行
+		name	進行成為天婦羅師傅的修行
+		info	臨時工開始進行成為天婦羅師傅的修行了
+		okmsg	臨時工成為天婦羅師傅了
+			use		1	臨時工
+			get		1	天婦羅師傅
 			get		10	店力	20%
 	@@USE
 		time	4h
 		exp		1%
 		exptime	2h
-		job		人材派遣業	times/job_man_time_rate
+		job		人力仲介	times/job_man_time_rate
 		scale	人
-		action	修行をする
-		name	うどん職人の修行をする
-		info	フリーターはうどん職人になる修行をします
-		okmsg	フリーターはうどん職人になりました
-			use		1	フリーター
-			use		10	小麦粉
-			get		1	うどん職人
+		action	開始修行
+		name	進行成為烏龍麵師傅的修行
+		info	臨時工開始進行成為烏龍麵師傅的修行了
+		okmsg	臨時工成為烏龍麵師傅了
+			use		1	臨時工
+			use		10	小麥粉
+			get		1	烏龍麵師傅
 			get		10	店力	20%
 	@@USE
 		time	4h
 		exp		1%
 		exptime	2h
-		job		人材派遣業	times/job_man_time_rate
+		job		人力仲介	times/job_man_time_rate
 		scale	人
-		action	修行をする
-		name	そば職人の修行をする
-		info	フリーターはそば職人になる修行をします
-		okmsg	フリーターはそば職人になりました
-			use		1	フリーター
-			use		10	そば粉
-			get		1	そば職人
+		action	開始修行
+		name	進行成為蕎麥麵師傅的修行
+		info	臨時工開始進行成為蕎麥麵師傅的修行了
+		okmsg	臨時工成為蕎麥麵師傅了
+			use		1	臨時工
+			use		10	蕎麥粉
+			get		1	蕎麥麵師傅
 			get		10	店力	20%
 	@@USE
 		time	4h
 		exp		1%
 		exptime	2h
-		job		人材派遣業	times/job_man_time_rate
+		job		人力仲介	times/job_man_time_rate
 		scale	人
-		action	便利屋になる
-		name	便利屋になる
-		info	フリーターは便利屋になります
-		okmsg	フリーターは便利屋になりました
-			use		1	フリーター
+		action	從事便利屋
+		name	從事便利屋
+		info	臨時工開始從事便利屋的工作了
+		okmsg	臨時工成為便利屋了
+			use		1	臨時工
 			get		1	便利屋
 			get		10	店力	20%
 	@@use
 		time	4h
-		job		人材派遣業	times/job_man_time_rate
+		job		人力仲介	times/job_man_time_rate
 		scale	回
-		action	働く
-		name	チラシ配りで資金稼ぎ
-		info	少し稼ぎましょう
+		action	工作
+		name	發傳單賺取資金
+		info	稍微賺點錢
 		param	7000
 		func	_local_
 			$DT->{money}+=$USE->{param1}*$count;
-			my $ret=GetMoneyString($USE->{param1}*$count).'稼ぎました';
+			my $ret='賺到'.GetMoneyString($USE->{param1}*$count).'了';
 			if (rand(1000)<200)
 			{
-			UseItem(1,1,$ITEM[1]->{name}.'が資金稼ぎで疲れて店を去りました');
+			UseItem(1,1,$ITEM[1]->{name}.'厭倦打工而離開商店了');
 			}
-			WriteLog(0,$DT->{id},"バイトし，$ret");
-			WriteLog(3,0,$DT->{shopname}."のフリーターがバイトしたようです");
+			WriteLog(0,$DT->{id},"去打工了，$ret");
+			WriteLog(3,0,$DT->{shopname}."的臨時工開始打工了");
 			return $ret;
 		_local_
 	@@use
 		time	9h
-		job		人材派遣業	times/job_man_time_rate
+		job		人力仲介	times/job_man_time_rate
 		scale	回
-		action	働く
-		name	コンビニで資金稼ぎ
-		info	ちょっときついけどけっこうな稼ぎです
+		action	工作
+		name	在便利商店賺取資金
+		info	稍微努力一點賺錢
 		param	20000
 		func	_local_7
 	@@USE
 		time	6h
-		action	人材派遣業の専門家になる
+		action	成為人力仲介
 		arg		nocount
-		name	人材派遣業の専門家になる
-		info	今までの経験を生かして，人材派遣業の専門家になります
+		name	成為人力仲介
+		info	利用自身的經驗，成為人力仲介。
 			needexp		20%
 		func	_local_
 			my $ret="";
-			main::OutError('現在すでに人材派遣業の専門家です') if ($DT->{job} eq 'man');
+			main::OutError('目前已經是人力仲介了') if ($DT->{job} eq 'man');
 			$DT->{job} = 'man';
-			$ret="人材派遣業の専門家になりました";
+			$ret="成為人力仲介了";
 			WriteLog(0,$DT->{id},$ret);
 			return $ret;
 		_local_
@@ -205,7 +205,7 @@
 	type	人材
 	code	man-nou
 	name	農夫
-	info	家畜を飼うのも得意です
+	info	也擅長飼養牲畜。
 	scale	人
 	price	30000
 	cost	1000
@@ -220,11 +220,11 @@
 		price	20000
 		job		農業	times/job_agri_time_rate
 		scale	反
-		action	畑を手に入れる
-		name	畑を手に入れる
-		info	手入れのよい畑を探して購入します
-		okmsg	すぐに収穫できそうな畑が手に入り，おまけに堆肥も分けてもらいました
-			get		1	収穫を待つ畑
+		action	取得田地
+		name	取得田地
+		info	尋找並購買良好的田地
+		okmsg	馬上找到了可以收割的田地，甚至還有一些堆肥。
+			get		1	待收割的田地
 			get		100	堆肥
 	@@USE
 		time	3h
@@ -232,13 +232,13 @@
 		exptime	1h
 		job		農業	times/job_agri_time_rate
 		scale	反
-		action	耕して種を植える
-		name	畑を耕して種を植える
-		info	畑に肥料を与えて耕し，作物の種を植えます
-		okmsg	畑はよく耕され，作物の種が植えられました
-			use		1	耕す前の畑
+		action	進行耕作並且播種
+		name	進行耕作並且播種
+		info	對田地施肥犁田，並且種植作物
+		okmsg	對田地施肥犁田，並且種植作物了
+			use		1	耕作前的田地
 			use		100	堆肥
-			get		1	よく耕した畑
+			get		1	耕作後的田地
 			get		10	店力	10%
 	@@USE
 		time	3h
@@ -246,18 +246,18 @@
 		exptime	1h
 		job		農業	times/job_agri_time_rate
 		scale	回
-		action	収穫をする
-		name	ねぎの収穫をする
-		info	ねぎ畑に行って収穫をします
+		action	進行收割
+		name	收穫蔥
+		info	去蔥田裡進行收割
 		func	lostman
 		param	50
-		ngmsg	何も収穫できませんでした‥
-			use		1	収穫を待つ畑
-			get		100	ねぎ	50%	ねぎを収穫しました
-			get		10	とうもろこし	50%	ついでに食べ頃のとうもろこしを取ってきました
-			get		1	福引き補助券	01%	畑で福引き補助券を拾いました
-			get		1	がちょう	05%	畑に侵入していた野生のがちょうをつかまえました
-			get		1	耕す前の畑
+		ngmsg	沒有收穫任何東西..
+			use		1	待收割的田地
+			get		100	蔥	50%	收穫了蔥
+			get		10	玉米	50%	也撿到了一些玉米
+			get		1	抽獎卷	01%	在田地裡撿到抽獎卷了
+			get		1	鵝	05%	抓到一隻入侵田地的野鵝
+			get		1	耕作前的田地
 			get		10	店力	10%
 		funcb	_local_
 			# 1/20の確率で収穫量が2倍になる
@@ -270,7 +270,7 @@
 				$_->{count}*=2;
 			}
 			
-			$USE->{result}->{message}->{resultok}='今回はかなり豊作でした<br>新しい畑を手に入れました';
+			$USE->{result}->{message}->{resultok}='本次大豐收<br>獲得了新的田地';
 			return 0;
 		_local_
 	@@USE
@@ -279,18 +279,18 @@
 		exptime	1h
 		job		農業	times/job_agri_time_rate
 		scale	回
-		action	収穫をする
-		name	小麦の収穫をする
-		info	小麦畑に行って収穫をします
+		action	進行收割
+		name	收穫小麥
+		info	去小麥田裡進行收割
 		func	lostman
 		param	50
-		ngmsg	何も収穫できませんでした‥
-			use		1	収穫を待つ畑
-			get		40	小麦粉	50%	小麦を収穫し，さらに製粉しました
-			get		10	とうがらし	50%	ついでにとうがらしを取ってきました
-			get		1	福引き補助券	01%	畑で福引き補助券を拾いました
-			get		1	がちょう	05%	畑に侵入していた野生のがちょうをつかまえました
-			get		1	耕す前の畑
+		ngmsg	沒有收穫任何東西..
+			use		1	待收割的田地
+			get		40	小麥粉	50%	收穫了小麥，並且磨成了粉
+			get		10	唐辛子	50%	也撿到了一些唐辛子
+			get		1	抽獎卷	01%	在田地裡撿到抽獎卷了
+			get		1	鵝	05%	抓到一隻入侵田地的野鵝
+			get		1	耕作前的田地
 			get		10	店力	10%
 		funcb	_local_
 			return 0 if rand(1000)>50;
@@ -302,7 +302,7 @@
 				$_->{count}*=2;
 			}
 			
-			$USE->{result}->{message}->{resultok}='今回はかなり豊作でした<br>新しい畑を手に入れました';
+			$USE->{result}->{message}->{resultok}='本次大豐收<br>獲得了新的田地';
 			return 0;
 		_local_
 @@USE
@@ -311,18 +311,18 @@
 		exptime	1h
 		job		農業	times/job_agri_time_rate
 		scale	回
-		action	収穫をする
-		name	そばの収穫をする
-		info	そば畑に行って収穫をします
+		action	進行收割
+		name	收割蕎麥
+		info	去そば田裡進行收割
 		func	lostman
 		param	50
-		ngmsg	何も収穫できませんでした‥
-			use		1	収穫を待つ畑
-			get		40	そば粉	50%	そばを収穫し，さらに製粉しました
-			get		20	とうがらし	50%	ついでにとうがらしを取ってきました
-			get		1	福引き補助券	01%	畑で福引き補助券を拾いました
-			get		1	豚	05%	畑に侵入していた野生の豚をつかまえました
-			get		1	耕す前の畑
+		ngmsg	沒有收穫任何東西..
+			use		1	待收割的田地
+			get		40	蕎麥粉	50%	收穫了蕎麥，並且磨成了粉
+			get		20	唐辛子	50%	也撿到了一些唐辛子
+			get		1	抽獎卷	01%	在田地裡撿到抽獎卷了
+			get		1	豬	05%	抓到一隻入侵田地的野豬
+			get		1	耕作前的田地
 			get		10	店力	10%
 		funcb	_local_
 			return 0 if rand(1000)>50;
@@ -334,7 +334,7 @@
 				$_->{count}*=2;
 			}
 			
-			$USE->{result}->{message}->{resultok}='今回はかなり豊作でした<br>新しい畑を手に入れました';
+			$USE->{result}->{message}->{resultok}='本次大豐收<br>獲得了新的田地';
 			return 0;
 		_local_
 @@USE
@@ -343,18 +343,18 @@
 		exptime	1h
 		job		農業	times/job_agri_time_rate
 		scale	回
-		action	収穫をする
-		name	大豆の収穫をする
-		info	大豆畑に行って収穫をします
+		action	進行收割
+		name	收穫大豆
+		info	去大豆田裡進行收割
 		func	lostman
 		param	50
-		ngmsg	何も収穫できませんでした‥
-			use		1	収穫を待つ畑
-			get		40	大豆	50%	大豆を収穫しました
-			get		30	ねぎ	50%	ついでにねぎを取ってきました
-			get		1	福引き補助券	01%	畑で福引き補助券を拾いました
-			get		1	豚	05%	畑に侵入していた野生の豚をつかまえました
-			get		1	耕す前の畑
+		ngmsg	沒有收穫任何東西..
+			use		1	待收割的田地
+			get		40	大豆	50%	收穫了大豆
+			get		30	蔥	50%	也撿到了一些蔥
+			get		1	抽獎卷	01%	在田地裡撿到抽獎卷了
+			get		1	豬	05%	抓到一隻入侵田地的野豬
+			get		1	耕作前的田地
 			get		10	店力	10%
 		funcb	_local_
 			return 0 if rand(1000)>50;
@@ -366,7 +366,7 @@
 				$_->{count}*=2;
 			}
 			
-			$USE->{result}->{message}->{resultok}='今回はかなり豊作でした<br>新しい畑を手に入れました';
+			$USE->{result}->{message}->{resultok}='本次大豐收<br>獲得了新的田地';
 			return 0;
 		_local_
 @@USE
@@ -375,18 +375,18 @@
 		exptime	1h
 		job		農業	times/job_agri_time_rate
 		scale	回
-		action	収穫をする
-		name	とうもろこしの収穫をする
-		info	とうもろこし畑に行って収穫をします
+		action	進行收割
+		name	收穫玉米
+		info	去玉米田裡進行收割
 		func	lostman
 		param	50
-		ngmsg	何も収穫できませんでした‥
-			use		1	収穫を待つ畑
-			get		27	とうもろこし	50%	とうもろこしを収穫しました
-			get		20	大豆	50%	ついでに大豆を取ってきました
-			get		1	福引き補助券	01%	畑で福引き補助券を拾いました
-			get		1	がちょう	05%	畑に侵入していた野生のがちょうをつかまえました
-			get		1	耕す前の畑
+		ngmsg	沒有收穫任何東西..
+			use		1	待收割的田地
+			get		27	玉米	50%	收穫了玉米
+			get		20	大豆	50%	也撿到了一些大豆
+			get		1	抽獎卷	01%	在田地裡撿到抽獎卷了
+			get		1	鵝	05%	抓到一隻入侵田地的野鵝
+			get		1	耕作前的田地
 			get		10	店力	10%
 		funcb	_local_
 			return 0 if rand(1000)>50;
@@ -398,7 +398,7 @@
 				$_->{count}*=2;
 			}
 			
-			$USE->{result}->{message}->{resultok}='今回はかなり豊作でした<br>新しい畑を手に入れました';
+			$USE->{result}->{message}->{resultok}='本次大豐收<br>獲得了新的田地';
 			return 0;
 		_local_
 	@@USE
@@ -407,11 +407,11 @@
 		exptime	1h
 		job		農業	times/job_agri_time_rate
 		arg		nocount
-		action	世話をする
-		name	にわとりの世話をする
-		info	餌を十分に準備すれば，鶏舎の掃除後ににわとりに食べさせることができます
+		action	照顧
+		name	照顧雞
+		info	如果你準備了足夠的飼料，你可以在清理雞舍後餵雞
 		param	2
-			need		1	にわとり
+			need		1	雞
 		func	_local_
 			my $val=$USE->{param1}*$count;
 			my $ret="";
@@ -421,7 +421,7 @@
 			if ($niwatori*$count>$toumorokosi)
 			{
 			AddItem(58,$count,);
-			$ret='鶏の餌が足りないようなので，鶏舎の掃除だけ済ませました';
+			$ret='看來雞的飼料不夠了，所以只打掃了雞舍。';
 			WriteLog(0,$DT->{id},$ret);
 			}
 			else
@@ -430,7 +430,7 @@
 			$val=int(rand($val) * 2)+1;
 			AddItem(9,$val,);
 			AddItem(58,$count,);
-			UseItem(17,$niwatori*$count,'にわとり１羽につき，とうもろこしを'.$count.'本食べさせました');
+			UseItem(17,$niwatori*$count,'給每隻雞餵了'.$count.'個玉米');
 			
 			my $useproba=$USE->{param1}*$USE->{param1};
 			my $usecount=0;
@@ -438,9 +438,9 @@
 			{
 				$usecount++ if rand(1000)<$useproba;
 			}
-			UseItem(20,$usecount,$ITEM[20]->{name}.'が満腹した後，昇天しました') if $usecount;
+			UseItem(20,$usecount,$ITEM[20]->{name}.'吃飽後，就升天了。') if $usecount;
 			
-			$ret='卵が'.$val.'個手に入りました';
+			$ret='獲得了'.$val.'個雞蛋';
 			WriteLog(0,$DT->{id},$ret);
 			}
 			return $ret;
@@ -450,33 +450,33 @@
 		exp		1%
 		exptime	1h
 		job		農業	times/job_agri_time_rate
-		scale	セット
-		action	親鳥に卵を抱かせる
-		name	卵を孵化させる
-		info	卵を親鳥に抱かせ，孵化させてみます
+		scale	次
+		action	讓母雞孵蛋
+		name	將雞蛋孵化
+		info	讓母雞孵蛋，使雞蛋孵化
 		func	lostman
 		param	50
-		okmsg	孵化の準備が整いました
-			need		1	にわとり
-			use		5	卵
-			get		5	孵化を待つ卵
+		okmsg	孵化的準備已經完成了
+			need		1	雞
+			use		5	雞蛋
+			get		5	等待孵化的雞蛋
 			get		10	店力	10%
 	@@USE
 		time	3h
 		exp		1%
 		exptime	1h
 		job		農業	times/job_agri_time_rate
-		scale	羽
-		action	世話をする
-		name	がちょうの世話をする
-		info	がちょうにたっぷり餌を与えてみます
+		scale	隻
+		action	照顧
+		name	照顧農場的鵝
+		info	餵食鵝充足的食物
 		func	lostman
 		param	50
-		ngmsg	フォアグラがとれる前に，がちょうが昇天してしまいました‥
-		okmsg	高級なフォアグラが手に入りました
-			use		1	がちょう
-			use		10	とうもろこし
-			get		48	フォアグラ	50%
+		ngmsg	還沒來得及拿到鵝肝，鵝就已經升天了……
+		okmsg	得到了高級的鵝肝
+			use		1	鵝
+			use		10	玉米
+			get		48	鵝肝	50%
 			get		10	店力	15%
 	@@USE
 		time	3h
@@ -485,11 +485,11 @@
 		job		農業	times/job_agri_time_rate
 		scale	回
 		arg		nocount
-		action	世話をする
-		name	豚の世話をする
-		info	餌を十分に用意すれば，豚に食べさせてから山に散歩に連れて行くことができます
+		action	照顧
+		name	照顧農場的豬
+		info	如果準備了足夠的飼料可以餵豬，然後帶牠們去山裡散步。
 		param	1
-			need		1	豚
+			need		1	豬
 		func	_local_
 			my $val=$USE->{param1}*$count;
 			my $ret="";
@@ -499,7 +499,7 @@
 			if ($buta*$count*5>$daizu)
 			{
 			AddItem(58,$count*2,);
-			$ret='餌が足りそうになかったので，豚小屋の掃除だけ済ませました';
+			$ret='因為飼料不足，所以只進行了豬欄的打掃';
 			WriteLog(0,$DT->{id},$ret);
 			}
 			else
@@ -508,7 +508,7 @@
 			$val=int(rand($val) * 3)+1;
 			AddItem(18,$val,);
 			AddItem(58,$count,);
-			UseItem(16,$buta*$count*5,'豚1頭につき，大豆を'.($count*5).'kg食べさせました');
+			UseItem(16,$buta*$count*5,'給每頭豬餵食了'.($count*5).'kg的大豆');
 			
 			my $useproba=$USE->{param1}*$USE->{param1};
 			my $usecount=0;
@@ -516,26 +516,26 @@
 			{
 				$usecount++ if rand(1000)<$useproba;
 			}
-			UseItem(22,$usecount,$ITEM[22]->{name}.'が山奥に逃げていきました') if $usecount;
+			UseItem(22,$usecount,$ITEM[22]->{name}.'往深山裡跑走了') if $usecount;
 			
-			$ret='食後の散歩に連れて行った山で，豚がトリュフを'.$val.'個見つけました';
+			$ret='帶吃飽的豬去山上散步，豬發現了'.$val.'個松露';
 			WriteLog(0,$DT->{id},$ret);
 			}
 			return $ret;
 		_local_
 	@@USE
 		time	6h
-		action	農業の専門家になる
+		action	成為農業專門家
 		scale	回
 		arg		nocount
-		name	農業の専門家になる
-		info	今までの経験を生かして，農業の専門家になります
+		name	成為農業專門家
+		info	利用自身的經驗，成為農業專門家
 			needexp		20%
 		func	_local_
 			my $ret="";
-			main::OutError('現在すでに農業の専門家です') if ($DT->{job} eq 'agri');
+			main::OutError('目前已經是農業專門家了') if ($DT->{job} eq 'agri');
 			$DT->{job} = 'agri';
-			$ret="農業の専門家になりました";
+			$ret="成為農業專門家了";
 			WriteLog(0,$DT->{id},$ret);
 			return $ret;
 		_local_
@@ -544,8 +544,8 @@
 	no		3
 	type	人材
 	code	man-gyo
-	name	漁師
-	info	大物を釣るには餌が必要です
+	name	漁夫
+	info	需要誘餌才能釣到大魚
 	scale	人
 	price	30000
 	cost	1000
@@ -559,15 +559,15 @@
 		exptime	1.5h
 		job		漁業	times/job_fish_time_rate
 		scale	回
-		action	釣りをする
-		name	釣りをする
-		info	近くの海岸で釣りをしてみます
-		ngmsg	釣果はありませんでした‥
-			get		10	すけとうだら	50%	すけとうだらが釣れました
-			get		2	えそ	50%	えそが釣れました
-			get		100	えび	60%	えびを捕まえました
-			get		40	わかめ	50%	ついでにわかめも採りました
-			get		1	がちょう	02%	溺れかけていたがちょうを助けました
+		action	去釣魚
+		name	去釣魚
+		info	在附近的海岸釣魚
+		ngmsg	什麼魚都沒釣到..
+			get		10	黃線狹鱈	50%	釣到了黃線狹鱈
+			get		2	狗母魚	50%	釣到了狗母魚
+			get		100	蝦	60%	捕到了蝦
+			get		40	海帶芽	50%	順便採到了一些海帶芽
+			get		1	鵝	02%	救了一隻溺水的鵝
 			get		10	店力	20%
 	@@USE
 		time	4h
@@ -575,18 +575,18 @@
 		exptime	2h
 		job		漁業	times/job_fish_time_rate
 		scale	回
-		action	漁に出る
-		name	漁に出る
-		info	船に乗って漁に出てみます
+		action	出海捕魚
+		name	出海捕魚
+		info	搭船出海捕魚
 		func	lostman
 		param	50
-		ngmsg	釣果はありませんでした‥
-			use		50	えび
-			get		8	すけとうだら	30%	すけとうだらが釣れました
-			get		8	えそ	50%	えそが釣れました
-			get		10	かつお	50%	かつおが釣れました
-			get		2	ちょうざめ	30%	大物のちょうざめが釣れました
-			get		1	豚	02%	溺れかけていた豚を助けました
+		ngmsg	什麼魚都沒釣到..
+			use		50	蝦
+			get		8	黃線狹鱈	30%	釣到了黃線狹鱈
+			get		8	狗母魚	50%	釣到了狗母魚
+			get		10	鰹魚	50%	釣到了鰹魚
+			get		2	鱘魚	30%	釣到了大隻的鱘魚
+			get		1	豬	02%	救了一隻溺水的豬
 			get		10	店力	20%
 	@@USE
 		time	2h
@@ -594,16 +594,16 @@
 		exptime	1h
 		job		漁業	times/job_fish_time_rate
 		scale	回
-		action	作る
-		name	辛子めんたいを作る
-		info	すけとうだらの卵を加工して，辛子めんたいを作ります
+		action	製作
+		name	製作明太子
+		info	將黃線狹鱈的魚卵進行加工，做成明太子
 		func	lostman
 		param	50
-		ngmsg	辛子めんたい作りに失敗し，材料を無駄にしてしまいました‥
-		okmsg	辛子めんたいができました
-			use		1	すけとうだら
-			use		5	とうがらし
-			get		20	辛子めんたい	80%
+		ngmsg	製作明太子失敗，材料都浪費了..
+		okmsg	做好明太子了
+			use		1	黃線狹鱈
+			use		5	唐辛子
+			get		20	明太子	80%
 			get		10	店力	10%
 	@@USE
 		time	2h
@@ -611,29 +611,29 @@
 		exptime	1h
 		job		漁業	times/job_fish_time_rate
 		scale	回
-		action	手に入れる
-		name	キャビアを手に入れる
-		info	ちょうざめのおなかからキャビアを取り出します
+		action	取得
+		name	取得魚子醬
+		info	從鱘魚裡面將魚子醬取出
 		func	lostman
 		param	50
-		ngmsg	ちょうざめは♂でした‥
-		okmsg	キャビアが手に入りました
-			use		1	ちょうざめ
-			get		40	キャビア	60%
+		ngmsg	這隻鱘魚是公的啦‥
+		okmsg	取得魚子醬了
+			use		1	鱘魚
+			get		40	魚子醬	60%
 			get		10	店力	10%
 	@@USE
 		time	6h
-		action	漁業の専門家になる
+		action	成為漁業專門家
 		scale	回
 		arg		nocount
-		name	漁業の専門家になる
-		info	今までの経験を生かして，漁業の専門家になります
+		name	成為漁業專門家
+		info	利用自身的經驗，成為漁業專門家
 			needexp		20%
 		func	_local_
 			my $ret="";
-			main::OutError('現在すでに漁業の専門家です') if ($DT->{job} eq 'fish');
+			main::OutError('目前已經是漁業專門家了') if ($DT->{job} eq 'fish');
 			$DT->{job} = 'fish';
-			$ret="漁業の専門家になりました";
+			$ret="成為漁業專門家了";
 			WriteLog(0,$DT->{id},$ret);
 			return $ret;
 		_local_
@@ -642,8 +642,8 @@
 	no		4
 	type	人材
 	code	man-ten
-	name	天ぷら職人
-	info	油揚げやかまぼこも作ります
+	name	天婦羅師傅
+	info	可以料理炸豆皮或魚板
 	scale	人
 	price	30000
 	cost	1000
@@ -655,72 +655,72 @@
 		time	90m
 		exp	2%
 		exptime	30m
-		job	天ぷら屋	times/job_temp_time_rate
+		job	天婦羅屋	times/job_temp_time_rate
 		scale	回
-		action	作る
-		name	油揚げを作る
-		info	大豆から豆腐を作り，さらに油揚げに加工します
-		ngmsg	油揚げ作りに失敗し，材料を無駄にしてしまいました‥
+		action	製作
+		name	製作炸豆皮
+		info	由大豆做成豆腐，然後加工成炸豆皮。
+		ngmsg	製作炸豆皮失敗，材料都浪費了..
 			use		10	大豆
-			get		100	油揚げ	80%	油揚げができました
+			get		100	炸豆皮	80%	做好炸豆皮了
 			get		10	店力	20%
 	@@USE
 		time	90m
 		exp	2%
 		exptime	30m
-		job		天ぷら屋	times/job_temp_time_rate
+		job		天婦羅屋	times/job_temp_time_rate
 		scale	回
-		action	作る
-		name	かまぼこを作る
-		info	かまぼこを作ります
-		ngmsg	かまぼこ作りに失敗し，材料を無駄にしてしまいました‥
-			use		4	すけとうだら
-			get		100	かまぼこ	80%	かまぼこができました
+		action	製作
+		name	製作魚板
+		info	製作魚板
+		ngmsg	製作魚板失敗，材料都浪費了..
+			use		4	黃線狹鱈
+			get		100	魚板	80%	做好魚板了
 			get		10	店力	20%
 	@@USE
 		time	90m
 		exp	2%
 		exptime	30m
-		job		天ぷら屋	times/job_temp_time_rate
+		job		天婦羅屋	times/job_temp_time_rate
 		scale	回
-		action	作る
-		name	丸天を作る
-		info	丸天を作ります
+		action	製作
+		name	製作圓形天婦羅
+		info	製作圓形天婦羅
 		func	lostman
 		param	50
-		ngmsg	丸天作りに失敗し，材料を無駄にしてしまいました‥
-			use		2	えそ
-			get		60	丸天	80%	丸天ができました
+		ngmsg	製作圓形天婦羅失敗，材料都浪費了..
+			use		2	狗母魚
+			get		60	圓形天婦羅	80%	做好圓形天婦羅了
 			get		10	店力	20%
 	@@USE
 		time	90m
 		exp	2%
 		exptime	30m
-		job		天ぷら屋	times/job_temp_time_rate
+		job		天婦羅屋	times/job_temp_time_rate
 		scale	回
-		action	作る
-		name	えび天を作る
-		info	えび天を作ります
+		action	製作
+		name	製作炸蝦天婦羅
+		info	製作炸蝦天婦羅
 		func	lostman
 		param	50
-		ngmsg	えび天作りに失敗し，材料を無駄にしてしまいました‥
-			use		20	えび
-			use		2	小麦粉
-			use		10	卵
-			get		50	えび天	80%	えび天ができました
+		ngmsg	製作炸蝦天婦羅失敗，材料都浪費了..
+			use		20	蝦
+			use		2	小麥粉
+			use		10	雞蛋
+			get		50	炸蝦天婦羅	80%	做好炸蝦天婦羅了
 			get		10	店力	20%
 	@@USE
 		time	6h
-		action	天ぷら作りの専門家になる
+		action	成為天婦羅師傅
 		arg		nocount
-		name	天ぷら作りの専門家になる
-		info	今までの経験を生かして，天ぷら作りの専門家になります
+		name	成為天婦羅師傅
+		info	利用自身的經驗，成為天婦羅師傅
 			needexp		20%
 		func	_local_
 			my $ret="";
-			main::OutError('現在すでに天ぷら作りの専門家です') if ($DT->{job} eq 'temp');
+			main::OutError('目前已經是天婦羅師傅了') if ($DT->{job} eq 'temp');
 			$DT->{job} = 'temp';
-			$ret="天ぷら作りの専門家になりました";
+			$ret="成為天婦羅師傅了";
 			WriteLog(0,$DT->{id},$ret);
 			return $ret;
 		_local_
@@ -729,8 +729,8 @@
 	no		5
 	type	人材
 	code	man-udon
-	name	うどん職人
-	info	各種うどんを1杯ずつ揃えて，新しいうどんの開発を！
+	name	烏龍麵師傅
+	info	每種烏龍麵各準備一碗，開發新的烏龍麵吧！
 	scale	人
 	price	30000
 	cost	1000
@@ -742,205 +742,205 @@
 		time	1h
 		exp	1%
 		exptime	20m
-		job	うどん屋	times/job_udon_time_rate
+		job	烏龍麵屋	times/job_udon_time_rate
 		scale	回
-		action	作る
-		name	すうどんを作る
-		info	すうどんを作ります
-		ngmsg	すうどん作りに失敗し，材料を無駄にしてしまいました‥
-			use		3	小麦粉
-			use		2	ねぎ
-			use		2	かまぼこ
-			use		40	きれいな丼
-			get		40	すうどん	80%	すうどんができました
+		action	製作
+		name	製作清湯烏龍麵
+		info	製作清湯烏龍麵
+		ngmsg	製作清湯烏龍麵失敗，材料都浪費了..
+			use		3	小麥粉
+			use		2	蔥
+			use		2	魚板
+			use		40	乾淨的碗
+			get		40	清湯烏龍麵	80%	做好清湯烏龍麵了
 			get		10	店力	10%
 	@@USE
 		time	1h
 		exp	1%
 		exptime	20m
-		job	うどん屋	times/job_udon_time_rate
+		job	烏龍麵屋	times/job_udon_time_rate
 		scale	回
-		action	作る
-		name	わかめうどんを作る
-		info	わかめうどんを作ります
-		ngmsg	わかめうどん作りに失敗し，材料を無駄にしてしまいました‥
-			use		3	小麦粉
-			use		2	ねぎ
-			use		5	わかめ
-			use		32	きれいな丼
-			get		30	わかめうどん	90%	わかめうどんができました
+		action	製作
+		name	製作海帶芽烏龍麵
+		info	製作海帶芽烏龍麵
+		ngmsg	製作海帶芽烏龍麵失敗，材料都浪費了..
+			use		3	小麥粉
+			use		2	蔥
+			use		5	海帶芽
+			use		32	乾淨的碗
+			get		30	海帶芽烏龍麵	90%	做好海帶芽烏龍麵了
 			get		10	店力	10%
 	@@USE
 		time	1h
 		exp	1%
 		exptime	20m
-		job	うどん屋	times/job_udon_time_rate
+		job	烏龍麵屋	times/job_udon_time_rate
 		scale	回
-		action	作る
-		name	きつねうどんを作る
-		info	きつねうどんを作ります
-		ngmsg	きつねうどん作りに失敗し，材料を無駄にしてしまいました‥
-			use		3	小麦粉
-			use		2	ねぎ
-			use		10	油揚げ
-			use		25	きれいな丼
-			get		25	きつねうどん	80%	きつねうどんができました
+		action	製作
+		name	製作豆皮烏龍麵
+		info	製作豆皮烏龍麵
+		ngmsg	製作豆皮烏龍麵失敗，材料都浪費了..
+			use		3	小麥粉
+			use		2	蔥
+			use		10	炸豆皮
+			use		25	乾淨的碗
+			get		25	豆皮烏龍麵	80%	做好豆皮烏龍麵了
 			get		10	店力	10%
 	@@USE
 		time	1h
 		exp	1%
 		exptime	20m
-		job	うどん屋	times/job_udon_time_rate
+		job	烏龍麵屋	times/job_udon_time_rate
 		scale	回
-		action	作る
-		name	丸天うどんを作る
-		info	丸天うどんを作ります
-		ngmsg	丸天うどん作りに失敗し，材料を無駄にしてしまいました‥
-			use		3	小麦粉
-			use		2	ねぎ
-			use		10	丸天
-			use		20	きれいな丼
-			get		20	丸天うどん	80%	丸天うどんができました
+		action	製作
+		name	製作天婦羅烏龍麵
+		info	製作天婦羅烏龍麵
+		ngmsg	製作天婦羅烏龍麵失敗，材料都浪費了..
+			use		3	小麥粉
+			use		2	蔥
+			use		10	圓形天婦羅
+			use		20	乾淨的碗
+			get		20	天婦羅烏龍麵	80%	做好天婦羅烏龍麵了
 			get		10	店力	10%
 	@@USE
 		time	2h
 		exp	2%
 		exptime	40m
-		job	うどん屋	times/job_udon_time_rate
+		job	烏龍麵屋	times/job_udon_time_rate
 		scale	回
-		action	作る
-		name	えび天うどんを作る
-		info	えび天うどんを作ります
-		ngmsg	えび天うどん作りに失敗し，材料を無駄にしてしまいました‥
-			use		5	小麦粉
-			use		5	ねぎ
-			use		20	えび天
-			use		20	きれいな丼
-			get		20	えび天うどん	80%	えび天うどんができました
+		action	製作
+		name	製作炸蝦烏龍麵
+		info	製作炸蝦烏龍麵
+		ngmsg	製作炸蝦烏龍麵失敗，材料都浪費了..
+			use		5	小麥粉
+			use		5	蔥
+			use		20	炸蝦天婦羅
+			use		20	乾淨的碗
+			get		20	炸蝦烏龍麵	80%	做好炸蝦烏龍麵了
 			get		20	店力	10%
 	@@USE
 		time	20m
 		exp	0%
 		exptime	10m
-		job	うどん屋	times/job_udon_time_rate
-		scale	セット
-		action	作る
-		name	うどん三昧を作る
-		info	うどん三昧を作ります
-		okmsg	うどん三昧ができました
+		job	烏龍麵屋	times/job_udon_time_rate
+		scale	組
+		action	製作
+		name	製作烏龍麵三昧
+		info	製作烏龍麵三昧
+		okmsg	做好烏龍麵三昧了
 			needexp		20%
-			use		10	きつねうどん
-			use		10	丸天うどん
-			use		10	えび天うどん
-			get		10	うどん三昧
+			use		10	豆皮烏龍麵
+			use		10	天婦羅烏龍麵
+			use		10	炸蝦烏龍麵
+			get		10	烏龍麵三昧
 	@@USE
 		time	3h
 		exp	4%
 		exptime	1h
-		job	うどん屋	times/job_udon_time_rate
+		job	烏龍麵屋	times/job_udon_time_rate
 		scale	回
-		action	作る
-		name	キャビアうどんを作る
-		info	キャビアうどんを作ります
+		action	製作
+		name	製作魚子醬烏龍麵
+		info	製作魚子醬烏龍麵
 		func	lostman
 		param	50
-		ngmsg	キャビアうどん作りに失敗し，材料を無駄にしてしまいました‥
+		ngmsg	製作魚子醬烏龍麵失敗，材料都浪費了..
 			needexp		40%
-			use		3	小麦粉
-			use		1	かつお
-			use		2	キャビア
-			use		8	きれいな丼
-			get		8	キャビアうどん	80%	キャビアうどんができました
+			use		3	小麥粉
+			use		1	鰹魚
+			use		2	魚子醬
+			use		8	乾淨的碗
+			get		8	魚子醬烏龍麵	80%	做好魚子醬烏龍麵了
 			get		10	店力	20%
 	@@USE
 		time	3h
 		exp	4%
 		exptime	1h
-		job	うどん屋	times/job_udon_time_rate
+		job	烏龍麵屋	times/job_udon_time_rate
 		scale	回
-		action	作る
-		name	トリュフうどんを作る
-		info	トリュフうどんを作ります
+		action	製作
+		name	製作松露烏龍麵
+		info	製作松露烏龍麵
 		func	lostman
 		param	50
-		ngmsg	トリュフうどん作りに失敗し，材料を無駄にしてしまいました‥
+		ngmsg	製作松露烏龍麵失敗，材料都浪費了..
 			needexp		40%
-			use		3	小麦粉
-			use		1	かつお
-			use		2	トリュフ
-			use		8	きれいな丼
-			get		10	トリュフうどん	60%	トリュフうどんができました
+			use		3	小麥粉
+			use		1	鰹魚
+			use		2	松露
+			use		8	乾淨的碗
+			get		10	松露烏龍麵	60%	做好松露烏龍麵了
 			get		10	店力	20%
 	@@USE
 		time	3h
 		exp	4%
 		exptime	1h
-		job		うどん屋	times/job_udon_time_rate
+		job		烏龍麵屋	times/job_udon_time_rate
 		scale	回
-		action	作る
-		name	フォアグラうどんを作る
-		info	フォアグラうどんを作ります
+		action	製作
+		name	製作鵝肝烏龍麵
+		info	製作鵝肝烏龍麵
 		func	lostman
 		param	50
-		ngmsg	フォアグラうどん作りに失敗し，材料を無駄にしてしまいました‥
+		ngmsg	製作鵝肝烏龍麵失敗，材料都浪費了..
 			needexp		40%
-			use		3	小麦粉
-			use		1	かつお
-			use		2	フォアグラ
-			use		6	きれいな丼
-			get		6	フォアグラうどん	80%	フォアグラうどんができました
+			use		3	小麥粉
+			use		1	鰹魚
+			use		2	鵝肝
+			use		6	乾淨的碗
+			get		6	鵝肝烏龍麵	80%	做好鵝肝烏龍麵了
 			get		10	店力	20%
 	@@USE
 		time	6h
 		exp	5%
 		exptime	2h
-		job		うどん屋	times/job_udon_time_rate
+		job		烏龍麵屋	times/job_udon_time_rate
 		scale	回
-		action	作る
-		name	博多うどんを作る
-		info	博多うどんを作ります
+		action	製作
+		name	製作博多烏龍麵
+		info	製作博多烏龍麵
 		func	lostman
 		param	50
-		ngmsg	博多うどん作りに失敗し，材料を無駄にしてしまいました‥
+		ngmsg	製作博多烏龍麵失敗，材料都浪費了..
 			needexp		60%
-			use		5	小麦粉
-			use		1	豚
-			use		2	辛子めんたい
-			use		6	きれいな丼
-			get		6	博多うどん	80%	博多うどんができました
+			use		5	小麥粉
+			use		1	豬
+			use		2	明太子
+			use		6	乾淨的碗
+			get		6	博多烏龍麵	80%	做好博多烏龍麵了
 			get		10	店力	20%
 	@@USE
 		time	6h
 		exp	5%
 		exptime	2h
-		job		うどん屋	times/job_udon_time_rate
+		job		烏龍麵屋	times/job_udon_time_rate
 		scale	回
-		action	作る
-		name	オリジナルうどんを作る
-		info	オリジナルうどんを作ります
-		ngmsg	オリジナルうどん作りに失敗し，材料を無駄にしてしまいました‥
+		action	製作
+		name	製作原創烏龍麵
+		info	製作原創烏龍麵
+		ngmsg	製作原創烏龍麵失敗，材料都浪費了..
 			needexp		80%
-			need		1	オリジナルうどんレシピ
-			use		5	小麦粉
-			use		1	かつお
-			use		1	がちょう
-			use		5	とうがらし
-			use		3	きれいな丼
-			get		5	オリジナルうどん	40%	オリジナルうどんができました
+			need		1	原創烏龍麵食譜
+			use		5	小麥粉
+			use		1	鰹魚
+			use		1	鵝
+			use		5	唐辛子
+			use		3	乾淨的碗
+			get		5	原創烏龍麵	40%	做好原創烏龍麵了
 			get		10	店力	20%
 		func	_local_
 			my $ret="";
 			$DT->{user}->{udoncnt}+=1;
 			if (rand(1000)<100)
 			{
-				UseItem(@@ITEMNO"うどん職人",1,"<br>仕事を終えたうどん職人が，黙って去っていきました");
+				UseItem(@@ITEMNO"烏龍麵師傅",1,"<br>工作完成後，烏龍麵師傅默默離去了");
 			}
 			if ((rand(1000)<100)&&($DT->{user}->{udoncnt}>50))
 			{
 				$DT->{user}->{udoncnt}=0;
-				UseItem(@@ITEMNO"オリジナルうどんレシピ",1,"<br>オリジナルうどんレシピにうっかり火がつき，燃やしてしまいました");
-				WriteLog(0,$DT->{id},"オリジナルうどんレシピを失いました");
-				WriteLog(2,0,$DT->{shopname}."がオリジナルうどんレシピをうっかり燃やしてしまったようです。");
+				UseItem(@@ITEMNO"原創烏龍麵食譜",1,"<br>原創烏龍麵食譜無意間被點燃，然後就燒毀了");
+				WriteLog(0,$DT->{id},"失去原創烏龍麵食譜了");
+				WriteLog(2,0,$DT->{shopname}."好像不小心把原創烏龍麵食譜燒了。");
 			}
 			return $ret;
 		_local_
@@ -948,45 +948,45 @@
 		time	6h
 		exp		1%
 		exptime	4h
-		job		うどん屋	times/job_udon_time_rate
-		action	という名前のうどんを作る
-		name	オリジナルうどんを開発する
-		info	精魂込めて作るオリジナルうどんに名前をつけます
+		job		烏龍麵屋	times/job_udon_time_rate
+		action	烏龍麵要叫什麼名字呢
+		name	開發原創烏龍麵
+		info	為全心全意創造的原創烏龍麵命名
 		arg		nocount|message30
-		okmsg	忘れないうちに作り方をメモしておきました
-			use		1	すうどん
-			use		1	わかめうどん
-			use		1	きつねうどん
-			use		1	丸天うどん
-			use		1	えび天うどん
-			use		1	キャビアうどん
-			use		1	トリュフうどん
-			use		1	フォアグラうどん
-			use		1	博多うどん
-			get		1	オリジナルうどん
-			get		1	オリジナルうどんレシピ
+		okmsg	在忘記之前將食譜記下來吧。
+			use		1	清湯烏龍麵
+			use		1	海帶芽烏龍麵
+			use		1	豆皮烏龍麵
+			use		1	天婦羅烏龍麵
+			use		1	炸蝦烏龍麵
+			use		1	魚子醬烏龍麵
+			use		1	松露烏龍麵
+			use		1	鵝肝烏龍麵
+			use		1	博多烏龍麵
+			get		1	原創烏龍麵
+			get		1	原創烏龍麵食譜
 		func	_local_
-			# オリジナルうどんを作る
-			main::OutError('名前をつけてください') if !$USE->{arg}->{message};
+			# 原創烏龍麵を製作
+			main::OutError('請輸入名稱') if !$USE->{arg}->{message};
 			my $ret;
-			$ret='オリジナルうどん【'.$USE->{arg}->{message}.'】が完成しました';	
-			WriteLog(3,0,$DT->{shopname}."が特製うどん「".$USE->{arg}->{message}."」を完成させました。");
+			$ret='原創烏龍麵【'.$USE->{arg}->{message}.'】製作完成了';	
+			WriteLog(3,0,$DT->{shopname}."的特製烏龍麵「".$USE->{arg}->{message}."」完成了。");
 			WriteLog(0,$DT->{id},$ret);
 			$DT->{user}->{udon}=$USE->{arg}->{message};
 			return $ret;
 		_local_
 	@@USE
 		time	6h
-		action	うどん作りの専門家になる
+		action	成為烏龍麵師傅
 		arg		nocount
-		name	うどん作りの専門家になる
-		info	今までの経験を生かして，うどん作りの専門家になります
+		name	成為烏龍麵師傅
+		info	利用自身的經驗，成為烏龍麵師傅
 			needexp		20%
 		func	_local_
 			my $ret="";
-			main::OutError('現在すでにうどん作りの専門家です') if ($DT->{job} eq 'udon');
+			main::OutError('目前已經是烏龍麵師傅了') if ($DT->{job} eq 'udon');
 			$DT->{job} = 'udon';
-			$ret="うどん作りの専門家になりました";
+			$ret="成為烏龍麵師傅了";
 			WriteLog(0,$DT->{id},$ret);
 			return $ret;
 		_local_
@@ -995,8 +995,8 @@
 	no		6
 	type	人材
 	code	man-soba
-	name	そば職人
-	info	各種そばを1杯ずつ揃えて，新しいそばの開発を！
+	name	蕎麥麵師傅
+	info	每種蕎麥麵各準備一碗，開發新的蕎麥麵吧！
 	scale	人
 	price	30000
 	cost	1000
@@ -1008,205 +1008,205 @@
 		time	1h
 		exp	1%
 		exptime	20m
-		job	そば屋	times/job_soba_time_rate
+		job		蕎麥麵屋	times/job_soba_time_rate
 		scale	回
-		action	作る
-		name	かけそばを作る
-		info	かけそばを作ります
-		ngmsg	かけそば作りに失敗し，材料を無駄にしてしまいました‥
-			use		3	そば粉
-			use		2	ねぎ
-			use		2	かまぼこ
-			use		40	きれいな丼
-			get		40	かけそば	80%	かけそばができました
+		action	製作
+		name	製作清湯蕎麥麵
+		info	製作清湯蕎麥麵
+		ngmsg	製作清湯蕎麥麵失敗，材料都浪費了..
+			use		3	蕎麥粉
+			use		2	蔥
+			use		2	魚板
+			use		40	乾淨的碗
+			get		40	清湯蕎麥麵	80%	做好清湯蕎麥麵了
 			get		10	店力	10%
 	@@USE
 		time	1h
 		exp	1%
 		exptime	20m
-		job		そば屋	times/job_soba_time_rate
+		job		蕎麥麵屋	times/job_soba_time_rate
 		scale	回
-		action	作る
-		name	わかめそばを作る
-		info	わかめそばを作ります
-		ngmsg	わかめそば作りに失敗し，材料を無駄にしてしまいました‥
-			use		3	そば粉
-			use		2	ねぎ
-			use		5	わかめ
-			use		32	きれいな丼
-			get		30	わかめそば	90%	わかめそばができました
+		action	製作
+		name	製作海帶芽蕎麥麵
+		info	製作海帶芽蕎麥麵
+		ngmsg	製作海帶芽蕎麥麵失敗，材料都浪費了..
+			use		3	蕎麥粉
+			use		2	蔥
+			use		5	海帶芽
+			use		32	乾淨的碗
+			get		30	海帶芽蕎麥麵	90%	做好海帶芽蕎麥麵了
 			get		10	店力	10%
 	@@USE
 		time	1h
 		exp	1%
 		exptime	20m
-		job		そば屋	times/job_soba_time_rate
+		job		蕎麥麵屋	times/job_soba_time_rate
 		scale	回
-		action	作る
-		name	きつねそばを作る
-		info	きつねそばを作ります
-		ngmsg	きつねそば作りに失敗し，材料を無駄にしてしまいました‥
-			use		3	そば粉
-			use		2	ねぎ
-			use		10	油揚げ
-			use		25	きれいな丼
-			get		25	きつねそば	80%	きつねそばができました
+		action	製作
+		name	製作豆皮蕎麥麵
+		info	製作豆皮蕎麥麵
+		ngmsg	製作豆皮蕎麥麵失敗，材料都浪費了..
+			use		3	蕎麥粉
+			use		2	蔥
+			use		10	炸豆皮
+			use		25	乾淨的碗
+			get		25	豆皮蕎麥麵	80%	做好豆皮蕎麥麵了
 			get		10	店力	10%
 	@@USE
 		time	1h
 		exp	1%
 		exptime	20m
-		job	そば屋	times/job_soba_time_rate
+		job		蕎麥麵屋	times/job_soba_time_rate
 		scale	回
-		action	作る
-		name	丸天そばを作る
-		info	丸天そばを作ります
-		ngmsg	丸天そば作りに失敗し，材料を無駄にしてしまいました‥
-			use		3	そば粉
-			use		2	ねぎ
-			use		10	丸天
-			use		20	きれいな丼
-			get		20	丸天そば	80%	丸天そばができました
+		action	製作
+		name	製作天婦羅蕎麥麵
+		info	製作天婦羅蕎麥麵
+		ngmsg	製作天婦羅蕎麥麵失敗，材料都浪費了..
+			use		3	蕎麥粉
+			use		2	蔥
+			use		10	圓形天婦羅
+			use		20	乾淨的碗
+			get		20	天婦羅蕎麥麵	80%	做好天婦羅蕎麥麵了
 			get		10	店力	10%
 	@@USE
 		time	2h
 		exp	2%
 		exptime	40m
-		job	そば屋	times/job_soba_time_rate
+		job		蕎麥麵屋	times/job_soba_time_rate
 		scale	回
-		action	作る
-		name	えび天そばを作る
-		info	えび天そばを作ります
-		ngmsg	えび天そば作りに失敗し，材料を無駄にしてしまいました‥
-			use		5	そば粉
-			use		5	ねぎ
-			use		20	えび天
-			use		20	きれいな丼
-			get		20	えび天そば	80%	えび天そばができました
+		action	製作
+		name	製作炸蝦蕎麥麵
+		info	製作炸蝦蕎麥麵
+		ngmsg	製作炸蝦蕎麥麵失敗，材料都浪費了..
+			use		5	蕎麥粉
+			use		5	蔥
+			use		20	炸蝦天婦羅
+			use		20	乾淨的碗
+			get		20	炸蝦蕎麥麵	80%	做好炸蝦蕎麥麵了
 			get		20	店力	10%
 	@@USE
 		time	20m
 		exp	0%
 		exptime	10m
-		job		そば屋	times/job_soba_time_rate
-		scale	セット
-		action	作る
-		name	そば三昧を作る
-		info	そば三昧を作ります
-		okmsg	そば三昧ができました
+		job		蕎麥麵屋	times/job_soba_time_rate
+		scale	組
+		action	製作
+		name	製作蕎麥麵三昧
+		info	製作蕎麥麵三昧
+		okmsg	蕎麥麵三昧做好了
 			needexp		20%
-			use		10	きつねそば
-			use		10	丸天そば
-			use		10	えび天そば
-			get		10	そば三昧
+			use		10	豆皮蕎麥麵
+			use		10	天婦羅蕎麥麵
+			use		10	炸蝦蕎麥麵
+			get		10	蕎麥麵三昧
 	@@USE
 		time	3h
 		exp	4%
 		exptime	1h
-		job	そば屋	times/job_soba_time_rate
+		job		蕎麥麵屋	times/job_soba_time_rate
 		scale	回
-		action	作る
-		name	キャビアそばを作る
-		info	キャビアそばを作ります
+		action	製作
+		name	製作魚子醬蕎麥麵
+		info	製作魚子醬蕎麥麵
 		func	lostman
 		param	50
-		ngmsg	キャビアそば作りに失敗し，材料を無駄にしてしまいました‥
+		ngmsg	製作魚子醬蕎麥麵失敗，材料都浪費了..
 			needexp		40%
-			use		3	そば粉
-			use		1	かつお
-			use		2	キャビア
-			use		8	きれいな丼
-			get		8	キャビアそば	80%	キャビアそばができました
+			use		3	蕎麥粉
+			use		1	鰹魚
+			use		2	魚子醬
+			use		8	乾淨的碗
+			get		8	魚子醬蕎麥麵	80%	做好魚子醬蕎麥麵了
 			get		10	店力	20%
 	@@USE
 		time	3h
 		exp	4%
 		exptime	1h
-		job	そば屋	times/job_soba_time_rate
+		job		蕎麥麵屋	times/job_soba_time_rate
 		scale	回
-		action	作る
-		name	トリュフそばを作る
-		info	トリュフそばを作ります
+		action	製作
+		name	製作松露蕎麥麵
+		info	製作松露蕎麥麵
 		func	lostman
 		param	50
-		ngmsg	トリュフそば作りに失敗し，材料を無駄にしてしまいました‥
+		ngmsg	製作松露蕎麥麵失敗，材料都浪費了..
 			needexp		40%
-			use		3	そば粉
-			use		1	かつお
-			use		2	トリュフ
-			use		8	きれいな丼
-			get		10	トリュフそば	60%	トリュフそばができました
+			use		3	蕎麥粉
+			use		1	鰹魚
+			use		2	松露
+			use		8	乾淨的碗
+			get		10	松露蕎麥麵	60%	做好松露蕎麥麵了
 			get		10	店力	20%
 	@@USE
 		time	3h
 		exp	4%
 		exptime	1h
-		job	そば屋	times/job_soba_time_rate
+		job		蕎麥麵屋	times/job_soba_time_rate
 		scale	回
-		action	作る
-		name	フォアグラそばを作る
+		action	製作
+		name	製作鵝肝蕎麥麵
 		func	lostman
 		param	50
-		info	フォアグラそばを作ります
-		ngmsg	フォアグラそば作りに失敗し，材料を無駄にしてしまいました‥
+		info	製作鵝肝蕎麥麵
+		ngmsg	製作鵝肝蕎麥麵失敗，材料都浪費了..
 			needexp		40%
-			use		3	そば粉
-			use		1	かつお
-			use		2	フォアグラ
-			use		6	きれいな丼
-			get		6	フォアグラそば	80%	フォアグラそばができました
+			use		3	蕎麥粉
+			use		1	鰹魚
+			use		2	鵝肝
+			use		6	乾淨的碗
+			get		6	鵝肝蕎麥麵	80%	做好鵝肝蕎麥麵了
 			get		10	店力	20%
 	@@USE
 		time	6h
 		exp	5%
 		exptime	2h
-		job	そば屋	times/job_soba_time_rate
+		job		蕎麥麵屋	times/job_soba_time_rate
 		scale	回
-		action	作る
-		name	博多そばを作る
-		info	博多そばを作ります
+		action	製作
+		name	製作博多蕎麥麵
+		info	製作博多蕎麥麵
 		func	lostman
 		param	50
-		ngmsg	博多そば作りに失敗し，材料を無駄にしてしまいました‥
+		ngmsg	製作博多蕎麥麵失敗，材料都浪費了..
 			needexp		60%
-			use		5	そば粉
-			use		1	豚
-			use		2	辛子めんたい
-			use		6	きれいな丼
-			get		6	博多そば	80%	博多そばができました
+			use		5	蕎麥粉
+			use		1	豬
+			use		2	明太子
+			use		6	乾淨的碗
+			get		6	博多蕎麥麵	80%	做好博多蕎麥麵了
 			get		10	店力	20%
 	@@USE
 		time	6h
 		exp	5%
 		exptime	2h
-		job	そば屋	times/job_soba_time_rate
+		job		蕎麥麵屋	times/job_soba_time_rate
 		scale	回
-		action	作る
-		name	オリジナルそばを作る
-		info	オリジナルそばを作ります
-		ngmsg	オリジナルそば作りに失敗し，材料を無駄にしてしまいました‥
+		action	製作
+		name	製作原創蕎麥麵
+		info	製作原創蕎麥麵
+		ngmsg	製作原創蕎麥麵失敗，材料都浪費了..
 			needexp		80%
-			need		1	オリジナルそばレシピ
-			use		5	そば粉
-			use		1	かつお
-			use		1	ちょうざめ
-			use		15	卵
-			use		3	きれいな丼
-			get		5	オリジナルそば	40%	オリジナルそばができました
+			need		1	原創蕎麥麵食譜
+			use		5	蕎麥粉
+			use		1	鰹魚
+			use		1	鱘魚
+			use		15	雞蛋
+			use		3	乾淨的碗
+			get		5	原創蕎麥麵	40%	做好原創蕎麥麵了
 			get		10	店力	30%
 		func	_local_
 			my $ret="";
 			$DT->{user}->{sobacnt}+=1;
 			if (rand(1000)<100)
 			{
-				UseItem(@@ITEMNO"そば職人",1,"<br>仕事を終えたそば職人が，黙って去っていきました");
+				UseItem(@@ITEMNO"蕎麥麵師傅",1,"<br>工作完成後，蕎麥麵師傅默默離去了");
 			}
 			if ((rand(1000)<100)&&($DT->{user}->{sobacnt}>50))
 			{
 				$DT->{user}->{sobacnt}=0;
-				UseItem(@@ITEMNO"オリジナルそばレシピ",1,"<br>オリジナルそばレシピにうっかり火がつき，燃やしてしまいました");
-				WriteLog(0,$DT->{id},"オリジナルそばレシピを失いました");
-				WriteLog(2,0,$DT->{shopname}."がオリジナルそばレシピをうっかり燃やしてしまったようです。");
+				UseItem(@@ITEMNO"原創蕎麥麵食譜",1,"<br>原創蕎麥麵食譜無意間被點燃，然後就燒毀了");
+				WriteLog(0,$DT->{id},"失去原創蕎麥麵食譜了");
+				WriteLog(2,0,$DT->{shopname}."好像不小心把原創蕎麥麵食譜燒了。");
 			}
 			return $ret;
 		_local_
@@ -1214,45 +1214,46 @@
 		time	6h
 		exp		1%
 		exptime	4h
-		job		そば屋	times/job_soba_time_rate
-		action	という名前のそばを作る
-		name	オリジナルそばを開発する
-		info	精魂込めて作るオリジナルそばに名前をつけます
+		job		蕎麥麵屋	times/job_soba_time_rate
+
+		action	蕎麥麵要叫什麼名字呢
+		name	開發原創蕎麥麵
+		info	為全心全意創造的原創蕎麥麵命名
 		arg		nocount|message30
-		okmsg	忘れないうちに作り方をメモしておきました
-			use		1	かけそば
-			use		1	わかめそば
-			use		1	きつねそば
-			use		1	丸天そば
-			use		1	えび天そば
-			use		1	キャビアそば
-			use		1	トリュフそば
-			use		1	フォアグラそば
-			use		1	博多そば
-			get		1	オリジナルそば
-			get		1	オリジナルそばレシピ
+		okmsg	在忘記之前將食譜記下來吧。
+			use		1	清湯蕎麥麵
+			use		1	海帶芽蕎麥麵
+			use		1	豆皮蕎麥麵
+			use		1	天婦羅蕎麥麵
+			use		1	炸蝦蕎麥麵
+			use		1	魚子醬蕎麥麵
+			use		1	松露蕎麥麵
+			use		1	鵝肝蕎麥麵
+			use		1	博多蕎麥麵
+			get		1	原創蕎麥麵
+			get		1	原創蕎麥麵食譜
 		func	_local_
-			# オリジナルそばを作る
-			main::OutError('名前をつけてください') if !$USE->{arg}->{message};
+			# 原創蕎麥麵を製作
+			main::OutError('請輸入名稱') if !$USE->{arg}->{message};
 			my $ret;
-			$ret='オリジナルそば【'.$USE->{arg}->{message}.'】が完成しました';	
-			WriteLog(3,0,$DT->{shopname}."が特製そば「".$USE->{arg}->{message}."」を完成させました。");
+			$ret='原創蕎麥麵【'.$USE->{arg}->{message}.'】製作完成了';	
+			WriteLog(3,0,$DT->{shopname}."的特製蕎麥麵「".$USE->{arg}->{message}."」完成了。");
 			WriteLog(0,$DT->{id},$ret);
 			$DT->{user}->{soba}=$USE->{arg}->{message};
 			return $ret;
 		_local_
 	@@USE
 		time	6h
-		action	そば作りの専門家になる
+		action	成為蕎麥麵師傅
 		arg		nocount
-		name	そば作りの専門家になる
-		info	今までの経験を生かして，そば作りの専門家になります
+		name	成為蕎麥麵師傅
+		info	利用自身的經驗，成為蕎麥麵師傅
 			needexp		20%
 		func	_local_
 			my $ret="";
-			main::OutError('現在すでにそば作りの専門家です') if ($DT->{job} eq 'soba');
+			main::OutError('目前已經是蕎麥麵師傅了') if ($DT->{job} eq 'soba');
 			$DT->{job} = 'soba';
-			$ret="そば作りの専門家になりました";
+			$ret="成為蕎麥麵師傅了";
 			WriteLog(0,$DT->{id},$ret);
 			return $ret;
 		_local_
@@ -1262,7 +1263,7 @@
 	type	人材
 	code	man-benri
 	name	便利屋
-	info	棚作りや丼洗いなどが得意です
+	info	擅長製作展示架和洗碗
 	scale	人
 	price	30000
 	cost	1000
@@ -1272,16 +1273,16 @@
 	flag	noshowcase|human
 	@@USE
 		time	1h
-		job		人材派遣業	times/job_man_time_rate
+		job		人力仲介	times/job_man_time_rate
 		scale	回
-		action	作業する
+		action	施工
 		price	0
-		name	陳列棚を1つにする
-		info	陳列棚を1つにする
+		name	將展示架改為1個
+		info	將展示架改為1個
 		arg		nocount
 		param	1
 		func	_local_
-			# ★陳列棚数変更
+			# ★展示架数変更
 			#   param1 変更後の棚数
 			my $oldcnt=$DT->{showcasecount};
 			my $newcnt=$USE->{param1};
@@ -1300,77 +1301,77 @@
 				splice(@{$DT->{showcase}},$newcnt);
 				splice(@{$DT->{price}},$newcnt);
 			}
-			my $ret="陳列棚を$DT->{showcasecount}個にしました";
+			my $ret="展示架已經改成$DT->{showcasecount}個了";
 			WriteLog(0,$DT->{id},$ret);
-			WriteLog(3,0,$DT->{shopname}."の陳列棚が$DT->{showcasecount}個になりました");
+			WriteLog(3,0,$DT->{shopname}."的展示架已經變成$DT->{showcasecount}個了");
 			
 			return $ret;
 		_local_
 	@@USE
 		time	2h
-		job		人材派遣業	times/job_man_time_rate
+		job		人力仲介	times/job_man_time_rate
 		price	10000
-		name	陳列棚を2つにする
-		info	陳列棚を2つにする
+		name	將展示架改為2個
+		info	將展示架改為2個
 		func	_local_1
 		arg		nocount
 		param	2
 	@@USE
 		time	4h
-		job		人材派遣業	times/job_man_time_rate
+		job		人力仲介	times/job_man_time_rate
 		price	50000
-		name	陳列棚を3つにする
-		info	陳列棚を3つにする
+		name	將展示架改為3個
+		info	將展示架改為3個
 		func	_local_1
 		arg		nocount
 		param	3
 			need	2	便利屋
 	@@USE
 		time	6h
-		job		人材派遣業	times/job_man_time_rate
+		job		人力仲介	times/job_man_time_rate
 		price	100000
-		name	陳列棚を4つにする
-		info	陳列棚を4つにする
+		name	將展示架改為4個
+		info	將展示架改為4個
 		func	_local_1
 		arg		nocount
 		param	4
 			need	2	便利屋
 	@@USE
 		time	10h
-		job		人材派遣業	times/job_man_time_rate
+		job		人力仲介	times/job_man_time_rate
 		price	200000
-		name	陳列棚を5つにする
-		info	陳列棚を5つにする
+		name	將展示架改為5個
+		info	將展示架改為5個
 		func	_local_1
 		arg		nocount
 		param	5
 			need	3	便利屋
 	@@USE
 		time	12h
-		job		人材派遣業	times/job_man_time_rate
+		job		人力仲介	times/job_man_time_rate
 		price	500000
-		name	陳列棚を6つにする
-		info	陳列棚を6つにする
+		name	將展示架改為6個
+		info	將展示架改為6個
 		func	_local_1
 		arg		nocount
 		param	6
 			need	3	便利屋
 	@@USE
 		time	14h
-		job		人材派遣業	times/job_man_time_rate
+		job		人力仲介	times/job_man_time_rate
 		price	1000000
-		name	陳列棚を7つにする
-		info	陳列棚を7つにする
+		name	將展示架改為7個
+		info	將展示架改為7個
 		func	_local_1
 		arg		nocount
 		param	7
 			need	4	便利屋
 	@@USE
 		time	16h
-		job		人材派遣業	times/job_man_time_rate
+		job		人力仲介	times/job_man_time_rate
 		price	2000000
-		name	陳列棚を8つにする
-		info	陳列棚を8つにする
+		name	將展示架改為8個
+		info	將展示架改為8個
 		func	_local_1
 		arg		nocount
 		param	8
@@ -1379,70 +1380,70 @@
 		time	30m
 		exp		1%
 		exptime	10m
-		job		人材派遣業	times/job_man_time_rate
+		job		人力仲介	times/job_man_time_rate
 		scale	回
-		action	洗う
-		name	丼洗いをする
-		info	汚れた丼を洗います
+		action	清洗
+		name	將碗洗乾淨
+		info	將髒掉的碗洗乾淨
 		func	lostman
 		param	10
-		ngmsg	丼を全部割ってしまいました‥
-			use		10	汚れた丼
-			get		10	きれいな丼	90%	丼がピカピカになりました
+		ngmsg	全部的碗都被打破了‥
+			use		10	髒掉的碗
+			get		10	乾淨的碗	90%	碗變得亮晶晶了
 			get		10	店力	02%
 	@@USE
 		time	1h
 		exp		1%
 		exptime	30m
-		job		人材派遣業	times/job_man_time_rate
+		job		人力仲介	times/job_man_time_rate
 		scale	回
-		action	セットする
-		name	食器洗い機で丼洗いをする
-		info	汚れた丼を食器洗い機にセットします
+		action	使用
+		name	使用洗碗機將碗洗乾淨
+		info	將髒掉的碗用洗碗機洗乾淨
 		func	lostman
 		param	50
-		ngmsg	丼を全部割ってしまいました‥
-			need		1	食器洗い機
-			use		50	汚れた丼
-			get		50	きれいな丼	95%	丼がピカピカになりました
+		ngmsg	全部的碗都被打破了‥
+			need		1	洗碗機
+			use		50	髒掉的碗
+			get		50	乾淨的碗	95%	碗變得亮晶晶了
 			get		10	店力	05%
 	@@use
 		time	10h
 		exp		5%
 		exptime	6h
-		job		人材派遣業	times/job_man_time_rate
-		action	広告を流す
-		name	[新聞]に広告を流す
-		info	下のフォームに文を書き込んでボタンをクリックすると<br>[新聞]に広告が流れます
+		job		人力仲介	times/job_man_time_rate
+		action	投放廣告
+		name	在[新聞]上投放廣告
+		info	請填寫下面的表格並點選按鈕<br>在[新聞]上投放廣告
 		param	300
 		arg		nocount|message100
 			use	1	便利屋
 		func	_local_
-			main::OutError('広告文をご記入ください') if !$USE->{arg}->{message};
+			main::OutError('請輸入廣告文宣') if !$USE->{arg}->{message};
 			my $ret;
 			my $up=int($USE->{param1}*(2-$DT->{rank}/5000));
 			$DT->{rank}+=$up;
 			$DT->{rank}=10000 if $DT->{rank}>10000;
 
-			$ret='[新聞]に広告を流して注目され，人気'.int($up/100)."%アップ";
-			WriteLog(2,0,"【広告】".$USE->{arg}{message});
+			$ret='在[新聞]上頭放廣告，人氣提升了'.int($up/100)."%";
+			WriteLog(2,0,"【廣告】".$USE->{arg}{message});
 			WriteLog(0,$DT->{id},$ret);	
 			return $ret;
 		_local_
 	@@USE
 		time	6h
-		action	看板を下ろす
+		action	取下招牌
 		arg		nocount
-		name	看板を下ろす
-		info	専門職の看板を下ろします
+		name	取下招牌
+		info	將專門職業的招牌拿下來
 		func	_local_
 			my $ret="";
-			main::OutError('専門職の看板はあがっていません') if ($DT->{job} eq '');
+			main::OutError('無法卸下專門職業的招牌') if ($DT->{job} eq '');
 			$DT->{money}+=30000;
 			$DT->{job}='';	
-			$ret='看板を下ろし，慰労金\30000を受け取りました';
-			WriteLog(0,$DT->{id},"看板を下ろし，慰労金を受け取りました");
-			WriteLog(3,0,"専門職の看板を下ろした".$DT->{shopname}."に，商店会から慰労金が支給されたようです");
+			$ret='卸下招牌後，獲得了30000的慰問金';
+			WriteLog(0,$DT->{id},"拿下招牌並且接受了慰問金");
+			WriteLog(3,0,$DT->{shopname}."卸下專門職業的招牌後，商店街自治會發給了慰問金");
 			return $ret;
 		_local_
 
@@ -1450,8 +1451,8 @@
 	no		8
 	type	人材
 	code	man-black
-	name	ブラック工作員
-	info	たまった店力を使って裏工作をします
+	name	黑道小弟
+	info	使用店力來進行地下工作
 	scale	人
 	price	50000
 	cost	2500
@@ -1462,103 +1463,103 @@
 		time	6h
 		exp	5%
 		exptime	4h
-		job		裏家業	times/job_black_time_rate
+		job		黑道	times/job_black_time_rate
 		scale	回
-		action	仲間を呼ぶ
-		name	仲間を呼ぶ
-		info	仲間が来る確率は50%です
-		ngmsg	仲間は来ませんでした
-		okmsg	仲間がやってきました
+		action	招募夥伴
+		name	招募夥伴
+		info	夥伴會來的機率只有50%
+		ngmsg	夥伴沒有來呢
+		okmsg	成功招募夥伴了
 		arg		nocount
-			get		1	ブラック工作員	50%
+			get		1	黑道小弟	50%
 	@@use
 		time	1h
 		exp	1%
 		exptime	30m
-		job		裏家業	times/job_black_time_rate
+		job		黑道	times/job_black_time_rate
 		scale	回
-		action	作る
-		name	闇うどんを作る
-		info	ありあわせの材料で適当にうどんを作ってみます
+		action	製作
+		name	製作暗黑烏龍麵
+		info	盡量使用擁有的材料做成烏龍麵
 		func	lostman
 		param	50
-		ngmsg	闇うどん作りに失敗しました‥
-			use		10	汚れた丼
-			get		10	闇うどん	95%	闇うどんを作りました
+		ngmsg	暗黑烏龍麵製作失敗了‥
+			use		10	髒掉的碗
+			get		10	暗黑烏龍麵	95%	做好暗黑烏龍麵了
 			get		10	店力	07%
 	@@use
 		time	1h
 		exp	1%
 		exptime	30m
-		job		裏家業	times/job_black_time_rate
+		job		黑道	times/job_black_time_rate
 		scale	回
-		action	作る
-		name	闇そばを作る
-		info	ありあわせの材料で適当にそばを作ってみます
+		action	製作
+		name	製作暗黑蕎麥麵
+		info	盡量使用擁有的材料做成蕎麥麵
 		func	lostman
 		param	50
-		ngmsg	闇そば作りに失敗しました‥
-			use		10	汚れた丼
-			get		10	闇そば	95%	闇そばを作りました
+		ngmsg	暗黑蕎麥麵製作失敗了‥
+			use		10	髒掉的碗
+			get		10	暗黑蕎麥麵	95%	做好暗黑蕎麥麵了
 			get		10	店力	07%
 	@@use
 		time	4h
 		exp	5%
 		exptime	2h
-		job		裏家業	times/job_black_time_rate
+		job		黑道	times/job_black_time_rate
 		scale	回
-		action	実行する
-		name	すり替え作戦を実行する
-		info	他店の陳列棚の商品を，こっそり他の商品とすり替えます
+		action	執行
+		name	執行替換作戰
+		info	偷偷把其他店鋪展示架的商品換成其他商品
 		arg		target|nocount
-			use		1	ブラック工作員
-			use		50	闇うどん
-			use		50	闇そば
+			use		1	黑道小弟
+			use		50	暗黑烏龍麵
+			use		50	暗黑蕎麥麵
 			use		10	店力
 		func	_local_
 		# ★すり替え作戦を実行する
 			my $cnt=int(rand(100))+1;
-			my $ret="すり替え作戦は失敗し，店の人気が下がりました";
+			my $ret="因為替換作戰失敗的關係，店裡的人氣下降了";
 			if(rand(1000)<900)
 			{
-				if($DTS->{item}[@@ITEMNO"警報機"-1])
+				if($DTS->{item}[@@ITEMNO"警報器"-1])
 				{
 					if(rand(1000)<200)
 					{
-					$DTS->{showcase}[0]=57; # 闇そばのアイテム番号
-					$DTS->{price}[0]=20; # 闇そばの価格
-					$DTS->{item}[@@ITEMNO"闇そば"-1]+=$cnt;
-					$DTS->{item}[@@ITEMNO"闇そば"-1]=2000 if $DTS->{item}[$itemno2-1]>2000;
-					$ret="すり替え作戦は成功しました";
-					$DTS->{item}[@@ITEMNO"警報機"-1]--;
-					WriteLog(2,0,$DTS->{shopname}."の陳列棚の商品が闇そばにすり替えられ，怒った店主が警報機をたたき壊しました");
+					$DTS->{showcase}[0]=57; # 暗黑蕎麥麵のアイテム番号
+					$DTS->{price}[0]=20; # 暗黑蕎麥麵の価格
+					$DTS->{item}[@@ITEMNO"暗黑蕎麥麵"-1]+=$cnt;
+					$DTS->{item}[@@ITEMNO"暗黑蕎麥麵"-1]=2000 if $DTS->{item}[$itemno2-1]>2000;
+					$ret="替換作戰成功了";
+					$DTS->{item}[@@ITEMNO"警報器"-1]--;
+					WriteLog(2,0,$DTS->{shopname}."展示架的商品被換成暗黑蕎麥麵，生氣的店長將警報器弄壞了");
 					}
 					elsif(rand(1000)<700)
 					{
 					$DT->{rank}-=int($DT->{rank}/3);
-					$DTS->{item}[@@ITEMNO"警報機"-1]--;
-					WriteLog(3,0,$DTS->{shopname}."に侵入した".$DT->{shopname}."のブラック工作員が，警報機を破壊しましたが結局捕まりました");
+					$DTS->{item}[@@ITEMNO"警報器"-1]--;
+					WriteLog(3,0,"入侵".$DTS->{shopname}."後，".$DT->{shopname}."的黑道小弟雖然破壞了警報器，但最後還是被逮捕了");
 					}
 					else
 					{
 					$DT->{rank}-=int($DT->{rank}/3);
-					WriteLog(3,0,$DTS->{shopname}."の警報機が鳴り響き，侵入していた".$DT->{shopname}."のブラック工作員が捕まりました");
+					WriteLog(3,0,$DTS->{shopname}."的警報器響了，想進行入侵的".$DT->{shopname}."的黑道小弟被逮捕了");
 					}
 				}
 				else
 				{
-				$DTS->{showcase}[0]=45; # 闇うどんのアイテムナンバー
-				$DTS->{price}[0]=20; # 闇うどんの価格
-				$DTS->{item}[@@ITEMNO"闇うどん"-1]+=$cnt;
-				$DTS->{item}[@@ITEMNO"闇うどん"-1]=2000 if $DTS->{item}[$itemno-1]>2000;
-				$ret="すり替え作戦は成功しました";
-				WriteLog(2,0,$DTS->{shopname}."の陳列棚の商品が闇うどんにすり替えられました");
+				$DTS->{showcase}[0]=45; # 暗黑烏龍麵のアイテムナンバー
+				$DTS->{price}[0]=20; # 暗黑烏龍麵の価格
+				$DTS->{item}[@@ITEMNO"暗黑烏龍麵"-1]+=$cnt;
+				$DTS->{item}[@@ITEMNO"暗黑烏龍麵"-1]=2000 if $DTS->{item}[$itemno-1]>2000;
+				$ret="替換作戰成功了";
+				WriteLog(2,0,$DTS->{shopname}."展示架的商品被換成暗黑烏龍麵了");
 				}
 			}
 			else
 			{
-			$ret="すり替え作戦は失敗しました";
-			WriteLog(3,0,$DTS->{shopname}."に現れたブラック工作員が，なぜか何もせずに去っていきました");
+			$ret="替換作戰失敗了";
+			WriteLog(3,0,"不知為何，出現在".$DTS->{shopname}."中的黑道小弟什麼都沒做就離開了。");
 			}
 			WriteLog(0,$DT->{id},$ret);
 			return $ret;
@@ -1566,30 +1567,30 @@
 	@@use
 		time	4h
 		exp	10%
-		job		裏家業	times/job_black_time_rate
+		job		黑道	times/job_black_time_rate
 		scale	回
-		action	万引きをする
-		name	万引きをする
-		info	警報機のある店は危険！？
+		action	進行偷竊
+		name	進行偷竊
+		info	有警報器的商店危險了！？
 		arg		target|nocount
 			use		50	店力
 		func	_local_
 			# ★万引き作戦（成功時はイベントと同じメッセージを出力）
 			
-			my $ret="万引きは失敗し，お店の人気が下がりました";
+			my $ret="偷竊失敗，店裡的人氣下降了";
 			if(rand(1000)<700)
 			{
-				if($DTS->{item}[@@ITEMNO"警報機"-1])
+				if($DTS->{item}[@@ITEMNO"警報器"-1])
 				{
 					$DT->{rank}-=int($DT->{rank}/2);
 					if(rand(1000)<700)
 					{
-						$DTS->{item}[@@ITEMNO"警報機"-1]--;
-						WriteLog(3,0,$DT->{shopname}."のブラック工作員が".$DTS->{shopname}."へ万引きに入り，$ITEM[@@ITEMNO"警報機"]->{name}を破壊しましたが結局捕まりました。");
+						$DTS->{item}[@@ITEMNO"警報器"-1]--;
+						WriteLog(3,0,$DT->{shopname}."的黑道小弟想去".$DTS->{shopname}."偷竊，雖然將$ITEM[@@ITEMNO"警報器"]->{name}破壊，但最後還是被逮捕了。");
 					}
 					else
 					{
-						WriteLog(3,0,$DT->{shopname}."のブラック工作員が".$DTS->{shopname}."へ万引きに入りましたが失敗しました。");
+						WriteLog(3,0,$DT->{shopname}."的黑道小弟想去".$DTS->{shopname}."偷竊失敗了。");
 					}
 				}
 				else
@@ -1607,16 +1608,16 @@
 							$manbiki_count+=$cnt*$DTS->{price}[$idx];
 						}
 					}
-					$ret="万引きは成功しました";
-					$ret="ブラック工作員は気が変わって万引きをやめました" if !$manbiki_count;
-					WriteLog(2,0,$DTS->{shopname}."が総額".GetMoneyString($manbiki_count)."の万引き被害に遭いました。") if $manbiki_count;
-					WriteLog(2,0,$DTS->{shopname}."に入った万引き犯は何も取らずに逃げました。") if !$manbiki_count;
+					$ret="成功進行偷竊了";
+					$ret="黑道小弟改變了主意，停止了入室行竊。" if !$manbiki_count;
+					WriteLog(2,0,$DTS->{shopname}."被偷了總價大概".GetMoneyString($manbiki_count)."的財物。") if $manbiki_count;
+					WriteLog(2,0,"闖進".$DTS->{shopname}."的小偷什麼都沒拿就逃走了。") if !$manbiki_count;
 				}
 			}
 			else
 			{
 				$DT->{rank}-=int($DT->{rank}/3);
-				WriteLog(3,0,$DT->{shopname}."のブラック工作員が".$DTS->{shopname}."へ万引きに入りましたが失敗しました。");
+				WriteLog(3,0,$DT->{shopname}."的黑道小弟想去".$DTS->{shopname}."偷竊但失敗了。");
 			}
 			WriteLog(0,$DT->{id},$ret);
 			return $ret;
@@ -1624,13 +1625,13 @@
 	@@use
 		time	10h
 		exp	10%
-		job		裏家業	times/job_black_time_rate
+		job		黑道	times/job_black_time_rate
 		scale	回
-		action	悪い噂を流す
-		name	店舗の悪い噂を流す
-		info	根も葉もない噂を流し，他店の人気を下げます
+		action	散佈謠言
+		name	散佈店鋪的謠言
+		info	散佈流言蜚語，降低其他店舖的人氣
 		arg		target|nocount
-			use		1	ブラック工作員
+			use		1	黑道小弟
 			use		100	店力
 		func	_local_
 			# ★悪い噂を流す作戦
@@ -1638,29 +1639,29 @@
 			if(rand(1000)<750)
 			{
 				$DTS->{rank}-=int($DTS->{rank}/4);
-				$ret=$DTS->{shopname}.'の悪い噂を流す作戦が成功しました。';
+				$ret='散佈'.$DTS->{shopname}.'謠言的作戰成功了。';
 				WriteLog(0,$DT->{id},$ret);
-				WriteLog(3,0,$DTS->{shopname}.'の悪い噂が広まり人気が下がりました。');
+				WriteLog(3,0,$DTS->{shopname}.'因為謠言的關係人氣下降了。');
 			}
 			else
 			{
 				$DT->{rank}-=int($DT->{rank}/2);
-				$ret=$DTS->{shopname}.'の悪い噂を流す作戦が失敗しました';
+				$ret='散佈'.$DTS->{shopname}.'謠言的作戰失敗了。';
 				WriteLog(0,$DT->{id},$ret);
-				WriteLog(3,0,$DT->{shopname}."のブラック工作員が".$DTS->{shopname}.'の悪い噂を流そうと画策していたようです。');
+				WriteLog(3,0,$DT->{shopname}."的黑道小弟策畫散佈".$DTS->{shopname}.'的謠言。');
 			}
 			return $ret;
 			_local_
 	@@use
 		time	2h
 		exp	10%
-		job		裏家業	times/job_black_time_rate
-		action	解放する
-		name	店力を解放する
-		info	店力をすべて解放し，店の人気を上げます
+		job		黑道	times/job_black_time_rate
+		action	解放
+		name	將店力解放
+		info	將店力全部解放，使店的人氣上升
 		arg		nocount
 		func	_local_
-			main::OutError('店力が100以上ないと解放できません') if ($DT->{item}[@@ITEMNO"店力"-1]<100);
+			main::OutError('店力沒有100以上沒辦法進行解放') if ($DT->{item}[@@ITEMNO"店力"-1]<100);
 			my $ret="";
 			my $power;
 			my $cnt=$DT->{item}[@@ITEMNO"店力"-1];
@@ -1669,19 +1670,19 @@
 
 			$DT->{rank}+=$up;
 			$DT->{rank}=10000 if $DT->{rank}>10000;
-			$ret="店力をすべて解放しました（人気".int($up/100)."%アップ）";
+			$ret="全部的店力被解放了（人気提升".int($up/100)."%）";
 			UseItem(@@ITEMNO"店力",$cnt);
 			WriteLog(0,$DT->{id},$ret);
-			WriteLog(3,0,$DT->{shopname}."がすべての店力を解放しました。");
+			WriteLog(3,0,$DT->{shopname}."將全部的店力解放了。");
 			return $ret;
 			_local_
 	@@USE
 		time	0m
-		action	時間操作をする
+		action	進行時間操作
 		scale	回
-		name	時間操作をする
-		info	成功すれば時間を取り戻せる！
-			use		2	ブラック工作員
+		name	進行時間操作
+		info	如果你成功了，可以讓時光倒流！
+			use		2	黑道小弟
 		arg		nocount
 		func	_local_
 			# ★持ち時間増加
@@ -1690,43 +1691,43 @@
 
 			if(rand(1000)<100)
 			{
-				$ret='時間操作は失敗しました';
-				WriteLog(3,0,$DT->{shopname}.'のブラック工作員が，時間操作をしくじったようです。');
-				AddItem(8,1,'ブラック工作員の1人が，時空の割れ目から戻ってきました');
-				WriteLog(0,$DT->{id},'時間操作は失敗しました');
+				$ret='時間操作失敗了';
+				WriteLog(3,0,$DT->{shopname}.'的黑道小弟似乎在進行時間操作的時候失敗了。');
+				AddItem(8,1,'有1位黑道小弟從時空裂縫中回來了');
+				WriteLog(0,$DT->{id},'的時間操作失敗了');
 			}
 			else
 			{
 				$DT->{time}-=3600*($cnt);
 				$DT->{user}->{black}+=1;
-				$ret='時間操作は成功しました　（＋'.($cnt).'時間）';
-				WriteLog(3,0,$DT->{shopname}.'のブラック工作員が，時間操作をおこなったようです。');
-				WriteLog(0,$DT->{id},'時間操作の結果，持ち時間が増えました');
+				$ret='時間操作成功了　（＋'.($cnt).'時間）';
+				WriteLog(3,0,$DT->{shopname}.'的黑道小弟似乎進行了時間操作。');
+				WriteLog(0,$DT->{id},'因為時間操作的結果，持有時間增加了');
 			}					
 			return $ret;
 		_local_
 	@@USE
 		time	6h
-		action	裏工作のプロになる
+		action	成為地下工作的專家
 		arg		nocount
-		name	裏工作のプロになる
-		info	今までの経験を生かして，裏工作のプロフェッショナルになります
+		name	成為地下工作的專家
+		info	利用自身的經驗，成為黑道
 			needexp		20%
 		func	_local_
 			my $ret="";
-			main::OutError('現在すでに裏工作のプロフェッショナルです') if ($DT->{job} eq 'black');
+			main::OutError('目前已經是黑道了') if ($DT->{job} eq 'black');
 			$DT->{job} = 'black';
-			$ret="裏工作のプロフェッショナルになりました";
+			$ret="成為黑道了";
 			WriteLog(0,$DT->{id},$ret);
 			return $ret;
 		_local_
 
 @@ITEM
 	no		9
-	type	陸産物
+	type	陸產品
 	code	riku-tamagoa
-	name	卵
-	info	栄養価の高い食品です
+	name	雞蛋
+	info	是一種營養豐富的食物
 	scale	個
 	price	100
 	cost	10
@@ -1737,19 +1738,19 @@
 	point	20%
 	@@USE
 		time	1m
-		action	コンポストに入れる
-		name	コンポストに入れる
-		info	古くなった食品をコンポストに入れ，堆肥を作ります
-		ngmsg	堆肥作りに失敗しました
-			use		1	卵
-			get		10	堆肥	15%	上質の堆肥ができました
+		action	放入堆肥
+		name	放入堆肥
+		info	把舊食物放入堆肥中，做成堆肥
+		ngmsg	堆肥製作失敗了
+			use		1	雞蛋
+			get		10	堆肥	15%	做成優質堆肥了
 
 @@ITEM
 	no		10
-	type	陸産物
+	type	陸產品
 	code	riku-tamagob
-	name	孵化を待つ卵
-	info	栄養価の高い食品です
+	name	等待孵化的雞蛋
+	info	是一種營養豐富的食物
 	scale	個
 	price	100
 	cost	50
@@ -1757,35 +1758,35 @@
 	pop	10d
 	funct	_local_
 		my($ITEM,@DT)=@_;
-		my $gabirth_per_day=3;  # 1日にがちょうが3羽産まれるような確率(?)の設定
-		my $nibirth_per_day=30;  # 1日ににわとりが30羽産まれるような確率(?)の設定
+		my $gabirth_per_day=3;  # 1日に鵝が3羽産まれるような確率(?)の設定
+		my $nibirth_per_day=30;  # 1日に雞が30羽産まれるような確率(?)の設定
 		my $val          =1;  # 一度に産まれる基本数
 
 		my $gabirth_rate=$gabirth_per_day && (86400/$gabirth_per_day); # 0で割るのを阻止
 		my $nibirth_rate=$nibirth_per_day && (86400/$nibirth_per_day);
 		foreach my $DT (@DT)
 		{
-			next if !$DT->{item}[@@ITEMNO"孵化を待つ卵"-1];
+			next if !$DT->{item}[@@ITEMNO"等待孵化的雞蛋"-1];
 			if(rand($gabirth_rate)<$TIMESPAN) # 1店舗につき「1日に$gabirth_per_day回」の確率で条件が真になる(ハズ…)
 			{
-				UseItemSub(@@ITEMNO"孵化を待つ卵",$val,$DT);
-				AddItemSub(@@ITEMNO"がちょう",$val,$DT);
-				WriteLog(0,$DT->{id},'なんと！卵からがちょうが生まれました');
+				UseItemSub(@@ITEMNO"等待孵化的雞蛋",$val,$DT);
+				AddItemSub(@@ITEMNO"鵝",$val,$DT);
+				WriteLog(0,$DT->{id},'天啊！雞蛋竟然孵出了鵝');
 			}
 			if(rand($nibirth_rate)<$TIMESPAN)
 			{
-				UseItemSub(@@ITEMNO"孵化を待つ卵",$val,$DT);
-				AddItemSub(@@ITEMNO"にわとり",$val,$DT);
+				UseItemSub(@@ITEMNO"等待孵化的雞蛋",$val,$DT);
+				AddItemSub(@@ITEMNO"雞",$val,$DT);
 			}
 		}
 	_local_ 
 
 @@ITEM
 	no		11
-	type	陸産物
+	type	陸產品
 	code	riku-age
-	name	油揚げ
-	info	俗にキツネの好物といわれる食品です
+	name	炸豆皮
+	info	這是一種通常被認為是狐狸喜愛的食物。
 	scale	枚
 	price	300
 	cost	10
@@ -1796,19 +1797,19 @@
 	point	20%
 	@@USE
 		time	1m
-		action	コンポストに入れる
-		name	コンポストに入れる
-		info	古くなった食品をコンポストに入れ，堆肥を作ります
-		ngmsg	堆肥作りに失敗しました
-			use		1	油揚げ
-			get		10	堆肥	20%	上質の堆肥ができました
+		action	放入堆肥
+		name	放入堆肥
+		info	把舊食物放入堆肥中，做成堆肥
+		ngmsg	堆肥製作失敗了
+			use		1	炸豆皮
+			get		10	堆肥	20%	做成優質堆肥了
 
 @@ITEM
 	no		12
-	type	陸産物
+	type	陸產品
 	code	riku-negi
-	name	ねぎ
-	info	うどんやそばには欠かせない薬味です
+	name	蔥
+	info	烏龍麵和蕎麥麵不可缺少的調味料。
 	scale	把
 	price	200
 	limit	5000/10
@@ -1818,19 +1819,19 @@
 	point	10%
 	@@USE
 		time	1m
-		action	コンポストに入れる
-		name	コンポストに入れる
-		info	古くなった食品をコンポストに入れ，堆肥を作ります
-		ngmsg	堆肥作りに失敗しました
-			use		1	ねぎ
-			get		10	堆肥	25%	上質の堆肥ができました
+		action	放入堆肥
+		name	放入堆肥
+		info	把舊食物放入堆肥中，做成堆肥
+		ngmsg	堆肥製作失敗了
+			use		1	蔥
+			get		10	堆肥	25%	做成優質堆肥了
 
 @@ITEM
 	no		13
-	type	陸産物
+	type	陸產品
 	code	riku-komugi
-	name	小麦粉
-	info	うどんや天ぷらの材料になります
+	name	小麥粉
+	info	製作烏龍麵和天婦羅的材料
 	scale	kg
 	price	500
 	cost	10
@@ -1841,19 +1842,19 @@
 	point	30%
 	@@USE
 		time	1m
-		action	コンポストに入れる
-		name	コンポストに入れる
-		info	古くなった食品をコンポストに入れ，堆肥を作ります
-		ngmsg	堆肥作りに失敗しました
-			use		1	小麦粉
-			get		10	堆肥	30%	上質の堆肥ができました
+		action	放入堆肥
+		name	放入堆肥
+		info	把舊食物放入堆肥中，做成堆肥
+		ngmsg	堆肥製作失敗了
+			use		1	小麥粉
+			get		10	堆肥	30%	做成優質堆肥了
 
 @@ITEM
 	no		14
-	type	陸産物
+	type	陸產品
 	code	riku-soba
-	name	そば粉
-	info	そばの材料になります
+	name	蕎麥粉
+	info	製作蕎麥麵的材料
 	scale	kg
 	price	500
 	cost	10
@@ -1864,19 +1865,19 @@
 	point	30%
 	@@USE
 		time	1m
-		action	コンポストに入れる
-		name	コンポストに入れる
-		info	古くなった食品をコンポストに入れ，堆肥を作ります
-		ngmsg	堆肥作りに失敗しました
-			use		1	そば粉
-			get		10	堆肥	30%	上質の堆肥ができました
+		action	放入堆肥
+		name	放入堆肥
+		info	把舊食物放入堆肥中，做成堆肥
+		ngmsg	堆肥製作失敗了
+			use		1	蕎麥粉
+			get		10	堆肥	30%	做成優質堆肥了
 
 @@ITEM
 	no		15
-	type	陸産物
+	type	陸產品
 	code	riku-tougarasi
-	name	とうがらし
-	info	博多名物『辛子めんたい』の味付けに使います
+	name	唐辛子
+	info	用於調味博多名產『明太子』
 	scale	kg
 	price	800
 	limit	1000/10
@@ -1885,19 +1886,19 @@
 	pop	5h
 	@@USE
 		time	1m
-		action	コンポストに入れる
-		name	コンポストに入れる
-		info	古くなった食品をコンポストに入れ，堆肥を作ります
-		ngmsg	堆肥作りに失敗しました
-			use		1	とうがらし
-			get		10	堆肥	35%	上質の堆肥ができました
+		action	放入堆肥
+		name	放入堆肥
+		info	把舊食物放入堆肥中，做成堆肥
+		ngmsg	堆肥製作失敗了
+			use		1	唐辛子
+			get		10	堆肥	35%	做成優質堆肥了
 
 @@ITEM
 	no		16
-	type	陸産物
+	type	陸產品
 	code	riku-daizu
 	name	大豆
-	info	加工品の一つに『油揚げ』があります
+	info	其中一種加工品是『炸豆皮』喔
 	scale	kg
 	price	400
 	limit	1500/20
@@ -1906,19 +1907,19 @@
 	pop	5h
 	@@USE
 		time	1m
-		action	コンポストに入れる
-		name	コンポストに入れる
-		info	古くなった食品をコンポストに入れ，堆肥を作ります
-		ngmsg	堆肥作りに失敗しました
+		action	放入堆肥
+		name	放入堆肥
+		info	把舊食物放入堆肥中，做成堆肥
+		ngmsg	堆肥製作失敗了
 			use		1	大豆
-			get		10	堆肥	35%	上質の堆肥ができました
+			get		10	堆肥	35%	做成優質堆肥了
 
 @@ITEM
 	no		17
-	type	陸産物
+	type	陸產品
 	code	riku-toukibi
-	name	とうもろこし
-	info	家畜の餌にもなります
+	name	玉米
+	info	它也可以做為家畜的飼料
 	scale	kg
 	price	600
 	limit	1000/10
@@ -1928,19 +1929,19 @@
 	point	50%
 	@@USE
 		time	1m
-		action	コンポストに入れる
-		name	コンポストに入れる
-		info	古くなった食品をコンポストに入れ，堆肥を作ります
-		ngmsg	堆肥作りに失敗しました
-			use		1	とうもろこし
-			get		10	堆肥	35%	上質の堆肥ができました
+		action	放入堆肥
+		name	放入堆肥
+		info	把舊食物放入堆肥中，做成堆肥
+		ngmsg	堆肥製作失敗了
+			use		1	玉米
+			get		10	堆肥	35%	做成優質堆肥了
 
 @@ITEM
 	no		18
-	type	陸産物
+	type	陸產品
 	code	riku-toryuhu
-	name	トリュフ
-	info	めずらしいきのこです
+	name	松露
+	info	一種罕見的蘑菇
 	scale	個
 	price	2000
 	limit	500
@@ -1949,19 +1950,19 @@
 	pop	8h
 	@@USE
 		time	1m
-		action	コンポストに入れる
-		name	コンポストに入れる
-		info	古くなった食品をコンポストに入れ，堆肥を作ります
-		ngmsg	堆肥作りに失敗しました
-			use		1	トリュフ
-			get		10	堆肥	35%	上質の堆肥ができました
+		action	放入堆肥
+		name	放入堆肥
+		info	把舊食物放入堆肥中，做成堆肥
+		ngmsg	堆肥製作失敗了
+			use		1	松露
+			get		10	堆肥	35%	做成優質堆肥了
 
 @@ITEM
 	no		19
-	type	陸産物
+	type	陸產品
 	code	riku-foagura
-	name	フォアグラ
-	info	肥大させたがちょうの肝臓です
+	name	鵝肝
+	info	肥鵝的肝臟
 	scale	個
 	price	2000
 	limit	500
@@ -1970,20 +1971,20 @@
 	pop	8h
 	@@USE
 		time	1m
-		action	コンポストに入れる
-		name	コンポストに入れる
-		info	古くなった食品をコンポストに入れ，堆肥を作ります
-		ngmsg	堆肥作りに失敗しました
-			use		1	フォアグラ
-			get		10	堆肥	35%	上質の堆肥ができました
+		action	放入堆肥
+		name	放入堆肥
+		info	把舊食物放入堆肥中，做成堆肥
+		ngmsg	堆肥製作失敗了
+			use		1	鵝肝
+			get		10	堆肥	35%	做成優質堆肥了
 
 @@ITEM
 	no		20
-	type	陸産物
+	type	陸產品
 	code	riku-niwatori
-	name	にわとり
-	info	卵を産ませるには餌が必要です
-	scale	羽
+	name	雞
+	info	需要飼料來生雞蛋。
+	scale	隻
 	price	5000
 	limit	30/3
 	base	30/300
@@ -1991,30 +1992,30 @@
 	pop	10d
 	@@USE
 		time	30m
-		action	交換する
+		action	交換
 		scale	回
-		name	がちょうと交換する
-		info	養育場に行って鶏をがちょうと交換します
-		okmsg	がちょうを手に入れました
-			use		2	にわとり
-			get		1	がちょう
+		name	與鵝交換
+		info	到繁殖場將把雞換成鵝
+		okmsg	獲得了鵝
+			use		2	雞
+			get		1	鵝
 	@@USE
 		time	30m
-		action	交換する
+		action	交換
 		scale	回
-		name	豚と交換する
-		info	養育場に行って鶏を豚と交換します
-		okmsg	豚を手に入れました
-			use		3	にわとり
-			get		1	豚
+		name	與豬交換
+		info	到繁殖場將把雞換成豬
+		okmsg	獲得了豬
+			use		3	雞
+			get		1	豬
 
 @@ITEM
 	no		21
-	type	陸産物
+	type	陸產品
 	code	riku-gatyou
-	name	がちょう
-	info	餌をたっぷりやって太らせましょう
-	scale	羽
+	name	鵝
+	info	需要飼料來讓牠變胖
+	scale	隻
 	price	7500
 	limit	20/2
 	base	20/200
@@ -2023,10 +2024,10 @@
 
 @@ITEM
 	no		22
-	type	陸産物
+	type	陸產品
 	code	riku-buta
-	name	豚
-	info	面倒をよく見ていると，恩返しをするかもしれません
+	name	豬
+	info	如果好好照顧牠的話，可能會報答你的恩惠。
 	scale	頭
 	price	10000
 	limit	20/2
@@ -2035,11 +2036,11 @@
 
 @@ITEM
 	no		23
-	type	海産物
+	type	海產品
 	code	umi-ebi
-	name	えび
-	info	プリッと身の引き締まった，近海物のえびです
-	scale	匹
+	name	蝦
+	info	附近海域的蝦，肉質緊實
+	scale	尾
 	price	100
 	limit	5000/20
 	base	1000/4000
@@ -2048,19 +2049,19 @@
 	point	10%
 	@@USE
 		time	1m
-		action	コンポストに入れる
-		name	コンポストに入れる
-		info	古くなった食品をコンポストに入れ，堆肥を作ります
-		ngmsg	堆肥作りに失敗しました
-			use		1	えび
-			get		10	堆肥	25%	上質の堆肥ができました
+		action	放入堆肥
+		name	放入堆肥
+		info	把舊食物放入堆肥中，做成堆肥
+		ngmsg	堆肥製作失敗了
+			use		1	蝦
+			get		10	堆肥	25%	做成優質堆肥了
 
 @@ITEM
 	no		24
-	type	海産物
+	type	海產品
 	code	umi-wakame
-	name	わかめ
-	info	ミネラルたっぷりの海藻です
+	name	海帶芽
+	info	富含礦物質的海帶芽
 	scale	kg
 	price	200
 	limit	2500/10
@@ -2070,20 +2071,20 @@
 	point	10%
 	@@USE
 		time	1m
-		action	コンポストに入れる
-		name	コンポストに入れる
-		info	古くなった食品をコンポストに入れ，堆肥を作ります
-		ngmsg	堆肥作りに失敗しました
-			use		1	わかめ
-			get		10	堆肥	30%	上質の堆肥ができました
+		action	放入堆肥
+		name	放入堆肥
+		info	把舊食物放入堆肥中，做成堆肥
+		ngmsg	堆肥製作失敗了
+			use		1	海帶芽
+			get		10	堆肥	30%	做成優質堆肥了
 
 @@ITEM
 	no		25
-	type	海産物
+	type	海產品
 	code	umi-kama
-	name	かまぼこ
-	info	ピンクのかまぼこです
-	scale	本
+	name	魚板
+	info	粉紅色的魚板
+	scale	條
 	price	300
 	limit	1500/10
 	plus	4h
@@ -2091,19 +2092,19 @@
 	point	30%
 	@@USE
 		time	1m
-		action	コンポストに入れる
-		name	コンポストに入れる
-		info	古くなった食品をコンポストに入れ，堆肥を作ります
-		ngmsg	堆肥作りに失敗しました
-			use		1	かまぼこ
-			get		10	堆肥	30%	上質の堆肥ができました
+		action	放入堆肥
+		name	放入堆肥
+		info	把舊食物放入堆肥中，做成堆肥
+		ngmsg	堆肥製作失敗了
+			use		1	魚板
+			get		10	堆肥	30%	做成優質堆肥了
 
 @@ITEM
 	no		26
-	type	海産物
+	type	海產品
 	code	umi-maruten
-	name	丸天
-	info	厚みのある丸天です
+	name	圓形天婦羅
+	info	魚漿製成，厚厚的圓形天婦羅
 	scale	枚
 	price	500
 	limit	1000/10
@@ -2112,20 +2113,20 @@
 	point	50%
 	@@USE
 		time	1m
-		action	コンポストに入れる
-		name	コンポストに入れる
-		info	古くなった食品をコンポストに入れ，堆肥を作ります
-		ngmsg	堆肥作りに失敗しました
-			use		1	丸天
-			get		10	堆肥	35%	上質の堆肥ができました
+		action	放入堆肥
+		name	放入堆肥
+		info	把舊食物放入堆肥中，做成堆肥
+		ngmsg	堆肥製作失敗了
+			use		1	圓形天婦羅
+			get		10	堆肥	35%	做成優質堆肥了
 
 @@ITEM
 	no		27
-	type	海産物
+	type	海產品
 	code	umi-ebiten
-	name	えび天
-	info	カラッと揚がったえびの天ぷらです
-	scale	匹
+	name	炸蝦天婦羅
+	info	油炸的炸蝦天婦羅
+	scale	個
 	price	600
 	limit	1000
 	plus	-1h
@@ -2133,20 +2134,20 @@
 	point	50%
 	@@USE
 		time	1m
-		action	コンポストに入れる
-		name	コンポストに入れる
-		info	古くなった食品をコンポストに入れ，堆肥を作ります
-		ngmsg	堆肥作りに失敗しました
-			use		1	えび天
-			get		10	堆肥	35%	上質の堆肥ができました
+		action	放入堆肥
+		name	放入堆肥
+		info	把舊食物放入堆肥中，做成堆肥
+		ngmsg	堆肥製作失敗了
+			use		1	炸蝦天婦羅
+			get		10	堆肥	35%	做成優質堆肥了
 
 @@ITEM
 	no		28
-	type	海産物
+	type	海產品
 	code	umi-suke
-	name	すけとうだら
-	info	かまぼこの原料になる魚で，卵は加工できます
-	scale	匹
+	name	黃線狹鱈
+	info	可以製成魚板的魚，卵也可以加工。
+	scale	尾
 	price	1000
 	limit	1000/10
 	base	500/5000
@@ -2154,20 +2155,20 @@
 	pop	9h
 	@@USE
 		time	1m
-		action	コンポストに入れる
-		name	コンポストに入れる
-		info	古くなった食品をコンポストに入れ，堆肥を作ります
-		ngmsg	堆肥作りに失敗しました
-			use		1	すけとうだら
-			get		10	堆肥	50%	上質の堆肥ができました
+		action	放入堆肥
+		name	放入堆肥
+		info	把舊食物放入堆肥中，做成堆肥
+		ngmsg	堆肥製作失敗了
+			use		1	黃線狹鱈
+			get		10	堆肥	50%	做成優質堆肥了
 
 @@ITEM
 	no		29
-	type	海産物
+	type	海產品
 	code	umi-eso
-	name	えそ
-	info	丸天の原料になる魚です
-	scale	匹
+	name	狗母魚
+	info	魚漿可以做成天婦羅的魚
+	scale	尾
 	price	2000
 	limit	500/5
 	base	250/5000
@@ -2175,20 +2176,20 @@
 	pop	18h
 	@@USE
 		time	1m
-		action	コンポストに入れる
-		name	コンポストに入れる
-		info	古くなった食品をコンポストに入れ，堆肥を作ります
-		ngmsg	堆肥作りに失敗しました
-			use		1	えそ
-			get		10	堆肥	50%	上質の堆肥ができました
+		action	放入堆肥
+		name	放入堆肥
+		info	把舊食物放入堆肥中，做成堆肥
+		ngmsg	堆肥製作失敗了
+			use		1	狗母魚
+			get		10	堆肥	50%	做成優質堆肥了
 
 @@ITEM
 	no		32
-	type	海産物
+	type	海產品
 	code	umi-katuo
-	name	かつお
-	info	高級うどん（そば）のだし作りに欠かせません
-	scale	匹
+	name	鰹魚
+	info	製作高級烏龍麵（蕎麥麵）湯頭的必備品
+	scale	尾
 	price	2000
 	limit	500
 	base	250/5000
@@ -2197,20 +2198,20 @@
 	point	200%
 	@@USE
 		time	1m
-		action	コンポストに入れる
-		name	コンポストに入れる
-		info	古くなった食品をコンポストに入れ，堆肥を作ります
-		ngmsg	堆肥作りに失敗しました
-			use		1	かつお
-			get		10	堆肥	50%	上質の堆肥ができました
+		action	放入堆肥
+		name	放入堆肥
+		info	把舊食物放入堆肥中，做成堆肥
+		ngmsg	堆肥製作失敗了
+			use		1	鰹魚
+			get		10	堆肥	50%	做成優質堆肥了
 
 @@ITEM
 	no		33
-	type	海産物
+	type	海產品
 	code	umi-tyouzame
-	name	ちょうざめ
-	info	海の宝と呼ばれる魚です
-	scale	匹
+	name	鱘魚
+	info	它是一種被稱為海中珍寶的魚。
+	scale	尾
 	price	8000
 	limit	100
 	base	250/5000
@@ -2219,19 +2220,19 @@
 	point	200%
 	@@USE
 		time	1m
-		action	コンポストに入れる
-		name	コンポストに入れる
-		info	古くなった食品をコンポストに入れ，堆肥を作ります
-		ngmsg	堆肥作りに失敗しました
-			use		1	ちょうざめ
-			get		10	堆肥	80%	上質の堆肥ができました
+		action	放入堆肥
+		name	放入堆肥
+		info	把舊食物放入堆肥中，做成堆肥
+		ngmsg	堆肥製作失敗了
+			use		1	鱘魚
+			get		10	堆肥	80%	做成優質堆肥了
 
 @@ITEM
 	no		30
-	type	海産物
+	type	海產品
 	code	umi-mentai
-	name	辛子めんたい
-	info	すけとうだらの卵をとうがらし汁に漬けこんだ，博多名物のひとつです
+	name	明太子
+	info	將黃線狹鱈的魚卵與唐辛子汁醃製，是博多名產之一
 	scale	kg
 	price	3000
 	limit	300
@@ -2240,19 +2241,19 @@
 	pop	12h
 	@@USE
 		time	1m
-		action	コンポストに入れる
-		name	コンポストに入れる
-		info	古くなった食品をコンポストに入れ，堆肥を作ります
-		ngmsg	堆肥作りに失敗しました
-			use		1	辛子めんたい
-			get		10	堆肥	35%	上質の堆肥ができました
+		action	放入堆肥
+		name	放入堆肥
+		info	把舊食物放入堆肥中，做成堆肥
+		ngmsg	堆肥製作失敗了
+			use		1	明太子
+			get		10	堆肥	35%	做成優質堆肥了
 
 @@ITEM
 	no		31
-	type	海産物
+	type	海產品
 	code	umi-kyabia
-	name	キャビア
-	info	黒いダイヤと呼ばれて珍重される，ちょうざめの卵です
+	name	魚子醬
+	info	珍貴到被稱為黑色鑽石，鱘魚的卵。
 	scale	kg
 	price	2000
 	limit	500
@@ -2261,490 +2262,490 @@
 	pop	8h
 	@@USE
 		time	1m
-		action	コンポストに入れる
-		name	コンポストに入れる
-		info	古くなった食品をコンポストに入れ，堆肥を作ります
-		ngmsg	堆肥作りに失敗しました
-			use		1	キャビア
-			get		10	堆肥	35%	上質の堆肥ができました
+		action	放入堆肥
+		name	放入堆肥
+		info	把舊食物放入堆肥中，做成堆肥
+		ngmsg	堆肥製作失敗了
+			use		1	魚子醬
+			get		10	堆肥	35%	做成優質堆肥了
 
 @@ITEM
 	no		34
-	type	うどん
+	type	烏龍麵
 	code	udon-su
-	name	すうどん
-	info	通好みのシンプルうどん
+	name	清湯烏龍麵
+	info	深受饕客喜愛的簡單烏龍麵
 	price	500
 	limit	1000/0
 	pop	75m
 	point	40%
 	@@USE
 		time	5m
-		action	食べる
-		name	食べる
-		info	熱々のうどんを食べます
-		okmsg	とても美味しかったです
-			use		1	すうどん
-			get		1	汚れた丼
+		action	食用
+		name	食用
+		info	食用熱騰騰的烏龍麵
+		okmsg	非常好吃
+			use		1	清湯烏龍麵
+			get		1	髒掉的碗
 			get		10	店力	20%
 
 @@ITEM
 	no		35
-	type	うどん
+	type	烏龍麵
 	code	udon-wakame
-	name	わかめうどん
-	info	髪の毛つやつやヘルシーうどん
+	name	海帶芽烏龍麵
+	info	猶如閃亮亮頭髮的健康烏龍麵
 	price	600
 	limit	1000/0
 	pop	90m
 	point	50%
 	@@USE
 		time	5m
-		action	食べる
-		name	食べる
-		info	熱々のうどんを食べます
-		okmsg	とても美味しかったです
-			use		1	わかめうどん
-			get		1	汚れた丼
+		action	食用
+		name	食用
+		info	食用熱騰騰的烏龍麵
+		okmsg	非常好吃
+			use		1	海帶芽烏龍麵
+			get		1	髒掉的碗
 			get		10	店力	20%
 
 @@ITEM
 	no		36
-	type	うどん
+	type	烏龍麵
 	code	udon-kitune
-	name	きつねうどん
-	info	味のしみこんだ油揚げが絶品のうどん
+	name	豆皮烏龍麵
+	info	搭配味道濃郁炸豆腐的烏龍麵
 	price	800
 	limit	1000/0
 	pop	120m
 	point	60%
 	@@USE
 		time	5m
-		action	食べる
-		name	食べる
-		info	熱々のうどんを食べます
-		okmsg	とても美味しかったです
-			use		1	きつねうどん
-			get		1	汚れた丼
+		action	食用
+		name	食用
+		info	食用熱騰騰的烏龍麵
+		okmsg	非常好吃
+			use		1	豆皮烏龍麵
+			get		1	髒掉的碗
 			get		10	店力	20%
 
 @@ITEM
 	no		37
-	type	うどん
+	type	烏龍麵
 	code	udon-maruten
-	name	丸天うどん
-	info	食べ応えのある丸天がのったうどん
+	name	天婦羅烏龍麵
+	info	搭配圓形天婦羅的烏龍麵
 	price	1000
 	limit	1000/0
 	pop	120m
 	point	75%
 	@@USE
 		time	5m
-		action	食べる
-		name	食べる
-		info	熱々のうどんを食べます
-		okmsg	とても美味しかったです
-			use		1	丸天うどん
-			get		1	汚れた丼
+		action	食用
+		name	食用
+		info	食用熱騰騰的烏龍麵
+		okmsg	非常好吃
+			use		1	天婦羅烏龍麵
+			get		1	髒掉的碗
 			get		10	店力	20%
 
 @@ITEM
 	no		38
-	type	うどん
+	type	烏龍麵
 	code	udon-ebiten
-	name	えび天うどん
-	info	からっと揚がったえびが二匹のったうどん
+	name	炸蝦烏龍麵
+	info	搭配兩隻炸蝦的烏龍麵
 	price	2000
 	limit	500/0
 	pop	240m
 	@@USE
 		time	5m
-		action	食べる
-		name	食べる
-		info	熱々のうどんを食べます
-		okmsg	とても美味しかったです
-			use		1	えび天うどん
-			get		1	汚れた丼
+		action	食用
+		name	食用
+		info	食用熱騰騰的烏龍麵
+		okmsg	非常好吃
+			use		1	炸蝦烏龍麵
+			get		1	髒掉的碗
 			get		10	店力	20%
 
 @@ITEM
 	no		39
-	type	うどん
+	type	烏龍麵
 	code	udon-zanmai
-	name	うどん三昧
-	info	おすすめうどん三種セット
-	scale	セット
+	name	烏龍麵三昧
+	info	搭配三種推薦配料的烏龍麵
+	scale	組
 	price	5000
 	limit	200
 	pop	8h
 	point	500%
 	@@USE
 		time	5m
-		action	食べる
-		name	食べる
-		info	熱々のうどんを食べます
-		okmsg	とても美味しかったです
-			use		1	うどん三昧
-			get		3	汚れた丼
+		action	食用
+		name	食用
+		info	食用熱騰騰的烏龍麵
+		okmsg	非常好吃
+			use		1	烏龍麵三昧
+			get		3	髒掉的碗
 			get		10	店力	30%
 
 @@ITEM
 	no		40
-	type	うどん
+	type	烏龍麵
 	code	udon-kyabia
-	name	キャビアうどん
-	info	世界三大珍味うどんのひとつ
+	name	魚子醬烏龍麵
+	info	世界三大美味烏龍麵之一
 	price	7500
 	limit	120/0
 	pop	12h
 	@@USE
 		time	5m
-		action	食べる
-		name	食べる
-		info	熱々のうどんを食べます
-		okmsg	びっくりするほど美味しかったです
-			use		1	キャビアうどん
-			get		1	汚れた丼
+		action	食用
+		name	食用
+		info	食用熱騰騰的烏龍麵
+		okmsg	出乎意料的好吃
+			use		1	魚子醬烏龍麵
+			get		1	髒掉的碗
 			get		10	店力	50%
 
 @@ITEM
 	no		41
-	type	うどん
+	type	烏龍麵
 	code	udon-toryuhu
-	name	トリュフうどん
-	info	世界三大珍味うどんのひとつ
+	name	松露烏龍麵
+	info	世界三大美味烏龍麵之一
 	price	8000
 	limit	120/0
 	pop	13h
 	@@USE
 		time	5m
-		action	食べる
-		name	食べる
-		info	熱々のうどんを食べます
-		okmsg	びっくりするほど美味しかったです
-			use		1	トリュフうどん
-			get		1	汚れた丼
+		action	食用
+		name	食用
+		info	食用熱騰騰的烏龍麵
+		okmsg	出乎意料的好吃
+			use		1	松露烏龍麵
+			get		1	髒掉的碗
 			get		10	店力	50%
 
 @@ITEM
 	no		42
-	type	うどん
+	type	烏龍麵
 	code	udon-foagura
-	name	フォアグラうどん
-	info	世界三大珍味うどんのひとつ
+	name	鵝肝烏龍麵
+	info	世界三大美味烏龍麵之一
 	price	10000
 	limit	100/0
 	pop	15h
 	@@USE
 		time	5m
-		action	食べる
-		name	食べる
-		info	熱々のうどんを食べます
-		okmsg	びっくりするほど美味しかったです
-			use		1	フォアグラうどん
-			get		1	汚れた丼
+		action	食用
+		name	食用
+		info	食用熱騰騰的烏龍麵
+		okmsg	出乎意料的好吃
+			use		1	鵝肝烏龍麵
+			get		1	髒掉的碗
 			get		10	店力	50%
 
 @@ITEM
 	no		43
-	type	うどん
+	type	烏龍麵
 	code	udon-hakata
-	name	博多うどん
-	info	博多の味の特製うどん
+	name	博多烏龍麵
+	info	博多風的特製烏龍麵
 	price	20000
 	limit	50
 	pop	25h
 	point	200%
 	@@USE
 		time	5m
-		action	食べる
-		name	食べる
-		info	熱々のうどんを食べます
-		okmsg	びっくりするほど美味しかったです
-			use		1	博多うどん
-			get		1	汚れた丼
+		action	食用
+		name	食用
+		info	食用熱騰騰的烏龍麵
+		okmsg	出乎意料的好吃
+			use		1	博多烏龍麵
+			get		1	髒掉的碗
 			get		10	店力	70%
 
 @@ITEM
 	no		44
-	type	うどん
+	type	烏龍麵
 	code	udon-origi
-	name	オリジナルうどん
-	info	精魂込めて作ったオリジナルうどん
+	name	原創烏龍麵
+	info	灌注靈魂所製作的原創烏龍麵
 	price	50000
 	limit	20/0
 	pop	60h
 	point	200%
 	@@USE
 		time	5m
-		action	食べる
-		name	食べる
-		info	熱々のうどんを食べます
-		okmsg	夢のように美味しかったです
-			use		1	オリジナルうどん
-			get		1	汚れた丼
+		action	食用
+		name	食用
+		info	食用熱騰騰的烏龍麵
+		okmsg	像夢一般美味
+			use		1	原創烏龍麵
+			get		1	髒掉的碗
 			get		20	店力	50%
 
 @@ITEM
 	no		45
-	type	うどん
+	type	烏龍麵
 	code	udon-yami
-	name	闇うどん
-	info	ブラック工作員が作ったまずいうどん
+	name	暗黑烏龍麵
+	info	黑道小弟製作的難吃烏龍麵
 	price	100
 	limit	5000/0
 	pop	1h
 	point	-10%
 	@@USE
 		time	5m
-		action	食べる
-		name	食べる
-		info	熱々のうどんを食べます
-		okmsg	お世辞にも美味しいとはいえませんでした
-			use		1	闇うどん
-			get		1	汚れた丼
+		action	食用
+		name	食用
+		info	食用熱騰騰的烏龍麵
+		okmsg	即使奉承也不好吃
+			use		1	暗黑烏龍麵
+			get		1	髒掉的碗
 
 @@ITEM
 	no		46
-	type	そば
+	type	蕎麥麵
 	code	soba-kake
-	name	かけそば
-	info	通好みのシンプルそば
+	name	清湯蕎麥麵
+	info	深受饕客喜愛的簡單蕎麥麵
 	price	500
 	limit	1000/0
 	pop	75m
 	point	40%
 	@@USE
 		time	5m
-		action	食べる
-		name	食べる
-		info	熱々のそばを食べます
-		okmsg	とても美味しかったです
-			use		1	かけそば
-			get		1	汚れた丼
+		action	食用
+		name	食用
+		info	食用熱騰騰的蕎麥麵
+		okmsg	非常好吃
+			use		1	清湯蕎麥麵
+			get		1	髒掉的碗
 			get		10	店力	20%
 
 @@ITEM
 	no		47
-	type	そば
+	type	蕎麥麵
 	code	soba-wakame
-	name	わかめそば
-	info	髪の毛つやつやヘルシーそば
+	name	海帶芽蕎麥麵
+	info	猶如閃亮亮頭髮的健康蕎麥麵
 	price	600
 	limit	1000/0
 	pop	90m
 	point	50%
 	@@USE
 		time	5m
-		action	食べる
-		name	食べる
-		info	熱々のそばを食べます
-		okmsg	とても美味しかったです
-			use		1	わかめそば
-			get		1	汚れた丼
+		action	食用
+		name	食用
+		info	食用熱騰騰的蕎麥麵
+		okmsg	非常好吃
+			use		1	海帶芽蕎麥麵
+			get		1	髒掉的碗
 			get		10	店力	20%
 
 @@ITEM
 	no		48
-	type	そば
+	type	蕎麥麵
 	code	soba-kitune
-	name	きつねそば
-	info	味のしみこんだ油揚げが絶品のそば
+	name	豆皮蕎麥麵
+	info	搭配味道濃郁炸豆腐的蕎麥麵
 	price	800
 	limit	1000/0
 	pop	120m
 	point	60%
 	@@USE
 		time	5m
-		action	食べる
-		name	食べる
-		info	熱々のそばを食べます
-		okmsg	とても美味しかったです
-			use		1	きつねそば
-			get		1	汚れた丼
+		action	食用
+		name	食用
+		info	食用熱騰騰的蕎麥麵
+		okmsg	非常好吃
+			use		1	豆皮蕎麥麵
+			get		1	髒掉的碗
 			get		10	店力	20%
 
 @@ITEM
 	no		49
-	type	そば
+	type	蕎麥麵
 	code	soba-maruten
-	name	丸天そば
-	info	食べ応えのある丸天がのったそば
+	name	天婦羅蕎麥麵
+	info	搭配圓形天婦羅的蕎麥麵
 	price	1000
 	limit	1000/0
 	pop	120m
 	point	75%
 	@@USE
 		time	5m
-		action	食べる
-		name	食べる
-		info	熱々のそばを食べます
-		okmsg	とても美味しかったです
-			use		1	丸天そば
-			get		1	汚れた丼
+		action	食用
+		name	食用
+		info	食用熱騰騰的蕎麥麵
+		okmsg	非常好吃
+			use		1	天婦羅蕎麥麵
+			get		1	髒掉的碗
 			get		10	店力	20%
 
 @@ITEM
 	no		50
-	type	そば
+	type	蕎麥麵
 	code	soba-ebiten
-	name	えび天そば
-	info	からっと揚がったえびが二匹のったそば
+	name	炸蝦蕎麥麵
+	info	搭配兩隻炸蝦的蕎麥麵
 	price	2000
 	limit	500/0
 	pop	240m
 	@@USE
 		time	5m
-		action	食べる
-		name	食べる
-		info	熱々のそばを食べます
-		okmsg	とても美味しかったです
-			use		1	えび天そば
-			get		1	汚れた丼
+		action	食用
+		name	食用
+		info	食用熱騰騰的蕎麥麵
+		okmsg	非常好吃
+			use		1	炸蝦蕎麥麵
+			get		1	髒掉的碗
 			get		10	店力	20%
 
 @@ITEM
 	no		51
-	type	そば
+	type	蕎麥麵
 	code	soba-zanmai
-	name	そば三昧
-	info	おすすめそば三種セット
-	scale	セット
+	name	蕎麥麵三昧
+	info	搭配三種推薦配料的蕎麥麵
+	scale	組
 	price	5000
 	limit	200
 	pop	8h
 	point	500%
 	@@USE
 		time	5m
-		action	食べる
-		name	食べる
-		info	熱々のそばを食べます
-		okmsg	とても美味しかったです
-			use		1	そば三昧
-			get		3	汚れた丼
+		action	食用
+		name	食用
+		info	食用熱騰騰的蕎麥麵
+		okmsg	非常好吃
+			use		1	蕎麥麵三昧
+			get		3	髒掉的碗
 			get		10	店力	30%
 
 @@ITEM
 	no		52
-	type	そば
+	type	蕎麥麵
 	code	soba-kyabia
-	name	キャビアそば
-	info	世界三大珍味そばのひとつ
+	name	魚子醬蕎麥麵
+	info	世界三大美味蕎麥麵之一
 	price	7500
 	limit	120/0
 	pop	12h
 	@@USE
 		time	5m
-		action	食べる
-		name	食べる
-		info	熱々のそばを食べます
-		okmsg	びっくりするほど美味しかったです
-			use		1	キャビアそば
-			get		1	汚れた丼
+		action	食用
+		name	食用
+		info	食用熱騰騰的蕎麥麵
+		okmsg	出乎意料的好吃
+			use		1	魚子醬蕎麥麵
+			get		1	髒掉的碗
 			get		10	店力	50%
 
 @@ITEM
 	no		53
-	type	そば
+	type	蕎麥麵
 	code	soba-toryuhu
-	name	トリュフそば
-	info	世界三大珍味そばのひとつ
+	name	松露蕎麥麵
+	info	世界三大美味蕎麥麵之一
 	price	8000
 	limit	120/0
 	pop	13h
 	@@USE
 		time	5m
-		action	食べる
-		name	食べる
-		info	熱々のそばを食べます
-		okmsg	びっくりするほど美味しかったです
-			use		1	トリュフそば
-			get		1	汚れた丼
+		action	食用
+		name	食用
+		info	食用熱騰騰的蕎麥麵
+		okmsg	出乎意料的好吃
+			use		1	松露蕎麥麵
+			get		1	髒掉的碗
 			get		10	店力	50%
 
 @@ITEM
 	no		54
-	type	そば
+	type	蕎麥麵
 	code	soba-foagura
-	name	フォアグラそば
-	info	世界三大珍味そばのひとつ
+	name	鵝肝蕎麥麵
+	info	世界三大美味蕎麥麵之一
 	price	10000
 	limit	100/0
 	pop	15h
 	@@USE
 		time	5m
-		action	食べる
-		name	食べる
-		info	熱々のそばを食べます
-		okmsg	びっくりするほど美味しかったです
-			use		1	フォアグラそば
-			get		1	汚れた丼
+		action	食用
+		name	食用
+		info	食用熱騰騰的蕎麥麵
+		okmsg	出乎意料的好吃
+			use		1	鵝肝蕎麥麵
+			get		1	髒掉的碗
 			get		10	店力	50%
 
 @@ITEM
 	no		55
-	type	そば
+	type	蕎麥麵
 	code	soba-hakata
-	name	博多そば
-	info	博多の味の特製そば
+	name	博多蕎麥麵
+	info	博多風的特製蕎麥麵
 	price	20000
 	limit	50
 	pop	25h
 	point	200%
 	@@USE
 		time	5m
-		action	食べる
-		name	食べる
-		info	熱々のそばを食べます
-		okmsg	びっくりするほど美味しかったです
-			use		1	博多そば
-			get		1	汚れた丼
+		action	食用
+		name	食用
+		info	食用熱騰騰的蕎麥麵
+		okmsg	出乎意料的好吃
+			use		1	博多蕎麥麵
+			get		1	髒掉的碗
 			get		10	店力	70%
 
 @@ITEM
 	no		56
-	type	そば
+	type	蕎麥麵
 	code	soba-origi
-	name	オリジナルそば
-	info	精魂込めて作ったオリジナルそば
+	name	原創蕎麥麵
+	info	灌注靈魂所製作的原創蕎麥麵
 	price	50000
 	limit	20/0
 	pop	60h
 	point	200%
 	@@USE
 		time	5m
-		action	食べる
-		name	食べる
-		info	熱々のそばを食べます
-		okmsg	夢のように美味しかったです
-			use		1	オリジナルそば
-			get		1	汚れた丼
+		action	食用
+		name	食用
+		info	食用熱騰騰的蕎麥麵
+		okmsg	像夢一般美味
+			use		1	原創蕎麥麵
+			get		1	髒掉的碗
 			get		20	店力	50%
 
 @@ITEM
 	no		57
-	type	そば
+	type	蕎麥麵
 	code	soba-yami
-	name	闇そば
-	info	ブラック工作員が作ったまずいそば
+	name	暗黑蕎麥麵
+	info	黑道小弟製作的難吃蕎麥麵
 	price	100
 	limit	5000/0
 	pop	1h
 	point	-10%
 	@@USE
 		time	5m
-		action	食べる
-		name	食べる
-		info	熱々のそばを食べます
-		okmsg	お世辞にも美味しいとはいえませんでした
-			use		1	闇そば
+		action	食用
+		name	食用
+		info	食用熱騰騰的蕎麥麵
+		okmsg	即使奉承也不好吃
+			use		1	暗黑蕎麥麵
 
 @@ITEM
 	no		58
-	type	ツール
+	type	工具
 	code	tool-tikara
 	name	店力
-	info	いざというときに真価を発揮するかもしれない[みせぢから]
+	info	在緊急情況下它可能會顯示出它的真正價值[店的力量]
 	scale	力
 	price	0
 	limit	1000/0
@@ -2753,112 +2754,112 @@
 	@@use
 		time	10m
 		scale	回
-		action	浴びる
-		name	浴びる
-		info	祈りを込めて店力を頭から浴びてみます
+		action	沐浴
+		name	沐浴
+		info	用祈禱沐浴在店力中
 		arg		nocount
 			use		500	店力
 		func	_local_
-			my $ret='祈りが通じて店力が不思議な力を発揮したようです';
+			my $ret='沐浴在店力中祈禱後似乎有股神秘的力量';
 
-			if ((rand(1000)<20) && !$DT->{item}[@@ITEMNO"オリジナルうどんレシピ"-1])
+			if ((rand(1000)<20) && !$DT->{item}[@@ITEMNO"原創烏龍麵食譜"-1])
 			{
-				AddItem(@@ITEMNO"オリジナルうどんレシピ",1,"突風で飛んできた紙切れをよく見ると，なんと！どこかの店の「オリジナルうどんレシピ」でした");
-				WriteLog(0,$DT->{id},'オリジナルうどんレシピを手に入れました');
+				AddItem(@@ITEMNO"原創烏龍麵食譜",1,"突然颳起一陣風吹來了張紙片，天啊！竟然是某間店的「原創烏龍麵食譜」");
+				WriteLog(0,$DT->{id},'得到原創烏龍麵食譜了');
 			}
-			elsif((rand(1000)<20) && !$DT->{item}[@@ITEMNO"オリジナルそばレシピ"-1])
+			elsif((rand(1000)<20) && !$DT->{item}[@@ITEMNO"原創蕎麥麵食譜"-1])
 			{
-				AddItem(@@ITEMNO"オリジナルそばレシピ",1,"突風で飛んできた紙切れをよく見ると，なんと！どこかの店の「オリジナルそばレシピ」でした");
-				WriteLog(0,$DT->{id},'オリジナルそばレシピを手に入れました');
+				AddItem(@@ITEMNO"原創蕎麥麵食譜",1,"突然颳起一陣風吹來了張紙片，天啊！竟然是某間店的「原創蕎麥麵食譜」");
+				WriteLog(0,$DT->{id},'得到原創蕎麥麵食譜了');
 			}
-			elsif ((rand(1000)<100) && ($DT->{item}[@@ITEMNO"豚"-1]<=10))
+			elsif ((rand(1000)<100) && ($DT->{item}[@@ITEMNO"豬"-1]<=10))
 			{
-				AddItem(@@ITEMNO"豚",10,"野生の豚集団が店に飛び込んできました");
-				WriteLog(0,$DT->{id},'豚を手に入れました');
+				AddItem(@@ITEMNO"豬",10,"一群野生的豬衝進了店裡");
+				WriteLog(0,$DT->{id},'得到豬了');
 			}
-			elsif ((rand(1000)<100) && ($DT->{item}[@@ITEMNO"がちょう"-1]<=10))
+			elsif ((rand(1000)<100) && ($DT->{item}[@@ITEMNO"鵝"-1]<=10))
 			{
-				AddItem(@@ITEMNO"がちょう",10,"野生のがちょう集団が店に飛び込んできました");
-				WriteLog(0,$DT->{id},'がちょうを手に入れました');
+				AddItem(@@ITEMNO"鵝",10,"一群野生的鵝衝進了店裡");
+				WriteLog(0,$DT->{id},'得到鵝了');
 			}
-			elsif ((rand(1000)<100) && ($DT->{item}[@@ITEMNO"とうがらし"-1]<=500))
+			elsif ((rand(1000)<100) && ($DT->{item}[@@ITEMNO"唐辛子"-1]<=500))
 			{
-				AddItem(@@ITEMNO"とうがらし",500,"遠い親戚からとうがらしの小包が送ってきました");
-				WriteLog(0,$DT->{id},'とうがらしを手に入れました');
+				AddItem(@@ITEMNO"唐辛子",500,"遠房親戚寄了一小包唐辛子。");
+				WriteLog(0,$DT->{id},'得到唐辛子了');
 			}
-			elsif((rand(1000)<100) && $DT->{item}[@@ITEMNO"にわとり"-1] && ($DT->{item}[@@ITEMNO"卵"-1]<=2700))
+			elsif((rand(1000)<100) && $DT->{item}[@@ITEMNO"雞"-1] && ($DT->{item}[@@ITEMNO"雞蛋"-1]<=2700))
 			{
-				AddItem(@@ITEMNO"卵",$DT->{item}[@@ITEMNO"にわとり"-1]*10,"飼っているにわとりが一斉に卵を10個ずつ産みました");
-				WriteLog(0,$DT->{id},'卵を手に入れました');
+				AddItem(@@ITEMNO"雞蛋",$DT->{item}[@@ITEMNO"雞"-1]*10,"飼っている雞が一斉に雞蛋を10個ずつ産みました");
+				WriteLog(0,$DT->{id},'得到雞蛋了');
 			}
-			elsif((rand(1000)<100) && $DT->{item}[@@ITEMNO"豚"-1] && ($DT->{item}[@@ITEMNO"トリュフ"-1]<=50))
+			elsif((rand(1000)<100) && $DT->{item}[@@ITEMNO"豬"-1] && ($DT->{item}[@@ITEMNO"松露"-1]<=50))
 			{
-				AddItem(@@ITEMNO"トリュフ",$DT->{item}[@@ITEMNO"豚"-1]*5,"飼っている豚が皆，トリュフを5個ずつくわえてきました");
-				WriteLog(0,$DT->{id},'トリュフを手に入れました');
+				AddItem(@@ITEMNO"松露",$DT->{item}[@@ITEMNO"豬"-1]*5,"飼養的豬隻竟然，嘴巴裡都含著5個松露");
+				WriteLog(0,$DT->{id},'得到松露了');
 			}
-			elsif ((rand(1000)<100) && ($DT->{item}[@@ITEMNO"ブラック工作員"-1]<2))
+			elsif ((rand(1000)<100) && ($DT->{item}[@@ITEMNO"黑道小弟"-1]<2))
 			{
-				AddItem(@@ITEMNO"ブラック工作員",1,"ブラック工作員がこっそり店に入ってきて，雇ってほしいと言いました");
-				WriteLog(0,$DT->{id},'ブラック工作員を手に入れました');
+				AddItem(@@ITEMNO"黑道小弟",1,"黑道小弟偷偷的溜進店裡後說，請雇用他吧");
+				WriteLog(0,$DT->{id},'得到黑道小弟了');
 			}
-			elsif((rand(1000)<20) && $DT->{user}->{udon} && ($DT->{user}->{udon}ne'トンヌラうどん') && ($DT->{user}->{udon}ne'ハイパーグレートＵＤＯＮ'))
+			elsif((rand(1000)<20) && $DT->{user}->{udon} && ($DT->{user}->{udon}ne'唐努拉烏龍麵') && ($DT->{user}->{udon}ne'超級厲害ＵＤＯＮ'))
 			{
 				if (rand(1000)<500)
 				{
-					$ret.='<br>突然ひらめいて，開発したオリジナルうどんの名前を「トンヌラうどん」に変えました<br>';
-					$DT->{user}->{udon}='トンヌラうどん';
+					$ret.='<br>突然腦中閃過，開發的原創烏龍麵的名稱變成「唐努拉烏龍麵」了<br>';
+					$DT->{user}->{udon}='唐努拉烏龍麵';
 				}
 				else
 				{
-					$ret.='<br>突然ひらめいて，開発したオリジナルうどんの名前を「ハイパーグレートＵＤＯＮ」に変えました<br>';
-					$DT->{user}->{udon}='ハイパーグレートＵＤＯＮ';
+					$ret.='<br>突然腦中閃過，開發的原創烏龍麵的名稱變成「超級厲害ＵＤＯＮ」了<br>';
+					$DT->{user}->{udon}='超級厲害ＵＤＯＮ';
 				}
-				WriteLog(0,$DT->{id},'オリジナルうどんの名前を変更しました');
-				WriteLog(3,0,$DT->{shopname}.'の店主が店力を浴びてひらめき，オリジナルうどんの名前を変更したようです');
+				WriteLog(0,$DT->{id},'原創烏龍麵名稱修改完成了');
+				WriteLog(3,0,$DT->{shopname}.'的店長沐浴在店力之下，原創烏龍麵的名稱變更了');
 			}
-			elsif((rand(1000)<20) && $DT->{user}->{soba} && ($DT->{user}->{soba}ne'愛の貧乏脱出そば') && ($DT->{user}->{soba}ne'ぬらりひょんソバ'))
+			elsif((rand(1000)<20) && $DT->{user}->{soba} && ($DT->{user}->{soba}ne'愛的脫離貧窮蕎麥麵') && ($DT->{user}->{soba}ne'滑頭鬼蕎麥麵'))
 			{
 				if (rand(1000)<500)
 				{
-					$ret.='<br>突然ひらめいて，開発したオリジナルそばの名前を「愛の貧乏脱出そば」に変えました<br>';
-					$DT->{user}->{soba}='愛の貧乏脱出そば';
+					$ret.='<br>突然腦中閃過，開發的原創蕎麥麵的名稱變成「愛的脫離貧窮蕎麥麵」了<br>';
+					$DT->{user}->{soba}='愛的脫離貧窮蕎麥麵';
 				}
 				else
 				{
-					$ret.='<br>突然ひらめいて，開発したオリジナルそばの名前を「ぬらりひょんソバ」に変えました<br>';
-					$DT->{user}->{soba}='ぬらりひょんソバ';
+					$ret.='<br>突然腦中閃過，開發的原創蕎麥麵的名稱變成「滑頭鬼蕎麥麵」了<br>';
+					$DT->{user}->{soba}='滑頭鬼蕎麥麵';
 				}
-				WriteLog(0,$DT->{id},'オリジナルそばの名前を変更しました');
-				WriteLog(3,0,$DT->{shopname}.'の店主が店力を浴びてひらめき，オリジナルそばの名前を変更したようです');
+				WriteLog(0,$DT->{id},'原創蕎麥麵名稱修改完成了');
+				WriteLog(3,0,$DT->{shopname}.'的店長沐浴在店力之下，原創蕎麥麵的名稱變更了');
 			}
 			else
 			{
-				$ret.='<br>店力によって時のエネルギーが増幅され，活動できる時間が増えました';
+				$ret.='<br>店力使得能量增幅，可以活動的時間增加了';
 				my $cnt=int(rand(6))+5;
 				$DT->{time}-=3600*($cnt);
 				$ret.='（＋'.($cnt).'時間）<br>';
-				WriteLog(0,$DT->{id},'店力を頭から浴びた結果，持ち時間が増えました');
+				WriteLog(0,$DT->{id},'沐浴在店力中祈禱後，持有的時間增加了');
 			}
 			return $ret;
 		_local_
 
 @@ITEM
 	no		59
-	type	ツール
+	type	工具
 	code	tool-huku
-	name	福引き補助券
-	info	5枚で1回抽選ができます
+	name	抽獎卷
+	info	可以用5張抽獎卷抽1次獎
 	scale	枚
 	price	0
 	limit	1000/0
 	pop		0
 	@@USE
 		time	5m
-		action	福引きをする
-		name	福引きをする
-		info	集めた福引き補助券で福引きをします
+		action	抽獎
+		name	抽獎
+		info	用收到的抽獎卷進行抽獎
 		scale	回
-			use		5	福引き補助券
+			use		5	抽獎卷
 		func	_local_
 			# ★福引き
 			my $ret;
@@ -2898,51 +2899,51 @@
 				}
 			}
 			$hit7=$count-($hit1+$hit2+$hit3+$hit4+$hit5+$hit6);
-			AddItem(83,$hit1,'なんと！特等の金の招き猫が'.$hit1.'回当たりました') if ($hit1>=1);
-			AddItem(82,$hit2,'なんと！1等の自動車が'.$hit2.'回当たりました') if ($hit2>=1);
-			AddItem(80,$hit3,'2等の食器洗い機が'.$hit3.'回当たりました') if ($hit3>=1);
-			AddItem(79,$hit4,'3等の自転車が'.$hit4.'回当たりました') if ($hit4>=1);
-			AddItem(67,$hit5,'4等のヒントブックが'.$hit5.'回当たりました') if ($hit5>=1);
-			AddItem(66,$hit6,'5等の商品券が'.$hit6.'回当たりました') if ($hit6>=1);
-			AddItem(64,$hit7,'残念賞のきれいな丼が'.$hit7.'回分です') if ($hit7>=1);
-			$ret='福引きははずれました';
-			$ret='福引きで景品を当てました' if ($hit7<$count);
+			AddItem(83,$hit1,'天啊！抽中了'.$hit1.'次特獎的招財貓') if ($hit1>=1);
+			AddItem(82,$hit2,'天啊！抽中了'.$hit2.'次頭獎的汽車') if ($hit2>=1);
+			AddItem(80,$hit3,'抽中了'.$hit3.'次二獎的洗碗機') if ($hit3>=1);
+			AddItem(79,$hit4,'抽中了'.$hit4.'次三獎的腳踏車') if ($hit4>=1);
+			AddItem(67,$hit5,'抽中了'.$hit5.'次四獎的攻略本') if ($hit5>=1);
+			AddItem(66,$hit6,'抽中了'.$hit6.'次五獎的商品券') if ($hit6>=1);
+			AddItem(64,$hit7,'抽到'.$hit7.'次安慰獎乾淨的碗') if ($hit7>=1);
+			$ret='抽獎什麼都沒中';
+			$ret='抽到獎品了' if ($hit7<$count);
 			WriteLog(0,$DT->{id},$ret);
 			return $ret;
 		_local_
 
 @@ITEM
 	no		60
-	type	ツール
+	type	工具
 	code	tool-udon
-	name	オリジナルうどんレシピ
-	info	オリジナルうどんの作り方が書いてあります
+	name	原創烏龍麵食譜
+	info	記載著原創烏龍麵的製作方法
 	scale	枚
 	price	0
 	limit	1/0
 	pop		0
 	@@USE
 		time	1m
-		action	見る
-		name	レシピを見る
-		info	オリジナルうどんの材料と作り方を忘れたときのために
+		action	閱讀
+		name	閱讀食譜
+		info	為了忘記原創烏龍麵的材料與製作方法的時候
 		scale	回
 		arg		nocount
-		ngmsg	【オリジナルうどんの作り方】<br>材料<br>・小麦粉<br>・かつお<br>・がちょう<br>・とうがらし<br>・きれいな丼<br><br>作り方<br><b>&nbsp;&nbsp;秘密</b>
+		ngmsg	【原創烏龍麵的製作方法】<br>材料<br>・小麥粉<br>・鰹魚<br>・鵝<br>・唐辛子<br>・乾淨的碗<br><br>做法<br><b>&nbsp;&nbsp;秘密</b>
 	@@USE
 		time	4h
-		job		うどん屋	times/job_udon_time_rate
-		action	という名前に変える
-		name	オリジナルうどんの名前を変える
-		info	オリジナルうどんの名前を変更します
+		job		烏龍麵屋	times/job_udon_time_rate
+		action	重新命名為
+		name	修改原創烏龍麵的名稱
+		info	修改原創烏龍麵的名稱
 		arg		nocount|message30
 		func	_local_
-			# オリジナルうどんの名前を変える
-			main::OutError('まずオリジナルうどんを開発してください') if !$DT->{user}->{udon};
-			main::OutError('名前をつけてください') if !$USE->{arg}->{message};
+			# 原創烏龍麵の名前を変える
+			main::OutError('請先開發原創烏龍麵') if !$DT->{user}->{udon};
+			main::OutError('請輸入名稱') if !$USE->{arg}->{message};
 			my $ret;
-			$ret='オリジナルうどんの名前を【'.$USE->{arg}->{message}.'】に変更しました';	
-			WriteLog(3,0,$DT->{shopname}."がオリジナルうどんの名前を変えたようです");
+			$ret='原創蕎麥麵的名稱變成【'.$USE->{arg}->{message}.'】了';	
+			WriteLog(3,0,$DT->{shopname}."改變原創烏龍麵的名稱了");
 			WriteLog(0,$DT->{id},$ret);
 			$DT->{user}->{udon}=$USE->{arg}->{message};
 			return $ret;
@@ -2950,35 +2951,35 @@
 
 @@ITEM
 	no		61
-	type	ツール
+	type	工具
 	code	tool-soba
-	name	オリジナルそばレシピ
-	info	オリジナルそばの作り方が書いてあります
+	name	原創蕎麥麵食譜
+	info	記載著原創蕎麥麵的製作方法
 	scale	枚
 	price	0
 	limit	1/0
 	pop		0
 	@@USE
 		time	1m
-		action	見る
-		name	レシピを見る
-		info	オリジナルそばの材料と作り方を忘れたときのために
+		action	閱讀
+		name	閱讀食譜
+		info	為了忘記原創蕎麥麵的材料與製作方法的時候
 		scale	回
 		arg		nocount
-		ngmsg	【オリジナルそばの作り方】<br>材料<br>・そば粉<br>・かつお<br>・ちょうざめ<br>・たまご<br>・きれいな丼<br><br>作り方<br><b>&nbsp;&nbsp;秘密</b>
+		ngmsg	【原創蕎麥麵的製作方法】<br>材料<br>・蕎麥粉<br>・鰹魚<br>・鱘魚<br>・魚卵<br>・乾淨的碗<br><br>做法<br><b>&nbsp;&nbsp;秘密</b>
 	@@USE
 		time	4h
-		job		そば屋	times/job_soba_time_rate
-		action	という名前に変える
-		name	オリジナルそばの名前を変える
-		info	オリジナルそばの名前を変更します
+		job		蕎麥麵屋	times/job_soba_time_rate
+		action	重新命名為
+		name	修改原創蕎麥麵的名稱
+		info	修改原創蕎麥麵的名稱
 		arg		nocount|message30
 		func	_local_
-			main::OutError('まずオリジナルそばを開発してください') if !$DT->{user}->{soba};
-			main::OutError('名前をつけてください') if !$USE->{arg}->{message};
+			main::OutError('請先開發原創蕎麥麵') if !$DT->{user}->{soba};
+			main::OutError('請輸入名稱') if !$USE->{arg}->{message};
 			my $ret;
-			$ret='オリジナルそばの名前を【'.$USE->{arg}->{message}.'】に変更しました';	
-			WriteLog(3,0,$DT->{shopname}."がオリジナルそばの名前を変えたようです");
+			$ret='原創蕎麥麵的名稱變成【'.$USE->{arg}->{message}.'】了';	
+			WriteLog(3,0,$DT->{shopname}."改變原創蕎麥麵的名稱了");
 			WriteLog(0,$DT->{id},$ret);
 			$DT->{user}->{soba}=$USE->{arg}->{message};
 			return $ret;
@@ -2986,10 +2987,10 @@
 
 @@ITEM
 	no		62
-	type	ツール
+	type	工具
 	code	tool-taihi
 	name	堆肥
-	info	畑の肥料です
+	info	田地的肥料
 	scale	kg
 	price	5
 	cost	0
@@ -3001,10 +3002,10 @@
 
 @@ITEM
 	no		63
-	type	ツール
+	type	工具
 	code	tool-yogore
-	name	汚れた丼
-	info	使った後の丼です
+	name	髒掉的碗
+	info	使用過的碗
 	scale	個
 	price	10
 	cost	0
@@ -3013,10 +3014,10 @@
 
 @@ITEM
 	no		64
-	type	ツール
+	type	工具
 	code	tool-kirei
-	name	きれいな丼
-	info	きれいに洗った丼です
+	name	乾淨的碗
+	info	洗乾淨的碗
 	scale	個
 	price	50
 	cost	10
@@ -3027,10 +3028,10 @@
 
 @@ITEM
 	no		65
-	type	ツール
+	type	工具
 	code	tool-takara
-	name	宝くじ
-	info	一攫千金を夢見て‥
+	name	彩卷
+	info	夢想快速致富...
 	scale	枚
 	price	1000
 	cost	10
@@ -3041,10 +3042,10 @@
 
 @@ITEM
 	no		66
-	type	ツール
+	type	工具
 	code	tool-syou
 	name	商品券
-	info	希望の商品と交換できます
+	info	可以換成想要的物品
 	scale	枚
 	price	5000
 	cost	10
@@ -3052,64 +3053,64 @@
 	pop		0
 	@@USE
 		time	10m
-		action	交換する
+		action	交換
 		scale	回
-		name	堆肥と交換する
-		info	商品券を希望の商品と交換します
-		okmsg	堆肥を手に入れました
+		name	交換堆肥
+		info	將商品券換成想要的物品
+		okmsg	獲得了堆肥
 			use		1	商品券
 			get		250	堆肥
 	@@USE
 		time	10m
-		action	交換する
+		action	交換
 		scale	回
-		name	きれいな丼と交換する
-		info	商品券を希望の商品と交換します
-		okmsg	きれいな丼を手に入れました
+		name	交換乾淨的碗
+		info	將商品券換成想要的物品
+		okmsg	獲得了乾淨的碗
 			use		1	商品券
-			get		100	きれいな丼
+			get		100	乾淨的碗
 	@@USE
 		time	10m
-		action	交換する
+		action	交換
 		scale	回
-		name	ヒントブックと交換する
-		info	商品券を希望の商品と交換します
-		okmsg	ヒントブックを手に入れました
+		name	交換攻略本
+		info	將商品券換成想要的物品
+		okmsg	獲得了攻略本
 			use		2	商品券
-			get		1	ヒントブック
+			get		1	攻略本
 	@@USE
 		time	10m
-		action	交換する
+		action	交換
 		scale	回
-		name	警報機と交換する
-		info	商品券を希望の商品と交換します
-		okmsg	警報機を手に入れました
+		name	交換警報器
+		info	將商品券換成想要的物品
+		okmsg	獲得了警報器
 			use		40	商品券
-			get		1	警報機
+			get		1	警報器
 	@@USE
 		time	10m
-		action	交換する
+		action	交換
 		scale	回
-		name	自動車と交換する
-		info	商品券を希望の商品と交換します
-		okmsg	自動車を手に入れました
+		name	交換汽車
+		info	將商品券換成想要的物品
+		okmsg	獲得了汽車
 			use		100	商品券
-			get		1	自動車
+			get		1	汽車
 	@@USE
 		time	10m
-		action	交換する
+		action	交換
 		scale	回
-		name	金の招き猫と交換する
-		info	商品券を希望の商品と交換します
-		okmsg	金の招き猫を手に入れました
+		name	交換招財貓
+		info	將商品券換成想要的物品
+		okmsg	獲得了招財貓
 			use		200	商品券
-			get		1	金の招き猫
+			get		1	招財貓
 	@@use
 		time	10m
 		scale	枚
-		action	換金する
-		name	換金する
-		info	商品券を金券ショップに引き取ってもらいます
+		action	換錢
+		name	換錢
+		info	商品券
 		param	500,2500
 			use		1	商品券
 		func	_local_
@@ -3117,25 +3118,25 @@
 			if (rand(1000)<300)
 			{
 				$DT->{money}+=$USE->{param1}*$count;
-				$ret='金券ショップのおやじに買いたたかれたようです<br>';
-				$ret.=GetMoneyString($USE->{param1}*$count).'で引き取ってもらいました';
+				$ret='金券行的大叔好像會買的樣子<br>';
+				$ret.='換到'.GetMoneyString($USE->{param1}*$count).'了';
 			}
 			else
 			{
 			$DT->{money}+=$USE->{param2}*$count;
-			$ret=GetMoneyString($USE->{param2}*$count).'で引き取ってもらいました';
+			$ret='換到'.GetMoneyString($USE->{param2}*$count).'了';
 			}
-			WriteLog(0,$DT->{id},"商品券を換金しました");
+			WriteLog(0,$DT->{id},"將商品券換成了錢");
 			return $ret;
 		_local_
 
 @@ITEM
 	no		67
-	type	ツール
+	type	工具
 	code	tool-hint
-	name	ヒントブック
-	info	<b>注意！★印のヒントを読むとヒントブックが消滅します</b>
-	scale	冊
+	name	攻略本
+	info	<b>注意！有★符號的提示看了之後，攻略本會被刪除</b>
+	scale	本
 	price	10000
 	cost	10
 	limit	5/0
@@ -3143,142 +3144,142 @@
 	flag	noshowcase|norequest
 	@@USE
 		time	1m
-		action	ヒントを読む
-		name	初めての方へ
-		info	まず何をしたらよいのかわからない場合のヒントです
+		action	閱讀提示
+		name	新手入門
+		info	如果您不知道先做什麼可以閱讀提示
 		arg		nocount
-		ngmsg	（「図書館」を見てから）<br><br>農夫か漁師を1人，市場か相場から購入してみましょう。<br>（どちらもない場合は，フリーターを買って農夫か漁師にしてください）<br>漁師の場合はすぐに釣りが始められます。<br>農夫は畑を手に入れると，収穫をすることができるようになります。<br>収穫した畑は「耕す前の畑」に戻り，1反につき堆肥100kgで<br>「よく耕した畑」にすることができ，さらにある程度の時間経過によって<br>順次「収穫を待つ畑」に変化します。
+		ngmsg	（可以閱讀「圖書館」內的資料）<br><br>從市場或商店街招募農民或漁夫。<br>（如果都沒有的話，可以先招募臨時工再轉職成農夫或漁夫）<br>漁夫可以馬上開始捕魚。<br>農夫可以取得田地後進行收割。<br>收穫後的田地會變回「耕作前的田地」，可以再進行耕作，1反需要堆肥100kg<br>隨著時間的流逝，「耕作後的田地」會變成「待收割的田地」。
 	@@USE
 		time	10m
-		action	ヒントを読む
-		name	★フリーターの秘密
-		info	人材派遣業を極めてみたい方へ
+		action	閱讀提示
+		name	★臨時工的秘密
+		info	針對想從事人力仲介的人
 		arg		nocount
-		ngmsg	・うどん職人の修行をするには，フリーターと小麦粉が必要です。<br>・そば職人の修行をするには，フリーターとそば粉が必要です。
-			use		1	ヒントブック
+		ngmsg	・想要進行烏龍麵師傅修行的話，需要臨時工和小麥粉。<br>・想要進行蕎麥麵師傅修行的話，需要臨時工和蕎麥粉。
+			use		1	攻略本
 	@@USE
 		time	10m
-		action	ヒントを読む
-		name	★農夫の秘密
-		info	農業を極めてみたい方へ
+		action	閱讀提示
+		name	★農夫的秘密
+		info	從事農業的方法
 		arg		nocount
-		ngmsg	・エサで動物を育てましょう。にわとりとがちょうのエサはとうもろこし，豚のエサは大豆です。<br>・卵がいくつかあるときは，にわとりの親鳥に卵を抱かせ，孵化させることができます。<br>（孵化を待つ卵は，時間が経過すると順次親鳥になります）<br>・にわとりを使用すると，がちょうや豚と取りかえることができます。
-			use		1	ヒントブック
+		ngmsg	・用飼料飼養動物。雞和鵝的飼料是玉米，豬的飼料是大豆。<br>・當你有幾個雞蛋時，可以讓母雞孵蛋，讓牠們孵化。<br>（等待孵化的雞蛋，隨著時間的推移，牠們會慢慢長成成雞。）<br>・也可以使用雞，將其換成鵝或豬。
+			use		1	攻略本
 	@@USE
 		time	10m
-		action	ヒントを読む
-		name	★漁師の秘密
-		info	漁業を極めてみたい方へ
+		action	閱讀提示
+		name	★漁夫的秘密
+		info	從事漁業的方法
 		arg		nocount
-		ngmsg	・えびをたくさん用意すると，漁に出られるようになります。<br>・すけとうだらと，とうがらしを準備すれば，辛子めんたいが作れます。
-			use		1	ヒントブック
+		ngmsg	・如果有足夠的蝦，可以去釣魚。<br>・準備黃線狹鱈和唐辛子，可以做成明太子。
+			use		1	攻略本
 	@@USE
 		time	10m
-		action	ヒントを読む
-		name	★天ぷら職人の秘密
-		info	天ぷら屋を極めてみたい方へ
+		action	閱讀提示
+		name	★天婦羅師傅的秘密
+		info	從事天婦羅屋的方法
 		arg		nocount
-		ngmsg	・大豆から油揚げを作ることができます。<br>・すけとうだらからかまぼこが作れます。<br>・えそから丸天が作れます。<br>・えびと小麦粉，卵を用意すれば，えび天を作ることができます。
-			use		1	ヒントブック
+		ngmsg	・可以用大豆做炸豆皮。<br>・黃線狹鱈可以做成魚板。<br>・狗母魚可以做成圓形天婦羅。<br>・準備蝦、小麥粉和雞蛋，可以做成炸蝦天婦羅。
+			use		1	攻略本
 	@@USE
 		time	10m
-		action	ヒントを読む
-		name	★うどん職人の秘密
-		info	うどん屋を極めてみたい方へ
+		action	閱讀提示
+		name	★烏龍麵師傅的秘密
+		info	從事烏龍麵屋的方法
 		arg		nocount
-		ngmsg	・作ることのできるうどんは，標準価格の安い順に「すうどん」「わかめうどん」「きつねうどん」<br>「丸天うどん」「えび天うどん」「うどん三昧」「キャビアうどん」「トリュフうどん」「フォアグラうどん」<br>「博多うどん」「オリジナルうどん」の11種類です。<br>・すうどんの材料は，小麦粉とねぎ，かまぼこときれいな丼です（うどん作りの基本）。<br>・うどん三昧は特定のうどん3種類を，セットにすることによって作ります。<br>・高級なうどんにはかつおが必要なものが多いです。<br>・博多うどんは豚骨味で，ある博多名物の海産物加工品がのっています。
-			use		1	ヒントブック
+		ngmsg	・可以做的烏龍麵，按標準價格升序排列為「清湯烏龍麵」「海帶芽烏龍麵」「豆皮烏龍麵」<br>「天婦羅烏龍麵」「炸蝦烏龍麵」「烏龍麵三昧」「魚子醬烏龍麵」「松露烏龍麵」「鵝肝烏龍麵」<br>「博多烏龍麵」「原創烏龍麵」共11種。<br>・清湯烏龍麵材料是小麥粉、蔥、魚板還有乾淨的碗（製作烏龍麵的基本）。<br>・烏龍麵三昧是將指定的三種配料組合做成的。<br>・許多高檔烏龍麵料理都需要鰹魚。<br>・博多烏龍麵是豚骨風味的，上面有博多特產海鮮加工品。
+			use		1	攻略本
 	@@USE
 		time	10m
-		action	ヒントを読む
-		name	★そば職人の秘密
-		info	そば屋を極めてみたい方へ
+		action	閱讀提示
+		name	★蕎麥麵師傅的秘密
+		info	從事蕎麥麵屋的方法
 		arg		nocount
-		ngmsg	・作ることのできるそばは，標準価格の安い順に「かけそば」「わかめそば」「きつねそば」<br>「丸天そば」「えび天そば」「そば三昧」「キャビアそば」「トリュフそば」「フォアグラそば」<br>「博多そば」「オリジナルそば」の11種類です。<br>・かけそばの材料は，そば粉とねぎ，かまぼこときれいな丼です（そば作りの基本）。<br>・そば三昧は特定のそば3種類を，セットにすることによって作ります。<br>・高級なそばにはかつおが必要なものが多いです。<br>・博多そばは豚骨味で，ある博多名物の海産物加工品がのっています。
-			use		1	ヒントブック
+		ngmsg	・可以做的蕎麥麵，按標準價格升序排列為「清湯蕎麥麵」「海帶芽蕎麥麵」「豆皮蕎麥麵」<br>「天婦羅蕎麥麵」「炸蝦蕎麥麵」「蕎麥麵三昧」「魚子醬蕎麥麵」「松露蕎麥麵」「鵝肝蕎麥麵」<br>「博多蕎麥麵」「原創蕎麥麵」共11種。<br>・清湯蕎麥麵的材料是蕎麥粉、蔥、魚板還有乾淨的碗（製作蕎麥麵的基本）。<br>・蕎麥麵三昧是將指定的三種配料組合做成的。<br>・許多高檔蕎麥麵料理都需要鰹魚。<br>・博多蕎麥麵是豚骨風味的，上面有博多特產海鮮加工品。
+			use		1	攻略本
 	@@USE
 		time	10m
-		action	ヒントを読む
-		name	★便利屋の秘密
-		info	人材派遣業を極めてみたい方へ
+		action	閱讀提示
+		name	★便利屋的秘密
+		info	從事人力仲介的方法
 		arg		nocount
-		ngmsg	・フリーターが人材派遣の専門家になることによって，便利屋の各種作業時間も短くなります。<br>・食器洗い機を手に入れると，短い時間でたくさんの汚れた丼が洗えるようになります。<br>・専門職の看板を下ろすと，商店会から慰労金が支給されます。
-			use		1	ヒントブック
+		ngmsg	・臨時工可以成為人力仲介，便利屋可以使得各種作業時間縮短。<br>・獲得洗碗機的話，可以在短時間內將髒掉的碗洗乾淨。<br>・取下專門職業招牌的話，商店街自治會會發給慰問金。
+			use		1	攻略本
 	@@USE
 		time	10m
-		action	ヒントを読む
-		name	★ブラック工作員の秘密
-		info	裏家業を極めてみたい方へ
+		action	閱讀提示
+		name	★黑道小弟的秘密
+		info	從事黑道的方法
 		arg		nocount
-		ngmsg	・汚れた丼がある程度あると，闇うどんと闇そばを作ることができます。<br>・闇うどんと闇そばがたくさん揃っているときに，店力が少しあれば，すり替え作戦を実行できます。<br>・悪い噂を流すためには，店力が100必要です。<br>・ブラック工作員が2人いて，さらに店力が100あると時間操作を行うことができます。<br>（時間操作によって，持ち時間がランダムに増加します）
-			use		1	ヒントブック
+		ngmsg	・如果有一定數量髒掉的碗的話，可以製作暗黑烏龍麵和暗黑蕎麥麵。<br>・在暗黑烏龍麵和暗黑蕎麥麵很多的時候，如果有一點店力，可以進行替換作戰。<br>・散佈謠言需要100的店力。<br>・有2名黑道小弟時，在店力有100的情況下可以進行時間操作。<br>（通過時間操作，可用時間會隨機增加）
+			use		1	攻略本
 	@@USE
 		time	1m
-		action	ヒントを読む
-		name	陳列棚について
-		info	陳列棚の増改築と維持費についての説明です
+		action	閱讀提示
+		name	關於展示架
+		info	這是展示架擴增與維護費的說明
 		arg		nocount
-		ngmsg	陳列棚の数を変えるには，便利屋を使います。<br>ただし，便利屋1人では陳列棚を２つまでしか増やすことができず，<br>それ以上増やしたいときには，便利屋の数がもっと必要です。<br>陳列棚の維持費は，棚が増えると次第にかかるようになってきます。
+		ngmsg	想變更展示架數量時，可以使用便利屋。<br>但是，便利屋1人只能將展示架變成２個，<br>如果還要增加更多的話，需要的便利屋數量也會更多。<br>展示架的維護費，會隨著數量增加而變多。
 	@@USE
 		time	1m
-		action	ヒントを読む
-		name	店力について
-		info	店力に関する説明です
+		action	閱讀提示
+		name	關於店力
+		info	店力相關的說明
 		arg		nocount
-		ngmsg	店力（みせぢから）とは，生産的な行動をとったり<br>うどんやそばを食べることによって手にはいるもので<br>ブラック工作員や金の招き猫によって，その力を使用することができます。
+		ngmsg	店力（店的力量），可以透過採取等生產性行動<br>以及吃烏龍麵和蕎麥麵獲得。<br>黑道小弟或招財貓需要使用這種力量。
 	@@USE
 		time	1m
-		action	ヒントを読む
-		name	オリジナルうどん（そば）について
-		info	オリジナルうどん（そば）の作り方の説明です
+		action	閱讀提示
+		name	關於原創烏龍麵（蕎麥麵）
+		info	原創烏龍麵（蕎麥麵）製作方法的說明
 		arg		nocount
-		ngmsg	うどん（そば）三昧とオリジナルうどん（そば）を除く全種類のうどん（そば）を1杯ずつ用意すると，<br>うどん（そば）職人はオリジナルうどん（そば）を開発することができるようになります。<br>オリジナルうどん（そば）には，好きな名前を付けられます。<br>この名前はショウウインドウ（陳列棚1）で販売したときに，ランキング中に表示されます。
+		ngmsg	除了烏龍麵（蕎麥麵）三昧以及原創烏龍麵（蕎麥麵）以外，需要準備全部種類的烏龍麵（蕎麥麵）各一碗，<br>烏龍麵（蕎麥麵）師傅似乎可以開發原創烏龍麵（蕎麥麵）。<br>原創烏龍麵（蕎麥麵）可以指定自己想要的名稱。<br>在櫥窗（展示架1）販售時，這個名字會在排行榜上顯示。
 	@@USE
 		time	1m
-		action	ヒントを読む
-		name	汚れた丼について
-		info	汚れた丼についての説明です
+		action	閱讀提示
+		name	關於髒掉的碗
+		info	髒掉的碗相關的說明
 		arg		nocount
-		ngmsg	うどんやそばが売れると，汚れた丼が倉庫にたまってきます。<br>（他店舗から買われたときには，丼は戻ってきません）<br>ただし，闇うどんと闇そばは例外で<br>一般市民も「ま，まずい！」と怒ったうえ，丼を叩き割ってしまうのです。
+		ngmsg	烏龍麵或蕎麥麵販售後，倉庫裡會產生髒掉的碗。<br>（從其他店舖裡購買的話，不會退還空碗）<br>但是，暗黑烏龍麵和暗黑蕎麥麵是例外<br>一般人會說「好，好難吃啊！」一怒之下把碗砸碎。
 	@@USE
 		time	1m
-		action	ヒントを読む
-		name	ヒントブックについて
-		info	ヒントブックの手に入れ方に関する説明です
+		action	閱讀提示
+		name	關於攻略本
+		info	攻略本獲得方法與相關的說明
 		arg		nocount
-		ngmsg	ヒントブックは，商品券と交換できます。<br>商品券は決算時の賞品としてもらえることがあります。<br>また，ヒントブックは福引きの景品で当たることもあります。<br>福引き補助券は，市場で買い物をするともらえることがあります。
+		ngmsg	攻略本可以透過商品券交換得到。<br>商品券為決算時可能得到的獎品。<br>另外，攻略本也可能在抽獎時抽到。<br>在市場購物時可能會獲得抽獎卷。
 	@@use
 		time	10m
 		scale	冊
-		action	換金する
-		name	換金する
-		info	ヒントブックを金券ショップに引き取ってもらいます
+		action	換成錢
+		name	換成錢
+		info	將攻略本拿去金券行換成錢
 		param	1000,5000
-			use		1	ヒントブック
+			use		1	攻略本
 		func	_local_
 			my $ret;
 			if (rand(1000)<300)
 			{
 				$DT->{money}+=$USE->{param1}*$count;
-				$ret='金券ショップのおやじに買いたたかれたようです<br>';
-				$ret.=GetMoneyString($USE->{param1}*$count).'で引き取ってもらいました';
+				$ret='金券行的大叔好像會買的樣子<br>';
+				$ret.='換到'.GetMoneyString($USE->{param1}*$count).'了';
 			}
 			else
 			{
 			$DT->{money}+=$USE->{param2}*$count;
-			$ret=GetMoneyString($USE->{param2}*$count).'で引き取ってもらいました';
+			$ret='換到'.GetMoneyString($USE->{param2}*$count).'了';
 			}
-			WriteLog(0,$DT->{id},"ヒントブックを換金しました");
+			WriteLog(0,$DT->{id},"將攻略本換成錢了");
 			return $ret;
 		_local_
 
 @@ITEM
 	no		68
-	type	ツール
+	type	工具
 	code	tool-paintr
-	name	赤の塗料
-	info	（使用できないアイテムです。破棄してください）
-	scale	缶
+	name	紅色顏料
+	info	（沒辦法使用的道具。請丟棄）
+	scale	罐
 	price	10000
 	cost	100
 	limit	1/0
@@ -3286,11 +3287,11 @@
 
 @@ITEM
 	no		69
-	type	ツール
+	type	工具
 	code	tool-paintb
-	name	青の塗料
-	info	（使用できないアイテムです。破棄してください）
-	scale	缶
+	name	藍色顏料
+	info	（沒辦法使用的道具。請丟棄）
+	scale	罐
 	price	10000
 	cost	100
 	limit	1/0
@@ -3298,11 +3299,11 @@
 
 @@ITEM
 	no		70
-	type	ツール
+	type	工具
 	code	tool-painto
-	name	オレンジの塗料
-	info	（使用できないアイテムです。破棄してください）
-	scale	缶
+	name	橘色顏料
+	info	（沒辦法使用的道具。請丟棄）
+	scale	罐
 	price	10000
 	cost	100
 	limit	1/0
@@ -3310,11 +3311,11 @@
 
 @@ITEM
 	no		71
-	type	ツール
+	type	工具
 	code	tool-painty
-	name	黄色の塗料
-	info	（使用できないアイテムです。破棄してください）
-	scale	缶
+	name	黃色顏料
+	info	（沒辦法使用的道具。請丟棄）
+	scale	罐
 	price	10000
 	cost	100
 	limit	1/0
@@ -3322,11 +3323,11 @@
 
 @@ITEM
 	no		72
-	type	ツール
+	type	工具
 	code	tool-paintg
-	name	緑の塗料
-	info	（使用できないアイテムです。破棄してください）
-	scale	缶
+	name	綠顏料
+	info	（沒辦法使用的道具。請丟棄）
+	scale	罐
 	price	10000
 	cost	100
 	limit	1/0
@@ -3334,11 +3335,11 @@
 
 @@ITEM
 	no		73
-	type	ツール
+	type	工具
 	code	tool-paintp
-	name	ピンクの塗料
-	info	（使用できないアイテムです。破棄してください）
-	scale	缶
+	name	粉紅色顏料
+	info	（沒辦法使用的道具。請丟棄）
+	scale	罐
 	price	10000
 	cost	100
 	limit	1/0
@@ -3346,11 +3347,11 @@
 
 @@ITEM
 	no		74
-	type	ツール
+	type	工具
 	code	tool-painte
-	name	紫の塗料
-	info	（使用できないアイテムです。破棄してください）
-	scale	缶
+	name	紫色顏料
+	info	（沒辦法使用的道具。請丟棄）
+	scale	罐
 	price	10000
 	cost	100
 	limit	1/0
@@ -3358,11 +3359,11 @@
 
 @@ITEM
 	no		75
-	type	ツール
+	type	工具
 	code	tool-paintk
-	name	黒の塗料
-	info	（使用できないアイテムです。破棄してください）
-	scale	缶
+	name	黒顏料
+	info	（沒辦法使用的道具。請丟棄）
+	scale	罐
 	price	10000
 	cost	100
 	limit	1/0
@@ -3370,10 +3371,10 @@
 
 @@ITEM
 	no		76
-	type	ツール
+	type	工具
 	code	tool-hatakea
-	name	耕す前の畑
-	info	肥料をたっぷり与えましょう
+	name	耕作前的田地
+	info	施予充足的的肥料吧
 	scale	反
 	price	5000
 	limit	40/2
@@ -3383,10 +3384,10 @@
 
 @@ITEM
 	no		77
-	type	ツール
+	type	工具
 	code	tool-hatakeb
-	name	よく耕した畑
-	info	しばらくすると収穫できるようになります
+	name	耕作後的田地
+	info	過一段時間就可以收割了
 	scale	反
 	price	10000
 	limit	20/0
@@ -3394,27 +3395,27 @@
 	flag	noshowcase|onlysend
 	funct	_local_
 		my($ITEM,@DT)=@_;
-		my $birth_per_day=40;  # 1日に収穫を待つ畑が40になる確率の設定
-		my $val          =1;  # 一度に収穫を待つ畑になる基本数
+		my $birth_per_day=40;  # 1日に待收割的田地が40になる確率の設定
+		my $val          =1;  # 一度に待收割的田地になる基本数
 		
 		my $birth_rate=$birth_per_day && (86400/$birth_per_day); # 0で割るのを阻止
 		foreach my $DT (@DT)
 		{
-			next if !$DT->{item}[@@ITEMNO"よく耕した畑"-1];
+			next if !$DT->{item}[@@ITEMNO"耕作後的田地"-1];
 			if(rand($birth_rate)<$TIMESPAN) # 1店舗につき「1日に$birth_per_day回」の確率で条件が真になる(ハズ…)
 			{
-				UseItemSub(@@ITEMNO"よく耕した畑",$val,$DT);
-				AddItemSub(@@ITEMNO"収穫を待つ畑",$val,$DT);
+				UseItemSub(@@ITEMNO"耕作後的田地",$val,$DT);
+				AddItemSub(@@ITEMNO"待收割的田地",$val,$DT);
 			}
 		}
 	_local_ 
 
 @@ITEM
 	no		78
-	type	ツール
+	type	工具
 	code	tool-hatakec
-	name	収穫を待つ畑
-	info	いろいろな収穫物が期待できそうです
+	name	待收割的田地
+	info	可以期待各式各樣的收穫
 	scale	反
 	price	20000
 	limit	20/0
@@ -3423,10 +3424,10 @@
 
 @@ITEM
 	no		79
-	type	ツール
+	type	工具
 	code	tool-ziten
-	name	自転車
-	info	買い物がちょっと楽になります
+	name	腳踏車
+	info	讓購物更輕鬆
 	scale	台
 	price	30000
 	cost	1000
@@ -3437,10 +3438,10 @@
 
 @@ITEM
 	no		80
-	type	ツール
+	type	工具
 	code	tool-syokki
-	name	食器洗い機
-	info	食器洗いが手早くできます
+	name	洗碗機
+	info	可以快速完成洗碗
 	scale	台
 	price	100000
 	cost	3000
@@ -3451,10 +3452,10 @@
 
 @@ITEM
 	no		81
-	type	ツール
+	type	工具
 	code	tool-keihou
-	name	警報機
-	info	店の安全対策に‥
+	name	警報器
+	info	為了店鋪安全...
 	scale	台
 	price	200000
 	cost	5000
@@ -3465,10 +3466,10 @@
 
 @@ITEM
 	no		82
-	type	ツール
+	type	工具
 	code	tool-kuruma
-	name	自動車
-	info	買い物がかなり楽になります
+	name	汽車
+	info	讓購物更輕鬆
 	scale	台
 	price	500000
 	cost	5000
@@ -3479,11 +3480,11 @@
 
 @@ITEM
 	no		83
-	type	ツール
+	type	工具
 	code	tool-neko
-	name	金の招き猫
-	info	店の守り神です
-	scale	体
+	name	招財貓
+	info	店裡的守護神
+	scale	尊
 	price	1000000
 	cost	1000
 	limit	1/0.2
@@ -3493,9 +3494,9 @@
 	@@use
 		time	3m
 		scale	回
-		action	拝む
-		name	拝む
-		info	商売繁盛を願って，金の招き猫を拝みます
+		action	膜拜
+		name	膜拜
+		info	為了生意興隆，膜拜招財貓
 			use		1	店力
 		func	_local_
 			my $val=$count;
@@ -3505,20 +3506,20 @@
 			{
 				$DT->{rank}-=$count*2;
 				$DT->{rank}=0 if $DT->{rank}<0;
-				WriteLog(2,0,$DT->{shopname}.'の店主が気を失って，救急車で運ばれました。');
-				WriteLog(2,0,'一度に'.$count.'回も金の招き猫を拝むなんて，正気の沙汰ではありません。');
-				$ret="‥気が付いたら病院のベッドの上でした";
+				WriteLog(2,0,$DT->{shopname}.'店主昏倒，被救護車抬走了。');
+				WriteLog(2,0,'一次拜了'.$count.'回招財貓，不一定是理智的。');
+				$ret="..當醒來時躺在病床上";
 			}
 			elsif($count>=20)
 			{
-				$ret='貧血を起こしてしまいました　一度に'.$count.'回は拝み過ぎです。';
+				$ret='膜拜太多次引起貧血 要等'.$count.'回合後才可以膜拜。';
 				WriteLog(0,$DT->{id},$ret);
 			}
 			else
 			{
 				$DT->{rank}+=int(rand($count+1))+$count;
 				$DT->{rank}=10000 if $DT->{rank}>10000;
-				$ret='金の招き猫を拝んで，今日も商売が順調にいく気がしました。';
+				$ret='膜拜招財貓後，感覺今天生意不錯。';
 				WriteLog(0,$DT->{id},$ret);
 			}
 			return $ret;
@@ -3530,31 +3531,31 @@
 	plustime	0h
 	code		loto
 	startfunc	loto
-	info		宝くじ抽選
+	info		彩卷抽選
 
 @@EVENT
 	start		30%
 	basetime	0h
 	plustime	0h
 	code		luckyneko
-	info		金の招き猫の招運
+	info		招財貓的財運
 	startfunc	_local_(200)
 		my($hitproba)=@_;
 		
-		foreach my $DT (@main'DT)
+		foreach my $DT (@main::DT)
 		{
 			next if rand(1000)>$hitproba;
 			{
-			foreach my $itemno (@@ITEMNO"金の招き猫")
+			foreach my $itemno (@@ITEMNO"招財貓")
 			{			
-			if ($DT->{item}[@@ITEMNO"金の招き猫"-1])
+			if ($DT->{item}[@@ITEMNO"招財貓"-1])
 			{
-				$DT->{item}[@@ITEMNO"金の招き猫"-1]=0;
+				$DT->{item}[@@ITEMNO"招財貓"-1]=0;
 				my $up=int(1000*(2-$DT->{rank}/5000));
 				$DT->{rank}+=$up;
 				$DT->{rank}=10000 if $DT->{rank}>10000;
-				WriteLog(2,0,$DT->{shopname}."の金の招き猫が，お店に幸運をもたらし天に昇っていきました。");
-				WriteLog(0,$DT->{id},"金の招き猫の不思議な力で，お店の人気が".int($up/100)."%上がりました");			}
+				WriteLog(2,0,$DT->{shopname}."的招財貓給店裡帶來的好運飛上天了。");
+				WriteLog(0,$DT->{id},"招財貓不可思議的力量，使店裡的人氣上升".int($up/100)."%了");			}
 			}		
 			}
 		}
@@ -3566,36 +3567,36 @@
 	basetime	0h
 	plustime	0h
 	code		yogoredon
-	info		汚れた丼の悪臭
+	info		髒掉的碗的惡臭
 	startfunc	_local_(500)
 		my($hitproba)=@_;
 		
-		foreach my $DT (@main'DT)
+		foreach my $DT (@main::DT)
 		{
 			next if rand(1000)>$hitproba;
 			{
-			foreach my $itemno (@@ITEMNO"汚れた丼")
+			foreach my $itemno (@@ITEMNO"髒掉的碗")
 			{			
-			if ($DT->{item}[@@ITEMNO"汚れた丼"-1]>=1000)
+			if ($DT->{item}[@@ITEMNO"髒掉的碗"-1]>=1000)
 			{
 				my $down=int($DT->{rank}/5);
 				$DT->{rank}-=$down;
 				$DT->{rank}=0 if $DT->{rank}<0;
-				WriteLog(2,0,$DT->{shopname}."にたまっている汚れた丼から悪臭が発生し，店の人気が下がりました。");
-				WriteLog(0,$DT->{id},"汚れた丼のせいで，お店の人気が".int($down/100)."%下がりました");			}
+				WriteLog(2,0,$DT->{shopname}."髒掉的碗散發出難聞的氣味，店裡的人氣下降了。");
+				WriteLog(0,$DT->{id},"因為髒掉的碗的關係，店裡的人氣下降".int($down/100)."%了");			}
 			}		
 			}
 		}
 		return 0;
 	_local_
 
-# オリジナルうどんで人気アップ
+# 原創烏龍麵で人気アップ
 @@EVENT
 	start		50%
 	basetime	0h
 	plustime	0h
 	code		udonpop
-	info		オリジナルうどん人気沸騰
+	info		原創烏龍麵人氣沸騰
 	startfunc	_local_
 		foreach(reverse(@DT))
 		{
@@ -3605,19 +3606,19 @@
 			my $up=int(300*(2-$_->{rank}/5000));
 			$_->{rank}+=$up;
 			$_->{rank}=10000 if $_->{rank}>10000;
-			return (0,$_->{shopname}.'特製うどん「'.$_->{user}->{udon}.'」が巷で噂になり，店の前は期待に胸を膨らませた客でいっぱいです。') ;
+			return (0,$_->{shopname}.'特製烏龍麵「'.$_->{user}->{udon}.'」成了街上熱門話題，店前坐滿了滿懷期待的顧客。') ;
 			}
 		}
 		return 0;
 	_local_
 
-# オリジナルそばで人気アップ
+# 原創蕎麥麵で人気アップ
 @@EVENT
 	start		50%
 	basetime	0h
 	plustime	0h
 	code		sobapop
-	info		オリジナルそば人気沸騰
+	info		原創蕎麥麵人氣沸騰
 	startfunc	_local_
 		foreach(reverse(@DT))
 		{
@@ -3627,7 +3628,7 @@
 			my $up=int(300*(2-$_->{rank}/5000));
 			$_->{rank}+=$up;
 			$_->{rank}=10000 if $_->{rank}>10000;
-			return (0,$_->{shopname}.'特製そば「'.$_->{user}->{soba}.'」が人気沸騰し，噂を聞きつけた客が店の前に行列をつくっています。') ;
+			return (0,$_->{shopname}.'特製蕎麥麵「'.$_->{user}->{soba}.'」成了街上熱門話題，店前坐滿了滿懷期待的顧客。') ;
 			}
 		}
 		return 0;
@@ -3638,7 +3639,7 @@
 	basetime	0h
 	plustime	0h
 	code		syokkiarai
-	info		食器洗い機の寿命
+	info		洗碗機的壽命
 	startfunc	_local_(100)
 		my($hitproba)=@_;
 		
@@ -3646,12 +3647,12 @@
 		{			
 			next if rand(1000)>$hitproba;
 			{
-			foreach my $itemno (@@ITEMNO"食器洗い機")
+			foreach my $itemno (@@ITEMNO"洗碗機")
 			{
-				if ($DT->{item}[@@ITEMNO"食器洗い機"-1]==1)					{
-				$DT->{item}[@@ITEMNO"食器洗い機"-1]=0;
-				WriteLog(2,0,$DT->{shopname}."の食器洗い機が故障したようです。");
-				WriteLog(0,$DT->{id},"故障した食器洗い機を廃棄しました");
+				if ($DT->{item}[@@ITEMNO"洗碗機"-1]==1)					{
+				$DT->{item}[@@ITEMNO"洗碗機"-1]=0;
+				WriteLog(2,0,$DT->{shopname}."的洗碗機壞掉了。");
+				WriteLog(0,$DT->{id},"丟棄了壞掉的洗碗機。");
 				}
 			}
 			}
@@ -3664,7 +3665,7 @@
 	basetime	0h
 	plustime	0h
 	code		haisya
-	info		廃車
+	info		爛車
 	startfunc	_local_(100)
 		my($hitproba)=@_;
 		
@@ -3672,12 +3673,12 @@
 		{			
 			next if rand(1000)>$hitproba;
 			{
-			foreach my $itemno (@@ITEMNO"自動車")
+			foreach my $itemno (@@ITEMNO"汽車")
 			{
-				if ($DT->{item}[@@ITEMNO"自動車"-1]==1)	{
-				$DT->{item}[@@ITEMNO"自動車"-1]=0;
-				WriteLog(2,0,$DT->{shopname}."が故障の多い自動車を廃車したようです。");
-				WriteLog(0,$DT->{id},"自動車を廃車しました");
+				if ($DT->{item}[@@ITEMNO"汽車"-1]==1)	{
+				$DT->{item}[@@ITEMNO"汽車"-1]=0;
+				WriteLog(2,0,$DT->{shopname}."的汽車因為多次故障所以進行報廢了。");
+				WriteLog(0,$DT->{id},"對汽車進行了報廢");
 				}
 			}
 			}
@@ -3691,9 +3692,9 @@
 	basetime	5h
 	plustime	5h
 	code		happy
-	startmsg	商店街の大売り出しが始まりました。
-	endmsg		大売り出しが終わりました。
-	info		大売り出しで商店街は活気にあふれています。
+	startmsg	商店街開始進行大特賣了。
+	endmsg		大特賣結束了。
+	info		商店街很熱鬧，買氣提升了。
 	func		_local_
 		my $time=$TIMESPAN;
 		$time=10*3600 if $time>10*3600; # 最大10%制限
@@ -3712,40 +3713,40 @@
 	basetime	6h
 	plustime	24h
 	code		udon-boom
-	startmsg	巷ではうどんがブームのようです。
-	endmsg		うどんブームが終わりました。
-	info		うどんの人気が高まっています。
-		param	すうどん			pop/1.5
-		param	わかめうどん			pop/1.5
-		param	きつねうどん			pop/1.5
-		param	丸天うどん			pop/1.5
-		param	えび天うどん			pop/2
-		param	うどん三昧			pop/2
-		param	キャビアうどん			pop/2
-		param	トリュフうどん			pop/2
-		param	フォアグラうどん		pop/2
-		param	博多うどん			pop/2
-		param	オリジナルうどん		pop/2
+	startmsg	烏龍麵似乎是街頭的熱潮。
+	endmsg		烏龍麵熱潮結束了。
+	info		烏龍麵越來越受歡迎。
+		param	清湯烏龍麵			pop/1.5
+		param	海帶芽烏龍麵			pop/1.5
+		param	豆皮烏龍麵			pop/1.5
+		param	天婦羅烏龍麵			pop/1.5
+		param	炸蝦烏龍麵			pop/2
+		param	烏龍麵三昧			pop/2
+		param	魚子醬烏龍麵			pop/2
+		param	松露烏龍麵			pop/2
+		param	鵝肝烏龍麵		pop/2
+		param	博多烏龍麵			pop/2
+		param	原創烏龍麵		pop/2
 
 @@EVENT
 	start		10%
 	basetime	6h
 	plustime	24h
 	code		soba-boom
-	startmsg	巷ではそばがブームのようです。
-	endmsg		そばブームが終わりました。
-	info		そばの人気が高まっています。
-		param	かけそば			pop/1.5
-		param	わかめそば			pop/1.5
-		param	きつねそば			pop/1.5
-		param	丸天そば			pop/1.5
-		param	えび天そば			pop/2
-		param	そば三昧			pop/2
-		param	キャビアそば			pop/2
-		param	トリュフそば			pop/2
-		param	フォアグラそば			pop/2
-		param	博多そば			pop/2
-		param	オリジナルそば			pop/2
+	startmsg	蕎麥麵似乎是街頭的熱潮。
+	endmsg		蕎麥麵熱潮結束了。
+	info		蕎麥麵越來越受歡迎了。
+		param	清湯蕎麥麵			pop/1.5
+		param	海帶芽蕎麥麵			pop/1.5
+		param	豆皮蕎麥麵			pop/1.5
+		param	天婦羅蕎麥麵			pop/1.5
+		param	炸蝦蕎麥麵			pop/2
+		param	蕎麥麵三昧			pop/2
+		param	魚子醬蕎麥麵			pop/2
+		param	松露蕎麥麵			pop/2
+		param	鵝肝蕎麥麵			pop/2
+		param	博多蕎麥麵			pop/2
+		param	原創蕎麥麵			pop/2
 
 @@EVENT
 	start		5%
@@ -3753,10 +3754,10 @@
 	plustime	16h
 	code		plusup-katuo
 	group		sui
-	startmsg	かつおが豊漁です。
-	endmsg		かつおの流通が平常に戻りました。
-	info		かつおの流通量が増えています。
-		param	かつお				plus=300
+	startmsg	鰹魚豐收了。
+	endmsg		鰹魚的流通量回到平常的水準了。
+	info		鰹魚的流通量增加了。
+		param	鰹魚				plus=300
 
 @@EVENT
 	start		1%
@@ -3764,10 +3765,10 @@
 	plustime	18h
 	code		plusup-tyouzame
 	group		sui
-	startmsg	ちょうざめの大群が浜にうち寄せました。
-	endmsg		ちょうざめの流通が平常に戻りました。
-	info		ちょうざめの流通量が増えています。
-		param	ちょうざめ			plus=500
+	startmsg	一大群鱘魚被沖上海灘。
+	endmsg		鱘魚的流通量回到平常的水準了。
+	info		鱘魚的流通量增加了。
+		param	鱘魚			plus=500
 
 # 低資金優先でギルド未加盟店に資金援助イベント
 @@EVENT
@@ -3785,7 +3786,7 @@
 			{
 			$_->{money}+=$money;
 			$_->{money}=$main::MAX_MONEY if $_->{money}>$main::MAX_MONEY;
-			return (0,"商店会から".$_->{shopname}.'へ'.GetMoneyString($money).'の補助金が支給されました');
+			return (0,"商店街自治會發給".$_->{shopname}.'共'.GetMoneyString($money).'的補助金');
 			}
 		}
 		return 0;
@@ -3797,7 +3798,7 @@
 	basetime	0h		#★持続系のイベントではないので時間は0。
 	plustime	0h
 	code		manbiki
-	info		万引き
+	info		偷竊
 	startfunc	_local_(400,200)
 		#★実はこの関数がイベントの本体になってる
 		my($hitproba,$breakproba)=@_;
@@ -3807,12 +3808,12 @@
 		{
 			next if rand(1000)>$hitproba;
 			
-			if($DT->{item}[@@ITEMNO"警報機"-1])
+			if($DT->{item}[@@ITEMNO"警報器"-1])
 			{
-				return (0,$DT->{shopname}.'へ万引きが入りましたが阻止されました。') if rand(1000)>$breakproba;
+				return (0,$DT->{shopname}.'有人企圖入室行竊，但被制止了。') if rand(1000)>$breakproba;
 				
-				$DT->{item}[@@ITEMNO"警報機"-1]--;
-				return (0,$DT->{shopname}.'へ万引きが入り，'.$ITEM[@@ITEMNO"警報機"]->{name}.'が破壊されました。');
+				$DT->{item}[@@ITEMNO"警報器"-1]--;
+				return (0,$DT->{shopname}.'有人企圖入室行竊，'.$ITEM[@@ITEMNO"警報器"]->{name}.'被破壊了。');
 			}
 			
 			my $count=0;
@@ -3825,8 +3826,8 @@
 				$DT->{item}[$itemno-1]-=$cnt;
 				$count+=$cnt*$DT->{price}[$idx];
 			}
-			return (0,$DT->{shopname}.'が総額'.GetMoneyString($count).'相当の万引き被害に遭いました。') if $count;
-			return (0,$DT->{shopname}.'に入った万引き犯は，何も取らずに逃げました。');
+			return (0,$DT->{shopname}.'被偷了相當於總額'.GetMoneyString($count).'的商品。') if $count;
+			return (0,'闖入'.$DT->{shopname}.'的小偷什麼都沒拿就逃走了。');
 		}
 		return 0;
 	_local_
@@ -3836,7 +3837,7 @@
 	basetime	0h
 	plustime	0h
 	code		goutou
-	info		強盗
+	info		強盜
 	startfunc	_local_(700)
 		#★実はこの関数がイベントの本体になってる
 		my($hitproba)=@_;
@@ -3846,10 +3847,10 @@
 		{
 			next if rand(1000)>$hitproba;
 			
-			if($DT->{item}[@@ITEMNO"警報機"-1])
+			if($DT->{item}[@@ITEMNO"警報器"-1])
 			{
-				$DT->{item}[@@ITEMNO"警報機"-1]--;
-				return (0,$DT->{shopname}.'へ強盗が入り，'.$ITEM[@@ITEMNO"警報機"]->{name}.'が破壊されました。');
+				$DT->{item}[@@ITEMNO"警報器"-1]--;
+				return (0,$DT->{shopname}.'有強盜闖入，'.$ITEM[@@ITEMNO"警報器"]->{name}.'被破壞了。');
 			}
 			
 			$DT->{rank}-=int($DT->{rank}/5);
@@ -3864,8 +3865,8 @@
 				$DT->{item}[$itemno-1]-=$cnt;
 				$count+=$cnt*$DT->{price}[$idx];
 			}
-			return (0,$DT->{shopname}.'が総額'.GetMoneyString($count).'相当の強盗被害に遭いました。') if $count;
-			return (0,$DT->{shopname}.'に入った強盗犯は，何も取らずに逃げました。');
+			return (0,$DT->{shopname}.'被搶了相當於總額'.GetMoneyString($count).'的商品。') if $count;
+			return (0,'闖入'.$DT->{shopname}.'的強盜什麼都沒拿就逃走了。');
 		}
 		return 0;
 	_local_
@@ -3875,7 +3876,7 @@
 	basetime	0h
 	plustime	0h
 	code		blacktime
-	info		時の渦
+	info		時間漩渦
 	startfunc	_local_(700)
 		my($hitproba)=@_;
 		foreach my $DT (@DT)
@@ -3889,8 +3890,8 @@
 				$cnt=12 if $cnt>12;
 				$DT->{time}+=3600*$cnt;
 				$DT->{user}->{black}=0;
-				WriteLog(0,$DT->{id},'時の渦に時間を吸い込まれました　－'.$cnt.'時間');
-				return (0,'度重なる時間操作のために時の渦が発生し，'.$DT->{shopname}.'の時間を吸い込んだようです。');
+				WriteLog(0,$DT->{id},'的時間被時間漩渦吸收了　－'.$cnt.'小時');
+				return (0,'由於重複操作時間的關係，產生了時間漩渦，'.$DT->{shopname}.'的時間被吸收了。');
 			}
 		}
 		return 0;
@@ -3912,20 +3913,20 @@
 			
 			$_->{rank}+=$pop;
 			$_->{rank}=10000 if $_->{rank}>10000;
-			return (0,$_->{shopname}.'が雑誌で紹介され，人気が上がったようです。');
+			return (0,'雜誌上介紹了'.$_->{shopname}.'，人氣提升了。');
 		}
 		return 0;
 	_local_
 
 @@FUNCEVENT
 ######################################################################
-# ★宝くじイベント
+# ★彩卷イベント
 # usage:  loto
 # return: 0 固定
 ######################################################################
 sub loto
 {
-	WriteLog(2,0,"宝くじの抽選が行われました。");
+	WriteLog(2,0,"彩卷的開獎開始了。");
 	foreach my $DT (@main::DT)
 	{
 		my $count=$DT->{item}[65-1];
@@ -3953,30 +3954,30 @@ sub loto
 				my $getmoney=(0,1000000000,150000000,5000000,100000,10000)[$hit];
 				
 				$DT->{moneystock}+=$getmoney;
-				$DT->{money}=$main'MAX_MONEY if $DT->{money}>$main'MAX_MONEY;
+				$DT->{money}=$main::MAX_MONEY if $DT->{money}>$main::MAX_MONEY;
 			}
 		}
 		my $hitlog=5;
 		$hitlog=1;
-		WriteLog(($hitlog<=3?1:2),0,$DT->{shopname}."が1等".GetMoneyString(1000000000)."を当てました！") if $hit1>0;
+		WriteLog(($hitlog<=3?1:2),0,$DT->{shopname}."抽中了頭獎".GetMoneyString(1000000000)."！") if $hit1>0;
 		$hitlog=2;
-		WriteLog(($hitlog<=3?1:2),0,$DT->{shopname}."が2等".GetMoneyString(150000000)."を$hit2本当てました") if $hit2>0;
+		WriteLog(($hitlog<=3?1:2),0,$DT->{shopname}."抽中了二獎".GetMoneyString(150000000)."$hit2次") if $hit2>0;
 		$hitlog=3;
-		WriteLog(($hitlog<=3?1:2),0,$DT->{shopname}."が3等".GetMoneyString(5000000)."を$hit3本当てました") if $hit3>0;
+		WriteLog(($hitlog<=3?1:2),0,$DT->{shopname}."抽中了三獎".GetMoneyString(5000000)."$hit3次") if $hit3>0;
 		$hitlog=4;
-		WriteLog(($hitlog<=3?1:2),0,$DT->{shopname}."が4等".GetMoneyString(100000)."を$hit4本当てました") if $hit4>0;
+		WriteLog(($hitlog<=3?1:2),0,$DT->{shopname}."抽中了四獎".GetMoneyString(100000)."$hit4次") if $hit4>0;
 		my $hitlog=5;
-		WriteLog(($hitlog<=3?1:2),0,$DT->{shopname}."が5等".GetMoneyString(10000)."を$hit5本当てました") if $hit5>0;
+		WriteLog(($hitlog<=3?1:2),0,$DT->{shopname}."抽中了五獎".GetMoneyString(10000)."$hit5次") if $hit5>0;
 	}
 	return 0;
 }
 
 @@FUNCINIT
-#自転車を持っている場合，買い物に必要な時間を3/4にする。
-$TIME_SEND_ITEM=int($TIME_SEND_ITEM/4*3) if (($DT->{item}[@@ITEMNO"自転車"-1])&&(!$DT->{item}[@@ITEMNO"自動車"-1]));
+#腳踏車を持っている場合，買い物に必要な時間を3/4にする。
+$TIME_SEND_ITEM=int($TIME_SEND_ITEM/4*3) if (($DT->{item}[@@ITEMNO"腳踏車"-1])&&(!$DT->{item}[@@ITEMNO"汽車"-1]));
 
-#自動車を持っている場合，買い物に必要な時間を1/4にする。
-$TIME_SEND_ITEM=int($TIME_SEND_ITEM/4) if $DT->{item}[@@ITEMNO"自動車"-1];
+#汽車を持っている場合，買い物に必要な時間を1/4にする。
+$TIME_SEND_ITEM=int($TIME_SEND_ITEM/4) if $DT->{item}[@@ITEMNO"汽車"-1];
 
 @@FUNCITEM
 ######################################################################
@@ -3987,7 +3988,7 @@ sub lostman
 	my $itemno=$USE->{itemno};
 	if(rand(1000)<$USE->{param1})
 	{
-		UseItem($itemno,1,'<br>仕事を終えた'.$ITEM[$itemno]->{name}.'が，黙って去っていきました');
+		UseItem($itemno,1,'<br>工作結束後'.$ITEM[$itemno]->{name}.'默默離去了');
 	}
 	return "";
 }
@@ -4005,37 +4006,37 @@ sub UpdateResetBefore #決算直前の処理(関数名固定)
 				['商品券',	[[@@ITEMNO "商品券", 5],			],],
 				['商品券',	[[@@ITEMNO "商品券", 4],			],],
 				['商品券',	[[@@ITEMNO "商品券", 3],			],],
-				['福引き補助券',	[[@@ITEMNO "福引き補助券", 5],		],],
-				['防犯用品',	[[@@ITEMNO "警報機", 1],		],],
-				['肥料トラック1台分',[[@@ITEMNO "堆肥", 1000],	],],
-				['食器',[[@@ITEMNO "きれいな丼", 500],	],],
+				['抽獎卷',	[[@@ITEMNO "抽獎卷", 5],		],],
+				['商品防竊',	[[@@ITEMNO "警報器", 1],		],],
+				['肥料一卡車',[[@@ITEMNO "堆肥", 1000],	],],
+				['食器',[[@@ITEMNO "乾淨的碗", 500],	],],
 			],
 			[
 				['商品券',	[[@@ITEMNO "商品券", 3],			],],
 				['商品券',	[[@@ITEMNO "商品券", 2],			],],
-				['福引き補助券',	[[@@ITEMNO "福引き補助券", 3],		],],
-				['食器',[[@@ITEMNO "きれいな丼", 300],	],],
+				['抽獎卷',	[[@@ITEMNO "抽獎卷", 3],		],],
+				['食器',[[@@ITEMNO "乾淨的碗", 300],	],],
 			],
 			[
-				['福引き補助券',	[[@@ITEMNO "福引き補助券", 2],		],],
+				['抽獎卷',	[[@@ITEMNO "抽獎卷", 2],		],],
 				['商品券',	[[@@ITEMNO "商品券", 2],			],],
 				['商品券',	[[@@ITEMNO "商品券", 1],			],],
-				['食器',[[@@ITEMNO "きれいな丼", 200],	],],
+				['食器',[[@@ITEMNO "乾淨的碗", 200],	],],
 			],
 			[
 				['商品券',	[[@@ITEMNO "商品券", 2],			],],
 				['商品券',	[[@@ITEMNO "商品券", 1],			],],
-				['福引き補助券',	[[@@ITEMNO "福引き補助券", 1],		],],
+				['抽獎卷',	[[@@ITEMNO "抽獎卷", 1],		],],
 			],
 		);
 		
-		TopGetItem($DT[0],$TOP123[0],"みごと優勝の") if defined($DT[0]);
-		TopGetItem($DT[1],$TOP123[1],"惜しくも2位の") if defined($DT[1]);
-		TopGetItem($DT[2],$TOP123[2],"3位入賞の") if defined($DT[2]);
+		TopGetItem($DT[0],$TOP123[0],"輝煌勝利的") if defined($DT[0]);
+		TopGetItem($DT[1],$TOP123[1],"可惜第二名的") if defined($DT[1]);
+		TopGetItem($DT[2],$TOP123[2],"第三名獲勝的") if defined($DT[2]);
 	
 		for(my $i=9; $i<$#DT; $i+=10)
 		{
-			TopGetItem($DT[$i],$TOP123[3],"ジャスト".($i+1)."位の") if defined($DT[$i]);
+			TopGetItem($DT[$i],$TOP123[3],"只有".($i+1)."名") if defined($DT[$i]);
 		}
 		
 		sub TopGetItem
@@ -4045,7 +4046,7 @@ sub UpdateResetBefore #決算直前の処理(関数名固定)
 			my @list=@{$itemlist};
 			my @getitem=@{$list[int(rand($#list+1))]};
 			
-			my $msg=$head.$DT->{shopname}."には，商店会より".$getitem[0]."が贈られました。";
+			my $msg=$head.$DT->{shopname}."，收到商店街自治會贈送的".$getitem[0]."了。";
 			WriteLog(2,0,0,$msg,1);
 			foreach (@{$getitem[1]})
 			{
@@ -4053,9 +4054,9 @@ sub UpdateResetBefore #決算直前の処理(関数名固定)
 				
 				my $cnt=AddItem($DT,$itemnocount[0],$itemnocount[1]);
 				my $ITEM=$ITEM[$itemnocount[0]];
-				WriteLog(0,$DT->{id},0,$head."賞品として".$ITEM->{name}."を".$itemnocount[1].$ITEM->{scale}."獲得しました。",1);
+				WriteLog(0,$DT->{id},0,"作為".$head."獎品，獲得".$ITEM->{name}." ".$itemnocount[1].$ITEM->{scale}."了。",1);
 				$cnt=$itemnocount[1]-$cnt;
-				WriteLog(0,$DT->{id},0,"しかし最大所持数以上だったので".$cnt.$ITEM->{scale}."破棄しました",1) if $cnt;
+				WriteLog(0,$DT->{id},0,"但是由於超過了最大持有數量，".$cnt.$ITEM->{scale}."被丟棄了",1) if $cnt;
 			}
 		}
 	}
@@ -4080,7 +4081,7 @@ if(@@VALUE"NewShopItem")
 
 # $DEFINE_FUNCNEW_NOLOG=1 を設定すると，システム側の最近の出来事新装開店メッセージを抑制します。
 $DEFINE_FUNCNEW_NOLOG=1;
-WriteLog(1,0,0,$DT->{shopname}."がリアカーを引いて，この街に現れました。",1);
+WriteLog(1,0,0,$DT->{shopname}."拉著一輛拖車，出現在城鎮上了。",1);
 
 # その他，新装開店時に独自の処理を追加できます。
 
@@ -4088,17 +4089,17 @@ WriteLog(1,0,0,$DT->{shopname}."がリアカーを引いて，この街に現れ
 
 SetUserDataEx($DT,'_so_move_in',$NOW_TIME); # 移転時刻を記録
 
-$DT->{item}[67-1]=1;	# ヒントブックをプレゼント
+$DT->{item}[67-1]=1;	# 攻略本をプレゼント
 if($DT->{job} eq 'man')
 {
-	# 人材派遣業(man)には移転消費時間の1/2を返還
+	# 人力仲介(man)には移転消費時間の1/2を返還
 	$DT->{_MoveTownTime}=int($DT->{_MoveTownTime}/2);
 	EditTime($DT,$DT->{_MoveTownTime});
-	WriteLog(0,$DT->{id},0,'移転時間が半分の'.GetTime2HMS($DT->{_MoveTownTime}).'で済んだようです',1);
+	WriteLog(0,$DT->{id},0,'轉移時間大概是'.GetTime2HMS($DT->{_MoveTownTime}).'會完成',1);
 }
 if(GetUserDataEx($DT,'_so_present_money'))
 {
-	WriteLog(0,$DT->{id},0,'移転元の街から餞別として'.GetMoneyString(GetUserDataEx($DT,'_so_present_money')).'をもらいました',1);
+	WriteLog(0,$DT->{id},0,'原始轉移街道送了餞別禮，得到'.GetMoneyString(GetUserDataEx($DT,'_so_present_money')).'了',1);
 	SetUserDataEx($DT,'_so_present_money','');
 }
 
@@ -4120,12 +4121,12 @@ if(GetUserDataEx($DT,'_so_move_in'))
 
 if($BUY->{whole})
 {
-	# 市場からの仕入の場合，\500000に付き1枚の福引き補助券を進呈する。
+	# 市場からの仕入の場合，\500000に付き1枚の抽獎卷を進呈する。
 	my $price=$BUY->{num}*$BUY->{price};
 	my $count=int $price/500000;
 	
-	$count=AddItemSub(@@ITEMNO"福引き補助券",$count,$BUY->{dt}) if $count;
-	WriteLog(0,$BUY->{dt}{id},'市場から福引き補助券を'.$count.'枚もらいました') if $count;
+	$count=AddItemSub(@@ITEMNO"抽獎卷",$count,$BUY->{dt}) if $count;
+	WriteLog(0,$BUY->{dt}{id},'收到來自市場的抽獎卷'.$count.'枚了') if $count;
 }
 
 @@END #定義終了宣言(以降コメント扱い)

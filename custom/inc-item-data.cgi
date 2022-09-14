@@ -3715,7 +3715,7 @@
 	code		udon-boom
 	startmsg	烏龍麵似乎是街頭的熱潮。
 	endmsg		烏龍麵熱潮結束了。
-	info		烏龍麵越來越受歡迎。
+	info		烏龍麵越來越受歡迎了。
 		param	清湯烏龍麵			pop/1.5
 		param	海帶芽烏龍麵			pop/1.5
 		param	豆皮烏龍麵			pop/1.5

@@ -1,0 +1,635 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. ($DATA_DIR)
+#: uron/admin.cgi:23
+msgid " ディレクトリ %1 のパーミッションを見直してください"
+msgstr ""
+
+#: uron/custom/inc-html-ranking.cgi:68
+msgid " （他店のオリジナルうどん）"
+msgstr ""
+
+#: uron/custom/inc-html-ranking.cgi:73
+msgid " （他店のオリジナルそば）"
+msgstr ""
+
+#: uron/admin.cgi:20
+msgid "$DATA_DIR の設定不良，もしくは，$DATA_DIR ディレクトリが作成されていません"
+msgstr ""
+
+#: uron/admin.cgi:21
+msgid "$SESSION_DIR $TEMP_DIR $LOG_DIR $BACKUP_DIR $SUBDATA_DIR 辺りの設定が異常です"
+msgstr ""
+
+#. ($HTML_TITLE)
+#: uron/admin.cgi:86 uron/admin.cgi:89
+msgid "%1 管理室"
+msgstr ""
+
+#. ("<BIG>$TITLE[$Q{t}]</BIG>")
+#: uron/custom/library.cgi:491
+msgid "%1については，以下の本が見つかりました。"
+msgstr ""
+
+#. (($STATE->{leader} ? $DT[$lid]->{name} : $BAL_NAME)
+#: uron/custom/inc-town.cgi:133
+msgid "%1の暴政に断固ハンターイ！"
+msgstr ""
+
+#: uron/custom/inc-html-ranking.cgi:47 uron/custom/inc-html-top.cgi:25
+msgid "(新)"
+msgstr ""
+
+#. (($MAX_MOVE_USER-$DTusercount)
+#: uron/index.cgi:26
+msgid "<small>（移転：残り%1名様）</small>"
+msgstr ""
+
+#: uron/index.cgi:26
+msgid "<small>（移転：現在満員）</small>"
+msgstr ""
+
+#: uron/custom/inc-menu.cgi:24
+msgid "LogOut"
+msgstr ""
+
+#: uron/custom/inc-html-ranking.cgi:28
+msgid "RANK"
+msgstr ""
+
+#: uron/custom/inc-menu.cgi:49
+msgid "wis"
+msgstr ""
+
+#: uron/custom/library.cgi:189
+msgid "【上級】ギルド"
+msgstr ""
+
+#: uron/custom/library.cgi:267
+msgid "【上級】ドラゴンレース"
+msgstr ""
+
+#: uron/custom/library.cgi:423
+msgid "【上級】結婚"
+msgstr ""
+
+#: uron/custom/library.cgi:340
+msgid "【上級】領主制度"
+msgstr ""
+
+#. ($MAX_USER - $DTusercount)
+#: uron/index.cgi:24
+msgid "【新規店舗オープン】<small>残り %1 名様</small>"
+msgstr ""
+
+#: uron/index.cgi:25
+msgid "【新規店舗オープン】<small>現在満員</small>"
+msgstr ""
+
+#: uron/custom/inc-town.cgi:117
+msgid "うちのスライムまた負けちゃった・・・"
+msgstr ""
+
+#: uron/custom/orilist.cgi:7
+msgid "うどん"
+msgstr ""
+
+#: uron/custom/staff.cgi:27
+msgid "うどんそば仕様原作"
+msgstr ""
+
+#: uron/custom/inc-menu.cgi:21
+msgid "お掃除"
+msgstr ""
+
+#: uron/custom/inc-hometown.cgi:43
+msgid "きゃんきゃんっ"
+msgstr ""
+
+#: uron/custom/inc-new.cgi:11
+msgid "このゲームは，ブラウザでプレイできる経営シミュレーションＲＰＧです。"
+msgstr ""
+
+#: uron/custom/inc-hometown.cgi:48
+msgid "この街は警戒がぬるくてラッキー♪"
+msgstr ""
+
+#: uron/custom/inc-palace.cgi:11 uron/custom/inc-palace.cgi:12
+msgid "ずっと食べたいと思っているのじゃが，この身では博多には行けぬ。"
+msgstr ""
+
+#: uron/custom/orilist.cgi:8
+msgid "そば"
+msgstr ""
+
+#: uron/custom/staff.cgi:17
+msgid "なお，素材をゲームから直接取り出して利用しないでください。"
+msgstr ""
+
+#: uron/custom/inc-menu.cgi:138
+msgid "なし"
+msgstr ""
+
+#: uron/custom/inc-new.cgi:8
+msgid "はじめに"
+msgstr ""
+
+#: uron/custom/inc-hometown.cgi:38
+msgid "はやくマイホームを建てないとなぁ・・・"
+msgstr ""
+
+#: uron/custom/inc-menu.cgi:135
+msgid "ほか"
+msgstr ""
+
+#: uron/custom/inc-town.cgi:127
+msgid "ぽかぽかして気持ちええのぉ・・・"
+msgstr ""
+
+#: uron/custom/inc-town.cgi:134
+msgid "もっと市民の安全を考えろーっ"
+msgstr ""
+
+#: uron/custom/inc-hometown.cgi:39
+msgid "やっと結婚できたねっ"
+msgstr ""
+
+#: uron/custom/inc-hometown.cgi:34
+msgid "わーい わーい"
+msgstr ""
+
+#: uron/custom/inc-new.cgi:30
+msgid "アイコン"
+msgstr ""
+
+#: uron/custom/inc-new.cgi:41
+msgid "アイコン一覧"
+msgstr ""
+
+#: uron/custom/staff.cgi:31
+msgid "アイコン（追加）"
+msgstr ""
+
+#: uron/custom/orilist.cgi:27
+msgid "オリジナルうどん開発店"
+msgstr ""
+
+#: uron/custom/orilist.cgi:59
+msgid "オリジナルそば開発店"
+msgstr ""
+
+#: uron/custom/inc-menu.cgi:40 uron/custom/inc-town.cgi:61
+msgid "ギルド"
+msgstr ""
+
+#: uron/sindex-mob.html:11 uron/sindex.html:39
+msgid "クッキーで保存"
+msgstr ""
+
+#: uron/custom/staff.cgi:16
+msgid "ゲームの各部分についての著作権は，それぞれ下記の方々に帰属します。"
+msgstr ""
+
+#: uron/custom/library.cgi:475
+msgid "ゲームをプレイするのに必要な知識から，高度な情報まで"
+msgstr ""
+
+#: uron/custom/inc-html-ranking.cgi:18 uron/custom/inc-html-top.cgi:13
+msgid "ジョブ"
+msgstr ""
+
+#: uron/sindex.html:45
+msgid "スタッフロール"
+msgstr ""
+
+#: uron/custom/inc-palace.cgi:16
+msgid "セリフ"
+msgstr ""
+
+#: uron/custom/inc-menu.cgi:117
+msgid "トップ"
+msgstr ""
+
+#. ($TOP_RANKING_PAGE_ROWS)
+#: uron/custom/inc-html-top.cgi:7
+msgid "トップ %1の店舗"
+msgstr ""
+
+#: uron/custom/inc-new.cgi:43 uron/sindex-mob.html:10 uron/sindex.html:38
+msgid "パスワード"
+msgstr ""
+
+#: uron/custom/inc-new.cgi:54
+msgid "パスワードは他人が推測できないようなものを。"
+msgstr ""
+
+#: uron/custom/inc-new.cgi:44
+msgid "パスワードもう一度"
+msgstr ""
+
+#: uron/custom/staff.cgi:12
+msgid "パスワード漏れの危険があるので表示中止します。"
+msgstr ""
+
+#. ($fname)
+#: uron/_config.cgi:227
+msgid "ファイルが見つかりません - %1"
+msgstr ""
+
+#: uron/custom/library.cgi:98
+msgid "プレイ方法（中級）"
+msgstr ""
+
+#: uron/custom/library.cgi:48
+msgid "プレイ方法（初級）"
+msgstr ""
+
+#: uron/custom/library.cgi:148
+msgid "プレイ方法（用語）"
+msgstr ""
+
+#: uron/custom/inc-menu.cgi:117
+msgid "ホーム"
+msgstr ""
+
+#: uron/custom/staff.cgi:33
+msgid "マップ・キャラ"
+msgstr ""
+
+#: uron/admin.cgi:134
+msgid "マニュアルを参照して正しく設定して下さい"
+msgstr ""
+
+#: uron/custom/inc-new.cgi:31
+msgid "ランダム"
+msgstr ""
+
+#: uron/custom/library.cgi:10
+msgid "ルールと注意"
+msgstr ""
+
+#: uron/custom/staff.cgi:29
+msgid "ロゴ・ジョブイラスト"
+msgstr ""
+
+#: uron/custom/inc-html-ranking.cgi:36
+msgid "一押"
+msgstr ""
+
+#: uron/custom/inc-town.cgi:111
+msgid "一気にケリをつけようっ"
+msgstr ""
+
+#: uron/custom/inc-html-ranking.cgi:37
+msgid "一言"
+msgstr ""
+
+#: uron/custom/inc-menu.cgi:45
+msgid "交流"
+msgstr ""
+
+#: uron/custom/inc-html-ranking.cgi:31 uron/custom/inc-html-top.cgi:14
+msgid "人気"
+msgstr ""
+
+#: uron/custom/inc-html-ranking.cgi:20 uron/custom/inc-html-top.cgi:15
+msgid "今期売上"
+msgstr ""
+
+#: uron/custom/inc-menu.cgi:43
+msgid "住宅地"
+msgstr ""
+
+#: uron/custom/inc-palace.cgi:10 uron/custom/inc-palace.cgi:8 uron/custom/inc-palace.cgi:9
+msgid "余は，いまグルメに凝っていてな。珍味を食したいと思っておるのじゃ。"
+msgstr ""
+
+#: uron/custom/inc-menu.cgi:29 uron/custom/inc-town.cgi:39
+msgid "依頼所"
+msgstr ""
+
+#: uron/custom/inc-menu.cgi:20
+msgid "倉庫"
+msgstr ""
+
+#: uron/custom/inc-menu.cgi:42
+msgid "傭兵所"
+msgstr ""
+
+#: uron/custom/inc-town.cgi:74
+msgid "兵士駐屯所"
+msgstr ""
+
+#: uron/custom/inc-new.cgi:47
+msgid "出店キーワード"
+msgstr ""
+
+#: uron/custom/inc-html-ranking.cgi:40
+msgid "創業"
+msgstr ""
+
+#: uron/custom/inc-new.cgi:27 uron/custom/inc-new.cgi:28
+msgid "半角全角OK"
+msgstr ""
+
+#: uron/custom/inc-new.cgi:43
+msgid "半角英数のみ"
+msgstr ""
+
+#: uron/custom/staff.cgi:25
+msgid "原作"
+msgstr ""
+
+#: uron/custom/inc-new.cgi:12
+msgid "参加する前に，図書館でルールやプレイ方法をよく読んでください。"
+msgstr ""
+
+#: uron/custom/inc-town.cgi:110
+msgid "反乱だ！加勢に行くぞっ"
+msgstr ""
+
+#: uron/custom/inc-menu.cgi:22
+msgid "収支"
+msgstr ""
+
+#: uron/custom/inc-menu.cgi:26
+msgid "取引"
+msgstr ""
+
+#: uron/custom/inc-new.cgi:27 uron/sindex-mob.html:9 uron/sindex.html:37
+msgid "名前"
+msgstr ""
+
+#: uron/sindex.html:45
+msgid "商人物語 配布元"
+msgstr ""
+
+#: uron/custom/inc-html-ranking.cgi:23 uron/custom/inc-html-top.cgi:18
+msgid "商品 【創業】 コメント"
+msgstr ""
+
+#: uron/custom/inc-menu.cgi:28
+msgid "商店通り"
+msgstr ""
+
+#: uron/custom/inc-menu.cgi:14 uron/custom/inc-menu.cgi:36 uron/custom/inc-town.cgi:83 uron/custom/library.cgi:455
+msgid "図書館"
+msgstr ""
+
+#: uron/custom/inc-town.cgi:122
+msgid "図書館の情報は重要だよっ"
+msgstr ""
+
+#: uron/custom/library.cgi:456 uron/custom/library.cgi:475 uron/custom/library.cgi:491
+msgid "図書館員"
+msgstr ""
+
+#: uron/custom/inc-town.cgi:109
+msgid "大変だ・・・。援軍を呼ばないと！"
+msgstr ""
+
+#: uron/custom/inc-menu.cgi:47
+msgid "宅配便"
+msgstr ""
+
+#: uron/custom/inc-menu.cgi:30
+msgid "宮殿"
+msgstr ""
+
+#: uron/custom/inc-menu.cgi:27 uron/custom/inc-town.cgi:48
+msgid "市場"
+msgstr ""
+
+#: uron/sindex-mob.html:12 uron/sindex.html:40
+msgid "店へ入る"
+msgstr ""
+
+#: uron/custom/inc-menu.cgi:19
+msgid "店内"
+msgstr ""
+
+#: uron/custom/inc-html-ranking.cgi:30 uron/custom/inc-html-top.cgi:14 uron/custom/inc-new.cgi:28
+msgid "店名"
+msgstr ""
+
+#: uron/custom/inc-html-ranking.cgi:19
+msgid "店名　人気"
+msgstr ""
+
+#: uron/custom/inc-html-ranking.cgi:17 uron/custom/inc-html-top.cgi:12
+msgid "店長"
+msgstr ""
+
+#: uron/custom/inc-hometown.cgi:43
+msgid "待って～っ"
+msgstr ""
+
+#: uron/custom/inc-menu.cgi:32
+msgid "情報"
+msgstr ""
+
+#: uron/custom/inc-palace.cgi:13 uron/custom/inc-palace.cgi:14
+msgid "我が国には，その日の食べ物すらままならない子供たちがおるのじゃ。"
+msgstr ""
+
+#: uron/custom/inc-menu.cgi:23
+msgid "手続"
+msgstr ""
+
+#: uron/custom/inc-menu.cgi:48 uron/custom/inc-town.cgi:92
+msgid "掲示板"
+msgstr ""
+
+#: uron/custom/inc-town.cgi:123
+msgid "掲示板のチェックも大切だね。ふむふむ・・・"
+msgstr ""
+
+#: uron/custom/inc-menu.cgi:13 uron/custom/inc-menu.cgi:34
+msgid "新聞"
+msgstr ""
+
+#: uron/custom/inc-html-ranking.cgi:8
+msgid "新聞：順位リスト"
+msgstr ""
+
+#. (($MAX_USER-$DTusercount)
+#: uron/custom/inc-new.cgi:18
+msgid "新規店舗オープン：残り%1名様"
+msgstr ""
+
+#: uron/custom/inc-menu.cgi:38
+msgid "施設"
+msgstr ""
+
+#: uron/custom/inc-html-ranking.cgi:34
+msgid "昨売"
+msgstr ""
+
+#: uron/custom/inc-html-ranking.cgi:38
+msgid "昨税"
+msgstr ""
+
+#: uron/sindex-mob.html:16 uron/sindex.html:45
+msgid "本サイトの管理者"
+msgstr ""
+
+#: uron/custom/inc-html-ranking.cgi:33
+msgid "本売"
+msgstr ""
+
+#: uron/custom/staff.cgi:15
+msgid "案内人"
+msgstr ""
+
+#. (GetTime2FormatTime($nextday-$TZ_JST+$DATE_REVISE_TIME)
+#: uron/custom/inc-menu.cgi:118 uron/custom/inc-menu.cgi:99
+msgid "次回決算 %1 まであと%2"
+msgstr ""
+
+#: uron/custom/inc-menu.cgi:35
+msgid "殿堂"
+msgstr ""
+
+#: uron/custom/inc-menu.cgi:72
+msgid "活動中"
+msgstr ""
+
+#: uron/custom/inc-html-ranking.cgi:16 uron/custom/inc-html-ranking.cgi:29 uron/custom/inc-html-top.cgi:11
+msgid "点数"
+msgstr ""
+
+#: uron/custom/inc-html-ranking.cgi:22 uron/custom/inc-html-ranking.cgi:39 uron/custom/inc-html-top.cgi:17
+msgid "熟練"
+msgstr ""
+
+#: uron/custom/inc-new.cgi:36
+msgid "画像"
+msgstr ""
+
+#: uron/custom/inc-new.cgi:50
+msgid "登録"
+msgstr ""
+
+#: uron/custom/inc-new.cgi:20
+msgid "登録は<b>１人１店舗</b>のみ"
+msgstr ""
+
+#: uron/custom/inc-hometown.cgi:47
+msgid "盗っ人め・・・待て！"
+msgstr ""
+
+#: uron/custom/inc-menu.cgi:41 uron/custom/inc-town.cgi:26
+msgid "競技場"
+msgstr ""
+
+#: uron/admin.cgi:131
+msgid "管理メニュー"
+msgstr ""
+
+#: uron/admin.cgi:34
+msgid "管理メニューへ"
+msgstr ""
+
+#: uron/admin.cgi:136 uron/admin.cgi:58
+msgid "管理メニューへ戻る"
+msgstr ""
+
+#: uron/admin.cgi:33
+msgid "管理者パスワード"
+msgstr ""
+
+#: uron/admin.cgi:17
+msgid "管理者パスワードが設定されていません"
+msgstr ""
+
+#: uron/admin.cgi:18
+msgid "管理者メールアドレスが設定されていません"
+msgstr ""
+
+#: uron/custom/inc-html-ranking.cgi:35
+msgid "維持"
+msgstr ""
+
+#: uron/custom/inc-menu.cgi:18
+msgid "自店"
+msgstr ""
+
+#: uron/custom/inc-new.cgi:53
+msgid "荒らしと疑われるような名前は避けましょう。"
+msgstr ""
+
+#: uron/admin.cgi:19
+msgid "街コードが設定されていません"
+msgstr ""
+
+#: uron/custom/inc-menu.cgi:11 uron/custom/staff.cgi:13
+msgid "街案内"
+msgstr ""
+
+#: uron/custom/staff.cgi:23
+msgid "製作・著作"
+msgstr ""
+
+#: uron/custom/inc-html-top.cgi:7
+msgid "詳細"
+msgstr ""
+
+#. ($DT[0]->{shopname})
+#: uron/custom/inc-town.cgi:128
+msgid "買い物はやっぱり%1よねっ"
+msgstr ""
+
+#: uron/custom/inc-html-ranking.cgi:21 uron/custom/inc-html-ranking.cgi:32 uron/custom/inc-html-top.cgi:16
+msgid "資金"
+msgstr ""
+
+#: uron/custom/inc-menu.cgi:46
+msgid "郵便局"
+msgstr ""
+
+#: uron/custom/staff.cgi:14
+msgid "開発スタッフロール"
+msgstr ""
+
+#: uron/custom/staff.cgi:35
+msgid "音楽"
+msgstr ""
+
+#: uron/custom/library.cgi:476
+msgid "項目ごとに整理されています。よく読んでおくことをおすすめします。"
+msgstr ""
+
+#: uron/custom/library.cgi:492
+msgid "項目一覧に戻る"
+msgstr ""
+
+#: uron/custom/inc-town.cgi:111
+msgid "領主を倒せっ"
+msgstr ""
+
+#: uron/custom/inc-menu.cgi:39
+msgid "領主邸"
+msgstr ""
+
+#: uron/custom/inc-menu.cgi:12 uron/custom/inc-menu.cgi:33
+msgid "風景"
+msgstr ""
+
+#: uron/custom/inc-town.cgi:118
+msgid "食事の材料買いに行かなくっちゃ。"
+msgstr ""

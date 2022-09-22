@@ -289,7 +289,7 @@ msgstr "圖示/店鋪插圖"
 
 #: uron/custom/inc-html-ranking.cgi:36
 msgid "一押"
-msgstr ""
+msgstr "主打"
 
 #: uron/custom/inc-town.cgi:111
 msgid "一気にケリをつけようっ"

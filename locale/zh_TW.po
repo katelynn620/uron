@@ -42,7 +42,7 @@ msgid "%1 管理室"
 msgstr "%1 管理室"
 
 #. ("<BIG>$TITLE[$Q{t}]</BIG>")
-#: uron/custom/library.cgi:491
+#: uron/custom/library.cgi:473
 msgid "%1については，以下の本が見つかりました。"
 msgstr "關於%1的內容，找到了以下的書籍。"
 
@@ -76,19 +76,19 @@ msgstr "RANK"
 msgid "wis"
 msgstr "密語"
 
-#: uron/custom/library.cgi:189
+#:
 msgid "【上級】ギルド"
 msgstr "【進階】商會"
 
-#: uron/custom/library.cgi:267
+#:
 msgid "【上級】ドラゴンレース"
 msgstr "【進階】賽龍"
 
-#: uron/custom/library.cgi:423
+#:
 msgid "【上級】結婚"
 msgstr "【進階】結婚"
 
-#: uron/custom/library.cgi:340
+#:
 msgid "【上級】領主制度"
 msgstr "【進階】領主制度"
 
@@ -205,7 +205,7 @@ msgstr "保存cookie"
 msgid "ゲームの各部分についての著作権は，それぞれ下記の方々に帰属します。"
 msgstr "遊戲各部分內容的著作權歸屬於，請參考以下內容"
 
-#: uron/custom/library.cgi:475
+#: uron/custom/library.cgi:457
 msgid "ゲームをプレイするのに必要な知識から，高度な情報まで"
 msgstr "這裡從遊戲遊玩的基礎知識到進階資訊都有"
 
@@ -251,15 +251,15 @@ msgstr "有暴露密碼的風險作業已中斷。"
 msgid "ファイルが見つかりません - %1"
 msgstr "找不到檔案 - %1"
 
-#: uron/custom/library.cgi:98
+#:
 msgid "プレイ方法（中級）"
 msgstr "遊玩方法（中級）"
 
-#: uron/custom/library.cgi:48
+#:
 msgid "プレイ方法（初級）"
 msgstr "遊玩方法（初級）"
 
-#: uron/custom/library.cgi:148
+#:
 msgid "プレイ方法（用語）"
 msgstr "遊玩方法（用語）"
 
@@ -279,7 +279,7 @@ msgstr "請參考使用手冊進行正確的設定"
 msgid "ランダム"
 msgstr "隨機"
 
-#: uron/custom/library.cgi:10
+#:
 msgid "ルールと注意"
 msgstr "規則與注意事項"
 
@@ -387,7 +387,7 @@ msgstr "商品 【創業時間】 評論"
 msgid "商店通り"
 msgstr "商店街"
 
-#: uron/custom/inc-menu.cgi:14 uron/custom/inc-menu.cgi:36 uron/custom/inc-town.cgi:83 uron/custom/library.cgi:455
+#: uron/custom/inc-menu.cgi:14 uron/custom/inc-menu.cgi:36 uron/custom/inc-town.cgi:83 uron/custom/library.cgi:437
 msgid "図書館"
 msgstr "圖書館"
 
@@ -395,7 +395,7 @@ msgstr "圖書館"
 msgid "図書館の情報は重要だよっ"
 msgstr "圖書館的情報很重要喔"
 
-#: uron/custom/library.cgi:456 uron/custom/library.cgi:475 uron/custom/library.cgi:491
+#: uron/custom/library.cgi:438 uron/custom/library.cgi:457 uron/custom/library.cgi:473
 msgid "図書館員"
 msgstr "圖書館員"
 
@@ -610,11 +610,11 @@ msgstr "開發工作人員名單"
 msgid "音楽"
 msgstr "音樂"
 
-#: uron/custom/library.cgi:476
+#: uron/custom/library.cgi:458
 msgid "項目ごとに整理されています。よく読んでおくことをおすすめします。"
 msgstr "都有按照項目整理好了。我們建議您仔細閱讀。"
 
-#: uron/custom/library.cgi:492
+#: uron/custom/library.cgi:474
 msgid "項目一覧に戻る"
 msgstr "回到項目列表"
 

@@ -42,7 +42,7 @@ msgid "%1 管理室"
 msgstr ""
 
 #. ("<BIG>$TITLE[$Q{t}]</BIG>")
-#: uron/custom/library.cgi:491
+#: uron/custom/library.cgi:473
 msgid "%1については，以下の本が見つかりました。"
 msgstr ""
 
@@ -74,22 +74,6 @@ msgstr ""
 
 #: uron/custom/inc-menu.cgi:49
 msgid "wis"
-msgstr ""
-
-#: uron/custom/library.cgi:189
-msgid "【上級】ギルド"
-msgstr ""
-
-#: uron/custom/library.cgi:267
-msgid "【上級】ドラゴンレース"
-msgstr ""
-
-#: uron/custom/library.cgi:423
-msgid "【上級】結婚"
-msgstr ""
-
-#: uron/custom/library.cgi:340
-msgid "【上級】領主制度"
 msgstr ""
 
 #. ($MAX_USER - $DTusercount)
@@ -205,7 +189,7 @@ msgstr ""
 msgid "ゲームの各部分についての著作権は，それぞれ下記の方々に帰属します。"
 msgstr ""
 
-#: uron/custom/library.cgi:475
+#: uron/custom/library.cgi:457
 msgid "ゲームをプレイするのに必要な知識から，高度な情報まで"
 msgstr ""
 
@@ -251,18 +235,6 @@ msgstr ""
 msgid "ファイルが見つかりません - %1"
 msgstr ""
 
-#: uron/custom/library.cgi:98
-msgid "プレイ方法（中級）"
-msgstr ""
-
-#: uron/custom/library.cgi:48
-msgid "プレイ方法（初級）"
-msgstr ""
-
-#: uron/custom/library.cgi:148
-msgid "プレイ方法（用語）"
-msgstr ""
-
 #: uron/custom/inc-menu.cgi:117
 msgid "ホーム"
 msgstr ""
@@ -277,10 +249,6 @@ msgstr ""
 
 #: uron/custom/inc-new.cgi:31
 msgid "ランダム"
-msgstr ""
-
-#: uron/custom/library.cgi:10
-msgid "ルールと注意"
 msgstr ""
 
 #: uron/custom/staff.cgi:29
@@ -387,7 +355,7 @@ msgstr ""
 msgid "商店通り"
 msgstr ""
 
-#: uron/custom/inc-menu.cgi:14 uron/custom/inc-menu.cgi:36 uron/custom/inc-town.cgi:83 uron/custom/library.cgi:455
+#: uron/custom/inc-menu.cgi:14 uron/custom/inc-menu.cgi:36 uron/custom/inc-town.cgi:83 uron/custom/library.cgi:437
 msgid "図書館"
 msgstr ""
 
@@ -395,7 +363,7 @@ msgstr ""
 msgid "図書館の情報は重要だよっ"
 msgstr ""
 
-#: uron/custom/library.cgi:456 uron/custom/library.cgi:475 uron/custom/library.cgi:491
+#: uron/custom/library.cgi:438 uron/custom/library.cgi:457 uron/custom/library.cgi:473
 msgid "図書館員"
 msgstr ""
 
@@ -610,11 +578,11 @@ msgstr ""
 msgid "音楽"
 msgstr ""
 
-#: uron/custom/library.cgi:476
+#: uron/custom/library.cgi:458
 msgid "項目ごとに整理されています。よく読んでおくことをおすすめします。"
 msgstr ""
 
-#: uron/custom/library.cgi:492
+#: uron/custom/library.cgi:474
 msgid "項目一覧に戻る"
 msgstr ""
 
